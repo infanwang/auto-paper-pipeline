@@ -2,6 +2,7 @@
 """Enhanced scheduler - orchestrates the enhanced paper pipeline."""
 
 import sys
+import os
 import json
 import smtplib
 from pathlib import Path
@@ -20,11 +21,11 @@ from reproducer import generate_repro_summary
 DATA_DIR = Path("/root/git/mimo/paper-pipeline/data")
 REPORTS_DIR = Path("/root/git/mimo/paper-pipeline/reports")
 
-SMTP_HOST = "smtp.163.com"
-SMTP_PORT = 465
-SENDER = "cl0udp1k@163.com"
-AUTH_CODE = "CKnX5kKGxzU3VkVT"
-RECIPIENT = "cl0udp1k@163.com"
+SMTP_HOST = os.environ.get("SMTP_HOST", "smtp.163.com")
+SMTP_PORT = int(os.environ.get("SMTP_PORT", "465"))
+SENDER = os.environ.get("SMTP_SENDER", "your@email.com")
+AUTH_CODE = os.environ.get("SMTP_AUTH_CODE", "your_auth_code")
+RECIPIENT = os.environ.get("SMTP_RECIPIENT", "your@email.com")
 
 
 def markdown_to_html(md_text):

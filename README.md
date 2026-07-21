@@ -82,11 +82,11 @@ topics:
     queries: ["LLM agent tool use", "multi-agent collaboration"]
     categories: ["cs.AI", "cs.CL"]
 
-# 邮件配置
+# 邮件配置（从环境变量读取）
 email:
-  smtp_host: "smtp.163.com"
-  sender: "your@email.com"
-  recipient: "your@email.com"
+  smtp_host: "smtp.163.com"  # 或设置 SMTP_HOST 环境变量
+  sender: "your@email.com"   # 或设置 SMTP_SENDER 环境变量
+  recipient: "your@email.com" # 或设置 SMTP_RECIPIENT 环境变量
 ```
 
 ### 3. 运行

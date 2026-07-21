@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 """Email briefing sender for paper pipeline."""
 
+import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from pathlib import Path
 from datetime import datetime
 
-SMTP_HOST = "smtp.163.com"
-SMTP_PORT = 465
-SENDER = "cl0udp1k@163.com"
-AUTH_CODE = "CKnX5kKGxzU3VkVT"
-RECIPIENT = "cl0udp1k@163.com"
+SMTP_HOST = os.environ.get("SMTP_HOST", "smtp.163.com")
+SMTP_PORT = int(os.environ.get("SMTP_PORT", "465"))
+SENDER = os.environ.get("SMTP_SENDER", "your@email.com")
+AUTH_CODE = os.environ.get("SMTP_AUTH_CODE", "your_auth_code")
+RECIPIENT = os.environ.get("SMTP_RECIPIENT", "your@email.com")
 
 
 def send_daily_briefing(report_path, repro_summary_path=None):

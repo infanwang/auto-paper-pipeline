@@ -164,7 +164,7 @@ PDF已下载到 pdfs/AI_Agent/
 正在生成技术简报...
 今日新论文：15篇
 Top 5复现候选：FVAttn, VTLoc, ADA-ST...
-邮件已发送至 cl0udp1k@163.com
+邮件已发送至配置的邮箱地址
 ```
 
 ## 注意事项
