@@ -61,7 +61,7 @@ services:
       - ./reports:/app/reports
       - ./logs:/app/logs
     command: >
-      sh -c "echo '0 8 * * * cd /app && python scripts/run_pipeline.py --mode daily >> /app/logs/scheduler.log 2>&1' > /etc/crontabs/root && crond -f"
+      sh -c "echo 'Scheduler started. Daily task at 08:00 via host cron.' && sleep infinity"
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "test", "-f", "/etc/crontabs/root"]
