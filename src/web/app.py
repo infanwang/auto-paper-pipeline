@@ -504,3 +504,33 @@ DASHBOARD_HTML = """
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
+# ============ 监控端点 ============
+@app.get("/api/metrics")
+async def get_metrics():
+    """获取Prometheus指标"""
+    from core.monitoring import MetricsCollector
+    collector = MetricsCollector()
+    return {"metrics": collector.export_prometheus()}
+
+
+@app.get("/api/logs")
+async def get_logs(limit: int = 50):
+    """获取访问日志"""
+    log_file = Path("/app/logs/access.log")
+    if not log_file.exists():
+        return {"logs": [], "total": 0}
+    
+    lines = log_file.read_text().strip().split("\n")
+    logs = lines[-limit:] if len(lines) > limit else lines
+    
+    return {"logs": logs, "total": len(lines)}
+
+
+@app.get("/api/health/detailed")
+async def detailed_health():
+    """详细健康检查"""
+    from core.monitoring import HealthChecker
+    checker = HealthChecker()
+    return checker.full_check()
