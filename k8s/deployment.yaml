@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paper-pipeline-web
+  labels:
+    app: paper-pipeline
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: paper-pipeline-web
+  template:
+    metadata:
+      labels:
+        app: paper-pipeline-web
+    spec:
+      containers:
+      - name: web
+        image: paper-pipeline-web:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: SMTP_HOST
+          valueFrom:
+            secretKeyRef:
+              name: paper-pipeline-secrets
+              key: smtp-host
+        - name: SMTP_SENDER
+          valueFrom:
+            secretKeyRef:
+              name: paper-pipeline-secrets
+              key: smtp-sender
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 8000
+          initialDelaySeconds: 10
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /api/health
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: paper-pipeline-service
+spec:
+  selector:
+    app: paper-pipeline-web
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: paper-pipeline-secrets
+type: Opaque
+stringData:
+  smtp-host: "smtp.163.com"
+  smtp-sender: "your@email.com"
+  smtp-auth-code: "your_auth_code"
