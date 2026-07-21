@@ -1,0 +1,19 @@
+# 核心依赖
+pyyaml>=6.0
+numpy>=1.24.0
+
+# PDF生成
+reportlab>=4.0
+
+# MCP Server
+mcp>=1.0.0
+
+# 测试
+pytest>=7.0
+
+# Web API
+fastapi>=0.100.0
+uvicorn>=0.23.0
+
+# PDF解析(可选)
+PyPDF2>=3.0

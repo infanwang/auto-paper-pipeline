@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # 主应用服务
+  app:
+    build: .
+    container_name: paper-pipeline
+    environment:
+      - SMTP_HOST=${SMTP_HOST:-smtp.163.com}
+      - SMTP_PORT=${SMTP_PORT:-465}
+      - SMTP_SENDER=${SMTP_SENDER}
+      - SMTP_AUTH_CODE=${SMTP_AUTH_CODE}
+      - SMTP_RECIPIENT=${SMTP_RECIPIENT}
+    volumes:
+      - ./data:/app/data
+      - ./docs:/app/docs
+      - ./reports:/app/reports
+      - ./pdfs:/app/pdfs
+    command: python scripts/run_pipeline.py --mode daily
+    restart: unless-stopped
+    networks:
+      - paper-network
+
+  # Web API 服务
+  web:
+    build: .
+    container_name: paper-pipeline-web
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./docs:/app/docs
+    command: uvicorn src.web.app:app --host 0.0.0.0 --port 8000
+    restart: unless-stopped
+    networks:
+      - paper-network
+    depends_on:
+      - app
+
+  # 定时任务服务
+  scheduler:
+    build: .
+    container_name: paper-pipeline-scheduler
+    environment:
+      - SMTP_HOST=${SMTP_HOST:-smtp.163.com}
+      - SMTP_PORT=${SMTP_PORT:-465}
+      - SMTP_SENDER=${SMTP_SENDER}
+      - SMTP_AUTH_CODE=${SMTP_AUTH_CODE}
+      - SMTP_RECIPIENT=${SMTP_RECIPIENT}
+    volumes:
+      - ./data:/app/data
+      - ./docs:/app/docs
+      - ./reports:/app/reports
+    command: >
+      sh -c "echo '0 8 * * * cd /app && python scripts/run_pipeline.py --mode daily >> /app/data/cron.log 2>&1' > /etc/crontabs/root && crond -f"
+    restart: unless-stopped
+    networks:
+      - paper-network
+
+networks:
+  paper-network:
+    driver: bridge

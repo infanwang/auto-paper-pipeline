@@ -9,8 +9,8 @@ from pathlib import Path
 
 app = FastAPI(title="Auto Paper Pipeline API", version="2.0.0")
 
-# 数据目录
-DATA_DIR = Path("/root/git/mimo/paper-pipeline/data")
+# 数据目录（容器内路径）
+DATA_DIR = Path("/app/data")
 
 
 @app.get("/", response_class=HTMLResponse)
@@ -61,7 +61,10 @@ async def list_papers(
     offset: int = 0
 ):
     """获取论文列表"""
-    papers_file = DATA_DIR / "discovery_2026-07-21.json"
+    # 查找最新的数据文件
+    papers_file = DATA_DIR / "pipeline_2026-07-21.json"
+    if not papers_file.exists():
+        papers_file = DATA_DIR / "discovery_2026-07-21.json"
     
     if not papers_file.exists():
         return {"papers": [], "total": 0}
@@ -91,7 +94,10 @@ async def search_papers(
     limit: int = Query(20, le=100)
 ):
     """搜索论文"""
-    papers_file = DATA_DIR / "discovery_2026-07-21.json"
+    # 查找最新的数据文件
+    papers_file = DATA_DIR / "pipeline_2026-07-21.json"
+    if not papers_file.exists():
+        papers_file = DATA_DIR / "discovery_2026-07-21.json"
     
     if not papers_file.exists():
         return {"papers": [], "total": 0}
@@ -134,7 +140,10 @@ async def list_topics():
 @app.get("/api/stats")
 async def get_stats():
     """获取统计信息"""
-    papers_file = DATA_DIR / "discovery_2026-07-21.json"
+    # 查找最新的数据文件
+    papers_file = DATA_DIR / "pipeline_2026-07-21.json"
+    if not papers_file.exists():
+        papers_file = DATA_DIR / "discovery_2026-07-21.json"
     
     if not papers_file.exists():
         return {"total": 0, "by_topic": {}}
@@ -157,7 +166,10 @@ async def get_stats():
 @app.get("/api/paper/{paper_id}")
 async def get_paper(paper_id: str):
     """获取单篇论文详情"""
-    papers_file = DATA_DIR / "discovery_2026-07-21.json"
+    # 查找最新的数据文件
+    papers_file = DATA_DIR / "pipeline_2026-07-21.json"
+    if not papers_file.exists():
+        papers_file = DATA_DIR / "discovery_2026-07-21.json"
     
     if not papers_file.exists():
         raise HTTPException(status_code=404, detail="No data found")
