@@ -4,30 +4,37 @@
     <meta charset="utf-8">
     <title>5G移动通信 - AI Paper Pipeline</title>
     <style>
-        body { font-family: -apple-system, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; }
-        h1 { color: #1a1a2e; border-bottom: 2px solid #667eea; }
-        .paper { background: #f9f9f9; border-radius: 8px; padding: 15px; margin: 10px 0; }
-        .paper h3 { color: #333; }
-        .meta { color: #666; font-size: 0.9em; }
+        body { font-family: -apple-system, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; border-radius: 12px; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        th { background: #667eea; color: white; padding: 12px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #eee; }
+        tr:hover { background: #f5f5f5; }
+        a { color: #667eea; text-decoration: none; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; }
     </style>
 </head>
 <body>
-    <h1>📁 5G移动通信 (2篇)</h1>
-    <a href="../index.html">← 返回首页</a>
-
-    <div class="paper">
-        <h3>1. SelectInfer: Selective Neuron Loading and Computation for On-Device LLMs</h3>
-        <div class="meta">
-            ArXiv: 2607.18081v1 | 日期: 2026-07-20 | 评分: 6.3
-        </div>
-        <p>Large Language Models (LLMs) have demonstrated remarkable capabilities across a range of Natural Language Processing (NLP) tasks, but their high computational and memory demands pose significant chall...</p>
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="header">
+        <h1>📁 5G移动通信</h1>
+        <p>2篇论文</p>
     </div>
-
-    <div class="paper">
-        <h3>2. Task-Oriented Precoding for Edge Inference over Large-Scale MIMO Systems</h3>
-        <div class="meta">
-            ArXiv: 2607.17877v1 | 日期: 2026-07-20 | 评分: 6.3
-        </div>
-        <p>Future wireless networks are expected to support networked artificial intelligence (AI) services, where multiple devices transmit learned features to an edge server for distributed inference. This set...</p>
-    </div>
-</body></html>
+    <table>
+        <tr><th>#</th><th>标题</th><th>日期</th><th>评分</th></tr>
+        
+            <tr>
+                <td>1</td>
+                <td><a href="../papers/2607.18081v1.html">SelectInfer: Selective Neuron Loading and Computation for On</a></td>
+                <td>2026-07-20</td>
+                <td><span style="background:#FFC107;color:white;padding:3px 8px;border-radius:10px;">6.3</span></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="../papers/2607.17877v1.html">Task-Oriented Precoding for Edge Inference over Large-Scale </a></td>
+                <td>2026-07-20</td>
+                <td><span style="background:#FFC107;color:white;padding:3px 8px;border-radius:10px;">6.3</span></td>
+            </tr>
+    </table>
+</body>
+</html>

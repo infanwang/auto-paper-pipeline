@@ -16,12 +16,13 @@ services:
       - ./docs:/app/docs
       - ./reports:/app/reports
       - ./pdfs:/app/pdfs
+      - ./logs:/app/logs
     command: python scripts/run_pipeline.py --mode daily
     restart: unless-stopped
     networks:
       - paper-network
 
-  # Web API 服务
+  # Web API 服务（带健康检查）
   web:
     build: .
     container_name: paper-pipeline-web
@@ -30,14 +31,21 @@ services:
     volumes:
       - ./data:/app/data
       - ./docs:/app/docs
+      - ./logs:/app/logs
     command: uvicorn src.web.app:app --host 0.0.0.0 --port 8000
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
     networks:
       - paper-network
     depends_on:
       - app
 
-  # 定时任务服务
+  # 定时任务服务（带健康检查）
   scheduler:
     build: .
     container_name: paper-pipeline-scheduler
@@ -51,9 +59,15 @@ services:
       - ./data:/app/data
       - ./docs:/app/docs
       - ./reports:/app/reports
+      - ./logs:/app/logs
     command: >
-      sh -c "echo '0 8 * * * cd /app && python scripts/run_pipeline.py --mode daily >> /app/data/cron.log 2>&1' > /etc/crontabs/root && crond -f"
+      sh -c "echo '0 8 * * * cd /app && python scripts/run_pipeline.py --mode daily >> /app/logs/scheduler.log 2>&1' > /etc/crontabs/root && crond -f"
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "test", "-f", "/etc/crontabs/root"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
     networks:
       - paper-network
 

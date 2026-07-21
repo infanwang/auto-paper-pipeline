@@ -1,0 +1,2786 @@
+{
+  "date": "2026-07-21",
+  "total_papers": 119,
+  "by_topic": {
+    "LLM推理优化": 22,
+    "多模态大模型": 12,
+    "AI_Agent": 30,
+    "芯片验证": 24,
+    "代码生成": 13,
+    "5G移动通信": 18
+  },
+  "papers": [
+    {
+      "id": "2607.18236v1",
+      "title": "Patch Policy: Efficient Embodied Control via Dense Visual Representations",
+      "abstract": "Pretrained dense visual features from Vision Transformers (ViTs) are powerful yet have been underutilized in robot learning. Modern robot policies either compress each observation into a single global token, or rely on visual backbones trained from scratch, sacrificing both fine-grained spatial detail and the benefits of large-scale visual pre-training. While there exist policies that do operate on dense patch features like large vision-language-action models (VLAs), they tend to be heavy and slow, inheriting the full cost of a billion-parameter vision-language model (VLM) backbone. We close this gap with Patch Policy, a minimal architectural extension that enables transformer-based policies to consume dense pre-trained patch tokens directly without the computational overhead of a full VLM. At its core is a block-causal attention mask that preserves the temporal causality of standard policies while letting the model attend over many patch tokens per observation, alongside other state information. Patch Policy is lightweight, fast, and highly effective. Across four simulated and three real-world environment suites, our method achieves a 40% relative improvement over policies using state-of-the-art global-pooled representations. Furthermore, it surpasses fine-tuned OpenVLA-OFT by 18% while using roughly 0.7% of the parameters. We believe Patch Policy provides a pipeline for the robotics community to readily leverage continuing progress in visual representation learning, without sacrificing the training efficiency or inference speed required for high-frequency, reactive control. Videos can be viewed at https://patch-policy.github.io",
+      "authors": [
+        {
+          "name": "Gaoyue Zhou"
+        },
+        {
+          "name": "Zichen Jeff Cui"
+        },
+        {
+          "name": "Ada Langford"
+        },
+        {
+          "name": "Bowen Tan"
+        },
+        {
+          "name": "Yann LeCun"
+        },
+        {
+          "name": "Lerrel Pinto"
+        }
+      ],
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "LLM推理优化",
+      "query": "LLM inference optimization",
+      "tfidf_score": 0.8599999999999999,
+      "llm_score": 7.8,
+      "llm_summary": "Pretrained dense visual features from Vision Transformers (ViTs) are powerful yet have been underuti...",
+      "llm_tags": [
+        "LLM",
+        "推理优化",
+        "多模态"
+      ],
+      "analysis": {
+        "paper_id": "2607.18236v1",
+        "title": "Patch Policy: Efficient Embodied Control via Dense Visual Representations",
+        "problem": "Pretrained dense visual features from Vision Transformers (ViTs) are powerful yet have been underutilized in robot learning",
+        "method": "Across four simulated and three real-world environment suites, our method achieves a 40% relative improvement over policies using state-of-the-art global-pooled representations",
+        "architecture": [
+          "model",
+          "attention",
+          "transformer",
+          "block"
+        ],
+        "experiments": {
+          "datasets": [],
+          "baselines": [],
+          "metrics": []
+        },
+        "results": {
+          "performance": [
+            "40%",
+            "18%",
+            "0.7%"
+          ],
+          "comparison": []
+        },
+        "strengths": [
+          "performance",
+          "efficiency"
+        ],
+        "weaknesses": [
+          "需要进一步验证"
+        ],
+        "improvements": [
+          "可以与其他方法进行对比实验",
+          "可以提供更详细的消融实验",
+          "可以开源代码和数据集"
+        ],
+        "code_quality": 5.5,
+        "reproducibility": 5.0
+      },
+      "reproducibility": {
+        "score": 2.0,
+        "factors": {
+          "code_available": false,
+          "dataset_mentioned": false,
+          "baselines_mentioned": false,
+          "metrics_specified": false,
+          "detailed_method": true
+        },
+        "verdict": "低"
+      }
+    },
+    {
+      "id": "2607.18217v1",
+      "title": "HOMIE: Human-object Centric Video Personalization via Multimodal Intelligent Enchancement",
+      "abstract": "Human-object centric video personalization (HOCVP) is a core task within subject-driven video generation. However, existing methods suffer from two key limitations. First, most approaches focusing on inter-subject personalization still struggle to strike a balance between high subject fidelity and accurate interaction patterns between humans and diverse objects, especially when objects represent abstract concepts such as logos. Second, while intra-subject references (e.g., OCR maps, multi-view inputs) are expected to enhance subject fidelity, most existing works lack mechanisms to understand such latent correspondence. To address both challenges, we propose HOMIE, an HOCVP framework that tackles both inter- and intra-subject input settings in a unified manner. Compared to previous approaches, HOMIE proposes a better MLLM integration strategy to extract knowledge of reference-level relationships without compromising the controllability of text encoders or incurring costly re-alignment. Specifically, we introduce global multimodal guidance within self-attention to better align MLLM-derived semantic features with VAE tokens. Furthermore, we propose modality-reference embedding to differentiate tokens from MLLM features and VAE tokens and associate intra-subject reference image tokens. Extensive experiments validate that our method achieves state-of-the-art performance across various HOCVP tasks. Project Page: https://yiyangcai.github.io/homie-page.github.io/",
+      "authors": [
+        {
+          "name": "Yiyang Cai"
+        },
+        {
+          "name": "Nan Chen"
+        },
+        {
+          "name": "Rongchang Xie"
+        },
+        {
+          "name": "Junwen Pan"
+        },
+        {
+          "name": "Chunyang Jiang"
+        },
+        {
+          "name": "Cheng Chen"
+        },
+        {
+          "name": "Wen Zhou"
+        },
+        {
+          "name": "Zhenbang Sun"
+        },
+        {
+          "name": "Wei Xue"
+        },
+        {
+          "name": "Wenhan Luo"
+        },
+        {
+          "name": "Yike Guo"
+        }
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "多模态大模型",
+      "query": "multimodal large language model",
+      "tfidf_score": 0.72,
+      "llm_score": 7.8,
+      "llm_summary": "Human-object centric video personalization (HOCVP) is a core task within subject-driven video genera...",
+      "llm_tags": [
+        "LLM",
+        "多模态"
+      ],
+      "analysis": {
+        "paper_id": "2607.18217v1",
+        "title": "HOMIE: Human-object Centric Video Personalization via Multimodal Intelligent Enchancement",
+        "problem": "However, existing methods suffer from two key limitations",
+        "method": "However, existing methods suffer from two key limitations",
+        "architecture": [
+          "encoder",
+          "attention"
+        ],
+        "experiments": {
+          "datasets": [],
+          "baselines": [],
+          "metrics": []
+        },
+        "results": {
+          "performance": [],
+          "comparison": [
+            "compared to"
+          ]
+        },
+        "strengths": [
+          "novelty",
+          "performance"
+        ],
+        "weaknesses": [
+          "computational_cost",
+          "limited_scope"
+        ],
+        "improvements": [
+          "可以与其他方法进行对比实验",
+          "可以提供更详细的消融实验",
+          "可以开源代码和数据集"
+        ],
+        "code_quality": 5.5,
+        "reproducibility": 5.0
+      },
+      "reproducibility": {
+        "score": 0.0,
+        "factors": {
+          "code_available": false,
+          "dataset_mentioned": false,
+          "baselines_mentioned": false,
+          "metrics_specified": false,
+          "detailed_method": false
+        },
+        "verdict": "低"
+      }
+    },
+    {
+      "id": "2607.18006v1",
+      "title": "MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models",
+      "abstract": "Large language models achieve strong reasoning performance, but often at prohibitive training cost - a challenge that is especially acute for compact models ($\\leq 4 \\, \\mathrm{B}$ parameters) trained under limited budgets. We introduce MADA-RL, a post-training framework that specializes compact models into generator and critic roles and trains them with a debate-aware learning signal, fine-tuning only a small subset of parameters via LoRA adapters. Our central contribution is a counterfactual critic advantage: a dynamic, role-conditioned baseline that redefines the critic's advantage as its reward minus the generator ensemble's per-instance accuracy. This explicitly optimizes critics to improve over generator consensus rather than to merely reproduce a correct answer, yielding more targeted credit assignment than static mean-reward normalization. At deployment, the specialized agents are composed in a lightweight multi-round protocol. Across five mathematical reasoning benchmarks, MADA-RL raises the accuracy of the DeepSeek-R1-Distill-Qwen-1.5B model from $39.9 \\, \\%$ to $41.9 \\, \\%$ ($+2.0$ points, $p < 0.001$) using $16$ times fewer trainable parameters than fully fine-tuned baselines, placing it on the accuracy-trainable-parameter Pareto front. It approaches, but does not surpass, the strongest baselines (DeepScaleR, STILL-3), which are trained on substantially larger datasets; we analyse this gap and the associated inference-time cost directly. A controlled study isolates the source of MADA-RL's gains: the counterfactual advantage produces the highest critic improvement rate of any model evaluated, indicating that trained critics learn to correct generator errors rather than to imitate them.",
+      "authors": [
+        {
+          "name": "Martino M. L. Pulici"
+        },
+        {
+          "name": "Cuong Xuan Chu"
+        },
+        {
+          "name": "Evgeny Kharlamov"
+        },
+        {
+          "name": "Zifeng Ding"
+        },
+        {
+          "name": "Volker Tresp"
+        },
+        {
+          "name": "Yunpu Ma"
+        }
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.MA"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "AI_Agent",
+      "query": "multi-agent collaboration",
+      "tfidf_score": 0.8999999999999999,
+      "llm_score": 7.3,
+      "llm_summary": "Large language models achieve strong reasoning performance, but often at prohibitive training cost -...",
+      "llm_tags": [
+        "LLM",
+        "Agent",
+        "推理优化"
+      ],
+      "analysis": {
+        "paper_id": "2607.18006v1",
+        "title": "MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models",
+        "problem": "Large language models achieve strong reasoning performance, but often at prohibitive training cost - a challenge that is especially acute for compact models ($\\leq 4 \\, \\mathrm{B}$ parameters) trained",
+        "method": "We introduce MADA-RL, a post-training framework that specializes compact models into generator and critic roles and trains them with a debate-aware learning signal, fine-tuning only a small subset of ",
+        "architecture": [
+          "model"
+        ],
+        "experiments": {
+          "datasets": [
+            "dataset",
+            "benchmark"
+          ],
+          "baselines": [],
+          "metrics": [
+            "accuracy"
+          ]
+        },
+        "results": {
+          "performance": [],
+          "comparison": []
+        },
+        "strengths": [
+          "efficiency"
+        ],
+        "weaknesses": [
+          "limited_scope"
+        ],
+        "improvements": [
+          "可以与其他方法进行对比实验",
+          "可以提供更详细的消融实验",
+          "可以开源代码和数据集"
+        ],
+        "code_quality": 5.5,
+        "reproducibility": 6.0
+      },
+      "reproducibility": {
+        "score": 6.0,
+        "factors": {
+          "code_available": false,
+          "dataset_mentioned": true,
+          "baselines_mentioned": false,
+          "metrics_specified": true,
+          "detailed_method": true
+        },
+        "verdict": "中"
+      }
+    },
+    {
+      "id": "2607.18080v1",
+      "title": "Sparse Evidence Can Suffice: Agentic Evidence Seeking for Multimodal Video Misinformation Detection",
+      "abstract": "Multimodal video misinformation detection is commonly formulated as a holistic video-understanding task, where the entire video and its associated content are processed and judged in a single pass. However, real-world misinformation often exhibits a sparse and compositional evidence structure: a reliable decision may depend on only a few coupled clues, while most video content contributes limited additional information. Exhaustive multimodal reasoning may therefore introduce substantial redundancy and obscure decisive evidence. This motivates decoupling evidence acquisition from verification: first identifying sparse, decision-relevant clues and then judging veracity based on the acquired evidence. Accordingly, we propose SIEVE, a framework for Sparse Interactive Evidence Verification via Extraction in multimodal video misinformation detection. An evidence-seeking agent actively explores the available multimodal evidence and constructs a compact evidence package, which is then used by a verifier to determine veracity. The agent is trained with supervised evidence-seeking trajectories and an evidence-aware reinforcement learning objective that promotes informative evidence acquisition while discouraging unnecessary or invalid interactions. Experiments on multiple video misinformation benchmarks show that SIEVE consistently outperforms the evaluated baselines and supports reliable verification using compact evidence packages. Moreover, the resulting acquisition process provides an explicit and inspectable evidence trail, improving the transparency and groundedness of multimodal misinformation detection.",
+      "authors": [
+        {
+          "name": "Haochen Zhao"
+        },
+        {
+          "name": "Yongxiu Xu"
+        },
+        {
+          "name": "Xinkui Lin"
+        },
+        {
+          "name": "Dong Xie"
+        },
+        {
+          "name": "Jiarui Lu"
+        },
+        {
+          "name": "Yuqi Qian"
+        },
+        {
+          "name": "Yubin Wang"
+        },
+        {
+          "name": "Hongbo Xu"
+        },
+        {
+          "name": "Gaopeng Gou"
+        }
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "芯片验证",
+      "query": "chip verification formal",
+      "tfidf_score": 0.8999999999999999,
+      "llm_score": 7.3,
+      "llm_summary": "Multimodal video misinformation detection is commonly formulated as a holistic video-understanding t...",
+      "llm_tags": [
+        "Agent",
+        "多模态",
+        "芯片验证"
+      ],
+      "analysis": {
+        "paper_id": "2607.18080v1",
+        "title": "Sparse Evidence Can Suffice: Agentic Evidence Seeking for Multimodal Video Misinformation Detection",
+        "problem": "Multimodal video misinformation detection is commonly formulated as a holistic video-understanding task, where the entire video and its associated content are processed and judged in a single pass",
+        "method": "Exhaustive multimodal reasoning may therefore introduce substantial redundancy and obscure decisive evidence",
+        "architecture": [
+          "N/A"
+        ],
+        "experiments": {
+          "datasets": [
+            "benchmark"
+          ],
+          "baselines": [],
+          "metrics": []
+        },
+        "results": {
+          "performance": [],
+          "comparison": []
+        },
+        "strengths": [
+          "novelty"
+        ],
+        "weaknesses": [
+          "limited_scope"
+        ],
+        "improvements": [
+          "可以与其他方法进行对比实验",
+          "可以提供更详细的消融实验",
+          "可以开源代码和数据集"
+        ],
+        "code_quality": 5.5,
+        "reproducibility": 5.0
+      },
+      "reproducibility": {
+        "score": 4.0,
+        "factors": {
+          "code_available": false,
+          "dataset_mentioned": true,
+          "baselines_mentioned": false,
+          "metrics_specified": false,
+          "detailed_method": true
+        },
+        "verdict": "中"
+      }
+    },
+    {
+      "id": "2607.17419v1",
+      "title": "Kernelized Linear Attention: Breaking the Capacity Wall with Symmetric Cones",
+      "abstract": "Linear attention promises constant-time recurrent inference but degrades sharply on associative recall. We formulate attention recall as a spherical-packing problem and introduce Kernelized Linear Attention Activations (KATA), a framework whose feature maps are derived from first principles by certifying nonnegative attention weights through a self-dual homogeneous cone. Building on this observation, we show that rank-one positive semi-definite (PSD) features offer a favorable capacity--interference tradeoff. KATA recovers a parameter-free convex output gate and characterizes associative capacity through the Welch interference floor. For tolerances above this floor, KATA enlarges the state without adding parameters and admits spherical codes with exponentially many keys in the projection dimension. We implement KATA as fused Triton kernels at two operating points: a flash-attention-style forward up to ${\\sim}1.6\\times$ FlashAttention-2 throughput, and an exact $O(T)$ chunked-state form that reaches ${\\sim}11\\times$ FlashAttention-2 forward throughput at $131$k tokens. An associative scan of the first-order feature lowers the inter-chunk recurrence depth to $O(\\log(T/C))$ for chunk size $C$ and averages ${\\sim}2.4\\times$ the throughput of a matched sequential linear-attention baseline. On long-range MQAR and repeated-key overwrite, several KATA variants outperform Gated DeltaNet, with parameter counts and state sizes reported alongside accuracy. Induction preserves near-perfect recall, while kernel benchmarks show that the maps can be implemented efficiently. KATA retains $0.985$ MQAR at a $16\\times$ out-of-distribution length, approaching the softmax with roughly one quarter of the KV-cache entries. Experiments on 340M-parameter LLMs reveal a feature-dependent fluency trade-off and clarify how positional embeddings, delta rules, and decay gates interact with feature geometry.",
+      "authors": [
+        {
+          "name": "Ayoub Ghriss"
+        },
+        {
+          "name": "Sourav Chakraborty"
+        }
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.IT",
+        "stat.ML"
+      ],
+      "published_date": "2026-07-19",
+      "source": "arxiv",
+      "topic": "LLM推理优化",
+      "query": "KV cache efficient",
+      "tfidf_score": 0.6599999999999999,
+      "llm_score": 7.0,
+      "llm_summary": "Linear attention promises constant-time recurrent inference but degrades sharply on associative reca...",
+      "llm_tags": [
+        "LLM",
+        "推理优化"
+      ],
+      "analysis": {
+        "paper_id": "2607.17419v1",
+        "title": "Kernelized Linear Attention: Breaking the Capacity Wall with Symmetric Cones",
+        "problem": "We formulate attention recall as a spherical-packing problem and introduce Kernelized Linear Attention Activations (KATA), a framework whose feature maps are derived from first principles by certifyin",
+        "method": "We formulate attention recall as a spherical-packing problem and introduce Kernelized Linear Attention Activations (KATA), a framework whose feature maps are derived from first principles by certifyin",
+        "architecture": [
+          "attention"
+        ],
+        "experiments": {
+          "datasets": [
+            "benchmark"
+          ],
+          "baselines": [],
+          "metrics": [
+            "accuracy",
+            "throughput"
+          ]
+        },
+        "results": {
+          "performance": [],
+          "comparison": []
+        },
+        "strengths": [
+          "novelty",
+          "efficiency"
+        ],
+        "weaknesses": [
+          "需要进一步验证"
+        ],
+        "improvements": [
+          "可以与其他方法进行对比实验",
+          "可以提供更详细的消融实验",
+          "可以开源代码和数据集"
+        ],
+        "code_quality": 5.0,
+        "reproducibility": 5.0
+      },
+      "reproducibility": {
+        "score": 6.0,
+        "factors": {
+          "code_available": false,
+          "dataset_mentioned": true,
+          "baselines_mentioned": false,
+          "metrics_specified": true,
+          "detailed_method": true
+        },
+        "verdict": "中"
+      }
+    },
+    {
+      "id": "2607.17715v1",
+      "title": "C$^2$KV: Compressed and Composable KV Cache Reuse for Efficient LLM Inference",
+      "abstract": "Long-context inference is central to modern large language model (LLM) applications such as retrieval-augmented generation and multi-document reasoning. To mitigate the growing inference cost, recent work has explored key-value (KV) cache reuse to reduce redundant prefill computation. However, existing reuse methods primarily focus on computation savings and overlook a critical bottleneck in long-context LLM serving: the cost of storing and accessing large KV caches. While KV compression appears to be a natural complement, naively combining compression with non-prefix KV reuse often leads to severe accuracy degradation. In this work, we propose C$^2$KV, a unified framework for non-prefix KV reuse that jointly optimizes KV extraction and inference-time concatenation. C$^2$KV learns a composable and compressed KV cache manifold that is explicitly designed to be position-agnostic. Our approach introduces a lightweight sidecar Extractor with learnable compression tokens and a structured attention flow, enabling modular KV representations that can be flexibly reused and concatenated without modifying the frozen base model. We further employ a compression-concatenation co-training strategy to align extraction-time representations with their downstream reuse behavior. Extensive experiments across multiple long-context benchmarks and model families demonstrate that C$^2$KV significantly reduces KV cache storage and transfer costs, achieving up to 17$\\times$ inference speedup under long contexts, while preserving generation quality.",
+      "authors": [
+        {
+          "name": "Chuheng Du"
+        },
+        {
+          "name": "Junyi Chen"
+        },
+        {
+          "name": "Hanlin Tang"
+        },
+        {
+          "name": "Kan Liu"
+        },
+        {
+          "name": "Tao Lan"
+        },
+        {
+          "name": "Lin Qu"
+        },
+        {
+          "name": "Chaoyue Niu"
+        },
+        {
+          "name": "Shengzhong Liu"
+        },
+        {
+          "name": "Guihai Chen"
+        },
+        {
+          "name": "Fan Wu"
+        }
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "LLM推理优化",
+      "query": "KV cache efficient",
+      "tfidf_score": 1.0,
+      "llm_score": 6.3,
+      "llm_summary": "Long-context inference is central to modern large language model (LLM) applications such as retrieva...",
+      "llm_tags": [
+        "LLM",
+        "推理优化"
+      ],
+      "analysis": {
+        "paper_id": "2607.17715v1",
+        "title": "C$^2$KV: Compressed and Composable KV Cache Reuse for Efficient LLM Inference",
+        "problem": "However, existing reuse methods primarily focus on computation savings and overlook a critical bottleneck in long-context LLM serving: the cost of storing and accessing large KV caches",
+        "method": "However, existing reuse methods primarily focus on computation savings and overlook a critical bottleneck in long-context LLM serving: the cost of storing and accessing large KV caches",
+        "architecture": [
+          "model",
+          "attention"
+        ],
+        "experiments": {
+          "datasets": [
+            "benchmark"
+          ],
+          "baselines": [],
+          "metrics": [
+            "accuracy"
+          ]
+        },
+        "results": {
+          "performance": [],
+          "comparison": []
+        },
+        "strengths": [
+          "efficiency"
+        ],
+        "weaknesses": [
+          "需要进一步验证"
+        ],
+        "improvements": [
+          "可以与其他方法进行对比实验",
+          "可以提供更详细的消融实验",
+          "可以开源代码和数据集"
+        ],
+        "code_quality": 5.5,
+        "reproducibility": 5.0
+      },
+      "reproducibility": {
+        "score": 6.0,
+        "factors": {
+          "code_available": false,
+          "dataset_mentioned": true,
+          "baselines_mentioned": false,
+          "metrics_specified": true,
+          "detailed_method": true
+        },
+        "verdict": "中"
+      }
+    },
+    {
+      "id": "2607.18213v1",
+      "title": "SWE-Pruner Pro: The Coder LLM Already Knows What to Prune",
+      "abstract": "Pruning long context for coding agents has been a vital technology for efficient context management. While existing context pruning methods such as SWE-Pruner realize this by attaching a separate code classifier, we find the agent itself encodes internal representations indicating the relevance of code context when reading tool output. Based on this finding, we propose SWE-Pruner Pro, which prunes tool outputs directly inside the agent. Concretely, a small head turns the agent's own internal representations into a keep-or-prune label for each line, with a length-aware embedding keyed to each tool output's line count. Across two open-weight backbones and four multi-turn benchmarks, SWE-Pruner Pro saves up to 39% of prompt and completion tokens while preserving task quality, with bounded inference overhead. Notably, on MiMo-V2-Flash SWE-Pruner Pro additionally raises the SWE-Bench Verified resolve rate by +3.8% and the long-context Oolong accuracy by +2.2 points.",
+      "authors": [
+        {
+          "name": "Yuhang Wang"
+        },
+        {
+          "name": "Yuling Shi"
+        },
+        {
+          "name": "Shaoqiu Zhang"
+        },
+        {
+          "name": "Jialiang Liang"
+        },
+        {
+          "name": "Shilin He"
+        },
+        {
+          "name": "Siyu Ye"
+        },
+        {
+          "name": "Yuting Chen"
+        },
+        {
+          "name": "Kai Cai"
+        },
+        {
+          "name": "Xiaodong Gu"
+        }
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.SE"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "AI_Agent",
+      "query": "LLM agent tool use",
+      "tfidf_score": 0.7999999999999999,
+      "llm_score": 6.3,
+      "llm_summary": "Pruning long context for coding agents has been a vital technology for efficient context management....",
+      "llm_tags": [
+        "Agent",
+        "推理优化",
+        "5G"
+      ],
+      "analysis": {
+        "paper_id": "2607.18213v1",
+        "title": "SWE-Pruner Pro: The Coder LLM Already Knows What to Prune",
+        "problem": "Pruning long context for coding agents has been a vital technology for efficient context management",
+        "method": "While existing context pruning methods such as SWE-Pruner realize this by attaching a separate code classifier, we find the agent itself encodes internal representations indicating the relevance of co",
+        "architecture": [
+          "N/A"
+        ],
+        "experiments": {
+          "datasets": [
+            "benchmark"
+          ],
+          "baselines": [],
+          "metrics": [
+            "accuracy"
+          ]
+        },
+        "results": {
+          "performance": [
+            "39%",
+            "3.8%"
+          ],
+          "comparison": []
+        },
+        "strengths": [
+          "efficiency"
+        ],
+        "weaknesses": [
+          "需要进一步验证"
+        ],
+        "improvements": [
+          "可以与其他方法进行对比实验",
+          "可以提供更详细的消融实验",
+          "可以开源代码和数据集"
+        ],
+        "code_quality": 5.5,
+        "reproducibility": 5.0
+      },
+      "reproducibility": {
+        "score": 6.0,
+        "factors": {
+          "code_available": false,
+          "dataset_mentioned": true,
+          "baselines_mentioned": false,
+          "metrics_specified": true,
+          "detailed_method": true
+        },
+        "verdict": "中"
+      }
+    },
+    {
+      "id": "2607.18147v1",
+      "title": "LLMs and Agentic AI Systems for Smart Grids: A Tutorial on Architectures and Applications",
+      "abstract": "Large language models (LLMs) and agentic AI systems have evolved from natural language tasks to using external tools to plan, retrieve, and act in technical domains. In smart grids, recent work applies agentic schemes to forecasting, optimization, and control, wrapping trusted solvers behind language interfaces and orchestrating multi-step workflows. The literature lacks a unified approach to designing and evaluating such systems. LLMs can produce numerically plausible yet physically infeasible outputs, evaluation protocols vary across tasks, and the boundary between what the model should and should not compute is implicit. This paper presents a solver-grounded design principle: a numerical result is reported only when it originates from a trusted tool and passes explicit verification. We review the building blocks of LLM and agentic AI systems for power systems: prompting strategies and agentic architectures. We instantiate the principle in four case studies: wind power forecasting, EV charging scheduling, power flow analysis, and contingency diagnosis, each comparing an LLM-only baseline against its solver-grounded counterpart on identical data and metrics. EVAgent reproduces the CVXPY optimum while reducing LLM-only unmet energy by 7.5-9.5x, and GridDebugAgent repairs 17/39 contingency cases while reducing total violations by 52.3%. We propose a four-group evaluation framework spanning task utility, solver-grounded correctness, faithfulness and safe failure, and cost and latency. A consistent division of labor emerges: the agentic system reliably orchestrates, retrieves, and explains, while trusted tools compute and a verification gate decides what is reported.",
+      "authors": [
+        {
+          "name": "Daniela Rojas"
+        },
+        {
+          "name": "Abdulwahab Albassam"
+        },
+        {
+          "name": "Aidan G. Leung"
+        },
+        {
+          "name": "Jett Ngo"
+        },
+        {
+          "name": "Ryan Luo"
+        },
+        {
+          "name": "Peter R. Quawas"
+        },
+        {
+          "name": "Junpyung Kim"
+        },
+        {
+          "name": "Kangkai Liang"
+        },
+        {
+          "name": "Mansi Nanavati"
+        },
+        {
+          "name": "Jonathan Mai"
+        },
+        {
+          "name": "Meng-Chi Tsai"
+        },
+        {
+          "name": "Yun-Tong Tsai"
+        },
+        {
+          "name": "Yize Chen"
+        },
+        {
+          "name": "Yuanyuan Shi"
+        }
+      ],
+      "categories": [
+        "eess.SY",
+        "cs.AI"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "AI_Agent",
+      "query": "LLM agent tool use",
+      "tfidf_score": 0.7999999999999999,
+      "llm_score": 6.3,
+      "llm_summary": "Large language models (LLMs) and agentic AI systems have evolved from natural language tasks to usin...",
+      "llm_tags": [
+        "LLM",
+        "Agent",
+        "推理优化"
+      ],
+      "analysis": {
+        "paper_id": "2607.18147v1",
+        "title": "LLMs and Agentic AI Systems for Smart Grids: A Tutorial on Architectures and Applications",
+        "problem": "Large language models (LLMs) and agentic AI systems have evolved from natural language tasks to using external tools to plan, retrieve, and act in technical domains",
+        "method": "This paper presents a solver-grounded design principle: a numerical result is reported only when it originates from a trusted tool and passes explicit verification",
+        "architecture": [
+          "model",
+          "block"
+        ],
+        "experiments": {
+          "datasets": [
+            "evaluation"
+          ],
+          "baselines": [],
+          "metrics": [
+            "latency"
+          ]
+        },
+        "results": {
+          "performance": [
+            "52.3%"
+          ],
+          "comparison": [
+            "against"
+          ]
+        },
+        "strengths": [
+          "N/A"
+        ],
+        "weaknesses": [
+          "需要进一步验证"
+        ],
+        "improvements": [
+          "可以与其他方法进行对比实验",
+          "可以提供更详细的消融实验",
+          "可以开源代码和数据集"
+        ],
+        "code_quality": 5.5,
+        "reproducibility": 5.0
+      },
+      "reproducibility": {
+        "score": 6.0,
+        "factors": {
+          "code_available": false,
+          "dataset_mentioned": true,
+          "baselines_mentioned": false,
+          "metrics_specified": true,
+          "detailed_method": true
+        },
+        "verdict": "中"
+      }
+    },
+    {
+      "id": "2607.17652v1",
+      "title": "FlowBlock: Wavefront-Parallel Decoding for Self-Correcting Diffusion Language Models",
+      "abstract": "Block-wise diffusion large language models (dLLMs) decode sequentially at the block level, enabling effective KV-cache reuse across blocks but making inter-block decoding strictly serial. Prior work has attempted to unlock inter-block parallelism through post-training methods, but achieves only modest speedups and often degrades accuracy. We observe that self-correcting dLLMs offer a training-free alternative: token-to-token (T2T) editing can repair tokens drafted with a slightly stale upstream context, so a downstream block requires only an informative draft rather than a finalized predecessor. This turns block finality from a hard dependency into a scheduling resource. We propose \\textbf{\\flowblock{}}, a training-free parallel decoding framework built on two mechanisms. (i) \\emph{Gated Wavefront Decoding} admits blocks into a bounded wavefront only when a readiness gate is satisfied, jointly refines active blocks via T2T editing, and commits blocks in order under a windowed block-causal mask that preserves exact frozen-prefix KV caches reuse. (ii) \\emph{Heterogeneous Wavefront Packing} assigns each request an independent wavefront while packing asynchronous windows into dense, shape-stable batched forwards. Across different benchmarks, \\flowblock{} improves tokens per second (TPS) over LLaDA-2.1 and LLaDA-2.0, two serial block-wise dLLMs, by up to 2.95$\\times$ and 4.01$\\times$, while reducing latency by up to 53.6\\% and 77.1\\%, respectively. It also improves average accuracy by 1.3 points. Compared with D2F, a training-based inter-block-parallel baseline, \\flowblock{} achieves higher accuracy and up to 16$\\times$ higher batched serving throughput.",
+      "authors": [
+        {
+          "name": "Bing Tian"
+        },
+        {
+          "name": "Haikun Liu"
+        },
+        {
+          "name": "Xiaocheng Zhong"
+        },
+        {
+          "name": "Zhuohui Duan"
+        },
+        {
+          "name": "Zhaokai Luo"
+        },
+        {
+          "name": "Huayi Jin"
+        },
+        {
+          "name": "Zhiyong Wang"
+        },
+        {
+          "name": "Xiaofei Liao"
+        }
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "LLM推理优化",
+      "query": "KV cache efficient",
+      "tfidf_score": 0.72,
+      "llm_score": 6.3,
+      "llm_summary": "Block-wise diffusion large language models (dLLMs) decode sequentially at the block level, enabling...",
+      "llm_tags": [
+        "LLM"
+      ],
+      "analysis": {
+        "paper_id": "2607.17652v1",
+        "title": "FlowBlock: Wavefront-Parallel Decoding for Self-Correcting Diffusion Language Models",
+        "problem": "Block-wise diffusion large language models (dLLMs) decode sequentially at the block level, enabling effective KV-cache reuse across blocks but making inter-block decoding strictly serial",
+        "method": "Prior work has attempted to unlock inter-block parallelism through post-training methods, but achieves only modest speedups and often degrades accuracy",
+        "architecture": [
+          "model",
+          "block"
+        ],
+        "experiments": {
+          "datasets": [
+            "benchmark"
+          ],
+          "baselines": [],
+          "metrics": [
+            "accuracy",
+            "latency",
+            "throughput"
+          ]
+        },
+        "results": {
+          "performance": [],
+          "comparison": []
+        },
+        "strengths": [
+          "N/A"
+        ],
+        "weaknesses": [
+          "data_dependency"
+        ],
+        "improvements": [
+          "可以与其他方法进行对比实验",
+          "可以提供更详细的消融实验",
+          "可以开源代码和数据集"
+        ],
+        "code_quality": 5.5,
+        "reproducibility": 5.0
+      },
+      "reproducibility": {
+        "score": 6.0,
+        "factors": {
+          "code_available": false,
+          "dataset_mentioned": true,
+          "baselines_mentioned": false,
+          "metrics_specified": true,
+          "detailed_method": true
+        },
+        "verdict": "中"
+      }
+    },
+    {
+      "id": "2607.17299v1",
+      "title": "WAR: Workload-Aware Rollouts for Synchronous Agentic Reinforcement Learning",
+      "abstract": "Long-horizon rollout generation has become the dominant systems bottleneck in agentic reinforcement learning (RL). As agents interact with environments over many turns, trajectories rapidly grow to tens of thousands of tokens, making synchronous RL training increasingly constrained by rollout. We propose WAR, a workload-aware rollout system that substantially accelerates synchronous agentic RL by jointly optimizing decoding and scheduling. WAR is built on a key observation: the optimal rollout optimization strategy depends on runtime load: (1) Under low load, WAR enables model-free speculative decoding with SuffixDecoding, which reuses suffix patterns from previously completed trajectories as speculative drafts for future rollouts. Unlike model-based drafters, SuffixDecoding introduces no additional draft model and avoids GPU contention with rollout generation. (2) Under high load, where saturated batched decoding leaves limited room for speculative speedup, WAR shifts the optimization focus to cache-aware scheduling. A global scheduler places requests across rollout replicas based on cache locality, trajectory progress and server load, reducing redundant KV-cache recomputation and mitigating load imbalance. By combining decoding-level suffix reuse with system-level rollout scheduling, WAR delivers robust throughput improvements across workload regimes without changing the underlying RL algorithm. WAR improves long-context agentic rollout throughput by 1.4x under low load and up to 1.6x under high load. These results show that WAR removes a major rollout bottleneck in synchronous agentic RL and provides a practical path toward scalable long-context agent training.",
+      "authors": [
+        {
+          "name": "Ryan Xu"
+        },
+        {
+          "name": "Atlas Zhao"
+        },
+        {
+          "name": "David Bao"
+        },
+        {
+          "name": "Frank Du"
+        }
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.OS"
+      ],
+      "published_date": "2026-07-19",
+      "source": "arxiv",
+      "topic": "LLM推理优化",
+      "query": "KV cache efficient",
+      "tfidf_score": 0.62,
+      "llm_score": 6.3,
+      "llm_summary": "Long-horizon rollout generation has become the dominant systems bottleneck in agentic reinforcement...",
+      "llm_tags": [
+        "Agent",
+        "推理优化"
+      ],
+      "analysis": {
+        "paper_id": "2607.17299v1",
+        "title": "WAR: Workload-Aware Rollouts for Synchronous Agentic Reinforcement Learning",
+        "problem": "Long-horizon rollout generation has become the dominant systems bottleneck in agentic reinforcement learning (RL)",
+        "method": "We propose WAR, a workload-aware rollout system that substantially accelerates synchronous agentic RL by jointly optimizing decoding and scheduling",
+        "architecture": [
+          "model"
+        ],
+        "experiments": {
+          "datasets": [],
+          "baselines": [],
+          "metrics": [
+            "throughput"
+          ]
+        },
+        "results": {
+          "performance": [],
+          "comparison": []
+        },
+        "strengths": [
+          "efficiency",
+          "generalization"
+        ],
+        "weaknesses": [
+          "limited_scope"
+        ],
+        "improvements": [
+          "可以与其他方法进行对比实验",
+          "可以提供更详细的消融实验",
+          "可以开源代码和数据集"
+        ],
+        "code_quality": 5.5,
+        "reproducibility": 5.0
+      },
+      "reproducibility": {
+        "score": 4.0,
+        "factors": {
+          "code_available": false,
+          "dataset_mentioned": false,
+          "baselines_mentioned": false,
+          "metrics_specified": true,
+          "detailed_method": true
+        },
+        "verdict": "中"
+      }
+    },
+    {
+      "id": "2607.18060v1",
+      "title": "RoboHarness: Memory-Driven Orchestration of Heterogeneous Robot Policies for Long-Horizon Planning",
+      "abstract": "Long-horizon robotic tasks require diverse capabilities that no single policy can reliably provide. Heterogeneous policies offer complementary strengths, but orchestrating them requires reasoning over uncertain capability boundaries and cross-policy distribution mismatch, which are largely overlooked by existing planning methods built on homogeneous, predefined skills with fixed applicability. We propose RoboHarness, a unified framework that encapsulates independently developed robot control systems as reusable agentic skills. Although instantiated in this work with VLAs, RL policies, and task-and-motion planning (TAMP) systems, RoboHarness is designed as a general framework compatible with a broader range of robot policies, such as navigation policies, model predictive controllers, and world-action models. RoboHarness uses multi-modal execution memory and online evidence to characterize policy capability boundaries for capability-aware decomposition and routing. To stabilize policy handoffs, its Memory Bridge retrieves execution trajectories associated with the next policy, estimates its in-distribution state region, and guides the robot toward that region without joint policy retraining. Extensive experiments on three public benchmarks, 500 customized tasks, and 135 real-robot experiments demonstrate effective capability-aware routing and stable policy orchestration, yielding substantial improvements in zero-shot long-horizon planning and out-of-distribution robustness.",
+      "authors": [
+        {
+          "name": "Jinbang Huang"
+        },
+        {
+          "name": "Yuanzhao Hu"
+        },
+        {
+          "name": "Zhiyuan Li"
+        },
+        {
+          "name": "Ran Qi"
+        },
+        {
+          "name": "Yixin Xiao"
+        },
+        {
+          "name": "Zhanguang Zhang"
+        },
+        {
+          "name": "Mark Coates"
+        },
+        {
+          "name": "Tongtong Cao"
+        },
+        {
+          "name": "Yingxue Zhang"
+        }
+      ],
+      "categories": [
+        "cs.RO"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "AI_Agent",
+      "query": "multi-agent collaboration",
+      "tfidf_score": 0.58,
+      "llm_score": 6.3,
+      "llm_summary": "Long-horizon robotic tasks require diverse capabilities that no single policy can reliably provide....",
+      "llm_tags": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "2607.18046v1",
+      "title": "SEE: Structure-aware Exploring \\& Exploiting for Long-horizon GUI Agent Trajectory Synthesis",
+      "abstract": "Graphical User Interface (GUI) agents powered by vision-language models hold promise for automating real-world mobile tasks. However, progress is limited by the lack of high-coverage, long-horizon interaction trajectories collected from element-rich and rapidly evolving apps. Existing pipelines often rely on costly human demonstrations or on-policy framework, which tends to over-sample common flows while missing rare transitions and complex multi-step procedures. To address this problem, we propose SEE, a two-stage data synthesis framework consisting of (i) an efficient exploration stage that builds an explicit UI transition graph over screens and elements, and (ii) a graph-based synthesis stage that composes diverse multi-step trajectories via planning and controlled sampling. This design yields reproducible and explainable data generation, while explicitly preventing spurious cycles and enabling long-horizon composition. Across multiple real-world apps, SEE produces trajectories with an average length of 14.8 steps while avoiding spurious loops, and agents fine-tuned on SEE achieve improved task success and generalization to unseen screens. We will publicly release our synthesis code and dataset.",
+      "authors": [
+        {
+          "name": "Zhuohang Fan"
+        },
+        {
+          "name": "Beichen Zhang"
+        },
+        {
+          "name": "Yuanfa Li"
+        },
+        {
+          "name": "Changqiao Wu"
+        },
+        {
+          "name": "Wei Liu"
+        },
+        {
+          "name": "Jian Luan"
+        },
+        {
+          "name": "Weigang Zhang"
+        }
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "AI_Agent",
+      "query": "multi-agent collaboration",
+      "tfidf_score": 0.58,
+      "llm_score": 6.3,
+      "llm_summary": "Graphical User Interface (GUI) agents powered by vision-language models hold promise for automating...",
+      "llm_tags": [
+        "LLM",
+        "Agent",
+        "推理优化"
+      ]
+    },
+    {
+      "id": "2607.18116v1",
+      "title": "SGA: Plug&Play Geometric Verification for Educational Video Synthesis",
+      "abstract": "Recent work leverages Large Language Models (LLMs) to generate executable code for pedagogical animations using libraries such as Manim. However, ensuring spatial correctness and visual legibility remains challenging, as existing frameworks emphasize pedagogical content while overlooking geometric occlusions. We propose the Symbolic Geometric Agent (SGA), a plug-and-play module for code-centric animation pipelines that intercepts LLM-generated code, performs partial execution to extract symbolic scene graphs, and applies targeted refinement when spatial conflicts are detected. We further introduce the Manim Visual Quality Score (MVQS), a deterministic rendering-free proxy for spatial integrity. Experiments on the MMMC-Code benchmark across four LLM backbones and two agentic pipelines show that SGA achieves a peak MVQS of 73.11 (Code2Video + GPT-5.1), corresponding to a 16.1% relative improvement over the raw baseline, and improves MVQS in 7 of 8 backbone x pipeline configurations.",
+      "authors": [
+        {
+          "name": "Lopez Jhon"
+        },
+        {
+          "name": "Hinojosa Carlos"
+        },
+        {
+          "name": "Ghanem Bernard"
+        }
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CV",
+        "cs.GR",
+        "cs.MA",
+        "cs.MM"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "AI_Agent",
+      "query": "agentic reasoning",
+      "tfidf_score": 1.0,
+      "llm_score": 6.0,
+      "llm_summary": "Recent work leverages Large Language Models (LLMs) to generate executable code for pedagogical anima...",
+      "llm_tags": [
+        "LLM",
+        "Agent",
+        "多模态"
+      ]
+    },
+    {
+      "id": "2607.18115v1",
+      "title": "Compositional Semantic Communication for Physical AI: Category Theory Meets Game Theory",
+      "abstract": "Physical artificial intelligence (AI) systems involve distributed sensing agents with embedded AI models that must coordinate to perceive, reason, and act in networked environments. Transmitting raw sensor data incurs significant communication overhead, latency, and redundancy. While semantic communication (SC) mitigates these challenges by transmitting task-relevant information, existing deep learning-based joint source-channel coding approaches exhibit limited adaptability, poor out-of-distribution generalization, and scalability challenges. To address these limitations, this paper proposes a framework for compositional semantic communication (CSC), enabling heterogeneous physical AI sources to transmit semantic representations (SRs) that compose meaningfully at a base station (BS) or edge server for remote inference. First, a category-theoretic measure of compositional semantics is developed to quantify each device's contribution to inference tasks beyond mutual information. Second, Grothendieck topologies and presheaves formalize semantic composition across devices, ensuring consistency and task relevance. Building on these foundations, multi-device coordination is formulated as a Stackelberg game in which devices commit to encoding strategies and the BS optimally composes received SRs. An ADMM-based algorithm computes equilibrium signaling strategies. Equilibrium existence is established under mild conditions and is Pareto optimal when compositional information yields increasing collective benefit. Simulation results demonstrate that the proposed approach achieves up to 17% bandwidth reduction and 53% lower end-to-end latency than cooperative multi-agent, distributed gradient descent, and uniform-selection CSC baselines while maintaining 85% inference accuracy across diverse autonomous driving scenarios.",
+      "authors": [
+        {
+          "name": "Christo Kurisummoottil Thomas"
+        },
+        {
+          "name": "Walid Saad"
+        },
+        {
+          "name": "Emilio Calvanese Strinati"
+        }
+      ],
+      "categories": [
+        "cs.IT",
+        "cs.GT",
+        "eess.SP"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "AI_Agent",
+      "query": "multi-agent collaboration",
+      "tfidf_score": 0.72,
+      "llm_score": 6.0,
+      "llm_summary": "Physical artificial intelligence (AI) systems involve distributed sensing agents with embedded AI mo...",
+      "llm_tags": [
+        "Agent",
+        "推理优化",
+        "芯片验证"
+      ]
+    },
+    {
+      "id": "2607.18101v1",
+      "title": "Empowering On-Device Model Adaptation with an Edge AI Inference Accelerator",
+      "abstract": "On-device model adaptation is essential to enable lifelong personalization on resource-constrained hardware, but compute, power, and memory limitations of such devices make end-to-end backpropagation impractical for modern deep neural networks. This work proposes a heterogeneous adaptation pipeline that repurposes a commercial edge AI inference accelerator, Hailo-8L, for frozen-backbone feature extraction during on-device training. The computational graph is partitioned so that the pre-trained backbone is quantized to INT8 and run on the accelerator, while only a lightweight FP32 classification head is fine-tuned on the host CPU, enabling frequent, energy-efficient in-field updates with most weights remaining fixed. Across multiple architectures and datasets, this pipeline achieves up to 15.4x faster wall-clock training time compared to a Raspberry Pi 5 CPU baseline, offers competitive throughput in favorable settings, and consistently reduces energy per sample. Post-training quantization restoration is shown to be crucial for preserving the quality of accelerator-generated features and mitigating accuracy loss in quantization-sensitive architectures. Overall, the results demonstrate a practical approach to efficient on-device adaptation using inference-oriented edge accelerators. The implementation is available at https://github.com/MatPiech/accelerator-training.",
+      "authors": [
+        {
+          "name": "Mateusz Piechocki"
+        },
+        {
+          "name": "Alessandro Capotondi"
+        },
+        {
+          "name": "Marek Kraft"
+        }
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AR",
+        "cs.CV"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "代码生成",
+      "query": "AI programming assistant",
+      "tfidf_score": 0.72,
+      "llm_score": 6.0,
+      "llm_summary": "On-device model adaptation is essential to enable lifelong personalization on resource-constrained h...",
+      "llm_tags": [
+        "推理优化",
+        "量化"
+      ]
+    },
+    {
+      "id": "2607.18171v1",
+      "title": "FlashRT: Agent Harness for Guiding Agents to Deploy Real-Time Multimodal Applications",
+      "abstract": "Real-time multimodal applications, including voice agents and interactive video generation, compose heterogeneous models into pipelines whose efficient deployment requires application-specific decisions about placement, streaming, and intra-model parallelism. Existing serving systems and auto-parallelism compilers commit to limited transformations and fixed workload assumptions, so achieving high performance on a new application requires hand-crafting an efficient implementation. We present FlashRT, an agent harness that guides coding agents to lift simple developer-written reference implementations into optimized multi-GPU deployments that flexibly weigh target metrics like latency and throughput. Using a new chain-of-program paradigm, FlashRT directs a generic coding agent through a multi-pass transformation process where an agent transforms the reference into an intermediate representation (IR) to capture data dependencies and persistent-state scopes, validates this IR via a sequential interpreter, and performs static analyses to identify candidate transformations. Then, the agent iteratively implements, verifies, and benchmarks each candidate under a measurement-gated optimization loop to produce effective deployments that span different hardware budgets. Across various applications, including video world models and multimodal LLMs, FlashRT converts reference implementations into highly efficient deployments, delivering up to ~70x latency reduction and 2.8x throughput improvement on NVIDIA B200 GPUs. On AMD MI355X GPUs, FlashRT matches the peak latency reduction while increasing peak throughput improvement to 3.6x, demonstrating that agent-driven optimization can be more scalable on platforms with less mature expert optimization. In fact, for Qwen3-Omni text-to-audio inference, FlashRT reduces response latency by 65% compared to the expert vLLM-Omni implementation on AMD MI355X.",
+      "authors": [
+        {
+          "name": "Krish Agarwal"
+        },
+        {
+          "name": "Zhuoming Chen"
+        },
+        {
+          "name": "Yanyuan Qin"
+        },
+        {
+          "name": "Zhenyu Gu"
+        },
+        {
+          "name": "Atri Rudra"
+        },
+        {
+          "name": "Beidi Chen"
+        }
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "AI_Agent",
+      "query": "LLM agent tool use",
+      "tfidf_score": 0.7999999999999999,
+      "llm_score": 5.3,
+      "llm_summary": "Real-time multimodal applications, including voice agents and interactive video generation, compose...",
+      "llm_tags": [
+        "LLM",
+        "Agent",
+        "推理优化"
+      ]
+    },
+    {
+      "id": "2607.17883v1",
+      "title": "Zero Hallucination, by Construction: Hallucination-Aware Layered Oversight for Trustworthy Enterprise AI",
+      "abstract": "Enterprises will not deploy AI agents they cannot trust, and the most-cited reason for distrust is hallucination: confident, fluent output that is simply not true. The common response is to wait for a model that does not hallucinate. We argue that this is the wrong target. Large language models are, by construction, capable of generating unsupported text, and no amount of scale removes the possibility; a faithfulness judge bolted onto a raw model catches some errors but still ships others, and even well-curated retrieval pipelines have been shown to fabricate citations. We reframe the goal: \"zero hallucination\" is not a property a model possesses but a property a system enforces. We present HALO (Hallucination-Aware Layered Oversight), an assurance architecture which treats hallucination as a containable failure mode rather than an eliminable one. HALO composes six layers of defense: grounded generation over retrieved, approved content; constrained, deterministic execution that bounds where the model can err; multi-signal verification that scores every output for groundedness and hallucination using both an LLM judge and evidence-based checks against the source text; calibrated abstention, so the system declines rather than guesses when grounding is insufficient; total traceability of every retrieval, tool call, and generation; and continuous oversight that detects drift, alerts on threshold breaches, and closes the loop by regenerating and statistically validating improved agents. We detail each layer, give particular attention to evidence-based confidence (which verifies extractions against the source document rather than trusting the model's self-reported certainty), and illustrate the architecture on a regulated claims-extraction workload",
+      "authors": [
+        {
+          "name": "Bogdan Raduta"
+        },
+        {
+          "name": "Horia Velicu"
+        },
+        {
+          "name": "Alexandru Preda"
+        },
+        {
+          "name": "Serban Chiricescu"
+        }
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "芯片验证",
+      "query": "chip verification formal",
+      "tfidf_score": 0.7999999999999999,
+      "llm_score": 5.3,
+      "llm_summary": "Enterprises will not deploy AI agents they cannot trust, and the most-cited reason for distrust is h...",
+      "llm_tags": [
+        "LLM",
+        "Agent",
+        "芯片验证"
+      ]
+    },
+    {
+      "id": "2607.18039v1",
+      "title": "Evidence-in-the-Loop: Trace-Driven Optimization for Customer-Service LLM Agents",
+      "abstract": "Production customer-service bots must improve answer quality across iterative releases, yet large language models must not bypass evidence boundaries, policy rules, or human-handoff safeguards. We present an \\textbf{Evidence-Grounded Customer-Service Agent Workflow} deployed in a real-world customer-service setting. BM25 recall, issue-title-vector recall, issue-description-vector recall, weighted RRF fusion, and cross-encoder reranking construct grounded FAQ evidence for controlled LLM decisions. Policy-guided orchestration then combines this RAG evidence with scenario-specific rule evidence, conversation memory, and clarification state inside a fixed LangGraph DAG~\\cite{langgraph2024}. The paper contributes three reusable deployment patterns: \\textbf{hybrid RAG evidence construction}, where multi-channel retrieval and reranking produce auditable FAQ candidates; \\textbf{evidence-grounded issue/action decision}, where an Evidence-Grounded Decision Module selects an issue/action from typed FAQ evidence and scenario-specific rule evidence; and \\textbf{trace-driven RAG and reranker improvement}, where traces diagnose whether failures come from recall, ranking, final candidate selection, clarification, rule-derived evidence, or action policy, and where reranker fine-tuning is evaluated not only for in-domain gain but also for forgetting risk.",
+      "authors": [
+        {
+          "name": "Chunming Wu"
+        },
+        {
+          "name": "Dafei Qiu"
+        },
+        {
+          "name": "Congde Yuan"
+        },
+        {
+          "name": "Charles Quan"
+        },
+        {
+          "name": "Jun Wu"
+        },
+        {
+          "name": "Suipeng Li"
+        },
+        {
+          "name": "Mo Wu"
+        },
+        {
+          "name": "Gavin Xie"
+        },
+        {
+          "name": "Hope Chen"
+        },
+        {
+          "name": "Max Yao"
+        }
+      ],
+      "categories": [
+        "cs.IR"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "AI_Agent",
+      "query": "multi-agent collaboration",
+      "tfidf_score": 0.6599999999999999,
+      "llm_score": 5.3,
+      "llm_summary": "Production customer-service bots must improve answer quality across iterative releases, yet large la...",
+      "llm_tags": [
+        "LLM",
+        "Agent"
+      ]
+    },
+    {
+      "id": "2607.18029v1",
+      "title": "Natural Language Access to Domain-Specific Metadata: A Reusable Framework for LLM Query Generation",
+      "abstract": "Researchers need to answer ad-hoc questions about the contents of domain-specific archives but often lack the expertise to write structured queries on the metadata. We show that when domain vocabulary and semantics are captured in a well-designed Web Ontology Language (OWL) ontology, Large Language Models (LLMs) can generate accurate structured queries zero-shot, without fine-tuning, retrieval augmentation, or multi-agent orchestration. We present the Natural Language Knowledge Graph Query (NLKGQ) system, a framework and development process that enables natural language access to metadata in such archives. The framework includes a web interface that helps researchers pose natural language questions, which a domain-agnostic harness translates to SPARQL via an LLM and executes against a knowledge graph. The development process begins with capturing domain vocabulary and semantics in a formal OWL ontology. Domain-specific code then extracts metadata from archive sources and imports it into a knowledge graph defined by the ontology. Both are designed for reuse across domains. We demonstrate the system on metadata derived from a large-scale neuroimaging research archive, evaluating multiple LLMs and ontology representations. The best configurations achieve 100% accuracy on a competence and regression question set developed with domain experts. An ablation study across eight ontology representations reveals that readable entity names and semantic annotations are the dominant factors in accuracy, more significant than model choice or prompt engineering. We also compare SPARQL to an auto-generated SQL database as query backends, showing that OWL's structural features provide a substantial advantage over SQL DDL for LLM-driven query generation. Our demonstration domain also requires local LLMs on modest institutional hardware to address privacy concerns for human subject data.",
+      "authors": [
+        {
+          "name": "Blake G. Fitch"
+        },
+        {
+          "name": "Cato Elia Kurtz"
+        }
+      ],
+      "categories": [
+        "cs.DB",
+        "cs.AI"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "AI_Agent",
+      "query": "multi-agent collaboration",
+      "tfidf_score": 0.72,
+      "llm_score": 5.0,
+      "llm_summary": "Researchers need to answer ad-hoc questions about the contents of domain-specific archives but often...",
+      "llm_tags": [
+        "LLM",
+        "Agent",
+        "芯片验证"
+      ]
+    },
+    {
+      "id": "2607.18187v1",
+      "title": "EVOLVE: Efficient Learned Volume Compression with Variable-Rate Encoding on a Cross-Domain Database",
+      "abstract": "Large-scale scientific simulations generate volumetric data at rates that far outpace advances in storage and network bandwidth, making effective lossy compression increasingly critical. However, conventional compressors often struggle to preserve fine structural details at high compression ratios (CRs), and implicit neural representations (INRs) require costly per-volume optimization and produce models with fixed CRs. To respond, we present EVOLVE, an autoencoder (AE)-based volume-compression framework that targets high CRs for offline compression, with three key contributions. First, we construct a large-scale cross-domain database of 6,376 volumes from 21 scientific simulations, curated via perceptual hashing to ensure diversity, enabling the optimized model to extract features that generalize across volumes within the covered scientific simulation domains. Second, we reexamine the design space of AE-based compressors and incorporate several macro- and micro-designs into a vanilla AE to develop EVOLVE, which substantially improves the expressive power and compression capability. Third, we develop a learnable gain mechanism with a three-stage training strategy to enable variable-rate encoding, allowing a single model to support continuous CR adjustment at inference time. Experiments on multiple unseen scientific simulation datasets demonstrate that EVOLVE achieves substantially higher CRs than conventional compressors at comparable reconstruction quality, while delivering compression speeds that are orders of magnitude faster than INR-based methods, highlighting its promise as a strong alternative for compressing scientific data. The code, model weights, and results are available on our project page at https://evolve-vis.github.io.",
+      "authors": [
+        {
+          "name": "Kaiyuan Tang"
+        },
+        {
+          "name": "Maizhe Yang"
+        },
+        {
+          "name": "Chaoli Wang"
+        }
+      ],
+      "categories": [
+        "cs.GR",
+        "cs.DB",
+        "cs.LG"
+      ],
+      "published_date": "2026-07-20",
+      "source": "arxiv",
+      "topic": "LLM推理优化",
+      "query": "LLM inference optimization",
+      "tfidf_score": 0.58,
+      "llm_score": 5.0,
+      "llm_summary": "Large-scale scientific simulations generate volumetric data at rates that far outpace advances in st...",
+      "llm_tags": [
+        "推理优化"
+      ]
+    },
+    {
+      "id": "2607.18235v1",
+      "title": "Automated Discovery Has No Universally Superior Harness",
+      "abstract": "Autonomous discovery systems such as OpenEvolve and TTT-Discover are often used as general-purpose harnesses. However, in practice these are composite systems combining several design choices about archives, parent selection, exploration, and budget allocation into a single recipe. Because discovery",
+      "authors": [
+        "Akshat Gupta",
+        "Jermaine Lei",
+        "Alexander Lu"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "Autonomous discovery systems such as OpenEvolve and TTT-Discover are often used as general-purpose h...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18232v1",
+      "title": "It's Not What You Say, It's How You Say It: Evaluating LLM Responses to Expressions of Belief",
+      "abstract": "Users frequently express their beliefs to large language models (LLMs). In some situations, the LLM should accept these contextual beliefs as true. In others, they should stick to their prior knowledge. Notably, users' expressions of belief (EoBs) can take linguistically diverse forms - using presup",
+      "authors": [
+        "Kevin Du",
+        "Clara Kümpel",
+        "Michelle Wastl"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "Users frequently express their beliefs to large language models (LLMs). In some situations, the LLM ...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18222v1",
+      "title": "HyperIso: A general BSM calculator for flavour observables",
+      "abstract": "We present HyperIso, a new standalone program for the evaluation of flavour physics observables across a wide variety of Standard Model (SM) and Beyond-the-Standard-Model (BSM) scenarios. The code builds on the physics heritage of SuperIso, but is implemented as a new modular software package with a",
+      "authors": [
+        "T. Reymermier",
+        "N. Fardeau",
+        "F. Mahmoudi"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "We present HyperIso, a new standalone program for the evaluation of flavour physics observables acro...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18220v1",
+      "title": "Nonexistence of Simultaneously EF1 and Pareto Optimal Allocations for Submodular Valuations",
+      "abstract": "The existence of allocations of indivisible goods that are simultaneously fair (envy-free up to one item (EF1)) and efficient (Pareto optimal (PO)) when agents have monotone submodular valuations has been a longstanding open problem. We settle this question negatively by giving an example with two a",
+      "authors": [
+        "Harish Chandramouleeswaran",
+        "Prajakta Nimbhorkar"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "The existence of allocations of indivisible goods that are simultaneously fair (envy-free up to one ...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18218v1",
+      "title": "GigaPath-Flash and GigaTIME-Flash: Efficient Pathology Foundation Models for Whole-Slide and Tumor Microenvironment Analysis",
+      "abstract": "Foundation models have emerged as a driving force in computational pathology, with the potential to transform cancer diagnosis, prognosis, and treatment selection by learning transferable representations from large-scale histopathology data. A growing landscape of pathology foundation models now spa",
+      "authors": [
+        "Naoto Usuyama",
+        "Jeya Maria Jose Valanarasu",
+        "Sicong Yao"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "Foundation models have emerged as a driving force in computational pathology, with the potential to ...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18192v1",
+      "title": "Risk-sensitive exit-time control for stochastic differential equations with path-dependent coefficients",
+      "abstract": "In this work, we study small-noise asymptotics of risk-sensitive exit-time control problems governed by stochastic differential equations with path-dependent coefficients. Our main result establishes the convergence of the $\\log$-transformed exit-time problem to a deterministic control problem with ",
+      "authors": [
+        "David Criens",
+        "Fabian Fuchs"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "In this work, we study small-noise asymptotics of risk-sensitive exit-time control problems governed...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18190v1",
+      "title": "Audio Cross Verification Using Dual Alignment Likelihood Ratio Test",
+      "abstract": "This paper explores a way to verify that audio has not been maliciously tampered in a specific context: short viral videos taken from news recordings. Rather than trying to detect artifacts of tampering (internal inconsistency), we focus on positively verifying a query against a trusted source such ",
+      "authors": [
+        "Heidi Lei",
+        "Arm Wonghirundacha",
+        "Irmak Bukey"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "This paper explores a way to verify that audio has not been maliciously tampered in a specific conte...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18181v1",
+      "title": "VEHBench: A Stage-Local Diagnostic Benchmark for LLM-Assisted Vibration Energy Harvester Design",
+      "abstract": "Battery-free Internet of Things (IoT) requires iterative design of vibration energy harvesters (VEHs) under coupled physical constraints, while LLMs are emerging as interface layers for engineering workflows. However, existing engineering benchmarks primarily assess final artifact validity, offering",
+      "authors": [
+        "Depeng Su",
+        "Yuyu Luo",
+        "Guobiao Hu"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "Battery-free Internet of Things (IoT) requires iterative design of vibration energy harvesters (VEHs...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18176v1",
+      "title": "Per Astronomix ad Astra: High-Order Differentiable (Magneto)hydrodynamics with Energy-Conserving Self-Gravity",
+      "abstract": "We present astronomix, a performant differentiable (magneto)hydrodynamics simulator written in Python/JAX. We demonstrate how automatic differentiation, validated against hand-derived analytical functional derivatives and finite differences, enables inverse modeling over millions of parameters and a",
+      "authors": [
+        "Leonard Storcks",
+        "Nils Thuerey",
+        "Tobias Buck"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "We present astronomix, a performant differentiable (magneto)hydrodynamics simulator written in Pytho...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18199v1",
+      "title": "PPL-Factory: Task-Aware and Budget-Aware Data Selection from Language Modeling to Reasoning",
+      "abstract": "Not all training samples contribute equally to large language model fine-tuning. Selecting informative training samples can reduce the computational cost while preserving downstream performance. Many existing data selection methods rely on indirect heuristics, such as data quality, diversity or reas",
+      "authors": [
+        "Hang Zhang",
+        "Warren J. Gross"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "Not all training samples contribute equally to large language model fine-tuning. Selecting informati...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18152v1",
+      "title": "jina-reranker-v3.5: An Efficient Listwise Reranker with Hybrid Attention and Self-Distillation",
+      "abstract": "Listwise rerankers are the discriminative core of agentic retrieval pipelines, yet production deployment demands efficiency, domain robustness, and fluency on semi-structured data at the same time. We present jina-reranker-v3.5, a 0.6B-parameter listwise reranker that meets these demands together wi",
+      "authors": [
+        "Christina Nasika",
+        "Feng Wang",
+        "Antonis Krasakis"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "Listwise rerankers are the discriminative core of agentic retrieval pipelines, yet production deploy...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18141v1",
+      "title": "HyMCache: A KV Cache Framework for Multi-Turn LLM Serving with CXL-Hybrid Memory",
+      "abstract": "Long-context, multi-turn, and agentic LLM workloads increasingly reuse previously processed context, making KV-cache reuse essential for reducing redundant computation. However, this reuse shifts the bottleneck to the memory tier that stores and serves reusable KV states at cluster scale. GPU HBM an",
+      "authors": [
+        "Hakbeom Jang",
+        "Inho Song",
+        "Sam H. Noh"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "Long-context, multi-turn, and agentic LLM workloads increasingly reuse previously processed context,...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18138v1",
+      "title": "AI Agent Communications in AI-Native 6G Network: Status, Challenges and Opportunities",
+      "abstract": "The rapid development of agentic AI and multi-agent systems is establishing AI agent communication as a fundamental requirement for the future Internet. While a diverse array of agent communication protocols has recently emerged, these solutions currently suffer from interoperability crises and infr",
+      "authors": [
+        "Qiang Duan"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "The rapid development of agentic AI and multi-agent systems is establishing AI agent communication a...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18102v1",
+      "title": "FinSAgent: Corpus-Aligned Multi-Agent RAG Framework for Evidence-Grounded SEC Filing Question Answering",
+      "abstract": "Financial question answering over U.S. Securities and Exchange Commission (SEC) filings requires retrieving and synthesizing heterogeneous evidence dispersed across long, standardized, and highly redundant disclosures. Existing retrieval-augmented and multi-agent systems typically derive retrieval q",
+      "authors": [
+        "Jijun Chi",
+        "Zhenghan Tai",
+        "Hanwei Wu"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "Financial question answering over U.S. Securities and Exchange Commission (SEC) filings requires ret...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18063v1",
+      "title": "Adaptive Adversaries: A Multi-Turn, Multi-LLM Benchmark for LLM Agent Security",
+      "abstract": "LLM-based agents process external content, exposing them to prompt injection and multi-turn manipulation. Most safety benchmarks evaluate defenders against fixed attack pools collected before evaluation, single-turn or multi-turn. We present a 21-scenario benchmark for \\emph{adaptive multi-round att",
+      "authors": [
+        "Devina Jain",
+        "David Hartmann",
+        "Chuan Li"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "LLM-based agents process external content, exposing them to prompt injection and multi-turn manipula...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18231v1",
+      "title": "FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation",
+      "abstract": "Vision-language-action (VLA) models have achieved impressive generalization in robotic manipulation, and recent memory-augmented VLAs have relaxed the Markovian assumption by conditioning on past images or language summaries. Vision-based memory approaches address this by conditioning on sampled pas",
+      "authors": [
+        "Ruicheng Li",
+        "Qixiu Li",
+        "Ruichun Ma"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "Vision-language-action (VLA) models have achieved impressive generalization in robotic manipulation,...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18228v1",
+      "title": "Logical Judgments Under Pressure: Diagnosing Syllogistic Stability with Learned Soft Prefixes",
+      "abstract": "To test how correct logical judgments respond to learned context, we prepend a soft prefix to an exactly labeled syllogistic reasoning benchmark while keeping the model fixed. Soft prefixes are opaque continuous vectors, so we characterize them through the behavior they induce across controlled vari",
+      "authors": [
+        "Brian K Chen"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "To test how correct logical judgments respond to learned context, we prepend a soft prefix to an exa...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18207v1",
+      "title": "Benchmarking wall velocities in cosmological phase transitions: Fluid Ansatz and WallGo",
+      "abstract": "A reliable computation of the bubble wall velocity during a cosmological phase transition requires an adequate modeling of the non-equilibrium dynamics in the vicinity of this expanding bubble. This task can be made computationally faster by imposing an \\emph{Ansatz} on the shape of the non-equilibr",
+      "authors": [
+        "Gláuber C. Dorsch",
+        "Marek Lewicki",
+        "Daniel A. Pinto"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "A reliable computation of the bubble wall velocity during a cosmological phase transition requires a...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18195v1",
+      "title": "Certified Training for Convolutional Perturbations",
+      "abstract": "Vision models have been found to be susceptible to perturbations such as motion blur induced at runtime by a shaking camera. This impedes their deployment in critical applications since phenomena such as slightly blurred vision might lead to failures, for example an object detector missing objects. ",
+      "authors": [
+        "Benedikt Brückner",
+        "Alessio Lomuscio"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "Vision models have been found to be susceptible to perturbations such as motion blur induced at runt...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18193v1",
+      "title": "A Self-Consistent 3D Hydrodynamic Model for Helium Transit Signatures in Evaporating Hot Jupiters",
+      "abstract": "The HeI triplet line (1083 nm), together with hydrodynamic models, can be used to characterize atmospheric escape of exoplanets. However, most of the available models cannot capture the three dimensional (3D) physics of escaping atmospheres, such as tidal forces and the interaction with stellar wind",
+      "authors": [
+        "Anselmo Falorca",
+        "Aline Vidotto"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "AI_Agent",
+      "llm_score": 5.0,
+      "llm_summary": "The HeI triplet line (1083 nm), together with hydrodynamic models, can be used to characterize atmos...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18229v1",
+      "title": "Breaking the $f_{\\text{NL}}$--$b_φ$ degeneracy with the time evolution of tracer number counts",
+      "abstract": "Constraining local primordial non-Gaussianity through scale-dependent bias requires an accurate determination of the PNG bias parameter $b_φ$, which is completely degenerate with $f_\\mathrm{NL}$ in the galaxy power spectrum. The standard universality relation predicts $b_φ$ from the linear bias, but",
+      "authors": [
+        "Caio B. de S. Nascimento",
+        "Neal Dalal"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "LLM推理优化",
+      "llm_score": 5.0,
+      "llm_summary": "Constraining local primordial non-Gaussianity through scale-dependent bias requires an accurate dete...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18227v1",
+      "title": "FlowMimic: Mask-free Visual Editing and Generation with Pixel-pair Warped Flow Field for Online Video Editing Data Generation and Modality Mimicry",
+      "abstract": "In line with the prevailing direction of vision research, we explore the integration of both generation and editing capabilities for video and image modalities within a single model. Current approaches to collecting video editing data typically depend on labour-intensive, time-consuming curated proc",
+      "authors": [
+        "Dingyun Zhang",
+        "Lixue Gong",
+        "Wei Liu"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "LLM推理优化",
+      "llm_score": 5.0,
+      "llm_summary": "In line with the prevailing direction of vision research, we explore the integration of both generat...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18225v1",
+      "title": "Vector Search As Nearest Neighbor Matching: RAG-based Policy Learning in Causal Inference",
+      "abstract": "We propose one-step and two-step methods for policy learning with retrieval-augmented generation (RAG). We formulate RAG-based action selection under the potential outcome framework. In the two-step method, vector search retrieves action-specific neighboring evidence in an embedding space, the gener",
+      "authors": [
+        "Masahiro Kato",
+        "Taka Kato"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "LLM推理优化",
+      "llm_score": 5.0,
+      "llm_summary": "We propose one-step and two-step methods for policy learning with retrieval-augmented generation (RA...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18144v1",
+      "title": "Do Language Models Dream of Binding Molecules? Benchmarking LLMs under Spatial Constraints",
+      "abstract": "Structure-based drug design (SBDD) leverages the 3D structure of protein targets, often complemented by other spatial constraints, to generate candidate binding molecules. While diffusion models have dominated as a leading paradigm for high-quality 3D molecule generation, LLM-based methods are rapid",
+      "authors": [
+        "Thomas MacDougall",
+        "Maksim Kuznetsov",
+        "Roman Schutski"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "LLM推理优化",
+      "llm_score": 5.0,
+      "llm_summary": "Structure-based drug design (SBDD) leverages the 3D structure of protein targets, often complemented...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18098v1",
+      "title": "VDAR-Router: Adaptive LLMs Routing via Verbalized Query Difficulty Analysis Retrieval",
+      "abstract": "Large language models are increasingly used in practical systems, making efficient model selection important for reducing deployment cost. LLM routing has emerged as a practical solution for allocating each input query to an appropriate model under a desired cost-performance trade-off. Existing rout",
+      "authors": [
+        "Yu-Chien Tang",
+        "Jun-Chen Hung",
+        "Wen-Chih Peng"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "LLM推理优化",
+      "llm_score": 5.0,
+      "llm_summary": "Large language models are increasingly used in practical systems, making efficient model selection i...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18069v1",
+      "title": "Hardware Mechanisms to Dynamically Throttle AI Performance",
+      "abstract": "As more capable AI models are increasingly integrated into critical computer systems, the lack of control over AI intent motivates safety mechanisms. Existing software safeguards impose only behavioral constraints that can potentially be bypassed by sufficiently intelligent models. While hardware-le",
+      "authors": [
+        "Haiyue Ma",
+        "Lauren Malek",
+        "Joseph Forzani"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "LLM推理优化",
+      "llm_score": 5.0,
+      "llm_summary": "As more capable AI models are increasingly integrated into critical computer systems, the lack of co...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18027v1",
+      "title": "L1 Augmented Attention as an Improved Vector Similarity Metric",
+      "abstract": "Scaled dot product attention conflates directional alignment and vector magnitude, limiting its effectiveness as a similarity metric in Transformer models. We introduce L1 augmented attention, a simple and computationally parallelizable modification that subtracts a learned, head specific L1 distanc",
+      "authors": [
+        "Kurt Godden"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "LLM推理优化",
+      "llm_score": 5.0,
+      "llm_summary": "Scaled dot product attention conflates directional alignment and vector magnitude, limiting its effe...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.17902v1",
+      "title": "Benchmarking Resource-Efficient LLMs for Research Topic Ontology Generation in the Biomedical Field",
+      "abstract": "Knowledge Organization Systems like Ontologies and taxonomies are fundamental for structuring scientific knowledge, yet their manual curation presents a persistent bottleneck in knowledge management. While Large Language Models (LLMs) offer a scalable mechanism for automated ontology generation, the",
+      "authors": [
+        "Tanay Aggarwal",
+        "Angelo Salatino",
+        "Francesco Osborne"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "LLM推理优化",
+      "llm_score": 5.0,
+      "llm_summary": "Knowledge Organization Systems like Ontologies and taxonomies are fundamental for structuring scient...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.17842v1",
+      "title": "CaT-GS: Efficient 3DGS Rendering for Large Scale Scenes via Inter-frame Caching and Tile Scheduling",
+      "abstract": "Recent breakthroughs in 3D Gaussian Splatting (3DGS) have advanced neural rendering with high fidelity and speed. However, its performance degrades significantly in large-scale scenes due to the computational burden of tile-based rasterization. Existing optimization efforts either require costly sce",
+      "authors": [
+        "Tingjia Zhang",
+        "Bo Chen",
+        "Shengzhong Liu"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "LLM推理优化",
+      "llm_score": 5.0,
+      "llm_summary": "Recent breakthroughs in 3D Gaussian Splatting (3DGS) have advanced neural rendering with high fideli...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18164v1",
+      "title": "A Continual Validation, Updating, and Decision-Making Framework for Self-Adaptive Digital Twins via Robust Model Predictive Control: A Case Study in Additive Manufacturing",
+      "abstract": "Digital Twins rely on surrogate models to mirror physical systems in real time, yet these models can degrade as operating conditions evolve, a phenomenon known as concept drift. Maintaining surrogate fidelity under drift, particularly when models must also capture aleatoric uncertainty, remains an o",
+      "authors": [
+        "Yi-Ping Chen",
+        "Ying-Kuan Tsai",
+        "Vispi Karkaria"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "LLM推理优化",
+      "llm_score": 5.0,
+      "llm_summary": "Digital Twins rely on surrogate models to mirror physical systems in real time, yet these models can...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18130v1",
+      "title": "Manifold-Constrained Hyper-Connections for Parameter-Efficient Finetuning",
+      "abstract": "Most parameter-efficient finetuning (PEFT) methods adapt weights or activations, thus leaving one of the key Transformer components unchanged: residual connections. This paper investigates Manifold-Constrained Hyper-Connections (mHC), a generalisation of residual connections, as a novel PEFT approac",
+      "authors": [
+        "Valentijn Oldenburg",
+        "Floris de Kam",
+        "Bente Zuijdam"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "LLM推理优化",
+      "llm_score": 5.0,
+      "llm_summary": "Most parameter-efficient finetuning (PEFT) methods adapt weights or activations, thus leaving one of...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18119v1",
+      "title": "COVAriance-Induced Fairness Gap Penalty for Subgroup-Fair Clustering",
+      "abstract": "Fair clustering aims to make cluster assignments independent of sensitive attributes, but this goal becomes challenging when multiple sensitive attributes jointly define many subgroups. In such settings, directly extending existing fair clustering algorithms is computationally expensive or numerical",
+      "authors": [
+        "Kyungseon Lee",
+        "Hankyo Jeong",
+        "Kunwoong Kim"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "LLM推理优化",
+      "llm_score": 5.0,
+      "llm_summary": "Fair clustering aims to make cluster assignments independent of sensitive attributes, but this goal ...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18237v1",
+      "title": "The Many Senses of Visual Similarity: A Text-Prompted Image Perceptual Metric",
+      "abstract": "Human visual similarity judgments are context-dependent. For example, two images may be similar in shape but distinct in color. Existing perceptual similarity metrics, however, collapse these nuances into a single scalar value, offering no mechanism to condition on specific aspects. To bridge this g",
+      "authors": [
+        "Sheng-Yu Wang",
+        "Yotam Nitzan",
+        "Aaron Hertzmann"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "LLM推理优化",
+      "llm_score": 5.0,
+      "llm_summary": "Human visual similarity judgments are context-dependent. For example, two images may be similar in s...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18234v1",
+      "title": "Cosmological consequences of a dynamical dark matter in the light of DESI DR2 measurements",
+      "abstract": "Recent DESI results exhibit preference for a Null Energy Condition violating dynamical dark energy, with early phantom behaviour. We explore an alternative interpretation in which this preference arises from unconventional dark matter dynamics rather than from dynamical dark energy. We propose a dyn",
+      "authors": [
+        "Abhijith Ajith",
+        "Utkarsh Kumar"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "LLM推理优化",
+      "llm_score": 5.0,
+      "llm_summary": "Recent DESI results exhibit preference for a Null Energy Condition violating dynamical dark energy, ...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18233v1",
+      "title": "Theoretical uncertainties in reconstructing model parameters with gravitational waves from supercooled phase transitions",
+      "abstract": "Future interferometers may detect a gravitational-wave (GW) signal from a cosmological first-order phase transition. Reconstructing the underlying particle-physics model from such a signal requires theoretical control over the map from microphysics to the spectrum. For classically scale-invariant ex",
+      "authors": [
+        "Maciej Kierkla",
+        "Marek Lewicki",
+        "Philipp Schicho"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "LLM推理优化",
+      "llm_score": 5.0,
+      "llm_summary": "Future interferometers may detect a gravitational-wave (GW) signal from a cosmological first-order p...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18230v1",
+      "title": "Simple Domain Generalization for Strong Pixel-Level Image Tampering Detection in Modern VLMs",
+      "abstract": "Modern vision-language models (VLMs) have significantly improved image generation and editing capabilities, making pixel-level image tampering detection increasingly important yet challenging under cross-model and out-of-distribution shifts. This work studies domain generalization for pixel-level im",
+      "authors": [
+        "Yi Tang",
+        "Xinyi Shang",
+        "Jiacheng Cui"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "LLM推理优化",
+      "llm_score": 5.0,
+      "llm_summary": "Modern vision-language models (VLMs) have significantly improved image generation and editing capabi...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18219v1",
+      "title": "Search for continuous gravitational waves from the pulsar J0435+3233",
+      "abstract": "We perform a search for continuous gravitational waves from J0435+3233 using LIGO O4a public data. J0435+3233 is unique among millisecond pulsars as it exhibits an exceptionally large spin-down and marks the first pulsar observed to date with a spin-down larger than $10^{-12}$ Hz/s in the sub $10$ m",
+      "authors": [
+        "Brian McGloughlin",
+        "Jing Ming",
+        "Maria Alessandra Papa"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "多模态大模型",
+      "llm_score": 5.0,
+      "llm_summary": "We perform a search for continuous gravitational waves from J0435+3233 using LIGO O4a public data. J...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18109v1",
+      "title": "SpEmoC: A Balanced Speaker-Segment Multimodal Emotion Benchmark",
+      "abstract": "Understanding human emotions in spoken conversations is a key challenge in affective computing, with applications in empathetic AI, human computer interaction, and mental health monitoring. However, existing datasets vary in scale, emotion distribution, modality alignment, and data partitioning stra",
+      "authors": [
+        "Sania Bano",
+        "Shahzad Ahmad",
+        "Santosh Kumar Vipparthi"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "多模态大模型",
+      "llm_score": 5.0,
+      "llm_summary": "Understanding human emotions in spoken conversations is a key challenge in affective computing, with...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18088v1",
+      "title": "The Label Complexity of Class-Conditional Coverage under Distribution Shift",
+      "abstract": "Standard evaluation of many recognition systems contains distribution shift by construction, since benchmarks place disjoint conditions in the training and test splits. Under such a shift, split conformal prediction keeps marginal coverage near the nominal level while per-class coverage fails silent",
+      "authors": [
+        "Weijia Han",
+        "Lisha Qu"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "多模态大模型",
+      "llm_score": 5.0,
+      "llm_summary": "Standard evaluation of many recognition systems contains distribution shift by construction, since b...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18042v1",
+      "title": "Anticipate Before Acting: Future-State-Conditioned Vision-Language Navigation",
+      "abstract": "End-to-end vision-language navigation (VLN) with causal vision-language models can map instructions and egocentric observations directly to actions, but standard behavior cloning supervises only the next action and does not explicitly train the policy state to be predictive of future visual outcomes",
+      "authors": [
+        "Lingfeng Zhang",
+        "Zhanguang Zhang",
+        "Liheng Ma"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "多模态大模型",
+      "llm_score": 5.0,
+      "llm_summary": "End-to-end vision-language navigation (VLN) with causal vision-language models can map instructions ...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.17849v1",
+      "title": "AlphaOracle: Oracle bone script decipherment via human-workflow-inspired deep learning",
+      "abstract": "Approximately 3,000 of the 4,500 oracle bone script (OBS) characters remain undeciphered due to fragmentary inscriptions and sparse evidence. Current AI approaches fail to replicate expert workflows that integrate form analysis, contextual semantics, and philological reasoning. We introduce AlphaOra",
+      "authors": [
+        "Yuliang Liu",
+        "Haisu Guan",
+        "Pengjie Wang"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "多模态大模型",
+      "llm_score": 5.0,
+      "llm_summary": "Approximately 3,000 of the 4,500 oracle bone script (OBS) characters remain undeciphered due to frag...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.17833v1",
+      "title": "Consistent Feature Transport for Image Relighting",
+      "abstract": "Image relighting modifies illumination while preserving non-lighting content such as identity and geometry. Existing diffusion-based methods often suffer from unstable illumination changes or inconsistent content preservation under complex lighting, as they lack an explicit mechanism to learn featur",
+      "authors": [
+        "Bohan Zhang",
+        "Huanwei Liang",
+        "Yuhan He"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "多模态大模型",
+      "llm_score": 5.0,
+      "llm_summary": "Image relighting modifies illumination while preserving non-lighting content such as identity and ge...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.17820v1",
+      "title": "PRiSM: Prototype Regularization for Few-Shot VLMs",
+      "abstract": "Training-free few-shot adaptation methods have gained significant attention recently in the context of Vision-language Models (VLMs). Yet, current benchmarks rely on strong assumptions about the statistics of the adaptation data, e.g., class balance. We question these simplifying assumptions and int",
+      "authors": [
+        "Ghassen Baklouti",
+        "Omprakash Chakraborty",
+        "Jose Dolz"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "多模态大模型",
+      "llm_score": 5.0,
+      "llm_summary": "Training-free few-shot adaptation methods have gained significant attention recently in the context ...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18114v1",
+      "title": "How Does Alignment Tuning Shape Representations of Sycophancy and Related Cue-Induced Biases in LLMs?",
+      "abstract": "Modern LLMs are alarmingly susceptible to surprisingly simple immaterial changes of input prompts: a casual hint, an incorrectly labeled few-shot example, or a fake prior assistant turn often flips an originally correct answer. We study where this susceptibility, spanning sycophancy and related cue-",
+      "authors": [
+        "Prakhar Gupta",
+        "Terry Jingchen Zhang",
+        "Florent Draye"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "多模态大模型",
+      "llm_score": 5.0,
+      "llm_summary": "Modern LLMs are alarmingly susceptible to surprisingly simple immaterial changes of input prompts: a...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18066v1",
+      "title": "Pancasila-Dilemmas: Evaluating Large Language Models on Indonesian Human Value Dilemmas Grounded in Pancasila",
+      "abstract": "The value alignment of large language models (LLMs) is crucial for ensuring responses align with human intention and value preferences. However, most evaluations of value alignment focus on Western or universal values, while assessments grounded in the value systems of specific countries remain scar",
+      "authors": [
+        " Supryadi",
+        " Irfan",
+        " Julianti"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "多模态大模型",
+      "llm_score": 5.0,
+      "llm_summary": "The value alignment of large language models (LLMs) is crucial for ensuring responses align with hum...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18056v1",
+      "title": "An Early Warning of Emerging Biosecurity Risks in Frontier LLMs",
+      "abstract": "Frontier large language models (LLMs) are increasingly integrated into scientific workflows, yet their growing biological capabilities may outpace current safeguards. To assess the biological risks of frontier models, we develop Intern-BioBreaker, a specialized bio-red-teaming model, together with a",
+      "authors": [
+        "Zhida He",
+        "Xia Hu",
+        "Baichen Le"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "多模态大模型",
+      "llm_score": 5.0,
+      "llm_summary": "Frontier large language models (LLMs) are increasingly integrated into scientific workflows, yet the...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.17773v1",
+      "title": "FillGauss: Fine-Grained Filling-Aware Impact Sound Generation for 3D Gaussian Splatting",
+      "abstract": "Synthesizing physically plausible impact sounds from visual observations remains a great challenge in multi-modal AI. Existing 3D-aware audio generation methods primarily model the surface geometry of hollow rigid bodies. However, they fundamentally overlook internal filling states, a critical physi",
+      "authors": [
+        "Chen Yang",
+        "Ganye Wen",
+        "Bin Huang"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "多模态大模型",
+      "llm_score": 5.0,
+      "llm_summary": "Synthesizing physically plausible impact sounds from visual observations remains a great challenge i...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18223v1",
+      "title": "All Tree-Level Massive Cosmological Correlators via Spectral Gluing",
+      "abstract": "Massive cosmological correlators exhibit a rich hypergeometric structure already at tree level, reflecting the distorted propagation of particles in de Sitter spacetime. In this paper, we reveal that this apparent complexity conceals a remarkably simple underlying mathematical structure. Using the s",
+      "authors": [
+        "Jonathan Gräfe",
+        "Denis Werth"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "代码生成",
+      "llm_score": 5.0,
+      "llm_summary": "Massive cosmological correlators exhibit a rich hypergeometric structure already at tree level, refl...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18211v1",
+      "title": "Sensitivity of p_T Fluctuations to the QCD Equation of State",
+      "abstract": "We construct a novel theoretical baseline for dynamical transverse momentum correlations, $C_{pT}$, across a wide range of collision energies spanning the RHIC Beam Energy Scan (BES) program. For the first time, a unified framework is developed to describe the energy and centrality dependence of $C_",
+      "authors": [
+        "Rutik Manikandhan",
+        "Rohit Gupta",
+        "Rene Bellwied"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "代码生成",
+      "llm_score": 5.0,
+      "llm_summary": "We construct a novel theoretical baseline for dynamical transverse momentum correlations, $C_{pT}$, ...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18204v1",
+      "title": "QuantiSpect: A Structure-Aware Lightweight 3D CNN Pre-Decoder for Scalable Surface Code Quantum Error Correction",
+      "abstract": "Real-time decoding is a critical bottleneck for large-scale fault-tolerant quantum computing. AI-based neural pre-decoders locally correct most physical errors before passing residual syndromes to a global decoder, enabling sub-microsecond latencies. However, existing architectures carry significant",
+      "authors": [
+        "Pan Gao",
+        "Xu-Sheng Xu",
+        "Ji-Ze Han"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "代码生成",
+      "llm_score": 5.0,
+      "llm_summary": "Real-time decoding is a critical bottleneck for large-scale fault-tolerant quantum computing. AI-bas...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18174v1",
+      "title": "Improved Convergence Rate for Stochastic Multi-Gradient Descent: A Proof Discovered with AI",
+      "abstract": "For smooth nonconvex stochastic multi-objective problems, stochastic multi-gradient descent (SMG) computes an approximate steepest common descent direction of the objectives from stochastic gradients. With unbiased, variance-bounded stochastic gradients, this note establishes a new convergence rate ",
+      "authors": [
+        "Lisha Chen"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "代码生成",
+      "llm_score": 5.0,
+      "llm_summary": "For smooth nonconvex stochastic multi-objective problems, stochastic multi-gradient descent (SMG) co...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18170v1",
+      "title": "An approach to systemic risks of AI through the lens of emergence, collective action problems, and externalities",
+      "abstract": "The integration of general-purpose artificial intelligence models into downstream AI systems, among other developments, has given rise to new forms of risk that are more systemic in nature than conventional AI risks. However, there is no generally accepted definition of systemic risks in general and",
+      "authors": [
+        "Carsten Orwat",
+        "Lucas Staab",
+        "Alexandros Gazos"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "代码生成",
+      "llm_score": 5.0,
+      "llm_summary": "The integration of general-purpose artificial intelligence models into downstream AI systems, among ...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18168v1",
+      "title": "A Forward-Backward Weight Analysis of INW for Permutation Branching Programs",
+      "abstract": "We construct an $\\varepsilon$-error PRG for permutation read-once branching programs of length $n$ and width $w$ with seed length \\[ O\\left((\\log w+\\log(1/\\varepsilon))\\cdot \\log n\\right). \\] This gives an exponential improvement in the dependence on $w$ compared with the constructions of De (CCC 20",
+      "authors": [
+        "Gil Cohen",
+        "Dean Doron",
+        "Noam Goldgraber"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "代码生成",
+      "llm_score": 5.0,
+      "llm_summary": "We construct an $\\varepsilon$-error PRG for permutation read-once branching programs of length $n$ a...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18161v1",
+      "title": "TRIM: Reducing AI-Generated CodeSlop via Agent Trajectory Minimization",
+      "abstract": "Coding agents are increasingly used to accelerate code generation in many downstream tasks, such as fixing bugs, building applications, and prototyping. However, despite their value as coding assistants, agent-generated code tends to be larger and more verbose than the corresponding human-written im",
+      "authors": [
+        "Alex Mathai",
+        "Shobini Iyer",
+        "Aleksandr Nogikh"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "代码生成",
+      "llm_score": 5.0,
+      "llm_summary": "Coding agents are increasingly used to accelerate code generation in many downstream tasks, such as ...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18127v1",
+      "title": "ClouDens: Operational Context-Aware Anomaly Detection for Large-scale Cloud System Monitoring",
+      "abstract": "With the rapid growth of cloud computing infrastructures in scale and complexity, network monitoring for Large-scale Cloud Systems (LCSs) has become increasingly challenging, requiring automated and reliable anomaly detection to maintain service availability. Modern LCSs continuously generate teleme",
+      "authors": [
+        "Thu T. H. Doan",
+        "Mohammad Saiful Islam",
+        "Andriy Miranskyy"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "代码生成",
+      "llm_score": 5.0,
+      "llm_summary": "With the rapid growth of cloud computing infrastructures in scale and complexity, network monitoring...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18108v1",
+      "title": "GARAGE: Characterizing the Automation Boundary in LLM-based Attack Graph Generation",
+      "abstract": "While modern vehicle security depends on effective Cyber Threat Intelligence (CTI) synthesis, current automated tools struggle with unstructured data and automotive-specific architectural nuances. To bridge this gap, we introduce GARAGE, a RAG-powered framework that converts fragmented CTI into an a",
+      "authors": [
+        "Daekwon Pi",
+        "Sangho Lee",
+        "Young Hun Lee"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "代码生成",
+      "llm_score": 5.0,
+      "llm_summary": "While modern vehicle security depends on effective Cyber Threat Intelligence (CTI) synthesis, curren...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18068v1",
+      "title": "Human Grounded Evaluation of Large Language Models for Optical Network Automation",
+      "abstract": "Large language models (LLMs) are increasingly adopted for network automation, yet their output quality and inference cost can vary substantially across LLM families. We present HuGLEN, a stepwise evaluation pipeline that uses an LLM-as-a-judge together with a small set of expert ratings to enable sc",
+      "authors": [
+        "Kiarash Rezaei",
+        "Omran Ayoub",
+        "Paolo Monti"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "代码生成",
+      "llm_score": 5.0,
+      "llm_summary": "Large language models (LLMs) are increasingly adopted for network automation, yet their output quali...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18064v1",
+      "title": "Autoresearch with Coding Agents: Generalizers and Metric-Maximizers on Quran Recitation Data",
+      "abstract": "Coding agents can now be left alone to improve software against a score. In this pattern--recently popularized as \"autoresearch\"--the agent receives a dataset, an evaluation script, and one editable file, and iterates without supervision: modify the code, measure, keep the change if the score improv",
+      "authors": [
+        "Nursultan Askarbekuly",
+        "Mohamad Al Mdfaa",
+        "Ahmed Helaly"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "代码生成",
+      "llm_score": 5.0,
+      "llm_summary": "Coding agents can now be left alone to improve software against a score. In this pattern--recently p...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18050v1",
+      "title": "New bound on $S_{1}\\times S_{2}$-setting Bell locality of a nonseparable Werner state",
+      "abstract": "In many quantum applications it is important to know whether or not a Bell nonlocal two-qudit state exhibits its nonlocality under correlation scenarios with some given numbers $S_{1},S_{2}\\geq1$ of generalized quantum measurements at two sites. In the present article, we find analytically a new gen",
+      "authors": [
+        "Elena R. Loubenets"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "代码生成",
+      "llm_score": 5.0,
+      "llm_summary": "In many quantum applications it is important to know whether or not a Bell nonlocal two-qudit state ...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18049v1",
+      "title": "Parameterized Verification of Deterministic MPI Programs",
+      "abstract": "We consider the problem of verifying a message passing program in which the number of processes is a parameter NP and each process knows its unique ID. Processes communicate using send and receive commands which specify a single destination or source. To verify the program, the user provides functio",
+      "authors": [
+        "Stephen F. Siegel"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "We consider the problem of verifying a message passing program in which the number of processes is a...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.17956v1",
+      "title": "Does Robust VIO Need More Learning? Geometry-Verified Visual Measurements under Distribution Shift",
+      "abstract": "Learning is increasingly introduced into visual-inertial odometry (VIO), ranging from learned feature front-ends to learning-dominant motion and geometry estimation. However, learning more of the pipeline does not necessarily improve robustness when deployment conditions differ from the training dis",
+      "authors": [
+        "Yangyang Ning",
+        "Shu Liang",
+        "Quanbo Ge"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "Learning is increasingly introduced into visual-inertial odometry (VIO), ranging from learned featur...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18062v1",
+      "title": "UniETP: Unifying Environments for Generalizable Embodied Task Planning",
+      "abstract": "This paper focuses on the problem of Embodied Task Planning, where an agent is required to execute a sequence of atomic actions within an interactive environment to complete a user-specified task. Though a variety of simulators and datasets have previously been built for this task, these efforts are",
+      "authors": [
+        "Peiran Xu",
+        "Jiaqi Zheng",
+        "Ziyou Wang"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "This paper focuses on the problem of Embodied Task Planning, where an agent is required to execute a...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18196v1",
+      "title": "Hardware Robustness of Sample-Based Quantum Diagonalization",
+      "abstract": "Sample-based Quantum Diagonalization (SQD) is a hybrid quantum-classical method that replaces variational optimization with a self-consistent recovery loop over QPU samples. Although SQD is considered robust to noisy samples and imperfect classical inputs, its robustness across practical deployment ",
+      "authors": [
+        "Ahatesham Bhuiyan",
+        "Cheng Chu",
+        "Qian Lou"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "Sample-based Quantum Diagonalization (SQD) is a hybrid quantum-classical method that replaces variat...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18169v1",
+      "title": "RRAM-DP: Device-Calibrated Differential Privacy for In-Memory Edge Learning",
+      "abstract": "Edge Artificial Intelligence of Things (AIoT) systems often collect sensitive data in situ, raising serious privacy concerns. Resistive-switching random-access memory (RRAM) is an attractive substrate for efficient AIoT thanks to its multi-bit storage and compute-in-memory (CiM) capabilities, while ",
+      "authors": [
+        "Kwunhang Wong",
+        "Jichang Yang",
+        "Karl M. H. Lai"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "Edge Artificial Intelligence of Things (AIoT) systems often collect sensitive data in situ, raising ...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18149v1",
+      "title": "Differentiable Logic Gate Networks for Low-Latency EEG Classification on Edge Devices",
+      "abstract": "Real-time EEG classification on edge devices is bottlenecked by the floating-point arithmetic of conventional neural networks. We investigated Differentiable Logic Gate Networks (Diff-Logic) as a hardware-native alternative that compiles models into pure Boolean circuits executable via bitwise CPU o",
+      "authors": [
+        "Shyamal Y. Dharia",
+        "Stephen D. Smith",
+        "Camilo E. Valderrama"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "Real-time EEG classification on edge devices is bottlenecked by the floating-point arithmetic of con...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18137v1",
+      "title": "Phase-Sensitive Benchmarking of Composite Quantum Gates with Chiral-Interference Circuits on Quantum Hardware",
+      "abstract": "We construct and experimentally implement compact gate-native circuits that simulate the state-transfer interference underlying three- and four-level chiral-resolution protocols. Both models are encoded in a two-qubit register, with the enantiomer-dependent sign of one of the couplings simulated by ",
+      "authors": [
+        "Georgi M. Aleksandrov",
+        "Nikolay V. Vitanov"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "We construct and experimentally implement compact gate-native circuits that simulate the state-trans...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18135v1",
+      "title": "Isaac Sim-to-Real: Reinforcement Learning based Locomotion for Quadrupeds",
+      "abstract": "Learning-based approaches to locomotion have risen in popularity in recent years, showing the capability for complex legged locomotion and whole-body control. Reinforcement learning (RL), the primary learning-based approach for locomotion, often utilizes a high-performance simulation tool, providing",
+      "authors": [
+        "Jordan Dowdy",
+        "Jean Chagas Vaz"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "Learning-based approaches to locomotion have risen in popularity in recent years, showing the capabi...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18126v1",
+      "title": "CutBackdoor: A Circuit Cut Triggered Backdoor Attack on Variational Quantum Algorithms",
+      "abstract": "Variational Quantum Algorithms (VQAs) are a leading paradigm for near-term quantum computing, combining parameterized quantum circuits with classical optimization across quantum chemistry, combinatorial optimization, and quantum machine learning. Since real-world VQA deployments routinely require ci",
+      "authors": [
+        "Ahatesham Bhuiyan",
+        "Hoang Ngo",
+        "Cheng Chu"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "Variational Quantum Algorithms (VQAs) are a leading paradigm for near-term quantum computing, combin...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.17899v1",
+      "title": "SEAM-V: A Hybrid-Decoupled RISC-V Vector Processor with Backend-Visible EP Context for Sustained Vector Throughput",
+      "abstract": "Data-parallel workloads in deep learning and scientific computing continue to drive demand for higher processor throughput, energy efficiency, and scalability. The RISC-V Vector Extension (RVV) supports scalable execution through a vector-length-agnostic programming model. However, many tightly coup",
+      "authors": [
+        "Weiying Wang",
+        "Zhiwei Zhang"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "Data-parallel workloads in deep learning and scientific computing continue to drive demand for highe...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.17528v1",
+      "title": "Can AI Agents Really Complete RTL-to-GDS? Lessons from Benchmarking Tool-Interactive EDA Workflows",
+      "abstract": "LLM-driven agent systems have emerged as a promising paradigm for electronic design automation (EDA), demonstrating strong potential for automating complex design workflows. However, existing evaluations primarily examine individual language models on isolated EDA tasks, providing limited insight in",
+      "authors": [
+        "Jinyuan Deng",
+        "Zhengrui Chen",
+        "Xufeng Wei"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "LLM-driven agent systems have emerged as a promising paradigm for electronic design automation (EDA)...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.17053v1",
+      "title": "MechMem-RTL: Reusing Verified Mechanism Memories for LLM-Based RTL Repair",
+      "abstract": "Large language models (LLMs) can automatically repair register-transfer-level (RTL) designs. However, fixing complex sequential logic errors requires reusing past debugging experience. Existing retrieval-augmented generation (RAG) relies on task-text similarity to provide this experience. This text-",
+      "authors": [
+        "Mingyu Cheng",
+        "Junjie Gao",
+        "Jinhua Cui"
+      ],
+      "published_date": "2026-07-19",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "Large language models (LLMs) can automatically repair register-transfer-level (RTL) designs. However...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.17423v1",
+      "title": "TimeLens2: Generalist Video Temporal Grounding with Multimodal LLMs",
+      "abstract": "Video multimodal large language models (MLLMs) can describe what happens in a video, but rarely identify when the supporting evidence occurs. We study generalist video temporal grounding, in which one model predicts a variable-cardinality set of evidence intervals across video lengths, domains, quer",
+      "authors": [
+        "Yuhan Zhu",
+        "Changlian Ma",
+        "Xiangyu Zeng"
+      ],
+      "published_date": "2026-07-19",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "Video multimodal large language models (MLLMs) can describe what happens in a video, but rarely iden...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.16855v1",
+      "title": "Rtl2lean: Automated RTL-to-Lean Translation with Hierarchical Theorem Generation and Lemma Reuse",
+      "abstract": "Formal verification with interactive theorem provers can provide strong correctness guarantees for register transfer level designs, but applying it to existing SystemVerilog code requires substantial manual effort in semantic modeling and proof construction. This paper presents Rtl2lean, a framework",
+      "authors": [
+        "Hongqin Lyu",
+        "Junxing Dong",
+        "Yonghao Wang"
+      ],
+      "published_date": "2026-07-18",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "Formal verification with interactive theorem provers can provide strong correctness guarantees for r...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.16632v1",
+      "title": "CLOSER-Bench: Evaluating Budgeted Cross-Stage Design Closure for Hardware Agents",
+      "abstract": "Hardware engineering exposes coding agents to a form of long-horizon work that is difficult to capture with pass-at-k: progress is continuous, tool feedback is delayed and heterogeneous, and a backend failure may require revising RTL rather than tuning another physical-design parameter. Existing ben",
+      "authors": [
+        "Peilong Zhou",
+        "Zhirong Chen",
+        "Cangyuan Li"
+      ],
+      "published_date": "2026-07-18",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "Hardware engineering exposes coding agents to a form of long-horizon work that is difficult to captu...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.16862v1",
+      "title": "InLiER: Learning-Free Heterogeneous LiDAR Place Recognition via Intermediate Mixed-Radix Structural Keypoint Tokenization",
+      "abstract": "LiDAR place recognition supports loop closure, relocalization, and multi-agent map management. As robotic platforms increasingly combine LiDARs with different fields of view, resolutions, and scanning patterns, existing descriptors degrade because they are tightly coupled to sensor-specific characte",
+      "authors": [
+        "Nikolaos Stathoulopoulos",
+        "George Nikolakopoulos"
+      ],
+      "published_date": "2026-07-18",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "LiDAR place recognition supports loop closure, relocalization, and multi-agent map management. As ro...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.16826v1",
+      "title": "Spatially-Aware Class-Agnostic Object Counting",
+      "abstract": "Generalised object counting aims to estimate the number of instances of an arbitrary object category from a single image, but many recent methods can struggle on structurally complex objects due to limited spatial modelling. We present \\textit{UpCount}, a class-agnostic counter designed to better pr",
+      "authors": [
+        "Robert Wijaya",
+        "Md. Tanvir Hossain",
+        "Amanda Kau"
+      ],
+      "published_date": "2026-07-18",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "Generalised object counting aims to estimate the number of instances of an arbitrary object category...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.16058v1",
+      "title": "From Patterns to Parsers: Automatic Generation of Efficient Hardware Parsers for FPGAs",
+      "abstract": "This work presents an open-source tool for automatically generating efficient hardware parsers from high-level specifications. It uses a parsing intermediate representation (PIR) that decouples application-specific frontends from a common register-transfer level (RTL) generation backend. The backend",
+      "authors": [
+        "Tushar Garg",
+        "Andrew Boutros"
+      ],
+      "published_date": "2026-07-17",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "This work presents an open-source tool for automatically generating efficient hardware parsers from ...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.15830v1",
+      "title": "RTL-Sequencer: Towards Scalable RTL Timing Prediction with the Sequence-based Paradigm",
+      "abstract": "Accurate timing prediction at the register-transfer level (RTL) is a longstanding challenge in design automation. Existing graph-based methods struggle with limited receptive fields, high complexity, and a lack of signal directionality. We present RTL-Sequencer, a novel sequence-based paradigm that ",
+      "authors": [
+        "Ziyan Guo",
+        "Wenji Fang",
+        "Wenkai Li"
+      ],
+      "published_date": "2026-07-17",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "Accurate timing prediction at the register-transfer level (RTL) is a longstanding challenge in desig...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.15782v1",
+      "title": "Vogls: a Fast Interactive Full-timing Simulator for Pre-silicon Power Side-Channel Analysis",
+      "abstract": "Designing hardware circuits resistant to side-channel attacks increasingly relies on simulation to predict device leakage before fabrication. Current functional verification simulators are designed for extended correctness-checking runs and are ill-suited for producing large numbers of short trace c",
+      "authors": [
+        "Gijs Burghoorn",
+        "Ileana Buhan",
+        "Lejla Batina"
+      ],
+      "published_date": "2026-07-17",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "Designing hardware circuits resistant to side-channel attacks increasingly relies on simulation to p...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.15328v1",
+      "title": "Lazy Arithmetic using Systolic Arrays for Closing the Verification Gap on Embedded Systems",
+      "abstract": "Complex algorithms such as deep neural networks are increasingly being deployed on embedded, resource constrained platforms. However, existing hardware and software schemes for implementing these models on the edge fall short, particularly for safety-critical applications such as medical devices. Fi",
+      "authors": [
+        "Taisa Kushner",
+        "Ryan McCleeary",
+        "Martin Brain"
+      ],
+      "published_date": "2026-07-16",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "Complex algorithms such as deep neural networks are increasingly being deployed on embedded, resourc...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.12244v1",
+      "title": "ORRAM: An OpenROAD-Integrated RAM Generator Using Standard Cells",
+      "abstract": "Memory inference remains a significant challenge in turnkey ASIC design flows. Inferring flip-flops from RTL can create thousands of densely interconnected instances which dramatically slow down design flows and impede performance. Memory compilers address this issue, although they are third-party t",
+      "authors": [
+        "Brayden Louie",
+        "Thinh P. Nguyen",
+        "Matt Liberty"
+      ],
+      "published_date": "2026-07-14",
+      "topic": "芯片验证",
+      "llm_score": 5.0,
+      "llm_summary": "Memory inference remains a significant challenge in turnkey ASIC design flows. Inferring flip-flops ...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18140v1",
+      "title": "A Mathematical Model of Dengue Transmission Incorporating Hospital Capacity and Threshold-Based Fogging Interventions",
+      "abstract": "Dengue remains a major public health challenge in tropical regions, and recurring outbreaks suggest that current intervention strategies are not yet fully effective. Existing mathematical models typically assume unlimited hospital capacity and continuously applied fogging, neglecting practical const",
+      "authors": [
+        "Dipo Aldila",
+        "Joseph Páez Chávez",
+        "Aytül Gökçe"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "Dengue remains a major public health challenge in tropical regions, and recurring outbreaks suggest ...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18089v1",
+      "title": "Real-Time Flight Test Maneuver Selection with Monte Carlo Tree Search",
+      "abstract": "Flight test is shifting toward a data-centric approach in which data contribute to model refinement, reducing reliance on pre-scripted test points. An open problem is how to sequence maneuvers within a sortie to maximize uncertainty reduction under resource limits. We present a real-time planning fr",
+      "authors": [
+        "Nicholas E. Bostock",
+        "Helen Pruitt-Kennett",
+        "Marc R. Schlichting"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "Flight test is shifting toward a data-centric approach in which data contribute to model refinement,...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18081v1",
+      "title": "SelectInfer: Selective Neuron Loading and Computation for On-Device LLMs",
+      "abstract": "Large Language Models (LLMs) have demonstrated remarkable capabilities across a range of Natural Language Processing (NLP) tasks, but their high computational and memory demands pose significant challenges for deployment on resource-constrained edge devices. Existing approaches to model compression ",
+      "authors": [
+        "Huzaifa Shaaban Kabakibo",
+        "Eric Schniedermeyer",
+        "Artem Burchanow"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "Large Language Models (LLMs) have demonstrated remarkable capabilities across a range of Natural Lan...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18036v1",
+      "title": "Self-Interference-Aware AS-Assisted Tri-Hybrid Beamforming for Full-Duplex Massive MIMO",
+      "abstract": "This paper proposes a tri-hybrid beamforming (tri-HBF) scheme with antenna-selection (AS)-based reconfigurable sub-arrays for full-duplex (FD) massive multiple-input multiple-output (mMIMO) systems. A sub-connected HBF architecture is adopted, where AS is performed in a group-wise manner to avoid ex",
+      "authors": [
+        "Yuanzhe Gong",
+        "Cheng-Jie Zhao",
+        "Tho Le-Ngoc"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "This paper proposes a tri-hybrid beamforming (tri-HBF) scheme with antenna-selection (AS)-based reco...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18034v1",
+      "title": "AdaHome: An Adaptive Smart Home Assistant using Local Small Language Models",
+      "abstract": "Smart home assistants interpret a wide range of user commands, from explicit device control to underspecified and preference dependent requests. While recent systems based on Large Language Models (LLMs) improve this capability, they often rely on heavyweight reasoning pipelines and cloud-based depl",
+      "authors": [
+        "Eu Jin Lim",
+        "Zhaoxing Li",
+        "Sebastian Stein"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "Smart home assistants interpret a wide range of user commands, from explicit device control to under...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18019v1",
+      "title": "Modeling rare-earth and energy materials supply chains under theoretical China-outer-Mongolia political reunification scenarios",
+      "abstract": "Critical rare earth elements, lithium, copper, and coal underpin global clean energy transitions and advanced manufacturing, yet China faces persistent supply volatility and resource security risks amid fragmented cross-border mineral trade with Outer Mongolia. This paper constructs a dynamic partia",
+      "authors": [
+        "Xi Liu",
+        "Wenxi Fang"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "Critical rare earth elements, lithium, copper, and coal underpin global clean energy transitions and...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18002v1",
+      "title": "ExpertPlex: A High-Goodput Disaggregated Serving System for MoE LLMs with Adaptive Persistent Kernels",
+      "abstract": "LLMs scale Mixture-of-Experts (MoE) parameters for superior intelligence, but massive weights and dynamic computation impede efficient serving. Existing instance-level prefill-decode disaggregation isolates the phases on separate full-model replicas. As MoE weights grow, each instance may span tens ",
+      "authors": [
+        "Bingyang Wu",
+        "Chao Jin",
+        "Zili Zhang"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "LLMs scale Mixture-of-Experts (MoE) parameters for superior intelligence, but massive weights and dy...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18166v1",
+      "title": "Non-injective field redefinitions and quantum inequivalence in scalar theories",
+      "abstract": "We study scalar theories obtained by pulling a free massive multiplet back through a polynomial field redefinition with constant unit Jacobian. Our main example uses the three-variable noninjective map recently announced by Alpöge. After a linear normalization, it defines a three-scalar sigma model ",
+      "authors": [
+        "Bin Zhu"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "We study scalar theories obtained by pulling a free massive multiplet back through a polynomial fiel...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18123v1",
+      "title": "A Low-Storage Implicit Dual-Time Finite-Volume Framework for Radio-Frequency Capacitively Coupled Plasma Fluid Simulations",
+      "abstract": "Radio-frequency (RF) capacitively coupled plasmas (CCPs) are widely utilized in semiconductor manufacturing. Efficiently and accurately solving the underlying fluid governing equations to resolve the complex multi-physics fields is crucial for optimizing plasma reactor designs and process control. T",
+      "authors": [
+        "Yuze Zhu",
+        "Hangkong Wu",
+        "Junzhe Cao"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "Radio-frequency (RF) capacitively coupled plasmas (CCPs) are widely utilized in semiconductor manufa...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.17978v1",
+      "title": "RuNNer 2.0: A Software Suite for High-Dimensional Neural Network Potentials",
+      "abstract": "We present RuNNer 2.0, the \"Ruhr University Neural Network energy representation\", a highly optimized software suite for training and evaluating high-dimensional neural network potentials (HDNNPs) of the second, third, and fourth generation. Long-range electrostatics and charge equilibration (QEq) f",
+      "authors": [
+        "Alexander L. M. Knoll",
+        "Moritz R. Schäfer",
+        "K. Nikolas Lausch"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "We present RuNNer 2.0, the \"Ruhr University Neural Network energy representation\", a highly optimize...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.17877v1",
+      "title": "Task-Oriented Precoding for Edge Inference over Large-Scale MIMO Systems",
+      "abstract": "Future wireless networks are expected to support networked artificial intelligence (AI) services, where multiple devices transmit learned features to an edge server for distributed inference. This setting calls for task-oriented physical-layer optimization, where wireless transmission should preserv",
+      "authors": [
+        "Hongru Li",
+        "Zeyan Zhuang",
+        "Zixin Wang"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "Future wireless networks are expected to support networked artificial intelligence (AI) services, wh...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.17862v1",
+      "title": "Massive MIMO-OFDM ISAC for Sparse ISAR Imaging: Joint Power and Subcarrier Allocation",
+      "abstract": "This paper investigates a massive multiple-input multiple-output (mMIMO) orthogonal frequency-division multiplexing (OFDM) framework for integrated sensing and communication (ISAC) with inverse synthetic aperture radar (ISAR) imaging, supporting applications such as the Internet of Things (IoT). A d",
+      "authors": [
+        "Hamid Reza Hashempour",
+        "Yanjiao Li",
+        "Jie Zhang"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "This paper investigates a massive multiple-input multiple-output (mMIMO) orthogonal frequency-divisi...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.17758v1",
+      "title": "Towards Reliable Zero-Shot Crowd Forecasting: Evaluating Time Series Foundation Models for Special Event Pedestrian Forecasting",
+      "abstract": "Managing massive crowds during infrequent special events requires reliable real-time pedestrian-flow forecasting to ensure public safety and operational efficiency. However, supervised forecasting methods face limitations in these contexts due to scarce historical data, heterogeneous data distributi",
+      "authors": [
+        "Ziteng Li",
+        "Yanan Xin",
+        "Tina Comes"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "Managing massive crowds during infrequent special events requires reliable real-time pedestrian-flow...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18091v1",
+      "title": "SciForma: Structure-Faithful Generation of Scientific Diagrams",
+      "abstract": "Structural fidelity is essential to scientific methodology diagrams. To communicate research logic, these diagrams must faithfully render components, directional relations, and textual annotations. Since a single error, such as a reversed arrow or an unreadable equation, can invalidate the entire fi",
+      "authors": [
+        "Yuxuan Luo",
+        "Peng Zhang",
+        "Xinjie Zhang"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "Structural fidelity is essential to scientific methodology diagrams. To communicate research logic, ...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18084v1",
+      "title": "WorldCupArena: Fine-Grained Evaluation of Language Models and Deep-Research Agents on Football Forecasting",
+      "abstract": "Predicting a football match before kickoff requires more than knowing past results: a model must use changing information and make a clear prediction before the answer is available. We present WorldCupArena, a dynamic benchmark for language models and deep-research agents. The 2026 FIFA World Cup is",
+      "authors": [
+        "Zhaokai Wang",
+        "Tianlin Gui",
+        "Jiayuan Rao"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "Predicting a football match before kickoff requires more than knowing past results: a model must use...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18067v1",
+      "title": "QIRF Quantum-Inspired Non-Orthogonal Function-Space Compression for 3D Gaussian Splatting",
+      "abstract": "3D Gaussian Splatting (3DGS) achieves high-quality real-time rendering by representing a scene with a large collection of anisotropic Gaussian primitives. However, complex scenes often require millions of Gaussians, resulting in substantial storage and rendering costs. Existing compression methods m",
+      "authors": [
+        "Shizeng Jiang",
+        "Hao Zhang",
+        "Xuerui Ma"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "3D Gaussian Splatting (3DGS) achieves high-quality real-time rendering by representing a scene with ...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18053v1",
+      "title": "Fiber-Optic Communication and Torsion Sensing via a BB84-Inspired Polarization Scheme",
+      "abstract": "Polarization-encoded optical-fiber links provide a useful platform for investigating the coexistence of communication and sensing functions in a shared optical channel. In this work, a classical analog of the BB84 polarization-encoding scheme was implemented over a bend-insensitive fiber link to eva",
+      "authors": [
+        "Vinícius Piaia",
+        "Rodrigo Cosme",
+        "Paulo Robalinho"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "Polarization-encoded optical-fiber links provide a useful platform for investigating the coexistence...",
+      "llm_tags": []
+    },
+    {
+      "id": "2607.18052v1",
+      "title": "When Phase Doesn't Matter: Self-Coherent Over-the-Air Computation at Sub-THz",
+      "abstract": "Over-the-air computation (OAC) enables efficient function aggregation in wireless networks by exploiting the superposition property of the multiple-access channel. However, practical deployment of OAC is severely challenged by the reliance on accurate carrier synchronization and coherent reception, ",
+      "authors": [
+        "Sherif Ghozzy",
+        "Mohamed Seif",
+        "H. Vincent Poor"
+      ],
+      "published_date": "2026-07-20",
+      "topic": "5G移动通信",
+      "llm_score": 5.0,
+      "llm_summary": "Over-the-air computation (OAC) enables efficient function aggregation in wireless networks by exploi...",
+      "llm_tags": []
+    }
+  ]
+}

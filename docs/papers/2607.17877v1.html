@@ -2,31 +2,31 @@
 <html lang="zh">
 <head>
     <meta charset="utf-8">
-    <title>Task-Oriented Precoding for Edge Inference over Large-Scale MIMO Systems - AI Paper Pipeline</title>
+    <title>Task-Oriented Precoding for Edge Inference over Large-Scale MIMO Systems</title>
     <style>
-        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { color: #1a1a2e; }
-        .meta { color: #666; margin: 10px 0; }
-        .abstract { background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0; }
-        .analysis { background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .paper { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a2e; line-height: 1.4; }
+        .meta { color: #666; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+        .abstract { background: #f0f4ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .section { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
     </style>
 </head>
 <body>
-    <a href="../index.html">← 返回首页</a>
-    <h1>Task-Oriented Precoding for Edge Inference over Large-Scale MIMO Systems</h1>
-    <div class="meta">
-        ArXiv: 2607.17877v1 | 日期: 2026-07-20
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="paper">
+        <h1>Task-Oriented Precoding for Edge Inference over Large-Scale MIMO Systems</h1>
+        <div class="meta">
+            <strong>ArXiv:</strong> 2607.17877v1 | 
+            <strong>日期:</strong> 2026-07-20 | 
+            <strong>评分:</strong> 6.3/10
+        </div>
+        <div class="abstract">
+            <h3>摘要</h3>
+            <p>Future wireless networks are expected to support networked artificial intelligence (AI) services, where multiple devices transmit learned features to an edge server for distributed inference. This setting calls for task-oriented physical-layer optimization, where wireless transmission should preserve useful information for inference rather than only maximize the rate or reconstruct the transmitted signals. A key physical-layer control variable is the multiple-input multiple-output precoder, which determines how device features are shaped and combined over wireless channels. Existing task-oriented precoding methods typically adapt the precoder to instantaneous channel state information at the transmitter (CSIT). However, in multi-device MIMO systems, acquiring the aggregate channel, feeding back CSI or optimized precoders, and reoptimizing across coherence blocks introduce substantial overhead. This paper develops a random-matrix-theoretic framework based on statistical CSIT that designs a slow-timescale precoder from channel covariance statistics and training-set feature statistics, without requiring instantaneous CSIT. We adopt maximal coding rate reduction (MCR${^2}$) to measure the class separability of the received features, yielding a task-aware utility for MIMO precoder design. Since this utility still depends on random small-scale fading, we derive a deterministic approximation that converts it into a fixed-point objective depending only on long-term statistics and large-system dimension ratios via random matrix theory. A projected block-coordinate ascent and successive convex approximation algorithm is developed to optimize this deterministic objective under per-device power constraints. Experiments on ModelNet10 verify the approximation and show that the proposed statistical precoder improves task-aware mode allocation and inference performance over competitive benchmarks.</p>
+        </div>
+        <div class="section"><h2>📊 深度分析</h2><p><strong>问题:</strong> Future wireless networks are expected to support networked artificial intelligence (AI) services, where multiple devices transmit learned features to an edge server for distributed inference</p><p><strong>方法:</strong> Existing task-oriented precoding methods typically adapt the precoder to instantaneous channel state information at the transmitter (CSIT)</p><p><strong>优点:</strong> N/A</p><p><strong>改进建议:</strong> 可以与其他方法进行对比实验, 可以提供更详细的消融实验, 可以开源代码和数据集</p></div>
     </div>
-    <div class="abstract">
-        <h3>摘要</h3>
-        <p>Future wireless networks are expected to support networked artificial intelligence (AI) services, where multiple devices transmit learned features to an edge server for distributed inference. This setting calls for task-oriented physical-layer optimization, where wireless transmission should preserve useful information for inference rather than only maximize the rate or reconstruct the transmitted signals. A key physical-layer control variable is the multiple-input multiple-output precoder, which determines how device features are shaped and combined over wireless channels. Existing task-oriented precoding methods typically adapt the precoder to instantaneous channel state information at the transmitter (CSIT). However, in multi-device MIMO systems, acquiring the aggregate channel, feeding back CSI or optimized precoders, and reoptimizing across coherence blocks introduce substantial overhead. This paper develops a random-matrix-theoretic framework based on statistical CSIT that designs a slow-timescale precoder from channel covariance statistics and training-set feature statistics, without requiring instantaneous CSIT. We adopt maximal coding rate reduction (MCR${^2}$) to measure the class separability of the received features, yielding a task-aware utility for MIMO precoder design. Since this utility still depends on random small-scale fading, we derive a deterministic approximation that converts it into a fixed-point objective depending only on long-term statistics and large-system dimension ratios via random matrix theory. A projected block-coordinate ascent and successive convex approximation algorithm is developed to optimize this deterministic objective under per-device power constraints. Experiments on ModelNet10 verify the approximation and show that the proposed statistical precoder improves task-aware mode allocation and inference performance over competitive benchmarks.</p>
-    </div>
-
-    <div class="analysis">
-        <h3>深度分析</h3>
-<p><strong>问题:</strong> Future wireless networks are expected to support networked artificial intelligence (AI) services, where multiple devices transmit learned features to an edge server for distributed inference</p>
-<p><strong>方法:</strong> Existing task-oriented precoding methods typically adapt the precoder to instantaneous channel state information at the transmitter (CSIT)</p>
-<p><strong>优点:</strong> N/A</p>
-<p><strong>改进建议:</strong> 可以与其他方法进行对比实验, 可以提供更详细的消融实验, 可以开源代码和数据集</p>
-    </div>
-</body></html>
+</body>
+</html>

@@ -73,7 +73,7 @@
     <div class="header">
         <h1>📚 AI Paper Pipeline</h1>
         <p>AI驱动的论文研究自动化平台</p>
-        <div class="subtitle">📅 2026-07-21 | 🔍 20篇论文 | 📊 5个领域</div>
+        <div class="subtitle">📅 2026-07-21 | 🔍 20篇论文 | 📊 6个领域</div>
     </div>
     
     <div class="container">
@@ -82,10 +82,11 @@
                 <div class="stat-number">20</div>
                 <div class="stat-label">论文总数</div>
             </div>
-            <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">LLM推理优化</div></div>
+            <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">LLM推理优化</div></div>
 <div class="stat-card"><div class="stat-number">1</div><div class="stat-label">多模态大模型</div></div>
-<div class="stat-card"><div class="stat-number">10</div><div class="stat-label">AI_Agent</div></div>
+<div class="stat-card"><div class="stat-number">9</div><div class="stat-label">AI_Agent</div></div>
 <div class="stat-card"><div class="stat-number">2</div><div class="stat-label">芯片验证</div></div>
+<div class="stat-card"><div class="stat-number">2</div><div class="stat-label">5G移动通信</div></div>
 <div class="stat-card"><div class="stat-number">1</div><div class="stat-label">代码生成</div></div>
 
             <div class="stat-card">
@@ -98,7 +99,8 @@
             <div class="section-title">🔍 筛选领域</div>
             <div class="filter-bar">
                 <button class="topic-btn active" onclick="filterPapers('all')">全部</button>
-                <button class="topic-btn" onclick="filterPapers('AI_Agent')">AI_Agent</button>
+                <button class="topic-btn" onclick="filterPapers('5G移动通信')">5G移动通信</button>
+<button class="topic-btn" onclick="filterPapers('AI_Agent')">AI_Agent</button>
 <button class="topic-btn" onclick="filterPapers('LLM推理优化')">LLM推理优化</button>
 <button class="topic-btn" onclick="filterPapers('代码生成')">代码生成</button>
 <button class="topic-btn" onclick="filterPapers('多模态大模型')">多模态大模型</button>
@@ -171,6 +173,16 @@
                 <div class="paper-abstract">Long-context inference is central to modern large language model (LLM) applications such as retrieval-augmented generati...</div>
                 <div class="paper-tags"><span class="tag">LLM</span><span class="tag">推理优化</span></div>
             </div>
+            <div class="paper-card" data-topic="5G移动通信">
+                <div class="paper-header">
+                    <span class="paper-score" style="background:#FFC107">6.3</span>
+                    <span class="paper-topic">5G移动通信</span>
+                </div>
+                <div class="paper-title"><a href="papers/2607.18081v1.html">SelectInfer: Selective Neuron Loading and Computation for On-Device LLMs</a></div>
+                <div class="paper-date">📅 2026-07-20</div>
+                <div class="paper-abstract">Large Language Models (LLMs) have demonstrated remarkable capabilities across a range of Natural Language Processing (NL...</div>
+                <div class="paper-tags"><span class="tag">LLM</span><span class="tag">推理优化</span><span class="tag">量化</span></div>
+            </div>
             <div class="paper-card" data-topic="AI_Agent">
                 <div class="paper-header">
                     <span class="paper-score" style="background:#FFC107">6.3</span>
@@ -190,6 +202,16 @@
                 <div class="paper-date">📅 2026-07-20</div>
                 <div class="paper-abstract">Large language models (LLMs) and agentic AI systems have evolved from natural language tasks to using external tools to ...</div>
                 <div class="paper-tags"><span class="tag">LLM</span><span class="tag">Agent</span><span class="tag">推理优化</span></div>
+            </div>
+            <div class="paper-card" data-topic="5G移动通信">
+                <div class="paper-header">
+                    <span class="paper-score" style="background:#FFC107">6.3</span>
+                    <span class="paper-topic">5G移动通信</span>
+                </div>
+                <div class="paper-title"><a href="papers/2607.17877v1.html">Task-Oriented Precoding for Edge Inference over Large-Scale MIMO Systems</a></div>
+                <div class="paper-date">📅 2026-07-20</div>
+                <div class="paper-abstract">Future wireless networks are expected to support networked artificial intelligence (AI) services, where multiple devices...</div>
+                <div class="paper-tags"><span class="tag">推理优化</span><span class="tag">5G</span></div>
             </div>
             <div class="paper-card" data-topic="LLM推理优化">
                 <div class="paper-header">
@@ -220,16 +242,6 @@
                 <div class="paper-date">📅 2026-07-20</div>
                 <div class="paper-abstract">Long-horizon robotic tasks require diverse capabilities that no single policy can reliably provide. Heterogeneous polici...</div>
                 <div class="paper-tags"><span class="tag">Agent</span></div>
-            </div>
-            <div class="paper-card" data-topic="AI_Agent">
-                <div class="paper-header">
-                    <span class="paper-score" style="background:#FFC107">6.3</span>
-                    <span class="paper-topic">AI_Agent</span>
-                </div>
-                <div class="paper-title"><a href="papers/2607.18046v1.html">SEE: Structure-aware Exploring \& Exploiting for Long-horizon GUI Agent Trajecto</a></div>
-                <div class="paper-date">📅 2026-07-20</div>
-                <div class="paper-abstract">Graphical User Interface (GUI) agents powered by vision-language models hold promise for automating real-world mobile ta...</div>
-                <div class="paper-tags"><span class="tag">LLM</span><span class="tag">Agent</span><span class="tag">推理优化</span></div>
             </div>
             <div class="paper-card" data-topic="AI_Agent">
                 <div class="paper-header">
@@ -300,16 +312,6 @@
                 <div class="paper-date">📅 2026-07-20</div>
                 <div class="paper-abstract">Researchers need to answer ad-hoc questions about the contents of domain-specific archives but often lack the expertise ...</div>
                 <div class="paper-tags"><span class="tag">LLM</span><span class="tag">Agent</span><span class="tag">芯片验证</span></div>
-            </div>
-            <div class="paper-card" data-topic="LLM推理优化">
-                <div class="paper-header">
-                    <span class="paper-score" style="background:#FFC107">5.0</span>
-                    <span class="paper-topic">LLM推理优化</span>
-                </div>
-                <div class="paper-title"><a href="papers/2607.18187v1.html">EVOLVE: Efficient Learned Volume Compression with Variable-Rate Encoding on a Cr</a></div>
-                <div class="paper-date">📅 2026-07-20</div>
-                <div class="paper-abstract">Large-scale scientific simulations generate volumetric data at rates that far outpace advances in storage and network ba...</div>
-                <div class="paper-tags"><span class="tag">推理优化</span></div>
             </div>
             </div>
         </div>
