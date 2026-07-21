@@ -1,0 +1,43 @@
+{
+  "side_channel": {
+    "features": [
+      1000,
+      16
+    ],
+    "avg_goodput": 88437781.81818183
+  },
+  "dl_detector": {
+    "anomaly_rate": 0.008
+  },
+  "online": {
+    "baseline_mean": 2.4374912222893386,
+    "baseline_std": 0.8837052778037188,
+    "history_len": 100
+  },
+  "defense": [
+    {
+      "name": "\u901f\u7387\u9650\u5236",
+      "detection_rate": 0.99,
+      "blocked_rate": 0.9405,
+      "false_positive": 0.05,
+      "impact_on_legit": 0.05,
+      "effectiveness": 0.8957142857142857
+    },
+    {
+      "name": "\u5f02\u5e38\u68c0\u6d4b",
+      "detection_rate": 0.99,
+      "blocked_rate": 0.9108,
+      "false_positive": 0.08,
+      "impact_on_legit": 0.08,
+      "effectiveness": 0.8433333333333334
+    },
+    {
+      "name": "DL\u68c0\u6d4b\u5668",
+      "detection_rate": 0.99,
+      "blocked_rate": 0.9602999999999999,
+      "false_positive": 0.03,
+      "impact_on_legit": 0.03,
+      "effectiveness": 0.9323300970873786
+    }
+  ]
+}

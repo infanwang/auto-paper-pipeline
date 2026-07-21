@@ -1,0 +1,65 @@
+{
+  "paper_id": "2607.16190",
+  "title": "FVAttn: Adaptive Sparse Attention with Runtime Load Balancing",
+  "method": "Top-p routing + Runtime Load Balancing + Slack-Aware Augmentation",
+  "elapsed_seconds": 0.34548497200012207,
+  "configuration": {
+    "n_heads": 16,
+    "n_ranks": 4,
+    "seq_len": 256,
+    "block_size": 16,
+    "top_p": 0.9,
+    "top_k_min": 4
+  },
+  "load_balancing": {
+    "initial_imbalance": 0.999999999999993,
+    "balanced_imbalance": 0.999999999999993,
+    "imbalance_reduction": 1.0
+  },
+  "attention_performance": {
+    "time_dense_attention": 0.00034353733062744143,
+    "time_sparse_all_blocks": 0.0009872198104858398,
+    "time_adaptive_sparse": 0.0007684707641601562,
+    "speedup_vs_dense": 0.4470402084884587,
+    "speedup_vs_uniform_sparse": 1.2846550012410027
+  },
+  "sparsity": {
+    "mean_sparsity": 0.125,
+    "active_block_ratio": 0.875,
+    "per_head_sparsity": {
+      "0": 0.125,
+      "1": 0.125,
+      "2": 0.125,
+      "3": 0.125,
+      "4": 0.125,
+      "5": 0.125,
+      "6": 0.125,
+      "7": 0.125,
+      "8": 0.125,
+      "9": 0.125,
+      "10": 0.125,
+      "11": 0.125,
+      "12": 0.125,
+      "13": 0.125,
+      "14": 0.125,
+      "15": 0.125
+    }
+  },
+  "kv_cache_comparison": {
+    "full_cache": {
+      "size_bytes": 262144,
+      "tokens": 256
+    },
+    "sparse_50pct": {
+      "size_bytes": 131072,
+      "tokens": 128,
+      "compression": 2.0
+    },
+    "block_sparse_50pct": {
+      "size_bytes": 131072,
+      "tokens": 128,
+      "compression": 2.0
+    }
+  },
+  "total_elapsed": 0.35727882385253906
+}

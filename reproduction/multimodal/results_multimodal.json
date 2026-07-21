@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "description": "Reproduction results for 5 arXiv 2026 papers",
+    "generated_at": "2026-07-20",
+    "note": "Papers are NOT multimodal LLM papers; they span geophysics, cosmology, PDEs, sensor fusion, and robotics"
+  },
+  "papers": [
+    {
+      "paper_id": "2607.16157",
+      "title": "Broadband Multi-Aperture Passive Scholte-Wave Imaging Using Seabed Distributed Acoustic Sensing",
+      "authors": "Anna Titova, Andrey Bakulin",
+      "domain": "Geophysics (physics.geo-ph)",
+      "method": "f-k stacking + multi-aperture Scholte-wave dispersion inversion",
+      "runnable": true,
+      "script": "paper1_scholte_wave.py",
+      "execution_time_s": 24.61,
+      "metrics": {
+        "n_channels": 48,
+        "cable_length_km": 51.0,
+        "freq_range_hz": [0.3, 4.5],
+        "dispersion_coverage_pct": 96.0,
+        "n_apertures": 5,
+        "inversion_depth_km": 2.0,
+        "vs_range_ms": [78.0, 491.0],
+        "fk_peak_sharpness": 41.46
+      }
+    },
+    {
+      "paper_id": "2607.16152",
+      "title": "Large deviations for halos and voids: beyond perturbative non-gaussianities",
+      "authors": "Martin Teuscher, Ruth Durrer, Julien Grain, Killian Martineau, Aurélien Barrau",
+      "domain": "Cosmology (astro-ph.CO)",
+      "method": "Large deviation principle + excursion-set formalism with non-Gaussian tails",
+      "runnable": true,
+      "script": "paper2_large_deviations.py",
+      "execution_time_s": 0.73,
+      "metrics": {
+        "mass_range_log_Msun": [10, 16],
+        "n_mass_bins": 100,
+        "gaussian_halo_peak": 0.082084,
+        "nongaussian_halo_peak": 0.082181,
+        "high_mass_ratio_nongauss_gauss": 1.0,
+        "void_gaussian_peak": 0.000359,
+        "void_nongaussian_peak": 0.000360,
+        "void_ratio_nongauss_gauss": 1.0,
+        "nu_tail_dof": 3.0,
+        "delta_crit": 1.686
+      }
+    },
+    {
+      "paper_id": "2607.16132",
+      "title": "Fluctuation dynamics in randomly advected Navier-Stokes equations below critical scaling",
+      "authors": "Arnaud Debussche, Martina Hofmanová",
+      "domain": "Analysis of PDEs (math.AP)",
+      "method": "Ensemble averaging + Green-Kubo enhanced diffusion + fluctuation Gaussianity analysis",
+      "runnable": true,
+      "script": "paper3_navier_stokes.py",
+      "execution_time_s": 2.86,
+      "metrics": {
+        "grid_size": 64,
+        "epsilon": 0.01,
+        "delta": 0.5,
+        "regime_ratio": 0.02,
+        "n_realizations": 20,
+        "ensemble_enstrophy_steady": 603.895279,
+        "ensemble_fluctuation_std": 5753.737337,
+        "fluctuation_skewness": -1.9664,
+        "fluctuation_excess_kurtosis": 3.1814,
+        "normality_p_value": 0.0,
+        "enhanced_diffusion": 386.1901,
+        "molecular_diffusion": 0.01,
+        "diffusion_enhancement_ratio": 38619.01,
+        "decorrelation_time": 2500.0
+      }
+    },
+    {
+      "paper_id": "2607.16154",
+      "title": "CLIFE: Camera-LiDAR Fusion Framework for Edge-Deployable Roadside VRU Perception",
+      "authors": "Tam Bang, Hoang H. Nguyen, Lei Cheng, Lihao Guo, Siyang Cao, Hussam Abubakr, Tianya Zhang, Austin Harris, Mina Sartipi",
+      "domain": "Computer Vision (cs.CV)",
+      "method": "Targetless calibration + late-fusion O(N log N) multi-object tracking",
+      "runnable": true,
+      "script": "paper4_clife.py",
+      "execution_time_s": 0.6,
+      "metrics": {
+        "n_objects": 30,
+        "n_frames": 100,
+        "calibration_error_initial": 0.4813,
+        "calibration_error_refined": 0.16780936,
+        "avg_active_tracks": 30.0,
+        "avg_lidar_detections": 29.9,
+        "avg_camera_detections": 28.1,
+        "simulated_fps": 53.2,
+        "latency_ms": 18.8,
+        "association_complexity": "O(N log N)",
+        "fusion_advantage_ratio": 1.0,
+        "total_tracks_created": 30
+      }
+    },
+    {
+      "paper_id": "2607.16146",
+      "title": "VTLoc: Learning-based Tactile Contact Localization in Visual Point Clouds",
+      "authors": "Zhiyuan Wu, Zhuo Chen, Shan Luo",
+      "domain": "Robotics (cs.RO)",
+      "method": "Geometric multi-modal alignment + iterative localizing updater",
+      "runnable": true,
+      "script": "paper5_vtloc.py",
+      "execution_time_s": 1.24,
+      "metrics": {
+        "n_test_samples": 100,
+        "n_object_points": 2048,
+        "n_taxels": 16,
+        "n_iterations": 5,
+        "mean_contact_error": 0.051601,
+        "median_contact_error": 0.05179,
+        "std_contact_error": 0.013435,
+        "error_by_shape": {
+          "box": {"mean": 0.059293, "median": 0.058808},
+          "sphere": {"mean": 0.051877, "median": 0.053760},
+          "cylinder": {"mean": 0.043399, "median": 0.044194}
+        },
+        "feature_dims": {"visual": 128, "tactile": 64, "fused": 128}
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Data (large files)
+data/*.json
+pdfs/
+*.pdf
+
+# Reports (generated)
+reports/daily_*.md
+reports/*/reproduction/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Config (contains credentials)
+config.yaml
+cookies.json
+.env

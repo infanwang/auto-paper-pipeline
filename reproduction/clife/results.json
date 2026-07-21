@@ -1,0 +1,5 @@
+{
+  "fusion": "transformer",
+  "pc": "4d",
+  "quant": "int8"
+}

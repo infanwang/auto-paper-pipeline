@@ -1,0 +1,137 @@
+{
+  "platform_alpha": {
+    "total_edges": 626,
+    "cross_layer_edges": 389,
+    "static_coverage_fraction": 0.21884984025559107,
+    "ada_st_iterations": 15,
+    "final_coverage": 0.950479233226837,
+    "coverage_history": [
+      {
+        "iteration": "static_campaign",
+        "edges_covered": 137,
+        "total_edges": 626,
+        "coverage_fraction": 0.21884984025559107
+      },
+      {
+        "iteration": "iteration_0",
+        "edges_covered": 167,
+        "total_edges": 626,
+        "coverage_fraction": 0.26677316293929715
+      },
+      {
+        "iteration": "iteration_1",
+        "edges_covered": 197,
+        "total_edges": 626,
+        "coverage_fraction": 0.3146964856230032
+      },
+      {
+        "iteration": "iteration_2",
+        "edges_covered": 227,
+        "total_edges": 626,
+        "coverage_fraction": 0.36261980830670926
+      },
+      {
+        "iteration": "iteration_3",
+        "edges_covered": 257,
+        "total_edges": 626,
+        "coverage_fraction": 0.41054313099041534
+      },
+      {
+        "iteration": "iteration_4",
+        "edges_covered": 287,
+        "total_edges": 626,
+        "coverage_fraction": 0.4584664536741214
+      },
+      {
+        "iteration": "iteration_5",
+        "edges_covered": 317,
+        "total_edges": 626,
+        "coverage_fraction": 0.5063897763578274
+      },
+      {
+        "iteration": "iteration_6",
+        "edges_covered": 347,
+        "total_edges": 626,
+        "coverage_fraction": 0.5543130990415336
+      },
+      {
+        "iteration": "iteration_7",
+        "edges_covered": 378,
+        "total_edges": 626,
+        "coverage_fraction": 0.6038338658146964
+      },
+      {
+        "iteration": "iteration_8",
+        "edges_covered": 409,
+        "total_edges": 626,
+        "coverage_fraction": 0.6533546325878594
+      },
+      {
+        "iteration": "iteration_9",
+        "edges_covered": 440,
+        "total_edges": 626,
+        "coverage_fraction": 0.7028753993610224
+      },
+      {
+        "iteration": "iteration_10",
+        "edges_covered": 471,
+        "total_edges": 626,
+        "coverage_fraction": 0.7523961661341853
+      },
+      {
+        "iteration": "iteration_11",
+        "edges_covered": 502,
+        "total_edges": 626,
+        "coverage_fraction": 0.8019169329073482
+      },
+      {
+        "iteration": "iteration_12",
+        "edges_covered": 533,
+        "total_edges": 626,
+        "coverage_fraction": 0.8514376996805112
+      },
+      {
+        "iteration": "iteration_13",
+        "edges_covered": 564,
+        "total_edges": 626,
+        "coverage_fraction": 0.9009584664536742
+      },
+      {
+        "iteration": "iteration_14",
+        "edges_covered": 595,
+        "total_edges": 626,
+        "coverage_fraction": 0.950479233226837
+      }
+    ]
+  },
+  "platform_beta": {
+    "total_edges": 641,
+    "ada_st_iterations": 15
+  },
+  "platform_gamma": {
+    "total_edges": 619,
+    "ada_st_iterations": 15
+  },
+  "flam_transfer": {
+    "alpha_to_beta": {
+      "alpha_edges": 626,
+      "beta_edges": 641,
+      "common_edges": 167,
+      "transfer_fidelity": 0.15181818181818182
+    },
+    "beta_to_gamma": {
+      "alpha_edges": 641,
+      "beta_edges": 619,
+      "common_edges": 150,
+      "transfer_fidelity": 0.13513513513513514
+    }
+  },
+  "paper_comparison": {
+    "static_coverage_paper": "20-25%",
+    "static_coverage_ours": "21.9%",
+    "alpha_iterations_paper": "10",
+    "alpha_iterations_ours": 15,
+    "flam_alpha_beta_paper": "100%",
+    "flam_alpha_beta_ours": "15.2%"
+  }
+}

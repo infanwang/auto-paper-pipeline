@@ -1,0 +1,81 @@
+{
+  "paper_id": "2607.16192",
+  "paper_title": "MotionForesight: Re-purposing Video Models for Future 3D Scene-Flow Prediction",
+  "experiments": {
+    "lift": {
+      "ADE_cm": 3.8083126732195614,
+      "FDE_cm": 5.27683124918559,
+      "PWT_5cm_pct": 53.07259511134541,
+      "TVO": 0.5252746606514199,
+      "VVO": 0.11794873136409245,
+      "MoveF1": 1.0,
+      "MoveIoU": 0.6263402332182124
+    },
+    "translate": {
+      "ADE_cm": 3.6155248763656505,
+      "FDE_cm": 5.03701061746017,
+      "PWT_5cm_pct": 57.212533101998325,
+      "TVO": 0.3643780643067291,
+      "VVO": 0.0635358416856728,
+      "MoveF1": 1.0,
+      "MoveIoU": 0.4717011491024384
+    },
+    "rotate": {
+      "ADE_cm": 3.548124461124976,
+      "FDE_cm": 4.965631968226793,
+      "PWT_5cm_pct": 57.39099818055343,
+      "TVO": 0.23994505088488516,
+      "VVO": 0.040942640217289564,
+      "MoveF1": 1.0,
+      "MoveIoU": 0.3326014433329715
+    },
+    "slide": {
+      "ADE_cm": 3.8853830758980616,
+      "FDE_cm": 5.374622366422384,
+      "PWT_5cm_pct": 52.8234807193108,
+      "TVO": 0.44480348121328667,
+      "VVO": 0.09111351222413427,
+      "MoveF1": 1.0,
+      "MoveIoU": 0.5492746745323577
+    }
+  },
+  "paper_results": {
+    "MotionForesight_SSv2": {
+      "ADE": 4.47,
+      "FDE": 6.23,
+      "PWT": 76
+    },
+    "MotionForesight_OOD": {
+      "ADE": 9.31,
+      "FDE": 14.88,
+      "PWT": 54
+    },
+    "MolmoMotion_no_lang_SSv2": {
+      "ADE": 5.66,
+      "FDE": 8.9,
+      "PWT": 70
+    },
+    "MolmoMotion_with_lang_SSv2": {
+      "ADE": 5.93,
+      "FDE": 9.38,
+      "PWT": 68
+    },
+    "VideoGen_tracks_SSv2": {
+      "ADE": 11.2,
+      "FDE": 12.58,
+      "PWT": 40
+    }
+  },
+  "analysis": {
+    "metrics_implemented": [
+      "ADE",
+      "FDE",
+      "PWT@5cm",
+      "TVO",
+      "VVO",
+      "MoveF1",
+      "MoveIoU"
+    ],
+    "note": "Full model reproduction requires TrackCraft3R, Wan2.1 DiT, SSv2 (40K videos), ~12.19M trainable params"
+  }
+}

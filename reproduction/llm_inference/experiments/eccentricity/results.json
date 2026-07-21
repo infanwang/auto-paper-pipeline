@@ -1,0 +1,90 @@
+{
+  "paper_id": "2607.16136",
+  "paper_title": "Eccentricity as a Magnifying Glass: Precision Population Inference Enabled by Eccentric NSBH Mergers",
+  "experiments": {
+    "negative_chi_eff": {
+      "fraction_circular": 0.2063305978898007,
+      "fraction_eccentric": 0.4501758499413834,
+      "paper_fraction_circular": 0.22,
+      "paper_fraction_eccentric": 0.43,
+      "detections_per_clear_event": 2.2213541666666665
+    },
+    "ns_mass_bayes_factors": {
+      "5": {
+        "median_log10_bf": -3.650568863390876,
+        "std_log10_bf": 0.6012050421482011
+      },
+      "10": {
+        "median_log10_bf": -6.635835453110782,
+        "std_log10_bf": 0.5883690121487046
+      },
+      "15": {
+        "median_log10_bf": -8.885140485260024,
+        "std_log10_bf": 0.5859764034310959
+      },
+      "20": {
+        "median_log10_bf": -10.840170180200232,
+        "std_log10_bf": 0.916878503072415
+      },
+      "30": {
+        "median_log10_bf": -14.758818707654887,
+        "std_log10_bf": 0.7596917400642029
+      }
+    },
+    "bh_metallicity": {
+      "5": {
+        "log10_bf_Z2_vs_Z1_median": -35.60556361452884,
+        "log10_bf_Z2_vs_Z3_median": -91.62758074159424
+      },
+      "10": {
+        "log10_bf_Z2_vs_Z1_median": -53.4578168576743,
+        "log10_bf_Z2_vs_Z3_median": -165.65908583156425
+      },
+      "15": {
+        "log10_bf_Z2_vs_Z1_median": -53.32676473430473,
+        "log10_bf_Z2_vs_Z3_median": -239.48454428181168
+      },
+      "20": {
+        "log10_bf_Z2_vs_Z1_median": -71.40494725507381,
+        "log10_bf_Z2_vs_Z3_median": -313.6855317289647
+      },
+      "30": {
+        "log10_bf_Z2_vs_Z1_median": -134.27722457066469,
+        "log10_bf_Z2_vs_Z3_median": -498.6523011121967
+      }
+    },
+    "eccentricity_recovery": {
+      "5": {
+        "median_a": -1.7808297884609798,
+        "std_a": 0.41590782647212454,
+        "true_a": -0.631578947368421
+      },
+      "10": {
+        "median_a": -1.803310533930393,
+        "std_a": 0.35106220894087,
+        "true_a": -0.631578947368421
+      },
+      "15": {
+        "median_a": -1.835236291697306,
+        "std_a": 0.11070959867765061,
+        "true_a": -0.631578947368421
+      },
+      "20": {
+        "median_a": -1.8901256382103995,
+        "std_a": 0.12291324979807342,
+        "true_a": -0.631578947368421
+      },
+      "30": {
+        "median_a": -1.8290686394004179,
+        "std_a": 0.07781443530829923,
+        "true_a": -0.631578947368421
+      }
+    }
+  },
+  "paper_key_results": {
+    "neg_chi_eff_circular": 0.22,
+    "neg_chi_eff_eccentric": 0.43,
+    "ns_mass_bf_ratio_at_N30": 7.5,
+    "bh_metallicity_bf_ratio_at_N30": 100000000000000.0
+  }
+}

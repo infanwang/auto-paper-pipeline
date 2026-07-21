@@ -1,0 +1,89 @@
+{
+  "paper_id": "2607.16074",
+  "paper_name": "JoyNexus",
+  "gpu_time_reduction_pct": 37.00517521805832,
+  "makespan_reduction_pct": 5.14791803527147,
+  "max_batching_speedup": 2.173913043478261,
+  "scalability": [
+    {
+      "n_tenants": 2,
+      "isolated_time": 103.00817134122155,
+      "joyntime": 121.21140731889493,
+      "reduction": -17.671642686844645
+    },
+    {
+      "n_tenants": 4,
+      "isolated_time": 145.80218676950187,
+      "joyntime": 149.58617651750495,
+      "reduction": -2.5952901200207545
+    },
+    {
+      "n_tenants": 6,
+      "isolated_time": 233.13103158759353,
+      "joyntime": 192.35709053882056,
+      "reduction": 17.489709873073302
+    },
+    {
+      "n_tenants": 8,
+      "isolated_time": 359.4633791501511,
+      "joyntime": 235.18201954736122,
+      "reduction": 34.574136563401204
+    },
+    {
+      "n_tenants": 12,
+      "isolated_time": 532.2566223676896,
+      "joyntime": 432.841816709251,
+      "reduction": 18.677983792141827
+    },
+    {
+      "n_tenants": 16,
+      "isolated_time": 685.3826565774824,
+      "joyntime": 470.2323870229674,
+      "reduction": 31.391262601958225
+    }
+  ],
+  "group_batching": [
+    {
+      "group_size": 1,
+      "no_batch_time": 10.0,
+      "batched_time": 8.8,
+      "speedup": 1.1363636363636362,
+      "efficiency": 0.8800000000000001
+    },
+    {
+      "group_size": 2,
+      "no_batch_time": 10.0,
+      "batched_time": 6.4,
+      "speedup": 1.5625,
+      "efficiency": 1.28
+    },
+    {
+      "group_size": 3,
+      "no_batch_time": 10.0,
+      "batched_time": 5.5944,
+      "speedup": 1.7875017875017873,
+      "efficiency": 1.6783200000000003
+    },
+    {
+      "group_size": 4,
+      "no_batch_time": 10.0,
+      "batched_time": 5.2,
+      "speedup": 1.923076923076923,
+      "efficiency": 2.08
+    },
+    {
+      "group_size": 6,
+      "no_batch_time": 10.0,
+      "batched_time": 4.7808,
+      "speedup": 2.0917001338688084,
+      "efficiency": 2.8684800000000004
+    },
+    {
+      "group_size": 8,
+      "no_batch_time": 10.0,
+      "batched_time": 4.6,
+      "speedup": 2.173913043478261,
+      "efficiency": 3.6799999999999993
+    }
+  ]
+}

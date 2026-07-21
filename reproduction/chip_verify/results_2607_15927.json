@@ -1,0 +1,278 @@
+{
+  "paper_id": "2607.15927",
+  "title": "Operation and performance of ProtoDUNE Dual Phase liquid argon time projection chamber",
+  "method": "Dual-phase LArTPC with vertical drift, gas-phase amplification, multi-wire readout",
+  "experiments": {
+    "electron_drift": {
+      "configs": [
+        {
+          "length_cm": 100,
+          "field_V_cm": 500,
+          "temp_K": 89
+        },
+        {
+          "length_cm": 300,
+          "field_V_cm": 500,
+          "temp_K": 89
+        },
+        {
+          "length_cm": 600,
+          "field_V_cm": 500,
+          "temp_K": 89
+        },
+        {
+          "length_cm": 600,
+          "field_V_cm": 250,
+          "temp_K": 89
+        },
+        {
+          "length_cm": 600,
+          "field_V_cm": 500,
+          "temp_K": 95
+        }
+      ],
+      "results": [
+        {
+          "n_electrons_initial": 10000,
+          "n_electrons_survived": 9924,
+          "survival_fraction": 0.9924,
+          "drift_time_us": 80.79,
+          "diffusion_transverse_cm": 0.0554,
+          "diffusion_longitudinal_cm": 0.0303
+        },
+        {
+          "n_electrons_initial": 10000,
+          "n_electrons_survived": 9758,
+          "survival_fraction": 0.9758,
+          "drift_time_us": 242.38,
+          "diffusion_transverse_cm": 0.0959,
+          "diffusion_longitudinal_cm": 0.0525
+        },
+        {
+          "n_electrons_initial": 10000,
+          "n_electrons_survived": 9560,
+          "survival_fraction": 0.956,
+          "drift_time_us": 484.76,
+          "diffusion_transverse_cm": 0.1357,
+          "diffusion_longitudinal_cm": 0.0743
+        },
+        {
+          "n_electrons_initial": 10000,
+          "n_electrons_survived": 9069,
+          "survival_fraction": 0.9069,
+          "drift_time_us": 969.51,
+          "diffusion_transverse_cm": 0.1919,
+          "diffusion_longitudinal_cm": 0.1051
+        },
+        {
+          "n_electrons_initial": 10000,
+          "n_electrons_survived": 9522,
+          "survival_fraction": 0.9522,
+          "drift_time_us": 534.59,
+          "diffusion_transverse_cm": 0.1402,
+          "diffusion_longitudinal_cm": 0.0768
+        }
+      ]
+    },
+    "townsend_avalanche": {
+      "configs": [
+        {
+          "gap_mm": 3.0,
+          "field_ratio_pct": 50
+        },
+        {
+          "gap_mm": 3.0,
+          "field_ratio_pct": 100
+        },
+        {
+          "gap_mm": 5.0,
+          "field_ratio_pct": 50
+        },
+        {
+          "gap_mm": 5.0,
+          "field_ratio_pct": 100
+        }
+      ],
+      "results": [
+        {
+          "n_electrons_in": 1000,
+          "total_amplified": 1267,
+          "mean_gain": 1.27,
+          "gain_resolution": 0.5841,
+          "gas_gap_mm": 3.0
+        },
+        {
+          "n_electrons_in": 1000,
+          "total_amplified": 1268,
+          "mean_gain": 1.27,
+          "gain_resolution": 0.5881,
+          "gas_gap_mm": 3.0
+        },
+        {
+          "n_electrons_in": 1000,
+          "total_amplified": 1208,
+          "mean_gain": 1.21,
+          "gain_resolution": 0.5408,
+          "gas_gap_mm": 5.0
+        },
+        {
+          "n_electrons_in": 1000,
+          "total_amplified": 1276,
+          "mean_gain": 1.28,
+          "gain_resolution": 0.5607,
+          "gas_gap_mm": 5.0
+        }
+      ]
+    },
+    "charge_readout": {
+      "configs": [
+        {
+          "n_avalanches": 10,
+          "n_wires": 256,
+          "wire_pitch_cm": 0.475,
+          "sample_rate_MHz": 2.0
+        },
+        {
+          "n_avalanches": 100,
+          "n_wires": 256,
+          "wire_pitch_cm": 0.475,
+          "sample_rate_MHz": 2.0
+        },
+        {
+          "n_avalanches": 1000,
+          "n_wires": 256,
+          "wire_pitch_cm": 0.475,
+          "sample_rate_MHz": 2.0
+        },
+        {
+          "n_avalanches": 1000,
+          "n_wires": 512,
+          "wire_pitch_cm": 0.475,
+          "sample_rate_MHz": 2.0
+        }
+      ],
+      "results": [
+        {
+          "n_avalanches": 10,
+          "n_wires": 256,
+          "peak_charge ADC": 3789.3,
+          "mean_charge ADC": 78.5,
+          "snr_db": 31.8
+        },
+        {
+          "n_avalanches": 100,
+          "n_wires": 256,
+          "peak_charge ADC": 4638.7,
+          "mean_charge ADC": 109.2,
+          "snr_db": 43.3
+        },
+        {
+          "n_avalanches": 1000,
+          "n_wires": 256,
+          "peak_charge ADC": 9901.4,
+          "mean_charge ADC": 893.5,
+          "snr_db": 31.4
+        },
+        {
+          "n_avalanches": 1000,
+          "n_wires": 512,
+          "peak_charge ADC": 7386.2,
+          "mean_charge ADC": 412.2,
+          "snr_db": 30.7
+        }
+      ]
+    },
+    "detection_efficiency": {
+      "configs": [
+        {
+          "n_events": 100,
+          "drift_length_cm": 100,
+          "field_V_cm": 500
+        },
+        {
+          "n_events": 100,
+          "drift_length_cm": 300,
+          "field_V_cm": 500
+        },
+        {
+          "n_events": 100,
+          "drift_length_cm": 600,
+          "field_V_cm": 500
+        }
+      ],
+      "results": [
+        {
+          "n_events": 100,
+          "detected": 100,
+          "efficiency": 1.0,
+          "drift_length_cm": 100,
+          "field_V_cm": 500
+        },
+        {
+          "n_events": 100,
+          "detected": 100,
+          "efficiency": 1.0,
+          "drift_length_cm": 300,
+          "field_V_cm": 500
+        },
+        {
+          "n_events": 100,
+          "detected": 100,
+          "efficiency": 1.0,
+          "drift_length_cm": 600,
+          "field_V_cm": 500
+        }
+      ]
+    },
+    "cathode_performance": {
+      "configs": [
+        {
+          "voltage_kv": -300,
+          "drift_length_m": 6.0
+        },
+        {
+          "voltage_kv": -300,
+          "drift_length_m": 3.0
+        },
+        {
+          "voltage_kv": -180,
+          "drift_length_m": 6.0
+        }
+      ],
+      "results": [
+        {
+          "voltage_kv": -300,
+          "drift_length_m": 6.0,
+          "nominal_field_V_cm": 500.0,
+          "actual_field_V_cm": 496.9,
+          "field_uniformity": 0.9938,
+          "dark_current_nA": 0.53
+        },
+        {
+          "voltage_kv": -300,
+          "drift_length_m": 3.0,
+          "nominal_field_V_cm": 1000.0,
+          "actual_field_V_cm": 998.7,
+          "field_uniformity": 0.9987,
+          "dark_current_nA": 2.05
+        },
+        {
+          "voltage_kv": -180,
+          "drift_length_m": 6.0,
+          "nominal_field_V_cm": 300.0,
+          "actual_field_V_cm": 295.7,
+          "field_uniformity": 0.9856,
+          "dark_current_nA": 0.89
+        }
+      ]
+    },
+    "long_term_stability": {
+      "total_hours": 1000,
+      "sampling_interval_hours": 10,
+      "initial_efficiency": 1.0,
+      "final_efficiency": 1.0,
+      "initial_dark_current_nA": 1.97,
+      "final_dark_current_nA": 2.07
+    }
+  }
+}

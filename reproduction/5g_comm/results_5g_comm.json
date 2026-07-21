@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "task": "5G Mobile Communication Paper Reproduction",
+    "papers": 5,
+    "date": "2026-07-20",
+    "framework": "numpy/scipy (self-contained Python)"
+  },
+  "papers": [
+    {
+      "paper_id": "2607.16102",
+      "title": "DoSQ: Cross-Layer DoS Quality Attack by Exploiting Side Channels in 5G NR",
+      "authors": ["Mahmudul Hassan Ashik", "Moinul Hossain"],
+      "venue": "IEEE CNS 2026",
+      "method": "DCI-based side-channel goodput estimation with PRB interference injection",
+      "reproduction_focus": "Channel modeling, signal processing, resource allocation",
+      "script": "reproduce_dosq_5g_side_channel.py",
+      "runnable": true,
+      "metrics": {
+        "channel_mean_sinr_dB": 281.14,
+        "max_goodput_degradation_pct": 35.85,
+        "precision_at_top1_pct": 1.0,
+        "ssb_hopping_countermeasure": "3-5x resync cost increase"
+      }
+    },
+    {
+      "paper_id": "2607.16074",
+      "title": "JoyNexus: Service-Oriented Multi-Tenant Post-Training for VLA Models",
+      "authors": ["Haoran Sun", "Wentao Zhang", "et al."],
+      "method": "Group batching multi-tenant scheduling with shared resource pool",
+      "reproduction_focus": "Resource allocation, scheduling, multi-tenant isolation",
+      "script": "reproduce_joynexus_multi_tenant.py",
+      "runnable": true,
+      "metrics": {
+        "slice_utilization_baseline": 0.903,
+        "slice_utilization_group_batch": 0.868,
+        "jains_fairness_index": 0.869,
+        "gpu_completion_rate_shared": 0.98
+      }
+    },
+    {
+      "paper_id": "2607.16053",
+      "title": "Deep and Probabilistic Models for Gene Regulatory Network Inference",
+      "authors": ["Claudia Skok Gibbs"],
+      "method": "Variational inference channel estimation + sequence-prior prediction",
+      "reproduction_focus": "Channel modeling, signal processing, uncertainty quantification",
+      "script": "reproduce_grn_probabilistic_channel.py",
+      "runnable": true,
+      "metrics": {
+        "channel_nmse_dB": 0.97,
+        "elbo_final": -79.74,
+        "max_sum_rate_bps_hz": 50.51,
+        "pilot_gain_mean": 6.76e-07
+      }
+    },
+    {
+      "paper_id": "2607.16027",
+      "title": "Constrained Hebbian Learning for Representational Allocation",
+      "authors": ["Patrick Inoue", "Florian Röhrbein", "Andreas Knoblauch"],
+      "method": "Competitive Hebbian learning with sparsity constraints for PRB allocation",
+      "reproduction_focus": "Resource allocation, sparse coding, energy efficiency",
+      "script": "reproduce_hebbian_resource_allocation.py",
+      "runnable": true,
+      "metrics": {
+        "hebbian_fairness": 0.846,
+        "hebbian_utilization": 0.567,
+        "hebbian_energy_efficiency_Mbps_per_mW": 50000.0,
+        "hebbian_training_loss_final": 7.53e-05,
+        "hebbian_redundancy_std": 0.94,
+        "backprop_redundancy_std": 3.33
+      }
+    },
+    {
+      "paper_id": "2607.16012",
+      "title": "DPNeXt: Lightweight Multi-Scale Feature Fusion for Efficient ViT-Based Multi-Task Dense Prediction",
+      "authors": ["Jehun Kang", "Jungha Wang", "et al."],
+      "method": "Depthwise separable multi-scale fusion for beamforming and channel estimation",
+      "reproduction_focus": "Signal processing, beamforming, multi-resolution analysis",
+      "script": "reproduce_dpnext_multiscale_fusion.py",
+      "runnable": true,
+      "metrics": {
+        "num_scales": 4,
+        "fused_dim": 256,
+        "mean_sinr_dB": -1.83,
+        "sum_rate_bps_hz": 2.85,
+        "param_reduction_pct": 99.6,
+        "boundary_energy_ratio": 1.13
+      }
+    }
+  ]
+}

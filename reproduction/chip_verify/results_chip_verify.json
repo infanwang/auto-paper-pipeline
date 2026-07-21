@@ -1,0 +1,103 @@
+{
+  "metadata": {
+    "pipeline": "chip_verify",
+    "date": "2026-07-20",
+    "total_papers": 5,
+    "all_runnable": true
+  },
+  "papers": [
+    {
+      "paper_id": "2607.16094",
+      "title": "How Do VLMs Fail? Vision-Operation Misalignment in Compositional VQA",
+      "authors": "Navya Gupta, Bingjie Xu, Avinash Anand, Timothy Liu, Zhengchen Zhang",
+      "venue": "ACM Multimedia 2026",
+      "method": "Operation-centric mechanistic framework with causal interventions across transformer layers",
+      "reproduction_focus": "Failure mode classification (grounding/reasoning/attribute_extraction/language_prior), pathway dissociation via causal intervention (FFN vs attention ablation)",
+      "runnable": true,
+      "metrics": {
+        "classification_accuracy": 0.79,
+        "failure_distribution": {"grounding": 73, "reasoning": 13, "attribute_extraction": 0, "language_prior": 14},
+        "peak_error_layers": {"grounding": 0, "reasoning": 3, "language_prior": 0}
+      },
+      "file_path": "chip_verify/rep_2607_16094_vlm_failure.py",
+      "results_file": "chip_verify/results_2607_16094.json"
+    },
+    {
+      "paper_id": "2607.16044",
+      "title": "IMEX Schemes for Compressible Flow using Hybridizable Discontinuous Galerkin Methods",
+      "authors": "Jan Ellmenreich, Edmond K. Shehadi, Philip L. Lederer",
+      "venue": "arXiv 2026",
+      "method": "Geometry-split IMEX framework: implicit HDG for stiff regions + explicit DG for non-stiff regions, ARK temporal coupling",
+      "reproduction_focus": "1D compressible Euler equations, grid convergence, explicit vs IMEX performance, CFL stability limits",
+      "runnable": true,
+      "metrics": {
+        "explicit_time_s": 0.22,
+        "imex_time_s": 0.35,
+        "imex_vs_explicit_speedup": 0.63,
+        "max_stable_cfl_explicit": 1.5,
+        "max_stable_cfl_imex": 10.0,
+        "cfl_advantage": 6.67
+      },
+      "file_path": "chip_verify/rep_2607_16044_imex_hdg.py",
+      "results_file": "chip_verify/results_2607_16044.json"
+    },
+    {
+      "paper_id": "2607.16042",
+      "title": "Reducing Power Consumption of Embedded Dynamic Memories with ECCs",
+      "authors": "Wenqing Song, Yifei Shen, Andreas Burg",
+      "venue": "arXiv 2026",
+      "method": "ECC selection combining refresh-interval model with power analysis to minimize total power under yield constraints",
+      "reproduction_focus": "GCRAM retention distribution, ECC power trade-off, optimal ECC selection across bandwidths/activity factors",
+      "runnable": true,
+      "metrics": {
+        "mean_retention_ms": 51.81,
+        "median_retention_ms": 49.80,
+        "1st_percentile_retention_ms": 18.24,
+        "best_ecc_across_regimes": "bch_128_136",
+        "paper_claimed_reduction": "46.8%-94.8%"
+      },
+      "file_path": "chip_verify/rep_2607_16042_ecc_memory.py",
+      "results_file": "chip_verify/results_2607_16042.json"
+    },
+    {
+      "paper_id": "2607.15951",
+      "title": "Rendering 3D Gaussians on a Graph Processor",
+      "authors": "Nicholas Fry, Ignacio Alzugaray, Mark Pupilli, Paul H. J. Kelly, Andrew J. Davison",
+      "venue": "Eurographics Symposium on Rendering 2026",
+      "method": "BSP-model tiled 3D Gaussian splatting on 1472-tile IPU with NEWS-grid inter-tile routing, SRAM-only rendering",
+      "reproduction_focus": "Tile routing via Manhattan hops, BSP communication phases, SRAM constraint analysis, scalability with gaussian count",
+      "runnable": true,
+      "metrics": {
+        "tiles_activated_5k_gaussians": 817,
+        "max_hops": 30,
+        "mean_hops": 10.0,
+        "workload_imbalance": 0.902,
+        "total_bsp_communication_KB": 6199.5,
+        "sram_utilization": 0.021,
+        "tiles_over_sram_budget": 0
+      },
+      "file_path": "chip_verify/rep_2607_15951_3dgs_ipu.py",
+      "results_file": "chip_verify/results_2607_15951.json"
+    },
+    {
+      "paper_id": "2607.15927",
+      "title": "Operation and performance of ProtoDUNE Dual Phase liquid argon time projection chamber",
+      "authors": "DUNE Collaboration (1363+ authors)",
+      "venue": "arXiv 2026 (CERN/Fermilab)",
+      "method": "6x6x6m dual-phase LArTPC: vertical electron drift, gas-phase Townsend amplification, multi-wire charge readout",
+      "reproduction_focus": "Electron drift survival/diffusion, Townsend avalanche gain, charge readout SNR, detection efficiency, cathode field uniformity",
+      "runnable": true,
+      "metrics": {
+        "drift_6m_survival_fraction": 0.956,
+        "drift_6m_time_us": 484.8,
+        "townsend_gain_at_3mm_100pct": 1.0,
+        "readout_snr_db_1000_avalanches": 31.4,
+        "detection_efficiency_6m": 1.0,
+        "cathode_field_uniformity": 0.9938,
+        "nominal_field_V_cm": 500.0
+      },
+      "file_path": "chip_verify/rep_2607_15927_protodune.py",
+      "results_file": "chip_verify/results_2607_15927.json"
+    }
+  ]
+}

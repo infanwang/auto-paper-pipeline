@@ -1,0 +1,54 @@
+{
+  "paper_id": "2607.16044",
+  "title": "IMEX Schemes for Compressible Flow using Hybridizable DG",
+  "method": "Geometry-split IMEX with HDG (mixed + interior-penalty) + ARK temporal coupling",
+  "experiments": {
+    "grid_convergence": {
+      "grid_sizes": [
+        20,
+        40,
+        80,
+        160
+      ],
+      "explicit_l2_errors": [
+        0.033693,
+        0.053136,
+        0.089045,
+        NaN
+      ],
+      "imex_l2_errors": [
+        0.051058,
+        0.084875,
+        0.161212,
+        NaN
+      ],
+      "explicit_convergence_rates": [
+        -0.66,
+        -0.74,
+        NaN
+      ],
+      "imex_convergence_rates": [
+        -0.73,
+        -0.93,
+        NaN
+      ],
+      "mean_explicit_rate": NaN,
+      "mean_imex_rate": NaN
+    },
+    "performance": {
+      "ncells": 200,
+      "t_final": 0.005,
+      "explicit_time_s": 0.2221,
+      "imex_time_s": 0.3508,
+      "explicit_steps": 27,
+      "imex_steps": 27,
+      "speedup": 0.63,
+      "paper_claimed_speedup_max": 50
+    },
+    "stability": {
+      "max_stable_cfl_explicit": 1.5,
+      "max_stable_cfl_imex": 10.0,
+      "imex_cfl_advantage": 6.67
+    }
+  }
+}

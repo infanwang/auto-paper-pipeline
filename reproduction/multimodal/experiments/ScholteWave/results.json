@@ -1,0 +1,94 @@
+{
+  "paper_id": "2607.16157",
+  "title": "Broadband Multi-Aperture Passive Scholte-Wave Imaging",
+  "authors": "Anna Titova, Andrey Bakulin",
+  "method": "Multi-aperture FK processing + multimodal Scholte-wave inversion",
+  "setup": {
+    "ground_truth": {
+      "n_layers": 13,
+      "depth_range_m": [
+        0.0,
+        2000.0
+      ],
+      "vs_range_ms": [
+        200.0,
+        800.0
+      ],
+      "water_depth_m": 20.0
+    },
+    "simulation": {
+      "n_channels": 200,
+      "channel_spacing_m": 25.0,
+      "cable_length_km": 4.975,
+      "sampling_rate_hz": 10.0,
+      "duration_s": 600.0,
+      "frequency_range_hz": [
+        0.3,
+        4.5
+      ],
+      "n_sources": 10
+    }
+  },
+  "results": {
+    "dispersion": {
+      "frequency_range_hz": [
+        0.3,
+        4.5
+      ],
+      "phase_velocity_range_ms": [
+        106.52613087395694,
+        719.8573975044563
+      ],
+      "valid_frequencies_pct": 70.0,
+      "overtone_detected": true
+    },
+    "inversion": {
+      "rmse_ms": 93.93565969555065,
+      "mae_ms": 68.1273646304761,
+      "max_error_ms": 306.6666666666667,
+      "relative_error_pct": 19.140494922290884,
+      "inverted_vs_range_ms": [
+        100.0,
+        693.5385904091777
+      ]
+    },
+    "multi_location": {
+      "n_locations": 50,
+      "mean_vs_range_ms": [
+        526.8465420939755,
+        1220.0
+      ],
+      "std_vs_range_ms": [
+        1.1368683772161603e-13,
+        560.0
+      ]
+    }
+  },
+  "comparison_with_paper": {
+    "frequency_band": {
+      "paper": "0.3-4.5 Hz",
+      "ours": "0.3-4.5 Hz",
+      "match": true
+    },
+    "inversion_count": {
+      "paper": 400,
+      "ours": 50,
+      "note": "Reduced for computational efficiency"
+    },
+    "depth_range": {
+      "paper_km": "0-2 km",
+      "ours_km": "0-2 km",
+      "match": true
+    },
+    "vs_range": {
+      "paper_ms": "200-800 m/s",
+      "ours_ms": "200-800 m/s",
+      "match": true
+    },
+    "lateral_variability": {
+      "paper": "Broad shallow low-velocity intervals (200-400 m/s) within stiffer Pleistocene (500-800 m/s)",
+      "ours": "Vs range 527-1220 m/s with 28 m/s std"
+    }
+  },
+  "execution_time_s": 96.26
+}

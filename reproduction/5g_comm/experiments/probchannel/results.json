@@ -1,0 +1,10 @@
+{
+  "paper_id": "2607.16053",
+  "paper_name": "ProbChannel (PMF-GRN)",
+  "auprc_pmf": 0.019003495895350657,
+  "auprc_random": 0.018876508989306685,
+  "auprc_prior": 0.21333333333305302,
+  "auprc_no_prior": 0.022245244428968206,
+  "auprc_ratio": 1.0067272452822664,
+  "elbo_final": -388590.4210869886
+}

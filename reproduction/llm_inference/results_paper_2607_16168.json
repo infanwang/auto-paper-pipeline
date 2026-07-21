@@ -1,0 +1,27 @@
+{
+  "paper_id": "2607.16168",
+  "title": "Behaviour-Conditioned Neural Processes for Adaptive Residential STLF",
+  "method": "BC-ANP with discrete + continuous latent variables",
+  "elapsed_seconds": 0.012560129165649414,
+  "configuration": {
+    "context_length": 20,
+    "forecast_horizon": 10,
+    "n_test_users": 10,
+    "n_behaviours": 4
+  },
+  "bc_anp_metrics": {
+    "mae": 1.180439938245846,
+    "rmse": 1.1843066269168694,
+    "crps": 0.579853528645023
+  },
+  "anp_baseline_metrics": {
+    "mae": 0.9737192409758813,
+    "rmse": 0.9790395668611321,
+    "crps": 0.467172643474691
+  },
+  "improvements": {
+    "mae_improvement_pct": -21.230010517486022,
+    "crps_improvement_pct": -24.1197524607274
+  },
+  "behaviour_detection_accuracy": 0.4
+}

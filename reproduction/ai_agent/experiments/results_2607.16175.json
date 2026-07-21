@@ -1,0 +1,61 @@
+{
+  "paper_id": "2607.16175",
+  "title": "CAV-STIXGen: Multi-agent threat intelligence generation",
+  "dataset": "synthetic CVE data (100 CVEs)",
+  "metrics": [
+    "SDO F1",
+    "SRO F1",
+    "CWE F1",
+    "MITRE Match@1"
+  ],
+  "our_results": {
+    "noise_0.0": {
+      "noise_level": 0.0,
+      "sdo_f1": 1.0,
+      "sro_f1": 1.0,
+      "cwe_f1": 1.0,
+      "mitre_match1": 1.0
+    },
+    "noise_0.1": {
+      "noise_level": 0.1,
+      "sdo_f1": 0.9458987783595114,
+      "sro_f1": 0.9743589743589743,
+      "cwe_f1": 0.92,
+      "mitre_match1": 0.95
+    },
+    "noise_0.2": {
+      "noise_level": 0.2,
+      "sdo_f1": 0.8400000000000001,
+      "sro_f1": 0.9333333333333333,
+      "cwe_f1": 0.8399999999999999,
+      "mitre_match1": 0.89
+    }
+  },
+  "paper_reported_results": {
+    "Phi-4": {
+      "sdo_f1": 0.94,
+      "sro_f1": 0.58,
+      "cwe_f1": 0.98,
+      "mitre_match1": 0.48
+    },
+    "Codestral-22B": {
+      "sdo_f1": 0.88,
+      "sro_f1": 0.63,
+      "cwe_f1": 0.99,
+      "mitre_match1": 0.45
+    },
+    "Qwen3-Coder-30B": {
+      "sdo_f1": 0.9,
+      "sro_f1": 0.6,
+      "cwe_f1": 0.97,
+      "mitre_match1": 0.5
+    },
+    "Gemma-4-31B": {
+      "sdo_f1": 0.91,
+      "sro_f1": 0.55,
+      "cwe_f1": 0.96,
+      "mitre_match1": 0.52
+    }
+  },
+  "analysis": "Our simulation shows that lower noise leads to higher F1 scores across all categories. SDO and CWE are easier to predict than SRO. MITRE mapping remains challenging."
+}

@@ -1,0 +1,80 @@
+{
+  "pF_0.01": {
+    "Q70_ell10": {
+      "viterbi_m_per_pauli": 4,
+      "medm_m_avg_total": 11.45117658653293,
+      "cats_per_pauli": 1.145117658653293,
+      "speedup": 3.493090836363636
+    },
+    "Q70_ell20": {
+      "viterbi_m_per_pauli": 4,
+      "medm_m_avg_total": 21.861337119744682,
+      "cats_per_pauli": 1.093066855987234,
+      "speedup": 3.6594284952380955
+    },
+    "Q102_ell10": {
+      "viterbi_m_per_pauli": 4,
+      "medm_m_avg_total": 11.45117658653293,
+      "cats_per_pauli": 1.145117658653293,
+      "speedup": 3.493090836363636
+    },
+    "Q102_ell20": {
+      "viterbi_m_per_pauli": 4,
+      "medm_m_avg_total": 21.861337119744682,
+      "cats_per_pauli": 1.093066855987234,
+      "speedup": 3.6594284952380955
+    }
+  },
+  "pF_0.005": {
+    "Q70_ell10": {
+      "viterbi_m_per_pauli": 3,
+      "medm_m_avg_total": 11.16666243687029,
+      "cats_per_pauli": 1.116666243687029,
+      "speedup": 2.6865681818181817
+    },
+    "Q70_ell20": {
+      "viterbi_m_per_pauli": 3,
+      "medm_m_avg_total": 21.318173743116006,
+      "cats_per_pauli": 1.0659086871558003,
+      "speedup": 2.8145
+    },
+    "Q102_ell10": {
+      "viterbi_m_per_pauli": 3,
+      "medm_m_avg_total": 11.16666243687029,
+      "cats_per_pauli": 1.116666243687029,
+      "speedup": 2.6865681818181817
+    },
+    "Q102_ell20": {
+      "viterbi_m_per_pauli": 3,
+      "medm_m_avg_total": 21.318173743116006,
+      "cats_per_pauli": 1.0659086871558003,
+      "speedup": 2.8145
+    }
+  },
+  "pF_0.001": {
+    "Q70_ell10": {
+      "viterbi_m_per_pauli": 3,
+      "medm_m_avg_total": 11.033066099099,
+      "cats_per_pauli": 1.1033066099099,
+      "speedup": 2.719099090909091
+    },
+    "Q70_ell20": {
+      "viterbi_m_per_pauli": 3,
+      "medm_m_avg_total": 21.063126189189003,
+      "cats_per_pauli": 1.05315630945945,
+      "speedup": 2.8485799999999997
+    },
+    "Q102_ell10": {
+      "viterbi_m_per_pauli": 3,
+      "medm_m_avg_total": 11.033066099099,
+      "cats_per_pauli": 1.1033066099099,
+      "speedup": 2.719099090909091
+    },
+    "Q102_ell20": {
+      "viterbi_m_per_pauli": 3,
+      "medm_m_avg_total": 21.063126189189003,
+      "cats_per_pauli": 1.05315630945945,
+      "speedup": 2.8485799999999997
+    }
+  }
+}

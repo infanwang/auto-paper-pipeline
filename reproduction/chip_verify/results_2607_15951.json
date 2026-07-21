@@ -1,0 +1,82 @@
+{
+  "paper_id": "2607.15951",
+  "title": "Rendering 3D Gaussians on a Graph Processor",
+  "method": "BSP-model tiled rendering with NEWS-grid gaussian routing on IPU",
+  "experiments": {
+    "gaussian_routing": {
+      "total_gaussians": 5000,
+      "tiles_activated": 817,
+      "total_tiles": 1024,
+      "max_hops": 30,
+      "mean_hops": 10.0,
+      "workload_imbalance": 0.902,
+      "max_tile_load": 32,
+      "min_tile_load": 1
+    },
+    "bsp_analysis": {
+      "num_stages": 5,
+      "communication_bytes_per_phase": [
+        1269632,
+        1269632,
+        1269632,
+        1269632,
+        1269632
+      ],
+      "computation_flops_per_phase": [
+        500000,
+        500000,
+        500000,
+        500000,
+        500000
+      ],
+      "total_communication_KB": 6199.38,
+      "total_computation_MFLOPS": 2.5,
+      "comm_to_comp_ratio": 2.539264
+    },
+    "sram_constraints": {
+      "sram_per_tile_KB": 256,
+      "max_usage_KB": 6.4,
+      "mean_usage_KB": 5.3,
+      "tiles_over_budget": 0,
+      "total_tiles_used": 817,
+      "sram_utilization": 0.021
+    },
+    "rendering_performance": {
+      "tiles_rendered": 100,
+      "total_tiles": 1024,
+      "render_time_s": 0.0025,
+      "estimated_fps": 403579.1,
+      "framebuffer_resolution": "1024x1024"
+    },
+    "scalability": [
+      {
+        "n_gaussians": 1000,
+        "tiles_activated": 488,
+        "workload_imbalance": 0.709,
+        "max_tile_load": 9,
+        "max_sram_KB": 5.4
+      },
+      {
+        "n_gaussians": 5000,
+        "tiles_activated": 826,
+        "workload_imbalance": 0.929,
+        "max_tile_load": 29,
+        "max_sram_KB": 6.2
+      },
+      {
+        "n_gaussians": 10000,
+        "tiles_activated": 917,
+        "workload_imbalance": 0.981,
+        "max_tile_load": 53,
+        "max_sram_KB": 7.3
+      },
+      {
+        "n_gaussians": 30000,
+        "tiles_activated": 1001,
+        "workload_imbalance": 1.029,
+        "max_tile_load": 137,
+        "max_sram_KB": 10.9
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "smart_inject": {
+    "random": 51.61,
+    "smart": 37.47
+  },
+  "temporal": {
+    "initial_health": 1.0,
+    "final_health": 0.37510987327396117,
+    "anomalies": 8
+  },
+  "propagation": {
+    "initial": 1,
+    "propagated": 2,
+    "layers_affected": [
+      2,
+      3
+    ]
+  }
+}

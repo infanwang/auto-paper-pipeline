@@ -1,0 +1,148 @@
+{
+  "paper_id": "2607.16094",
+  "title": "How Do VLMs Fail? Vision-Operation Misalignment in Compositional VQA",
+  "method": "Operation-centric mechanistic framework with causal interventions",
+  "experiments": {
+    "failure_classification": {
+      "num_samples": 100,
+      "failure_distribution": {
+        "grounding": 73,
+        "reasoning": 13,
+        "attribute_extraction": 0,
+        "language_prior": 14
+      },
+      "classification_accuracy": 0.79,
+      "operation_failure_rates": {
+        "object_selection": {
+          "grounding": 26,
+          "reasoning": 5,
+          "language_prior": 5
+        },
+        "spatial_relation": {
+          "grounding": 24,
+          "reasoning": 7,
+          "language_prior": 6
+        },
+        "attribute_verification": {
+          "grounding": 23,
+          "reasoning": 1,
+          "language_prior": 3
+        }
+      }
+    },
+    "pathway_dissociation": {
+      "interventions": [
+        "zero_ffn",
+        "zero_attn",
+        "patch"
+      ],
+      "pathway_impacts": {
+        "grounding": {
+          "zero_ffn": {
+            "mean_delta": 0.0,
+            "std_delta": 0.0
+          },
+          "zero_attn": {
+            "mean_delta": 0.0,
+            "std_delta": 0.0
+          },
+          "patch": {
+            "mean_delta": 0.0111,
+            "std_delta": 0.0073
+          }
+        },
+        "reasoning": {
+          "zero_ffn": {
+            "mean_delta": 0.0,
+            "std_delta": 0.0
+          },
+          "zero_attn": {
+            "mean_delta": 0.0,
+            "std_delta": 0.0
+          },
+          "patch": {
+            "mean_delta": 0.0085,
+            "std_delta": 0.007
+          }
+        },
+        "attribute_extraction": {
+          "zero_ffn": {
+            "mean_delta": 0.0,
+            "std_delta": 0.0
+          },
+          "zero_attn": {
+            "mean_delta": 0.0,
+            "std_delta": 0.0
+          },
+          "patch": {
+            "mean_delta": 0.0044,
+            "std_delta": 0.0034
+          }
+        },
+        "language_prior": {
+          "zero_ffn": {
+            "mean_delta": 0.0,
+            "std_delta": 0.0
+          },
+          "zero_attn": {
+            "mean_delta": 0.0,
+            "std_delta": 0.0
+          },
+          "patch": {
+            "mean_delta": 0.012,
+            "std_delta": 0.0082
+          }
+        }
+      },
+      "dissociation_verified": false,
+      "key_findings": {
+        "grounding_routed_through_ffn": false,
+        "reasoning_routed_through_late_attn": false
+      }
+    },
+    "failure_propagation": {
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "error_rates_by_type": {
+        "grounding": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "reasoning": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "attribute_extraction": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "language_prior": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    }
+  }
+}

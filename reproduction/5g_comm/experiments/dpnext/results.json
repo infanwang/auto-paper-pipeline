@@ -1,0 +1,101 @@
+{
+  "paper_id": "2607.16012",
+  "paper_name": "DPNeXt",
+  "ablation": {
+    "Standard DPT": {
+      "mIoU": 68.26,
+      "RMSE": 7.22,
+      "JPS": 0.796,
+      "params": 30.177
+    },
+    "+ IPA": {
+      "mIoU": 68.23,
+      "RMSE": 7.08,
+      "JPS": 0.797,
+      "params": 15.353
+    },
+    "+ DDSIF (Dual DSConv)": {
+      "mIoU": 68.95,
+      "RMSE": 6.84,
+      "JPS": 0.802,
+      "params": 5.004
+    },
+    "+ DDSIF (Inv. BN)": {
+      "mIoU": 69.66,
+      "RMSE": 6.8,
+      "JPS": 0.806,
+      "params": 6.073
+    },
+    "DPNeXt-S (OHEM only)": {
+      "mIoU": 70.66,
+      "RMSE": 7.0,
+      "JPS": 0.81,
+      "params": 6.073
+    },
+    "DPNeXt-S (+BAD)": {
+      "mIoU": 70.91,
+      "RMSE": 6.81,
+      "JPS": 0.812,
+      "params": 6.456
+    },
+    "DPNeXt-S (+BAS)": {
+      "mIoU": 71.07,
+      "RMSE": 7.08,
+      "JPS": 0.811,
+      "params": 6.456
+    },
+    "DPNeXt-S (Full MTBG)": {
+      "mIoU": 71.39,
+      "RMSE": 6.86,
+      "JPS": 0.814,
+      "params": 6.456
+    }
+  },
+  "paper_main_results": {
+    "DPNeXt-S": {
+      "mIoU": 78.32,
+      "RMSE": 5.45,
+      "JPS": 0.858,
+      "trainable": 6.5
+    },
+    "DPNeXt-B": {
+      "mIoU": 79.64,
+      "RMSE": 4.95,
+      "JPS": 0.867,
+      "trainable": 6.8
+    }
+  },
+  "efficiency": {
+    "Standard DPT": {
+      "total": 52.236,
+      "trainable": 30.177
+    },
+    "DPNeXt-S": {
+      "total": 28.89,
+      "trainable": 6.83
+    },
+    "DPNeXt-B": {
+      "total": 93.81,
+      "trainable": 7.22
+    }
+  },
+  "speed": {
+    "SwinMTL": {
+      "FPS": 19.74,
+      "GFLOPs": 59.37
+    },
+    "M2H-Small": {
+      "FPS": 20.72,
+      "GFLOPs": 51.6
+    },
+    "DPNeXt-B": {
+      "FPS": 36.49,
+      "GFLOPs": 131.83
+    },
+    "DPNeXt-S": {
+      "FPS": 51.02,
+      "GFLOPs": 98.24
+    }
+  },
+  "param_reduction_pct": 77.36686880736985
+}

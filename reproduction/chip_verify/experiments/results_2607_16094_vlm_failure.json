@@ -1,0 +1,192 @@
+{
+  "paper_id": "2607.16094",
+  "title": "How Do VLMs Fail? Vision-Operation Misalignment",
+  "failure_mode_analysis": {
+    "select": {
+      "accuracy": 60.4,
+      "gs_correct": 1.538305634551903,
+      "gs_incorrect": 1.14387742505876,
+      "d_gs": 1.8153333948050687,
+      "ko_attn_correct": 0.11226982107280269,
+      "ko_attn_incorrect": 0.13905303042872444,
+      "d_ko_attn": -1.4722027677575384,
+      "ko_mlp_correct": 1.4964345064086968,
+      "ko_mlp_incorrect": 1.8097821499491755,
+      "d_ko_mlp": -1.8566018807242217,
+      "classified_mode": "grounding"
+    },
+    "relate": {
+      "accuracy": 44.8,
+      "gs_correct": 1.4636409545702982,
+      "gs_incorrect": 1.6420187485870812,
+      "d_gs": -0.808813164826381,
+      "ko_attn_correct": 0.19652578758600006,
+      "ko_attn_incorrect": 0.32355107854839377,
+      "d_ko_attn": -6.255048515813018,
+      "ko_mlp_correct": 1.809811874808255,
+      "ko_mlp_incorrect": 1.9009511887232646,
+      "d_ko_mlp": -0.5511567916251736,
+      "classified_mode": "unclassified"
+    },
+    "verify": {
+      "accuracy": 86.4,
+      "gs_correct": 1.6800202992790574,
+      "gs_incorrect": 1.5258713067703318,
+      "d_gs": 0.6476332309453516,
+      "ko_attn_correct": 0.09376985877562796,
+      "ko_attn_incorrect": 0.08580054871586724,
+      "d_ko_attn": 0.5003725445537153,
+      "ko_mlp_correct": 1.3584412494017333,
+      "ko_mlp_incorrect": 1.5689170362872726,
+      "d_ko_mlp": -1.2812066594650962,
+      "classified_mode": "unclassified"
+    },
+    "query": {
+      "accuracy": 67.4,
+      "gs_correct": 1.485705412027251,
+      "gs_incorrect": 1.3539619009678647,
+      "d_gs": 0.6035287190977578,
+      "ko_attn_correct": 0.25263695138281633,
+      "ko_attn_incorrect": 0.2621651272445565,
+      "d_ko_attn": -0.49415200395308545,
+      "ko_mlp_correct": 1.648827210467299,
+      "ko_mlp_incorrect": 1.4781720526436226,
+      "d_ko_mlp": 0.9656286799615972,
+      "classified_mode": "unclassified"
+    },
+    "exist": {
+      "accuracy": 78.2,
+      "gs_correct": 1.420499512072092,
+      "gs_incorrect": 1.5502464574748975,
+      "d_gs": -0.5703060245537659,
+      "ko_attn_correct": 0.2095543357336714,
+      "ko_attn_incorrect": 0.22509327300331414,
+      "d_ko_attn": -0.791025455798931,
+      "ko_mlp_correct": 1.4507823191722757,
+      "ko_mlp_incorrect": 1.66270930499206,
+      "d_ko_mlp": -1.1811233615059433,
+      "classified_mode": "unclassified"
+    },
+    "choose": {
+      "accuracy": 82.6,
+      "gs_correct": 1.2481504407266362,
+      "gs_incorrect": 1.2097971198294681,
+      "d_gs": 0.18597057803988903,
+      "ko_attn_correct": 0.12548410097781074,
+      "ko_attn_incorrect": 0.13053563382329192,
+      "d_ko_attn": -0.28070026295117445,
+      "ko_mlp_correct": 0.9011526324775476,
+      "ko_mlp_incorrect": 0.8905135854859461,
+      "d_ko_mlp": 0.06784046829985307,
+      "classified_mode": "unclassified"
+    },
+    "filter": {
+      "accuracy": 71.8,
+      "gs_correct": 1.1404491534267547,
+      "gs_incorrect": 1.136818247850073,
+      "d_gs": 0.017443493052018234,
+      "ko_attn_correct": 0.10696229616946568,
+      "ko_attn_incorrect": 0.11243892567799517,
+      "d_ko_attn": -0.32260729098600366,
+      "ko_mlp_correct": 0.8844572677316349,
+      "ko_mlp_incorrect": 0.8986382963565603,
+      "d_ko_mlp": -0.09916582944557988,
+      "classified_mode": "unclassified"
+    }
+  },
+  "representational_validation": {
+    "verify": {
+      "VS_accuracy": 0.9782873879339887,
+      "NV_accuracy": 0.6899203633975076,
+      "delta_VS": 0.2883670245364811,
+      "paper_delta": 0.34,
+      "verdict": "Vision"
+    },
+    "relate": {
+      "VS_accuracy": 0.9356595699610399,
+      "NV_accuracy": 0.6348111585824573,
+      "delta_VS": 0.30084841137858265,
+      "paper_delta": 0.24,
+      "verdict": "Vision"
+    },
+    "exist": {
+      "VS_accuracy": 0.9684279949606293,
+      "NV_accuracy": 0.7995430961129145,
+      "delta_VS": 0.16888489884771474,
+      "paper_delta": 0.23,
+      "verdict": "Vision"
+    },
+    "query": {
+      "VS_accuracy": 0.9514664151321385,
+      "NV_accuracy": 0.9271326211343146,
+      "delta_VS": 0.02433379399782387,
+      "paper_delta": 0.06,
+      "verdict": "Artifact"
+    },
+    "select": {
+      "VS_accuracy": 1.0,
+      "NV_accuracy": 0.9139977879320469,
+      "delta_VS": 0.11132093724206382,
+      "paper_delta": 0.06,
+      "verdict": "Marginal"
+    },
+    "filter": {
+      "VS_accuracy": 0.8064222769675589,
+      "NV_accuracy": 0.7771587309318932,
+      "delta_VS": 0.02926354603566561,
+      "paper_delta": 0.03,
+      "verdict": "Artifact"
+    }
+  },
+  "pathway_dissociation": {
+    "select": {
+      "failure_mode": "Grounding",
+      "dominant_pathway": "MLP-mediated",
+      "d_GS": 0.75,
+      "d_KOattn": -0.19,
+      "d_KOmlp": -0.8
+    },
+    "relate": {
+      "failure_mode": "Reasoning",
+      "dominant_pathway": "Attention-mediated (late layers)",
+      "d_GS": -0.17,
+      "d_KOattn": -0.32,
+      "d_KOmlp": -0.17
+    },
+    "verify": {
+      "failure_mode": "Attr. extraction",
+      "dominant_pathway": "MLP-mediated",
+      "d_GS": 0.12,
+      "d_KOattn": 0.05,
+      "d_KOmlp": -0.71
+    },
+    "query": {
+      "failure_mode": "Attr. extraction",
+      "dominant_pathway": "MLP-mediated",
+      "d_GS": 0.15,
+      "d_KOattn": -0.02,
+      "d_KOmlp": -0.58
+    },
+    "exist": {
+      "failure_mode": "Attr. extraction",
+      "dominant_pathway": "MLP-mediated",
+      "d_GS": -0.08,
+      "d_KOattn": -0.06,
+      "d_KOmlp": -0.65
+    },
+    "choose": {
+      "failure_mode": "Language prior",
+      "dominant_pathway": "Neither (bypasses visual computation)",
+      "d_GS": 0.04,
+      "d_KOattn": -0.02,
+      "d_KOmlp": -0.03
+    },
+    "filter": {
+      "failure_mode": "Language prior",
+      "dominant_pathway": "Neither (bypasses visual computation)",
+      "d_GS": 0.03,
+      "d_KOattn": -0.03,
+      "d_KOmlp": -0.05
+    }
+  }
+}

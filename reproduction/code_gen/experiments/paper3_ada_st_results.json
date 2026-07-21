@@ -1,0 +1,34 @@
+{
+  "Alpha": {
+    "vertices": 22,
+    "edges": 66,
+    "static_coverage": 0.22727272727272727,
+    "static_covered_edges": 15,
+    "ada_iterations": 2,
+    "ada_final_coverage": 1.0,
+    "ada_covered_edges": 66
+  },
+  "Beta": {
+    "vertices": 23,
+    "edges": 69,
+    "static_coverage": 0.22727272727272727,
+    "static_covered_edges": 15,
+    "ada_iterations": 2,
+    "ada_final_coverage": 1.0,
+    "ada_covered_edges": 66
+  },
+  "flam": {
+    "alpha_to_beta": {
+      "source_edges": 8,
+      "target_edges": 8,
+      "matched": 8,
+      "fidelity": 1.0
+    },
+    "beta_to_gamma": {
+      "source_edges": 8,
+      "target_edges": 8,
+      "matched": 8,
+      "fidelity": 1.0
+    }
+  }
+}

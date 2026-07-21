@@ -1,0 +1,88 @@
+{
+  "paper_id": "2607.16170",
+  "title": "Morphologies of SAGAbg low-mass galaxies",
+  "method": "Non-parametric morphological analysis (Gini, M20, CAS) + attention analogy",
+  "elapsed_seconds": 0.34081029891967773,
+  "galaxy_morphology": {
+    "elliptical": {
+      "measures": {
+        "gini": 0.6938716244534096,
+        "m20": 0.2097676007838146,
+        "concentration": 0.7456179685123819,
+        "asymmetry": 0.15960274292110818,
+        "clumpiness": 0.09219213043900377
+      },
+      "classification": "irregular"
+    },
+    "spiral": {
+      "measures": {
+        "gini": 0.6067348157386677,
+        "m20": 0.7124594127270861,
+        "concentration": 0.5591247092756817,
+        "asymmetry": 0.11293941343875266,
+        "clumpiness": 0.07262340826580614
+      },
+      "classification": "irregular"
+    },
+    "irregular": {
+      "measures": {
+        "gini": 0.5396105543337634,
+        "m20": 0.6657424872992358,
+        "concentration": 0.5255555147738571,
+        "asymmetry": 0.0828418536133892,
+        "clumpiness": 0.03594576682841485
+      },
+      "classification": "irregular"
+    }
+  },
+  "attention_distribution": {
+    "uniform": {
+      "morphology": {
+        "gini": 0.4965290240650708,
+        "m20": 2.1370479448006816,
+        "concentration": 0.18706300072454835,
+        "asymmetry": 0.4984338754659875,
+        "clumpiness": 0.35280783956972
+      },
+      "mean_entropy": 3.743856553988337,
+      "max_entropy": 3.8485023870353343,
+      "sparsity": 0.529541015625
+    },
+    "local": {
+      "morphology": {
+        "gini": 0.5590580974531195,
+        "m20": 2.3626940820436415,
+        "concentration": 0.3244655165534837,
+        "asymmetry": 5.0913032877357586e-17,
+        "clumpiness": 0.027877445123351566
+      },
+      "mean_entropy": 3.629356575631393,
+      "max_entropy": 3.817302140230497,
+      "sparsity": 0.47119140625
+    },
+    "sparse": {
+      "morphology": {
+        "gini": 0.5130216827731624,
+        "m20": 2.0007309539645908,
+        "concentration": 0.17045684598700087,
+        "asymmetry": 0.9154255766325868,
+        "clumpiness": 0.8264333933406097
+      },
+      "mean_entropy": 1.8301950243544152,
+      "max_entropy": 2.5092075439191017,
+      "sparsity": 0.13525390625
+    },
+    "head_specialized": {
+      "morphology": {
+        "gini": 0.43682134248521615,
+        "m20": 2.354589708492571,
+        "concentration": 0.2763512970569358,
+        "asymmetry": 0.029401966511127777,
+        "clumpiness": 0.039522481861780936
+      },
+      "mean_entropy": 3.8502905781419337,
+      "max_entropy": 3.9830480691570536,
+      "sparsity": 0.564453125
+    }
+  }
+}

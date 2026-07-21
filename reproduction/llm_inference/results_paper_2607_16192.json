@@ -1,0 +1,15 @@
+{
+  "paper_id": "2607.16192",
+  "title": "MotionForesight: Re-purposing Video Models for Future 3D Scene-Flow",
+  "method": "Adapter-based forward prediction with mask latents",
+  "elapsed_seconds": 0.17093157768249512,
+  "metrics": {
+    "adapter_epe": 1.728692909293174,
+    "mask_latent_epe": 1.7270071798759823,
+    "constant_velocity_epe": 0.05668920385444711,
+    "improvement_over_baseline": 0.03279310255146828
+  },
+  "n_samples": 200,
+  "n_observed_frames": 8,
+  "n_predicted_frames": 4
+}

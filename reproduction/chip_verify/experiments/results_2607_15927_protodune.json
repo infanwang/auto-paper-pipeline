@@ -1,0 +1,309 @@
+{
+  "paper_id": "2607.15927",
+  "title": "Operation and performance of ProtoDUNE Dual Phase LArTPC",
+  "detector_specs": {
+    "active_volume_m3": 216,
+    "active_mass_t": 300,
+    "total_mass_t": 720,
+    "drift_length_m": 6.0
+  },
+  "hv_delivery": {
+    "cathode_voltage_target_kv": 300,
+    "cathode_voltage_achieved_kv": 300,
+    "drift_field_target_v_cm": 100,
+    "drift_length_m": 6.0,
+    "drift_time_ms": 12.76595744680851,
+    "max_voltage_stable_kv": 300,
+    "voltage_stability": "Stable operation at -300 kV demonstrated",
+    "key_achievement": "First time -300 kV delivered to a LArTPC cathode",
+    "redesign_changes": [
+      "New HV feedthrough design",
+      "Improved cable routing",
+      "Better insulation at cryogenic temperatures"
+    ]
+  },
+  "lar_purity": {
+    "50_ppt": {
+      "o2_equiv_ppt": 50,
+      "electron_lifetime_ms": 6.0,
+      "drift_time_ms": 12.76595744680851,
+      "collection_efficiency": 0.11911574941423322,
+      "paper_measurement_ppt": "<100"
+    },
+    "70_ppt": {
+      "o2_equiv_ppt": 70,
+      "electron_lifetime_ms": 4.285714285714286,
+      "drift_time_ms": 12.76595744680851,
+      "collection_efficiency": 0.0508577171865452,
+      "paper_measurement_ppt": "<100"
+    },
+    "100_ppt": {
+      "o2_equiv_ppt": 100,
+      "electron_lifetime_ms": 3.0,
+      "drift_time_ms": 12.76595744680851,
+      "collection_efficiency": 0.014188561758514401,
+      "paper_measurement_ppt": "<100"
+    },
+    "150_ppt": {
+      "o2_equiv_ppt": 150,
+      "electron_lifetime_ms": 2.0,
+      "drift_time_ms": 12.76595744680851,
+      "collection_efficiency": 0.0016900811669755737,
+      "paper_measurement_ppt": "<100"
+    },
+    "200_ppt": {
+      "o2_equiv_ppt": 200,
+      "electron_lifetime_ms": 1.5,
+      "drift_time_ms": 12.76595744680851,
+      "collection_efficiency": 0.00020131528477517727,
+      "paper_measurement_ppt": "<100"
+    },
+    "300_ppt": {
+      "o2_equiv_ppt": 300,
+      "electron_lifetime_ms": 1.0,
+      "drift_time_ms": 12.76595744680851,
+      "collection_efficiency": 2.856374350965517e-06,
+      "paper_measurement_ppt": "<100"
+    },
+    "500_ppt": {
+      "o2_equiv_ppt": 500,
+      "electron_lifetime_ms": 0.6,
+      "drift_time_ms": 12.76595744680851,
+      "collection_efficiency": 5.750318158891351e-10,
+      "paper_measurement_ppt": "<100"
+    },
+    "paper_measurement": {
+      "purity_achieved_ppt": "<100 O2-equivalent",
+      "electron_lifetime_ms": 3.75,
+      "sufficient_for_6m_drift": "False"
+    }
+  },
+  "effective_gain": {
+    "ef_2_kvcm": {
+      "extraction_field_kV_cm": 2,
+      "lem_voltages": [
+        100,
+        125,
+        150,
+        175,
+        200,
+        225,
+        250,
+        275,
+        300,
+        325,
+        350,
+        375
+      ],
+      "gains": [
+        1.2036447077323793,
+        1.204130829294326,
+        1.204681914478993,
+        1.2053066806284563,
+        1.206015025031281,
+        1.2068181875260175,
+        1.207728936329243,
+        1.2087617806336364,
+        1.2099332141251435,
+        1.2112619942908487,
+        1.2127694632581312,
+        1.2144799169556426
+      ],
+      "max_gain": 1.2144799169556426
+    },
+    "ef_3_kvcm": {
+      "extraction_field_kV_cm": 3,
+      "lem_voltages": [
+        100,
+        125,
+        150,
+        175,
+        200,
+        225,
+        250,
+        275,
+        300,
+        325,
+        350,
+        375
+      ],
+      "gains": [
+        1.3039484333767442,
+        1.3044750650688535,
+        1.3050720740189095,
+        1.3057489040141612,
+        1.3065162771172214,
+        1.3073863698198525,
+        1.3083730143566799,
+        1.3094919290197728,
+        1.3107609819689057,
+        1.3122004938150862,
+        1.3138335851963088,
+        1.3156865767019463
+      ],
+      "max_gain": 1.3156865767019463
+    },
+    "ef_4_kvcm": {
+      "extraction_field_kV_cm": 4,
+      "lem_voltages": [
+        100,
+        125,
+        150,
+        175,
+        200,
+        225,
+        250,
+        275,
+        300,
+        325,
+        350,
+        375
+      ],
+      "gains": [
+        1.404252159021109,
+        1.4048193008433805,
+        1.4054622335588254,
+        1.4061911273998657,
+        1.4070175292031613,
+        1.4079545521136871,
+        1.4090170923841168,
+        1.410222077405909,
+        1.4115887498126676,
+        1.4131389933393235,
+        1.4148977071344864,
+        1.4168932364482498
+      ],
+      "max_gain": 1.4168932364482498
+    },
+    "ef_5_kvcm": {
+      "extraction_field_kV_cm": 5,
+      "lem_voltages": [
+        100,
+        125,
+        150,
+        175,
+        200,
+        225,
+        250,
+        275,
+        300,
+        325,
+        350,
+        375
+      ],
+      "gains": [
+        1.504555884665474,
+        1.5051635366179077,
+        1.5058523930987415,
+        1.5066333507855705,
+        1.5075187812891016,
+        1.508522734407522,
+        1.5096611704115537,
+        1.5109522257920456,
+        1.5124165176564297,
+        1.514077492863561,
+        1.515961829072664,
+        1.5180998961945535
+      ],
+      "max_gain": 1.5180998961945535
+    },
+    "paper_summary": {
+      "gain_range": "10 to 100",
+      "typical_gain_at_nominal": 30,
+      "lem_thickness_effect": "Thicker LEMs (0.8mm) give higher gain than thinner (0.4mm)",
+      "extraction_field_effect": "Higher extraction field \u2192 higher gain"
+    }
+  },
+  "wavelength_shifting": {
+    "TPB": {
+      "absorption_128nm": 0.92,
+      "quantum_yield": 0.85,
+      "overall_efficiency": 0.78,
+      "stability": "Degrades over time in LAr",
+      "thickness_nm": 200
+    },
+    "PEN": {
+      "absorption_128nm": 0.72,
+      "quantum_yield": 0.8,
+      "overall_efficiency": 0.58,
+      "stability": "More stable than TPB",
+      "thickness_nm": 180
+    },
+    "comparison": {
+      "tpb_advantage": "TPB is ~1.3x more efficient",
+      "pen_advantage": "PEN shows better long-term stability",
+      "paper_conclusion": "Both suitable for DUNE; PEN preferred for stability"
+    },
+    "light_yield_with_drift_field": {
+      "0_Vcm": {
+        "tpb_efficiency": 0.11634,
+        "pen_efficiency": 0.09743999999999998
+      },
+      "100_Vcm": {
+        "tpb_efficiency": 0.1359583813067281,
+        "pen_efficiency": 0.11387127965040042
+      },
+      "200_Vcm": {
+        "tpb_efficiency": 0.1478575310631919,
+        "pen_efficiency": 0.12383735453668057
+      },
+      "300_Vcm": {
+        "tpb_efficiency": 0.15507473021499932,
+        "pen_efficiency": 0.12988208451220157
+      },
+      "500_Vcm": {
+        "tpb_efficiency": 0.16210724196861243,
+        "pen_efficiency": 0.13577213045746597
+      }
+    }
+  },
+  "charge_readout": {
+    "crp_type": "Large Electron Multiplier (LEM)",
+    "lem_dimensions": "10x10 cm^2 test sections",
+    "active_area_m2": 36,
+    "charge_readout_planes": 2,
+    "performance": {
+      "gain_achievement": "Successfully demonstrated charge amplification",
+      "noise_level": "Within specifications",
+      "uniformity": "Moderate - some spatial variations",
+      "technical_issues": [
+        "LEM HV stability issues during long-term operation",
+        "Some CRP channels showed degraded performance",
+        "Charging-up effects observed"
+      ],
+      "successful_demonstrations": [
+        "-300 kV cathode operation",
+        "Replaceable electronics design validated",
+        "Photon detection system operational",
+        "Full drift distance (6m) charge collection"
+      ]
+    },
+    "charging_up_effect": {
+      "description": "LEM capacitance charging affects gain stability",
+      "time_constant_s": 10,
+      "gain_variation_pct": 15,
+      "mitigation": "Periodic voltage cycling"
+    }
+  },
+  "photon_detection": {
+    "pmt_model": "Hamamatsu R5912-20Mod",
+    "n_pmts": 50,
+    "pmt_diameter_inch": 8,
+    "quantum_efficiency_420nm": 0.25,
+    "time_alignment": {
+      "method": "Light calibration system (laser pulser)",
+      "resolution_ns": 1.0,
+      "aligned": true
+    },
+    "single_photoelectron": {
+      "measurement": "SPE rate measured at different drift fields",
+      "rate_at_0V_cm": "Baseline rate",
+      "rate_with_drift": "Increases with drift field due to recombination light"
+    },
+    "light_yield_results": {
+      "total_photons_per_mev": 20000,
+      "detected_fraction": 0.05,
+      "sufficient_for_trigger": true
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "resolution_sweep": [
+    {
+      "M": 2,
+      "n_cycles": 50000,
+      "avg_work": 0.6931471805599451,
+      "theoretical_work_binary": 0.6931471805599453,
+      "avg_info_acquired_bits": 1.0,
+      "avg_info_unavailable_bits": 0.0,
+      "unavailable_info_ratio": 0.0,
+      "efficiency": 0.9999999999999997,
+      "fluctuation_check": 0.5
+    },
+    {
+      "M": 4,
+      "n_cycles": 50000,
+      "avg_work": 0.6931471805599451,
+      "theoretical_work_binary": 0.6931471805599453,
+      "avg_info_acquired_bits": 2.0,
+      "avg_info_unavailable_bits": 1.0,
+      "unavailable_info_ratio": 0.5,
+      "efficiency": 0.49999999999999983,
+      "fluctuation_check": 0.5
+    },
+    {
+      "M": 8,
+      "n_cycles": 50000,
+      "avg_work": 0.6931471805599451,
+      "theoretical_work_binary": 0.6931471805599453,
+      "avg_info_acquired_bits": 3.0,
+      "avg_info_unavailable_bits": 2.0,
+      "unavailable_info_ratio": 0.6666666666666666,
+      "efficiency": 0.33333333333333326,
+      "fluctuation_check": 0.5
+    },
+    {
+      "M": 16,
+      "n_cycles": 50000,
+      "avg_work": 0.6931471805599451,
+      "theoretical_work_binary": 0.6931471805599453,
+      "avg_info_acquired_bits": 4.0,
+      "avg_info_unavailable_bits": 3.0,
+      "unavailable_info_ratio": 0.75,
+      "efficiency": 0.24999999999999992,
+      "fluctuation_check": 0.5
+    },
+    {
+      "M": 32,
+      "n_cycles": 50000,
+      "avg_work": 0.6931471805599451,
+      "theoretical_work_binary": 0.6931471805599453,
+      "avg_info_acquired_bits": 5.0,
+      "avg_info_unavailable_bits": 4.0,
+      "unavailable_info_ratio": 0.8,
+      "efficiency": 0.19999999999999993,
+      "fluctuation_check": 0.5
+    },
+    {
+      "M": 64,
+      "n_cycles": 50000,
+      "avg_work": 0.6931471805599451,
+      "theoretical_work_binary": 0.6931471805599453,
+      "avg_info_acquired_bits": 6.0,
+      "avg_info_unavailable_bits": 5.0,
+      "unavailable_info_ratio": 0.8333333333333334,
+      "efficiency": 0.16666666666666663,
+      "fluctuation_check": 0.5
+    },
+    {
+      "M": 128,
+      "n_cycles": 50000,
+      "avg_work": 0.6931471805599451,
+      "theoretical_work_binary": 0.6931471805599453,
+      "avg_info_acquired_bits": 7.0,
+      "avg_info_unavailable_bits": 6.0,
+      "unavailable_info_ratio": 0.8571428571428571,
+      "efficiency": 0.14285714285714282,
+      "fluctuation_check": 0.5
+    },
+    {
+      "M": 256,
+      "n_cycles": 50000,
+      "avg_work": 0.6931471805599451,
+      "theoretical_work_binary": 0.6931471805599453,
+      "avg_info_acquired_bits": 8.0,
+      "avg_info_unavailable_bits": 7.0,
+      "unavailable_info_ratio": 0.875,
+      "efficiency": 0.12499999999999996,
+      "fluctuation_check": 0.5
+    }
+  ],
+  "summary": {
+    "key_finding": "As resolution M increases, information acquired diverges as log2(M), but extractable work remains bounded at kT*ln(2). Unavailable information accounts for the difference.",
+    "max_resolution": 256,
+    "work_at_max_M": 0.6931471805599451,
+    "info_at_max_M": 8.0
+  }
+}

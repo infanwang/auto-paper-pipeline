@@ -1,0 +1,256 @@
+{
+  "paper_id": "2607.15951",
+  "title": "Rendering 3D Gaussians on a Graph Processor",
+  "memory_budget": {
+    "Pringles": {
+      "n_gaussians": 91450,
+      "memory_MB": 5.232810974121094,
+      "fraction_of_tile": 27.9083251953125,
+      "fraction_of_tile_pct": 2790.83251953125,
+      "max_gaussians_per_tile": 3276,
+      "fits_single_tile": false,
+      "paper_footprint_MB": 5.232810974121094
+    },
+    "Chairs": {
+      "n_gaussians": 44000,
+      "memory_MB": 2.5177001953125,
+      "fraction_of_tile": 13.427734375,
+      "fraction_of_tile_pct": 1342.7734375,
+      "max_gaussians_per_tile": 3276,
+      "fits_single_tile": false,
+      "paper_footprint_MB": 2.5177001953125
+    },
+    "Salad": {
+      "n_gaussians": 38000,
+      "memory_MB": 2.17437744140625,
+      "fraction_of_tile": 11.5966796875,
+      "fraction_of_tile_pct": 1159.66796875,
+      "max_gaussians_per_tile": 3276,
+      "fits_single_tile": false,
+      "paper_footprint_MB": 2.17437744140625
+    },
+    "Sloth": {
+      "n_gaussians": 25161,
+      "memory_MB": 1.4397239685058594,
+      "fraction_of_tile": 7.67852783203125,
+      "fraction_of_tile_pct": 767.852783203125,
+      "max_gaussians_per_tile": 3276,
+      "fits_single_tile": false,
+      "paper_footprint_MB": 1.4397239685058594
+    },
+    "Bonsai": {
+      "n_gaussians": 272956,
+      "memory_MB": 15.618667602539062,
+      "fraction_of_tile": 83.299560546875,
+      "fraction_of_tile_pct": 8329.9560546875,
+      "max_gaussians_per_tile": 3276,
+      "fits_single_tile": false,
+      "paper_footprint_MB": 15.618667602539062
+    }
+  },
+  "timing_breakdown": {
+    "Pringles": {
+      "n_gaussians": 91450,
+      "avg_gaussians_per_tile": 62.12635869565217,
+      "routing": {
+        "min": 1.4880000000000002,
+        "mean": 3.72,
+        "max": 14.136
+      },
+      "projection": {
+        "min": 3.048,
+        "mean": 3.81,
+        "max": 11.43
+      },
+      "sorting": {
+        "min": 0.0,
+        "mean": 0.24,
+        "max": 3.36
+      },
+      "blending_ms": 17.16,
+      "exchange_ms": 0.07,
+      "total_max_ms": 46.59,
+      "bottleneck": "blending"
+    },
+    "Chairs": {
+      "n_gaussians": 44000,
+      "avg_gaussians_per_tile": 29.891304347826086,
+      "routing": {
+        "min": 2.728,
+        "mean": 6.82,
+        "max": 25.916
+      },
+      "projection": {
+        "min": 3.5280000000000005,
+        "mean": 4.41,
+        "max": 13.23
+      },
+      "sorting": {
+        "min": 0.0,
+        "mean": 0.4,
+        "max": 5.6000000000000005
+      },
+      "blending_ms": 15.76,
+      "exchange_ms": 0.07,
+      "total_max_ms": 47.41,
+      "bottleneck": "routing"
+    },
+    "Salad": {
+      "n_gaussians": 38000,
+      "avg_gaussians_per_tile": 25.815217391304348,
+      "routing": {
+        "min": 1.656,
+        "mean": 4.14,
+        "max": 15.731999999999998
+      },
+      "projection": {
+        "min": 3.16,
+        "mean": 3.95,
+        "max": 11.850000000000001
+      },
+      "sorting": {
+        "min": 0.0,
+        "mean": 0.26,
+        "max": 3.64
+      },
+      "blending_ms": 16.66,
+      "exchange_ms": 0.07,
+      "total_max_ms": 45.86,
+      "bottleneck": "blending"
+    },
+    "Sloth": {
+      "n_gaussians": 25161,
+      "avg_gaussians_per_tile": 17.093070652173914,
+      "routing": {
+        "min": 1.084,
+        "mean": 2.71,
+        "max": 10.298
+      },
+      "projection": {
+        "min": 2.728,
+        "mean": 3.41,
+        "max": 10.23
+      },
+      "sorting": {
+        "min": 0.0,
+        "mean": 0.12,
+        "max": 1.68
+      },
+      "blending_ms": 16.15,
+      "exchange_ms": 0.07,
+      "total_max_ms": 44.4,
+      "bottleneck": "blending"
+    }
+  },
+  "fps_comparison": {
+    "IPU": {
+      "fps": 19.8,
+      "power_W": 27.18,
+      "peak_power_W": 29.3,
+      "j_per_frame": 1.373,
+      "fps_per_watt": 0.728476821192053,
+      "paper_fps": 19.8,
+      "paper_power_W": 27.18
+    },
+    "GTX_1080": {
+      "fps": 580.55,
+      "power_W": 74.42,
+      "peak_power_W": 119.67,
+      "j_per_frame": 0.128,
+      "fps_per_watt": 7.800994356355818,
+      "paper_fps": 580.55,
+      "paper_power_W": 74.42
+    },
+    "RTX_4090": {
+      "fps": 2401.47,
+      "power_W": 89.8,
+      "peak_power_W": 112.61,
+      "j_per_frame": 0.037,
+      "fps_per_watt": 26.742427616926502,
+      "paper_fps": 2401.47,
+      "paper_power_W": 89.8
+    }
+  },
+  "churn_rate": {
+    "Orbit 0.1\u00b0": {
+      "moved_gaussians": 136,
+      "churn_pct": 0.5405190572711737,
+      "paper_moved": 138,
+      "paper_churn_pct": 0.55,
+      "error_pct": 1.7238077688775235
+    },
+    "Orbit 0.5\u00b0": {
+      "moved_gaussians": 643,
+      "churn_pct": 2.555542307539446,
+      "paper_moved": 616,
+      "paper_churn_pct": 2.45,
+      "error_pct": 4.307849287324315
+    },
+    "Orbit 2.0\u00b0": {
+      "moved_gaussians": 2808,
+      "churn_pct": 11.160128770716584,
+      "paper_moved": 2745,
+      "paper_churn_pct": 10.91,
+      "error_pct": 2.2926560102345004
+    },
+    "Pure translation": {
+      "moved_gaussians": 56,
+      "churn_pct": 0.2225666706410715,
+      "paper_moved": 56,
+      "paper_churn_pct": 0.22,
+      "error_pct": 1.1666684732143158
+    },
+    "Pure rotation 1\u00b0": {
+      "moved_gaussians": 1577,
+      "churn_pct": 6.2676364214458875,
+      "paper_moved": 1634,
+      "paper_churn_pct": 11.99,
+      "error_pct": 47.72613493372905
+    },
+    "Random teleport": {
+      "moved_gaussians": 23748,
+      "churn_pct": 94.38416597114582,
+      "paper_moved": 24595,
+      "paper_churn_pct": 97.75,
+      "error_pct": 3.443308469416042
+    }
+  },
+  "channel_saturation": {
+    "sparse_scene": {
+      "gaussians_per_tile": 20,
+      "neighbors": 4,
+      "total_needed": 80,
+      "channel_capacity": 7200,
+      "saturation_ratio": 0.011111111111111112,
+      "dropped_gaussians": 0,
+      "has_artifacts": false
+    },
+    "moderate_scene": {
+      "gaussians_per_tile": 60,
+      "neighbors": 6,
+      "total_needed": 360,
+      "channel_capacity": 7200,
+      "saturation_ratio": 0.05,
+      "dropped_gaussians": 0,
+      "has_artifacts": false
+    },
+    "dense_scene": {
+      "gaussians_per_tile": 200,
+      "neighbors": 8,
+      "total_needed": 1600,
+      "channel_capacity": 7200,
+      "saturation_ratio": 0.2222222222222222,
+      "dropped_gaussians": 0,
+      "has_artifacts": false
+    },
+    "very_dense_scene": {
+      "gaussians_per_tile": 500,
+      "neighbors": 12,
+      "total_needed": 6000,
+      "channel_capacity": 7200,
+      "saturation_ratio": 0.8333333333333334,
+      "dropped_gaussians": 0,
+      "has_artifacts": false
+    }
+  }
+}

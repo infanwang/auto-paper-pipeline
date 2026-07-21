@@ -1,0 +1,30 @@
+{
+  "experts": 8,
+  "uniform_bits": 4.0,
+  "adaptive_bits": [
+    3.0,
+    3.0,
+    6.0,
+    4.0,
+    5.0,
+    3.0,
+    2.0,
+    2.0
+  ],
+  "savings": 0.125,
+  "memory_usage": {
+    "used_pages": 41,
+    "total_pages": 1000,
+    "utilization": 0.041,
+    "pages_per_expert": {
+      "0": 6,
+      "1": 4,
+      "2": 3,
+      "3": 5,
+      "4": 7,
+      "5": 6,
+      "6": 6,
+      "7": 4
+    }
+  }
+}

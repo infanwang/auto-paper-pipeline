@@ -1,0 +1,45 @@
+{
+  "ecc_schemes": {
+    "Hamming": {
+      "ratio": 1.75,
+      "len": 7
+    },
+    "BCH": {
+      "ratio": 1.0625,
+      "len": 136
+    },
+    "LDPC": {
+      "ratio": 2.0,
+      "len": 256
+    },
+    "Polar": {
+      "ratio": 2.0,
+      "len": 256
+    }
+  },
+  "aging": {
+    "0": {
+      "retention": 7.0534458212283755e-09,
+      "ber": 0.9999999992946554
+    },
+    "1000": {
+      "retention": 6.9832628626659176e-09,
+      "ber": 0.9999999993016737
+    },
+    "5000": {
+      "retention": 6.709445209274033e-09,
+      "ber": 0.9999999993290555
+    },
+    "10000": {
+      "retention": 6.3822217051368115e-09,
+      "ber": 0.9999999993617779
+    }
+  },
+  "ml_prediction": {
+    "scheme": "hamming",
+    "score": -Infinity,
+    "correction": 1,
+    "power": 1.0,
+    "latency": 1
+  }
+}

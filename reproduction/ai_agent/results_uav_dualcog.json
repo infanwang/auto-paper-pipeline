@@ -1,0 +1,19 @@
+{
+  "scenes": 12,
+  "landmarks": 394,
+  "qa_items": 984,
+  "task_distribution": {
+    "self_relative_position": 240,
+    "future_observation": 240,
+    "landmark_direction": 240,
+    "action_decision": 240,
+    "behavior_recognition": 12,
+    "visibility_counting": 12
+  },
+  "metrics": {
+    "self_accuracy": 0.40291610384116616,
+    "env_accuracy": 0.40214363437263934,
+    "msIoU@50": 1.0,
+    "msIoU": 0.5624999648437524
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "paper_id": "2607.16189",
+  "title": "VideoTreeSearch: Self-Correcting Agents for Grounded Long Video QA",
+  "dataset": "synthetic video frames (1000 frames, 200 questions)",
+  "metrics": [
+    "mIoU",
+    "QA Accuracy (IoU>=0.5)"
+  ],
+  "our_results": {
+    "VTS": {
+      "mIoU": 0.3086552808203073,
+      "accuracy": 0.22
+    },
+    "Uniform": {
+      "mIoU": 0.09302421588908649,
+      "accuracy": 0.015
+    },
+    "Random": {
+      "mIoU": 0.04095470856156256,
+      "accuracy": 0.035
+    }
+  },
+  "paper_reported_results": {
+    "VTS": {
+      "mIoU": 16.8,
+      "accuracy": 36.4
+    },
+    "Uniform": {
+      "mIoU": 4.3,
+      "accuracy": 17.4
+    }
+  },
+  "analysis": "Our VTS agent achieves higher mIoU and accuracy than uniform and random baselines, showing the benefit of tree search. Paper results are on real video datasets; our synthetic results show relative improvement."
+}

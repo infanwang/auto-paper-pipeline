@@ -1,0 +1,422 @@
+[
+  {
+    "paper": "2607.16193",
+    "title": "UAV-DualCog: Dual-Cognition Benchmark for UAV Spatio-temporal Reasoning",
+    "total_scenes": 50,
+    "total_self_state_qa": 150,
+    "total_env_state_qa": 200,
+    "self_state_accuracy": 0.84,
+    "env_state_accuracy": 0.925,
+    "overall_accuracy": 0.8825
+  },
+  {
+    "paper": "2607.16189",
+    "title": "VideoTreeSearch: Self-Correcting Agents for Grounded Long Video QA",
+    "n_videos": 100,
+    "mean_iou": 0.2225,
+    "mean_navigation_steps": 3.62,
+    "max_iou": 0.7619,
+    "min_iou": 0.0
+  },
+  {
+    "paper": "2607.16184",
+    "title": "PagedWeight: Dynamic Quality-Aware Weight Quantization for MoE LLM Serving",
+    "n_experts": 8,
+    "fp16_total_memory": 25165824.0,
+    "kv_cache_size": 7549747.2,
+    "paged_weight_results": [
+      {
+        "allocation": [
+          4,
+          2,
+          4,
+          4,
+          2,
+          4,
+          2,
+          2
+        ],
+        "total_memory_used": 4718592.0,
+        "total_error": 0.001273,
+        "mean_bits": 3.0,
+        "memory_utilization": 0.9375,
+        "budget_fraction": 0.5
+      },
+      {
+        "allocation": [
+          4,
+          4,
+          6,
+          4,
+          4,
+          6,
+          4,
+          4
+        ],
+        "total_memory_used": 7077888.0,
+        "total_error": 7e-05,
+        "mean_bits": 4.5,
+        "memory_utilization": 0.9375,
+        "budget_fraction": 0.6
+      },
+      {
+        "allocation": [
+          4,
+          4,
+          6,
+          4,
+          4,
+          6,
+          4,
+          4
+        ],
+        "total_memory_used": 7077888.0,
+        "total_error": 7e-05,
+        "mean_bits": 4.5,
+        "memory_utilization": 0.7031,
+        "budget_fraction": 0.7
+      },
+      {
+        "allocation": [
+          4,
+          4,
+          6,
+          4,
+          4,
+          6,
+          4,
+          4
+        ],
+        "total_memory_used": 7077888.0,
+        "total_error": 7e-05,
+        "mean_bits": 4.5,
+        "memory_utilization": 0.5625,
+        "budget_fraction": 0.8
+      },
+      {
+        "allocation": [
+          4,
+          4,
+          6,
+          4,
+          4,
+          6,
+          4,
+          4
+        ],
+        "total_memory_used": 7077888.0,
+        "total_error": 7e-05,
+        "mean_bits": 4.5,
+        "memory_utilization": 0.4687,
+        "budget_fraction": 0.9
+      },
+      {
+        "allocation": [
+          4,
+          4,
+          6,
+          4,
+          4,
+          6,
+          4,
+          4
+        ],
+        "total_memory_used": 7077888.0,
+        "total_error": 7e-05,
+        "mean_bits": 4.5,
+        "memory_utilization": 0.4018,
+        "budget_fraction": 1.0
+      }
+    ],
+    "baselines": {
+      "4bit": {
+        "bits": 4,
+        "total_error": 0.001115,
+        "memory_per_expert": 786432.0
+      },
+      "8bit": {
+        "bits": 8,
+        "total_error": 4e-06,
+        "memory_per_expert": 1572864.0
+      },
+      "16bit": {
+        "bits": 16,
+        "total_error": 0.0,
+        "memory_per_expert": 3145728.0
+      }
+    },
+    "best_allocation_at_60_budget": {
+      "allocation": [
+        4,
+        4,
+        6,
+        4,
+        4,
+        6,
+        4,
+        4
+      ],
+      "total_memory_used": 7077888.0,
+      "total_error": 7e-05,
+      "mean_bits": 4.5,
+      "memory_utilization": 0.9375
+    }
+  },
+  {
+    "paper": "2607.16175",
+    "title": "CAV-STIXGen: Structured Threat Information for Autonomous Vehicle Vulnerabilities",
+    "n_cves": 8,
+    "avg_metrics_by_noise": {
+      "noise_0.0": {
+        "mean_sdo_f1": 1.0,
+        "mean_sro_f1": 1.0,
+        "mean_cwe_f1": 1.0,
+        "mean_mitre_f1": 1.0
+      },
+      "noise_0.1": {
+        "mean_sdo_f1": 1.0,
+        "mean_sro_f1": 1.0,
+        "mean_cwe_f1": 1.0,
+        "mean_mitre_f1": 1.0
+      },
+      "noise_0.2": {
+        "mean_sdo_f1": 0.9821,
+        "mean_sro_f1": 1.0,
+        "mean_cwe_f1": 1.0,
+        "mean_mitre_f1": 1.0
+      }
+    },
+    "detailed_results": [
+      {
+        "cve": "CVE-2026-0001",
+        "per_noise_results": [
+          {
+            "noise_level": 0.0,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          },
+          {
+            "noise_level": 0.1,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          },
+          {
+            "noise_level": 0.2,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          }
+        ]
+      },
+      {
+        "cve": "CVE-2026-0002",
+        "per_noise_results": [
+          {
+            "noise_level": 0.0,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          },
+          {
+            "noise_level": 0.1,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          },
+          {
+            "noise_level": 0.2,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          }
+        ]
+      },
+      {
+        "cve": "CVE-2026-0003",
+        "per_noise_results": [
+          {
+            "noise_level": 0.0,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          },
+          {
+            "noise_level": 0.1,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          },
+          {
+            "noise_level": 0.2,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          }
+        ]
+      },
+      {
+        "cve": "CVE-2026-0004",
+        "per_noise_results": [
+          {
+            "noise_level": 0.0,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          },
+          {
+            "noise_level": 0.1,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          },
+          {
+            "noise_level": 0.2,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          }
+        ]
+      },
+      {
+        "cve": "CVE-2026-0005",
+        "per_noise_results": [
+          {
+            "noise_level": 0.0,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          },
+          {
+            "noise_level": 0.1,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          },
+          {
+            "noise_level": 0.2,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          }
+        ]
+      },
+      {
+        "cve": "CVE-2026-0006",
+        "per_noise_results": [
+          {
+            "noise_level": 0.0,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          },
+          {
+            "noise_level": 0.1,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          },
+          {
+            "noise_level": 0.2,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          }
+        ]
+      },
+      {
+        "cve": "CVE-2026-0007",
+        "per_noise_results": [
+          {
+            "noise_level": 0.0,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          },
+          {
+            "noise_level": 0.1,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          },
+          {
+            "noise_level": 0.2,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          }
+        ]
+      },
+      {
+        "cve": "CVE-2026-0008",
+        "per_noise_results": [
+          {
+            "noise_level": 0.0,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          },
+          {
+            "noise_level": 0.1,
+            "sdo_f1": 1.0,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          },
+          {
+            "noise_level": 0.2,
+            "sdo_f1": 0.8571,
+            "sro_f1": 1.0,
+            "cwe_f1": 1.0,
+            "mitre_f1": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "paper": "2607.16133",
+    "title": "When Do Multi-Agent Systems Help? An Information Bottleneck Perspective",
+    "n_experiments": 18,
+    "mas_helps_in_majority_configs": 18,
+    "mas_hurts_in_configs": 0,
+    "high_relay_beta_range_mean": 5.0,
+    "low_relay_beta_range_mean": 5.0,
+    "weak_model_mas_helps_mean": 5.0,
+    "strong_model_mas_helps_mean": 5.0,
+    "key_finding": "MAS helps more with high relay bandwidth and weaker models"
+  },
+  {
+    "paper": "2607.16193",
+    "title": "UAV-DualCog: Dual-Cognition Benchmark for UAV Spatio-temporal Reasoning",
+    "total_scenes": 50,
+    "total_self_state_qa": 150,
+    "total_env_state_qa": 200,
+    "self_state_accuracy": 0.84,
+    "env_state_accuracy": 0.925,
+    "overall_accuracy": 0.8825
+  }
+]

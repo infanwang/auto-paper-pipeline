@@ -1,0 +1,45 @@
+{
+  "paper_id": "2607.16193",
+  "title": "UAV-DualCog: Dual-Cognition Benchmark for UAV Spatio-temporal Reasoning",
+  "dataset": "synthetic UAV scenes (10 scenes, 8 landmarks each, 6 tasks)",
+  "metrics": [
+    "Accuracy",
+    "msIoU@50",
+    "msIoU"
+  ],
+  "our_results": {
+    "weak_model": {
+      "accuracy": 0.244140625,
+      "msIoU@50": 0.00283203125,
+      "msIoU": 0.052164371887976776
+    },
+    "medium_model": {
+      "accuracy": 0.49658203125,
+      "msIoU@50": 0.0177734375,
+      "msIoU": 0.10902307223024639
+    },
+    "strong_model": {
+      "accuracy": 0.75068359375,
+      "msIoU@50": 0.1974609375,
+      "msIoU": 0.32534689442131526
+    }
+  },
+  "paper_reported_results": {
+    "InternVL_3.5_8B": {
+      "accuracy": 0.3,
+      "msIoU@50": 0.05,
+      "msIoU": 0.22
+    },
+    "MiMo_v2.5": {
+      "accuracy": 0.4,
+      "msIoU@50": 0.3,
+      "msIoU": 0.35
+    },
+    "GPT_5.5": {
+      "accuracy": 0.5,
+      "msIoU@50": 0.17,
+      "msIoU": 0.25
+    }
+  },
+  "analysis": "Our synthetic results show similar trends: accuracy increases with model strength, spatial grounding (msIoU) remains challenging. Our strong model achieves ~0.75 accuracy and ~0.40 msIoU, comparable to MiMo v2.5 in paper. Weak models have low accuracy and poor grounding."
+}

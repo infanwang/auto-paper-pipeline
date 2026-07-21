@@ -1,0 +1,88 @@
+{
+  "paper_id": "2607.16170",
+  "paper_title": "Morphologies of SAGAbg Low-Mass Galaxies in Legacy Survey Multi-band Imaging",
+  "experiments": {
+    "band_statistics": {
+      "g": {
+        "gini_mean": 0.7758370482055761,
+        "gini_std": 0.09375028413820521,
+        "m20_mean": -Infinity,
+        "m20_std": NaN,
+        "cas_mean": 19.273767158919252,
+        "cas_std": 23.57919974577845,
+        "asym_mean": -0.47219815400423265,
+        "asym_std": 2.047629394866402
+      },
+      "r": {
+        "gini_mean": 0.7800148725891473,
+        "gini_std": 0.0927615570808124,
+        "m20_mean": -Infinity,
+        "m20_std": NaN,
+        "cas_mean": 19.25804002187451,
+        "cas_std": 23.59273585220803,
+        "asym_mean": -0.3337280911574987,
+        "asym_std": 1.8108821712799532
+      },
+      "i": {
+        "gini_mean": 0.7850029960541016,
+        "gini_std": 0.08564915737598586,
+        "m20_mean": -Infinity,
+        "m20_std": NaN,
+        "cas_mean": 19.277319348204358,
+        "cas_std": 23.57682130638357,
+        "asym_mean": -0.10423358264158093,
+        "asym_std": 1.1895533027745715
+      },
+      "z": {
+        "gini_mean": 0.7784521192154622,
+        "gini_std": 0.09384228074159151,
+        "m20_mean": -Infinity,
+        "m20_std": NaN,
+        "cas_mean": 19.3039192186215,
+        "cas_std": 23.559624924058916,
+        "asym_mean": -0.3268393258203786,
+        "asym_std": 1.7445752655385616
+      }
+    },
+    "bivariate_gaussian_fits": {
+      "g": {
+        "mu_gini": 0.7758370482055761,
+        "mu_m20": -Infinity,
+        "sigma_gini": 0.09375028413820521,
+        "sigma_m20": NaN,
+        "correlation": NaN
+      },
+      "r": {
+        "mu_gini": 0.7800148725891473,
+        "mu_m20": -Infinity,
+        "sigma_gini": 0.0927615570808124,
+        "sigma_m20": NaN,
+        "correlation": NaN
+      },
+      "i": {
+        "mu_gini": 0.7850029960541016,
+        "mu_m20": -Infinity,
+        "sigma_gini": 0.08564915737598586,
+        "sigma_m20": NaN,
+        "correlation": NaN
+      },
+      "z": {
+        "mu_gini": 0.7784521192154622,
+        "mu_m20": -Infinity,
+        "sigma_gini": 0.09384228074159151,
+        "sigma_m20": NaN,
+        "correlation": NaN
+      }
+    }
+  },
+  "paper_key_results": {
+    "sample_size": 6211,
+    "mass_range": "7 < log(M*/Msun) < 10",
+    "redshift_range": "z < 0.1",
+    "gini_band_variation": "2%",
+    "m20_decreases_with_wavelength": true,
+    "gini_underestimate": 0.015,
+    "m20_overestimate": 0.05,
+    "dominant_morphology": "Sb/Sc/Ir"
+  }
+}

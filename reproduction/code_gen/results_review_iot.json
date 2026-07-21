@@ -1,0 +1,154 @@
+{
+  "paper_id": "2607.16172",
+  "paper_type": "review",
+  "reproducible": false,
+  "reason": "Review paper with no novel algorithms or experimental results",
+  "conceptual_demo": {
+    "n_machines": 20,
+    "n_clusters": 4,
+    "machines": [
+      {
+        "id": "VM_000",
+        "cluster": 0,
+        "type": "sensor",
+        "latency_ms": 22.224482767726588,
+        "bandwidth_mbps": 860.0119407122686
+      },
+      {
+        "id": "VM_001",
+        "cluster": 1,
+        "type": "gateway",
+        "latency_ms": 35.01971743843851,
+        "bandwidth_mbps": 103.23557440877303
+      },
+      {
+        "id": "VM_002",
+        "cluster": 2,
+        "type": "controller",
+        "latency_ms": 38.176415248522474,
+        "bandwidth_mbps": 788.2036622241843
+      },
+      {
+        "id": "VM_003",
+        "cluster": 3,
+        "type": "gateway",
+        "latency_ms": 6.841624817439521,
+        "bandwidth_mbps": 455.88207851661144
+      },
+      {
+        "id": "VM_004",
+        "cluster": 0,
+        "type": "controller",
+        "latency_ms": 46.37486694800579,
+        "bandwidth_mbps": 647.4264688798579
+      },
+      {
+        "id": "VM_005",
+        "cluster": 1,
+        "type": "actuator",
+        "latency_ms": 41.22669985690608,
+        "bandwidth_mbps": 448.9800568390578
+      },
+      {
+        "id": "VM_006",
+        "cluster": 2,
+        "type": "actuator",
+        "latency_ms": 27.951946957283823,
+        "bandwidth_mbps": 73.17908354313357
+      },
+      {
+        "id": "VM_007",
+        "cluster": 3,
+        "type": "sensor",
+        "latency_ms": 41.46774301363281,
+        "bandwidth_mbps": 635.3477551308442
+      },
+      {
+        "id": "VM_008",
+        "cluster": 0,
+        "type": "sensor",
+        "latency_ms": 18.049035422428485,
+        "bandwidth_mbps": 970.9910441509543
+      },
+      {
+        "id": "VM_009",
+        "cluster": 1,
+        "type": "gateway",
+        "latency_ms": 44.709495505448785,
+        "bandwidth_mbps": 780.5996621030242
+      },
+      {
+        "id": "VM_010",
+        "cluster": 2,
+        "type": "gateway",
+        "latency_ms": 23.60268968448819,
+        "bandwidth_mbps": 53.36572812935649
+      },
+      {
+        "id": "VM_011",
+        "cluster": 3,
+        "type": "sensor",
+        "latency_ms": 8.137329857343618,
+        "bandwidth_mbps": 686.21846371003
+      },
+      {
+        "id": "VM_012",
+        "cluster": 0,
+        "type": "gateway",
+        "latency_ms": 48.391731755493396,
+        "bandwidth_mbps": 332.5671045567704
+      },
+      {
+        "id": "VM_013",
+        "cluster": 1,
+        "type": "controller",
+        "latency_ms": 18.83775544872601,
+        "bandwidth_mbps": 474.86025316304983
+      },
+      {
+        "id": "VM_014",
+        "cluster": 2,
+        "type": "gateway",
+        "latency_ms": 6.931114514105847,
+        "bandwidth_mbps": 480.9478769636744
+      },
+      {
+        "id": "VM_015",
+        "cluster": 3,
+        "type": "sensor",
+        "latency_ms": 11.732012778018763,
+        "bandwidth_mbps": 673.1158547356853
+      },
+      {
+        "id": "VM_016",
+        "cluster": 0,
+        "type": "gateway",
+        "latency_ms": 41.71757070486295,
+        "bandwidth_mbps": 703.2624509822266
+      },
+      {
+        "id": "VM_017",
+        "cluster": 1,
+        "type": "actuator",
+        "latency_ms": 15.962148748411034,
+        "bandwidth_mbps": 833.9372033812491
+      },
+      {
+        "id": "VM_018",
+        "cluster": 2,
+        "type": "actuator",
+        "latency_ms": 19.680179761993635,
+        "bandwidth_mbps": 295.4448228909417
+      },
+      {
+        "id": "VM_019",
+        "cluster": 3,
+        "type": "gateway",
+        "latency_ms": 34.28352744676128,
+        "bandwidth_mbps": 148.3549587732167
+      }
+    ],
+    "connectivity_density": 0.165,
+    "avg_latency": 27.565904433801876
+  }
+}

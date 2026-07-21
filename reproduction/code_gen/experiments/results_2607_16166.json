@@ -1,0 +1,26 @@
+{
+  "paper_id": "2607.16166",
+  "scheduler": {
+    "n_ops": 20,
+    "schedule_length": 20
+  },
+  "joint_measurement": {
+    "n_ops": 20,
+    "cat_time": 20.0,
+    "viterbi_time": 56.0,
+    "speedup": 2.8,
+    "success_rate": 0.9591415666181774
+  },
+  "clifford": {
+    "cat": {
+      "time": 100.0,
+      "fidelity": 0.990861331611952
+    },
+    "viterbi": {
+      "time": 350.0,
+      "fidelity": 0.9955626377961975
+    },
+    "speedup": 3.5
+  },
+  "toffoli_speedup": 5.0
+}

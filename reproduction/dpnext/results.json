@@ -1,0 +1,21 @@
+{
+  "nas_random": {
+    "accuracy": 0.81,
+    "params": 1056
+  },
+  "nas_evo": {
+    "accuracy": 0.764,
+    "params": 320
+  },
+  "freq_adapt": {
+    "-5": "sub6",
+    "5": "sub6",
+    "15": "mmwave",
+    "25": "thz"
+  },
+  "onnx": {
+    "model": "dpnext_student",
+    "quant": "INT8",
+    "opset": 17
+  }
+}

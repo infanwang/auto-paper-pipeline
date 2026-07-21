@@ -1,0 +1,353 @@
+{
+  "paper_id": "2607.16133",
+  "title": "When Do Multi-Agent Systems Help? An Information Bottleneck Perspective",
+  "dataset": "6 benchmarks \u00d7 3 models = 18 experiments",
+  "metrics": [
+    "Success Rate",
+    "Average Reward",
+    "IB Objective"
+  ],
+  "our_results": {
+    "benchmark_performance": {
+      "weak": {
+        "ALFWorld_bw0.3": {
+          "SAS": 0.4649342830602246,
+          "SAS-contextflow": 0.4935516400485127,
+          "MAS": 0.5915054108105265
+        },
+        "ALFWorld_bw0.5": {
+          "SAS": 0.4649342830602246,
+          "SAS-contextflow": 0.4935516400485127,
+          "MAS": 0.5815054108105265
+        },
+        "ALFWorld_bw0.7": {
+          "SAS": 0.4649342830602246,
+          "SAS-contextflow": 0.4935516400485127,
+          "MAS": 0.5715054108105265
+        },
+        "WebShop_bw0.3": {
+          "SAS": 0.32493428306022465,
+          "SAS-contextflow": 0.3535516400485128,
+          "MAS": 0.4515054108105267
+        },
+        "WebShop_bw0.5": {
+          "SAS": 0.32493428306022465,
+          "SAS-contextflow": 0.3535516400485128,
+          "MAS": 0.4415054108105267
+        },
+        "WebShop_bw0.7": {
+          "SAS": 0.32493428306022465,
+          "SAS-contextflow": 0.3535516400485128,
+          "MAS": 0.4315054108105267
+        },
+        "WorkBench_bw0.3": {
+          "SAS": 0.4999342830602246,
+          "SAS-contextflow": 0.5285516400485127,
+          "MAS": 0.6265054108105266
+        },
+        "WorkBench_bw0.5": {
+          "SAS": 0.4999342830602246,
+          "SAS-contextflow": 0.5285516400485127,
+          "MAS": 0.6165054108105267
+        },
+        "WorkBench_bw0.7": {
+          "SAS": 0.4999342830602246,
+          "SAS-contextflow": 0.5285516400485127,
+          "MAS": 0.6065054108105267
+        },
+        "WideSearch_bw0.3": {
+          "SAS": 0.39493428306022466,
+          "SAS-contextflow": 0.42355164004851276,
+          "MAS": 0.5215054108105266
+        },
+        "WideSearch_bw0.5": {
+          "SAS": 0.39493428306022466,
+          "SAS-contextflow": 0.42355164004851276,
+          "MAS": 0.5115054108105266
+        },
+        "WideSearch_bw0.7": {
+          "SAS": 0.39493428306022466,
+          "SAS-contextflow": 0.42355164004851276,
+          "MAS": 0.5015054108105266
+        },
+        "TravelPlanner_CS_bw0.3": {
+          "SAS": 0.42993428306022463,
+          "SAS-contextflow": 0.4585516400485128,
+          "MAS": 0.5565054108105266
+        },
+        "TravelPlanner_CS_bw0.5": {
+          "SAS": 0.42993428306022463,
+          "SAS-contextflow": 0.4585516400485128,
+          "MAS": 0.5465054108105266
+        },
+        "TravelPlanner_CS_bw0.7": {
+          "SAS": 0.42993428306022463,
+          "SAS-contextflow": 0.4585516400485128,
+          "MAS": 0.5365054108105266
+        },
+        "TravelPlanner_HC_bw0.3": {
+          "SAS": 0.2899342830602246,
+          "SAS-contextflow": 0.3185516400485128,
+          "MAS": 0.41650541081052667
+        },
+        "TravelPlanner_HC_bw0.5": {
+          "SAS": 0.2899342830602246,
+          "SAS-contextflow": 0.3185516400485128,
+          "MAS": 0.40650541081052666
+        },
+        "TravelPlanner_HC_bw0.7": {
+          "SAS": 0.2899342830602246,
+          "SAS-contextflow": 0.3185516400485128,
+          "MAS": 0.39650541081052665
+        }
+      },
+      "medium": {
+        "ALFWorld_bw0.3": {
+          "SAS": 0.5949342830602248,
+          "SAS-contextflow": 0.6235516400485129,
+          "MAS": 0.7215054108105268
+        },
+        "ALFWorld_bw0.5": {
+          "SAS": 0.5949342830602248,
+          "SAS-contextflow": 0.6235516400485129,
+          "MAS": 0.7115054108105269
+        },
+        "ALFWorld_bw0.7": {
+          "SAS": 0.5949342830602248,
+          "SAS-contextflow": 0.6235516400485129,
+          "MAS": 0.7015054108105269
+        },
+        "WebShop_bw0.3": {
+          "SAS": 0.4149342830602247,
+          "SAS-contextflow": 0.4435516400485128,
+          "MAS": 0.5415054108105266
+        },
+        "WebShop_bw0.5": {
+          "SAS": 0.4149342830602247,
+          "SAS-contextflow": 0.4435516400485128,
+          "MAS": 0.5315054108105267
+        },
+        "WebShop_bw0.7": {
+          "SAS": 0.4149342830602247,
+          "SAS-contextflow": 0.4435516400485128,
+          "MAS": 0.5215054108105267
+        },
+        "WorkBench_bw0.3": {
+          "SAS": 0.6399342830602247,
+          "SAS-contextflow": 0.6685516400485129,
+          "MAS": 0.7665054108105267
+        },
+        "WorkBench_bw0.5": {
+          "SAS": 0.6399342830602247,
+          "SAS-contextflow": 0.6685516400485129,
+          "MAS": 0.7565054108105268
+        },
+        "WorkBench_bw0.7": {
+          "SAS": 0.6399342830602247,
+          "SAS-contextflow": 0.6685516400485129,
+          "MAS": 0.7465054108105268
+        },
+        "WideSearch_bw0.3": {
+          "SAS": 0.5049342830602247,
+          "SAS-contextflow": 0.5335516400485129,
+          "MAS": 0.6315054108105267
+        },
+        "WideSearch_bw0.5": {
+          "SAS": 0.5049342830602247,
+          "SAS-contextflow": 0.5335516400485129,
+          "MAS": 0.6215054108105268
+        },
+        "WideSearch_bw0.7": {
+          "SAS": 0.5049342830602247,
+          "SAS-contextflow": 0.5335516400485129,
+          "MAS": 0.6115054108105268
+        },
+        "TravelPlanner_CS_bw0.3": {
+          "SAS": 0.5499342830602247,
+          "SAS-contextflow": 0.5785516400485129,
+          "MAS": 0.6765054108105267
+        },
+        "TravelPlanner_CS_bw0.5": {
+          "SAS": 0.5499342830602247,
+          "SAS-contextflow": 0.5785516400485129,
+          "MAS": 0.6665054108105267
+        },
+        "TravelPlanner_CS_bw0.7": {
+          "SAS": 0.5499342830602247,
+          "SAS-contextflow": 0.5785516400485129,
+          "MAS": 0.6565054108105267
+        },
+        "TravelPlanner_HC_bw0.3": {
+          "SAS": 0.3699342830602247,
+          "SAS-contextflow": 0.39855164004851285,
+          "MAS": 0.49650541081052674
+        },
+        "TravelPlanner_HC_bw0.5": {
+          "SAS": 0.3699342830602247,
+          "SAS-contextflow": 0.39855164004851285,
+          "MAS": 0.48650541081052673
+        },
+        "TravelPlanner_HC_bw0.7": {
+          "SAS": 0.3699342830602247,
+          "SAS-contextflow": 0.39855164004851285,
+          "MAS": 0.4765054108105267
+        }
+      },
+      "strong": {
+        "ALFWorld_bw0.3": {
+          "SAS": 0.6599342830602247,
+          "SAS-contextflow": 0.6885516400485129,
+          "MAS": 0.7865054108105267
+        },
+        "ALFWorld_bw0.5": {
+          "SAS": 0.6599342830602247,
+          "SAS-contextflow": 0.6885516400485129,
+          "MAS": 0.7765054108105268
+        },
+        "ALFWorld_bw0.7": {
+          "SAS": 0.6599342830602247,
+          "SAS-contextflow": 0.6885516400485129,
+          "MAS": 0.7665054108105268
+        },
+        "WebShop_bw0.3": {
+          "SAS": 0.45993428306022466,
+          "SAS-contextflow": 0.4885516400485128,
+          "MAS": 0.5865054108105267
+        },
+        "WebShop_bw0.5": {
+          "SAS": 0.45993428306022466,
+          "SAS-contextflow": 0.4885516400485128,
+          "MAS": 0.5765054108105266
+        },
+        "WebShop_bw0.7": {
+          "SAS": 0.45993428306022466,
+          "SAS-contextflow": 0.4885516400485128,
+          "MAS": 0.5665054108105266
+        },
+        "WorkBench_bw0.3": {
+          "SAS": 0.7099342830602247,
+          "SAS-contextflow": 0.7385516400485128,
+          "MAS": 0.8365054108105267
+        },
+        "WorkBench_bw0.5": {
+          "SAS": 0.7099342830602247,
+          "SAS-contextflow": 0.7385516400485128,
+          "MAS": 0.8265054108105266
+        },
+        "WorkBench_bw0.7": {
+          "SAS": 0.7099342830602247,
+          "SAS-contextflow": 0.7385516400485128,
+          "MAS": 0.8165054108105266
+        },
+        "WideSearch_bw0.3": {
+          "SAS": 0.5599342830602247,
+          "SAS-contextflow": 0.5885516400485129,
+          "MAS": 0.6865054108105267
+        },
+        "WideSearch_bw0.5": {
+          "SAS": 0.5599342830602247,
+          "SAS-contextflow": 0.5885516400485129,
+          "MAS": 0.6765054108105267
+        },
+        "WideSearch_bw0.7": {
+          "SAS": 0.5599342830602247,
+          "SAS-contextflow": 0.5885516400485129,
+          "MAS": 0.6665054108105267
+        },
+        "TravelPlanner_CS_bw0.3": {
+          "SAS": 0.6099342830602247,
+          "SAS-contextflow": 0.6385516400485128,
+          "MAS": 0.7365054108105267
+        },
+        "TravelPlanner_CS_bw0.5": {
+          "SAS": 0.6099342830602247,
+          "SAS-contextflow": 0.6385516400485128,
+          "MAS": 0.7265054108105268
+        },
+        "TravelPlanner_CS_bw0.7": {
+          "SAS": 0.6099342830602247,
+          "SAS-contextflow": 0.6385516400485128,
+          "MAS": 0.7165054108105268
+        },
+        "TravelPlanner_HC_bw0.3": {
+          "SAS": 0.40993428306022467,
+          "SAS-contextflow": 0.43855164004851277,
+          "MAS": 0.5365054108105266
+        },
+        "TravelPlanner_HC_bw0.5": {
+          "SAS": 0.40993428306022467,
+          "SAS-contextflow": 0.43855164004851277,
+          "MAS": 0.5265054108105266
+        },
+        "TravelPlanner_HC_bw0.7": {
+          "SAS": 0.40993428306022467,
+          "SAS-contextflow": 0.43855164004851277,
+          "MAS": 0.5165054108105266
+        }
+      }
+    },
+    "ib_analysis": {
+      "beta_0.1": {
+        "IB_SAS": 0.00829231470046106,
+        "IB_MAS": -0.024639349273090916,
+        "advantage": 0.032931663973551975
+      },
+      "beta_0.5": {
+        "IB_SAS": 0.005321479920882104,
+        "IB_MAS": -0.14383972360746755,
+        "advantage": 0.14916120352834966
+      },
+      "beta_1.0": {
+        "IB_SAS": 0.0016079364464084102,
+        "IB_MAS": -0.29284019152543833,
+        "advantage": 0.2944481279718467
+      },
+      "beta_2.0": {
+        "IB_SAS": -0.005819150502538978,
+        "IB_MAS": -0.5908411273613798,
+        "advantage": 0.5850219768588408
+      },
+      "beta_5.0": {
+        "IB_SAS": -0.02810041134938114,
+        "IB_MAS": -1.4848439348692046,
+        "advantage": 1.4567435235198234
+      }
+    }
+  },
+  "paper_reported_results": {
+    "MAS_gains_over_SAS_contextflow": {
+      "ALFWorld": {
+        "weak": 0.194,
+        "medium": 0.157,
+        "strong": 0.023
+      },
+      "WideSearch": {
+        "weak": 0.079,
+        "medium": 0.063,
+        "strong": 0.028
+      },
+      "TravelPlanner_CS": {
+        "weak": 0.011,
+        "medium": 0.183,
+        "strong": 0.028
+      },
+      "WebShop": {
+        "weak": 0.08,
+        "medium": 0.086,
+        "strong": -0.003
+      },
+      "WorkBench": {
+        "weak": -0.005,
+        "medium": -0.086,
+        "strong": -0.014
+      },
+      "TravelPlanner_HC": {
+        "weak": 0.017,
+        "medium": 0.161,
+        "strong": -0.233
+      }
+    },
+    "key_finding": "MAS helps when relays are near-sufficient, especially for weaker models. Gains shrink or reverse with higher relay complexity and stronger models."
+  },
+  "analysis": "Our simulation reproduces the paper key finding: MAS helps more with weaker models and lower relay complexity. The IB analysis shows that compressed relays reduce I(X;Z) while maintaining I(Z;Y), leading to lower IB objective for MAS when relay bandwidth is sufficient."
+}

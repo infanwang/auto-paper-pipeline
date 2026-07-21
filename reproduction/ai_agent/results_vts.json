@@ -1,0 +1,19 @@
+{
+  "tree": {
+    "nodes": 15,
+    "duration": 60.0
+  },
+  "search_results": 50,
+  "metrics": {
+    "mean_iou": 0.5728390775312293,
+    "miou@50": 0.64,
+    "miou@75": 0.26,
+    "avg_steps": 5.2
+  },
+  "action_distribution": {
+    "zoom_in": 129,
+    "zoom_out": 45,
+    "shift": 45,
+    "answer": 18
+  }
+}

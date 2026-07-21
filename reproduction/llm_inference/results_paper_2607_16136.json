@@ -1,0 +1,34 @@
+{
+  "paper_id": "2607.16136",
+  "title": "Eccentricity as a Magnifying Glass: Precision Population Inference",
+  "method": "Eccentricity-enhanced Fisher information parameter estimation",
+  "elapsed_seconds": 0.06134819984436035,
+  "parameter_comparison": {
+    "chi_eff": {
+      "circular_uncertainty": 0.09706413005943632,
+      "eccentric_uncertainty": 0.0902290605935506,
+      "precision_improvement": 1.0793364284659401
+    },
+    "mass_ratio": {
+      "circular_uncertainty": 0.07673593252267664,
+      "eccentric_uncertainty": 0.07378325802563149,
+      "precision_improvement": 1.0409645607284148
+    },
+    "luminosity_distance": {
+      "circular_uncertainty": 0.0686347045750222,
+      "eccentric_uncertainty": 0.0686347045750222,
+      "precision_improvement": 1.0
+    },
+    "inclination": {
+      "circular_uncertainty": 0.08203416250126958,
+      "eccentric_uncertainty": 0.07887762068909634,
+      "precision_improvement": 1.040964560728411
+    }
+  },
+  "misalignment_detection": {
+    "fraction_circular_misaligned": 0.158,
+    "fraction_eccentric_misaligned": 0.254,
+    "detections_per_eccentric_event": 3.937007874015748
+  },
+  "n_detections": 500
+}
