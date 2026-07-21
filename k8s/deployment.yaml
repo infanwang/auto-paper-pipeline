@@ -4,6 +4,7 @@ metadata:
   name: paper-pipeline-web
   labels:
     app: paper-pipeline
+    component: web
 spec:
   replicas: 2
   selector:
@@ -17,31 +18,51 @@ spec:
       containers:
       - name: web
         image: paper-pipeline-web:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8000
+          name: http
         env:
         - name: SMTP_HOST
           valueFrom:
             secretKeyRef:
               name: paper-pipeline-secrets
               key: smtp-host
+        - name: SMTP_PORT
+          valueFrom:
+            secretKeyRef:
+              name: paper-pipeline-secrets
+              key: smtp-port
         - name: SMTP_SENDER
           valueFrom:
             secretKeyRef:
               name: paper-pipeline-secrets
               key: smtp-sender
+        - name: SMTP_AUTH_CODE
+          valueFrom:
+            secretKeyRef:
+              name: paper-pipeline-secrets
+              key: smtp-auth-code
+        - name: SMTP_RECIPIENT
+          valueFrom:
+            secretKeyRef:
+              name: paper-pipeline-secrets
+              key: smtp-recipient
         livenessProbe:
           httpGet:
             path: /api/health
             port: 8000
-          initialDelaySeconds: 10
+          initialDelaySeconds: 15
           periodSeconds: 30
+          timeoutSeconds: 5
+          failureThreshold: 3
         readinessProbe:
           httpGet:
             path: /api/health
             port: 8000
           initialDelaySeconds: 5
           periodSeconds: 10
+          timeoutSeconds: 5
         resources:
           requests:
             memory: "128Mi"
@@ -49,11 +70,25 @@ spec:
           limits:
             memory: "256Mi"
             cpu: "500m"
+        volumeMounts:
+        - name: data-volume
+          mountPath: /app/data
+        - name: logs-volume
+          mountPath: /app/logs
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: paper-pipeline-data-pvc
+      - name: logs-volume
+        emptyDir: {}
+      restartPolicy: Always
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: paper-pipeline-service
+  labels:
+    app: paper-pipeline
 spec:
   selector:
     app: paper-pipeline-web
@@ -61,7 +96,19 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 8000
+    name: http
   type: LoadBalancer
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: paper-pipeline-data-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
 ---
 apiVersion: v1
 kind: Secret
@@ -70,5 +117,45 @@ metadata:
 type: Opaque
 stringData:
   smtp-host: "smtp.163.com"
+  smtp-port: "465"
   smtp-sender: "your@email.com"
   smtp-auth-code: "your_auth_code"
+  smtp-recipient: "your@email.com"
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: paper-pipeline-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: paper-pipeline-web
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: paper-pipeline-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: paper-pipeline.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: paper-pipeline-service
+            port:
+              number: 80
