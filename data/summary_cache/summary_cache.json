@@ -1,0 +1,8 @@
+{
+  "test_robot_123": {
+    "core_problem": "提升机器人embodied控制和感知能力",
+    "innovation": "机器人策略学习",
+    "conclusion": "实验验证有效",
+    "limitation": "进一步实验验证"
+  }
+}

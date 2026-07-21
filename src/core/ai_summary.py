@@ -1,35 +1,46 @@
 """
-AI深度摘要生成器 - 防滥用 + 精准结构
+AI深度摘要生成器 - 精准版：基于关键词匹配的结构化摘要
 """
 
 import json
 import re
-import time
 from pathlib import Path
 from typing import Dict, Optional, Tuple
-from datetime import datetime
 
 
 class AISummaryGenerator:
     """AI深度摘要生成器"""
     
-    # 结构化模板
-    TEMPLATE = """你是一名顶会审稿人，请用中文严格按JSON格式输出：
-{
-  "core_problem": "≤20字，研究要解决的关键问题",
-  "innovation": "≤40字，突出技术突破",
-  "conclusion": "含量化结果，例：'吞吐提升37.2%'",
-  "limitation": "1条可落地的改进方向"
-}
-原文：{input_text}"""
-    
     def __init__(self, cache_dir: str = "/app/data/summary_cache"):
         self.cache_dir = Path(cache_dir)
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.cache = self._load_cache()
+        
+        # 关键词-问题映射
+        self.problem_keywords = {
+            'attention': '解决Transformer注意力机制的计算瓶颈',
+            'flash': '解决注意力计算的内存和速度问题',
+            'kv cache': '优化LLM推理的KV缓存内存占用',
+            'rag': '提升检索增强生成的效率和准确性',
+            'agent': '提升AI Agent的任务执行和推理能力',
+            'moe': '解决MoE模型的负载均衡和效率问题',
+            'quantiz': '降低模型量化后的精度损失',
+            'video': '实现高质量视频生成或理解',
+            'robot': '提升机器人embodied控制和感知能力',
+            'embodied': '实现embodied AI的高效控制',
+            'code': '提升代码生成质量和效率',
+            'multimodal': '增强多模态跨模态理解能力',
+            'vision': '提升视觉理解和表示学习',
+            'language': '增强语言理解和生成能力',
+            'reasoning': '提升模型推理和逻辑能力',
+            'inference': '优化模型推理效率和速度',
+            'training': '提升模型训练效率',
+            'distill': '通过知识蒸馏压缩模型',
+            'prune': '通过剪枝减少模型参数',
+            'sparse': '利用稀疏性提升效率',
+        }
     
     def _load_cache(self) -> Dict:
-        """加载缓存"""
         cache_file = self.cache_dir / "summary_cache.json"
         if cache_file.exists():
             try:
@@ -39,93 +50,101 @@ class AISummaryGenerator:
         return {}
     
     def _save_cache(self):
-        """保存缓存"""
         cache_file = self.cache_dir / "summary_cache.json"
         cache_file.write_text(json.dumps(self.cache, ensure_ascii=False, indent=2))
     
     def generate_summary(self, paper: Dict) -> Tuple[Dict, bool]:
-        """
-        生成AI摘要
-        返回: (summary_dict, success)
-        """
+        """生成AI摘要"""
         paper_id = paper.get('id', '')
         
-        # 1. 检查缓存
+        # 检查缓存
         if paper_id in self.cache:
             return self.cache[paper_id], True
         
-        # 2. 预处理输入（防滥用：截断超长摘要）
-        input_text = self._preprocess_input(paper)
+        # 预处理
+        title = paper.get('title', '')
+        abstract = paper.get('abstract', '')[:500]
+        text = f"{title} {abstract}".lower()
         
-        # 3. 生成摘要（带重试）
-        for attempt in range(2):
-            try:
-                summary = self._generate_with_llm(input_text)
-                if summary:
-                    # 4. 缓存结果
-                    self.cache[paper_id] = summary
-                    self._save_cache()
-                    return summary, True
-            except Exception as e:
-                print(f"  摘要生成失败 (尝试{attempt+1}): {e}")
-                time.sleep(1)
-        
-        # 5. 失败时返回默认摘要
-        fallback = {
-            "core_problem": "摘要生成失败",
-            "innovation": "请稍后重试",
-            "conclusion": "N/A",
-            "limitation": "系统暂时无法处理此论文"
+        # 生成摘要
+        summary = {
+            "core_problem": self._match_problem(text),
+            "innovation": self._match_innovation(text),
+            "conclusion": self._extract_conclusion(abstract),
+            "limitation": self._infer_limitation(text)
         }
-        return fallback, False
-    
-    def _preprocess_input(self, paper: Dict) -> str:
-        """预处理输入（防滥用：截断超长内容）"""
-        title = paper.get('title', '')[:100]
-        abstract = paper.get('abstract', '')[:500]  # 关键：摘要截断防超长
-        keywords = ', '.join(paper.get('llm_tags', [])[:5])
         
-        return f"标题:{title}\n摘要:{abstract}\n关键词:{keywords}"
-    
-    def _generate_with_llm(self, input_text: str) -> Optional[Dict]:
-        """调用LLM生成摘要（带结构化输出）"""
-        # 使用规则引擎生成结构化摘要
-        summary = self._rule_based_summary(input_text)
-        return summary
-    
-    def _rule_based_summary(self, input_text: str) -> Dict:
-        """基于规则的摘要生成"""
-        # 提取核心问题
-        core_problem = "研究LLM推理优化"  # 简化示例
-        if 'agent' in input_text.lower():
-            core_problem = "AI Agent能力提升"
-        elif 'multimodal' in input_text.lower():
-            core_problem = "多模态理解增强"
-        elif 'code' in input_text.lower():
-            core_problem = "代码生成优化"
+        # 缓存
+        self.cache[paper_id] = summary
+        self._save_cache()
         
-        # 提取创新方法
-        innovation = "提出新型架构优化方法"
-        if 'propose' in input_text.lower():
-            innovation = "提出创新方法提升性能"
+        return summary, True
+    
+    def _match_problem(self, text: str) -> str:
+        """匹配核心问题"""
+        for keyword, problem in self.problem_keywords.items():
+            if keyword in text:
+                return problem
+        return '提升模型性能和效率'
+    
+    def _match_innovation(self, text: str) -> str:
+        """匹配创新方法"""
+        innovations = {
+            'flash': 'Flash Attention机制优化',
+            'sparse': '稀疏注意力和动态路由',
+            'mixture': '混合专家动态门控',
+            'distill': '知识蒸馏压缩',
+            'prune': '结构化剪枝',
+            'quantiz': '混合精度量化',
+            'adapter': '轻量级适配器微调',
+            'lora': '低秩适配高效微调',
+            'rag': '检索增强生成优化',
+            'agent': '多Agent协作框架',
+            'video': '视频扩散模型',
+            'robot': '机器人策略学习',
+            'embodied': 'Embodied AI控制',
+            'code': '代码生成和补全',
+            'multimodal': '跨模态融合',
+        }
         
-        # 提取结论
-        conclusion = "实验验证有效性"
-        numbers = re.findall(r'(\d+\.?\d*)\s*%', input_text)
+        for keyword, innovation in innovations.items():
+            if keyword in text:
+                return innovation
+        
+        if 'novel' in text or 'first' in text:
+            return '首次提出新方法'
+        return '提出创新方案'
+    
+    def _extract_conclusion(self, abstract: str) -> str:
+        """提取实验结论"""
+        # 查找具体数字
+        numbers = re.findall(r'(\d+\.?\d*)\s*(?:x|×|percent|%)', abstract)
         if numbers:
-            conclusion = f"性能提升{'/'.join(numbers[:2])}%"
+            return f"性能提升{'/'.join(numbers[:2])}"
         
-        return {
-            "core_problem": core_problem[:20],
-            "innovation": innovation[:40],
-            "conclusion": conclusion,
-            "limitation": "需进一步验证泛化性"
-        }
+        if 'outperform' in abstract.lower() or 'surpass' in abstract.lower():
+            return '超越现有方法'
+        elif 'state-of-the-art' in abstract.lower() or 'sota' in abstract.lower():
+            return '达到SOTA水平'
+        elif 'improv' in abstract.lower():
+            return '显著提升性能'
+        
+        return '实验验证有效'
+    
+    def _infer_limitation(self, text: str) -> str:
+        """推断局限"""
+        if 'dataset' in text and 'small' in text:
+            return '扩展到更大规模数据集'
+        elif 'real' in text and 'world' in text:
+            return '实际部署验证'
+        elif 'comput' in text or 'cost' in text:
+            return '降低计算成本'
+        elif 'generaliz' in text:
+            return '提升泛化能力'
+        return '进一步实验验证'
     
     def get_summary(self, paper_id: str) -> Optional[Dict]:
-        """获取已缓存的摘要"""
         return self.cache.get(paper_id)
     
     def has_summary(self, paper_id: str) -> bool:
-        """检查是否有缓存摘要"""
         return paper_id in self.cache

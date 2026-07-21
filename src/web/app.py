@@ -148,6 +148,13 @@ async def root():
     """
 
 
+@app.get("/search", response_class=HTMLResponse)
+async def search_page():
+    """搜索页面"""
+    search_html = (Path(__file__).parent / "templates" / "search.html").read_text()
+    return search_html
+
+
 @app.get("/api/health")
 async def health_check():
     """健康检查端点"""
