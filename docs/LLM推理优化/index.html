@@ -4,54 +4,61 @@
     <meta charset="utf-8">
     <title>LLM推理优化 - AI Paper Pipeline</title>
     <style>
-        body { font-family: -apple-system, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; }
-        h1 { color: #1a1a2e; border-bottom: 2px solid #667eea; }
-        .paper { background: #f9f9f9; border-radius: 8px; padding: 15px; margin: 10px 0; }
-        .paper h3 { color: #333; }
-        .meta { color: #666; font-size: 0.9em; }
+        body { font-family: -apple-system, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; border-radius: 12px; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        th { background: #667eea; color: white; padding: 12px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #eee; }
+        tr:hover { background: #f5f5f5; }
+        a { color: #667eea; text-decoration: none; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; }
     </style>
 </head>
 <body>
-    <h1>📁 LLM推理优化 (5篇)</h1>
-    <a href="../index.html">← 返回首页</a>
-
-    <div class="paper">
-        <h3>1. Patch Policy: Efficient Embodied Control via Dense Visual Representations</h3>
-        <div class="meta">
-            ArXiv: 2607.18236v1 | 日期: 2026-07-20 | 评分: 7.8
-        </div>
-        <p>Pretrained dense visual features from Vision Transformers (ViTs) are powerful yet have been underutilized in robot learning. Modern robot policies either compress each observation into a single global...</p>
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="header">
+        <h1>📁 LLM推理优化</h1>
+        <p>6篇论文</p>
     </div>
-
-    <div class="paper">
-        <h3>2. Kernelized Linear Attention: Breaking the Capacity Wall with Symmetric Cones</h3>
-        <div class="meta">
-            ArXiv: 2607.17419v1 | 日期: 2026-07-19 | 评分: 7.0
-        </div>
-        <p>Linear attention promises constant-time recurrent inference but degrades sharply on associative recall. We formulate attention recall as a spherical-packing problem and introduce Kernelized Linear Att...</p>
-    </div>
-
-    <div class="paper">
-        <h3>3. C$^2$KV: Compressed and Composable KV Cache Reuse for Efficient LLM Inference</h3>
-        <div class="meta">
-            ArXiv: 2607.17715v1 | 日期: 2026-07-20 | 评分: 6.3
-        </div>
-        <p>Long-context inference is central to modern large language model (LLM) applications such as retrieval-augmented generation and multi-document reasoning. To mitigate the growing inference cost, recent ...</p>
-    </div>
-
-    <div class="paper">
-        <h3>4. FlowBlock: Wavefront-Parallel Decoding for Self-Correcting Diffusion Language Models</h3>
-        <div class="meta">
-            ArXiv: 2607.17652v1 | 日期: 2026-07-20 | 评分: 6.3
-        </div>
-        <p>Block-wise diffusion large language models (dLLMs) decode sequentially at the block level, enabling effective KV-cache reuse across blocks but making inter-block decoding strictly serial. Prior work h...</p>
-    </div>
-
-    <div class="paper">
-        <h3>5. WAR: Workload-Aware Rollouts for Synchronous Agentic Reinforcement Learning</h3>
-        <div class="meta">
-            ArXiv: 2607.17299v1 | 日期: 2026-07-19 | 评分: 6.3
-        </div>
-        <p>Long-horizon rollout generation has become the dominant systems bottleneck in agentic reinforcement learning (RL). As agents interact with environments over many turns, trajectories rapidly grow to te...</p>
-    </div>
-</body></html>
+    <table>
+        <tr><th>#</th><th>标题</th><th>日期</th><th>评分</th></tr>
+        
+            <tr>
+                <td>1</td>
+                <td><a href="../papers/2607.18236v1.html">Patch Policy: Efficient Embodied Control via Dense Visual Re</a></td>
+                <td>2026-07-20</td>
+                <td><span style="background:#4CAF50;color:white;padding:3px 8px;border-radius:10px;">7.8</span></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="../papers/2607.17419v1.html">Kernelized Linear Attention: Breaking the Capacity Wall with</a></td>
+                <td>2026-07-19</td>
+                <td><span style="background:#4CAF50;color:white;padding:3px 8px;border-radius:10px;">7.0</span></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="../papers/2607.17715v1.html">C$^2$KV: Compressed and Composable KV Cache Reuse for Effici</a></td>
+                <td>2026-07-20</td>
+                <td><span style="background:#FFC107;color:white;padding:3px 8px;border-radius:10px;">6.3</span></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="../papers/2607.17652v1.html">FlowBlock: Wavefront-Parallel Decoding for Self-Correcting D</a></td>
+                <td>2026-07-20</td>
+                <td><span style="background:#FFC107;color:white;padding:3px 8px;border-radius:10px;">6.3</span></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><a href="../papers/2607.17299v1.html">WAR: Workload-Aware Rollouts for Synchronous Agentic Reinfor</a></td>
+                <td>2026-07-19</td>
+                <td><span style="background:#FFC107;color:white;padding:3px 8px;border-radius:10px;">6.3</span></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><a href="../papers/2607.18187v1.html">EVOLVE: Efficient Learned Volume Compression with Variable-R</a></td>
+                <td>2026-07-20</td>
+                <td><span style="background:#FFC107;color:white;padding:3px 8px;border-radius:10px;">5.0</span></td>
+            </tr>
+    </table>
+</body>
+</html>

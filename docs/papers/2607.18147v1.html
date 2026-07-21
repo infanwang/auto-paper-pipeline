@@ -2,31 +2,31 @@
 <html lang="zh">
 <head>
     <meta charset="utf-8">
-    <title>LLMs and Agentic AI Systems for Smart Grids: A Tutorial on Architectures and Applications - AI Paper Pipeline</title>
+    <title>LLMs and Agentic AI Systems for Smart Grids: A Tutorial on Architectures and Applications</title>
     <style>
-        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { color: #1a1a2e; }
-        .meta { color: #666; margin: 10px 0; }
-        .abstract { background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0; }
-        .analysis { background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .paper { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a2e; line-height: 1.4; }
+        .meta { color: #666; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+        .abstract { background: #f0f4ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .section { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
     </style>
 </head>
 <body>
-    <a href="../index.html">← 返回首页</a>
-    <h1>LLMs and Agentic AI Systems for Smart Grids: A Tutorial on Architectures and Applications</h1>
-    <div class="meta">
-        ArXiv: 2607.18147v1 | 日期: 2026-07-20
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="paper">
+        <h1>LLMs and Agentic AI Systems for Smart Grids: A Tutorial on Architectures and Applications</h1>
+        <div class="meta">
+            <strong>ArXiv:</strong> 2607.18147v1 | 
+            <strong>日期:</strong> 2026-07-20 | 
+            <strong>评分:</strong> 6.3/10
+        </div>
+        <div class="abstract">
+            <h3>摘要</h3>
+            <p>Large language models (LLMs) and agentic AI systems have evolved from natural language tasks to using external tools to plan, retrieve, and act in technical domains. In smart grids, recent work applies agentic schemes to forecasting, optimization, and control, wrapping trusted solvers behind language interfaces and orchestrating multi-step workflows. The literature lacks a unified approach to designing and evaluating such systems. LLMs can produce numerically plausible yet physically infeasible outputs, evaluation protocols vary across tasks, and the boundary between what the model should and should not compute is implicit. This paper presents a solver-grounded design principle: a numerical result is reported only when it originates from a trusted tool and passes explicit verification. We review the building blocks of LLM and agentic AI systems for power systems: prompting strategies and agentic architectures. We instantiate the principle in four case studies: wind power forecasting, EV charging scheduling, power flow analysis, and contingency diagnosis, each comparing an LLM-only baseline against its solver-grounded counterpart on identical data and metrics. EVAgent reproduces the CVXPY optimum while reducing LLM-only unmet energy by 7.5-9.5x, and GridDebugAgent repairs 17/39 contingency cases while reducing total violations by 52.3%. We propose a four-group evaluation framework spanning task utility, solver-grounded correctness, faithfulness and safe failure, and cost and latency. A consistent division of labor emerges: the agentic system reliably orchestrates, retrieves, and explains, while trusted tools compute and a verification gate decides what is reported.</p>
+        </div>
+        <div class="section"><h2>📊 深度分析</h2><p><strong>问题:</strong> Large language models (LLMs) and agentic AI systems have evolved from natural language tasks to using external tools to plan, retrieve, and act in technical domains</p><p><strong>方法:</strong> This paper presents a solver-grounded design principle: a numerical result is reported only when it originates from a trusted tool and passes explicit verification</p><p><strong>优点:</strong> N/A</p><p><strong>改进建议:</strong> 可以与其他方法进行对比实验, 可以提供更详细的消融实验, 可以开源代码和数据集</p></div>
     </div>
-    <div class="abstract">
-        <h3>摘要</h3>
-        <p>Large language models (LLMs) and agentic AI systems have evolved from natural language tasks to using external tools to plan, retrieve, and act in technical domains. In smart grids, recent work applies agentic schemes to forecasting, optimization, and control, wrapping trusted solvers behind language interfaces and orchestrating multi-step workflows. The literature lacks a unified approach to designing and evaluating such systems. LLMs can produce numerically plausible yet physically infeasible outputs, evaluation protocols vary across tasks, and the boundary between what the model should and should not compute is implicit. This paper presents a solver-grounded design principle: a numerical result is reported only when it originates from a trusted tool and passes explicit verification. We review the building blocks of LLM and agentic AI systems for power systems: prompting strategies and agentic architectures. We instantiate the principle in four case studies: wind power forecasting, EV charging scheduling, power flow analysis, and contingency diagnosis, each comparing an LLM-only baseline against its solver-grounded counterpart on identical data and metrics. EVAgent reproduces the CVXPY optimum while reducing LLM-only unmet energy by 7.5-9.5x, and GridDebugAgent repairs 17/39 contingency cases while reducing total violations by 52.3%. We propose a four-group evaluation framework spanning task utility, solver-grounded correctness, faithfulness and safe failure, and cost and latency. A consistent division of labor emerges: the agentic system reliably orchestrates, retrieves, and explains, while trusted tools compute and a verification gate decides what is reported.</p>
-    </div>
-
-    <div class="analysis">
-        <h3>深度分析</h3>
-<p><strong>问题:</strong> Large language models (LLMs) and agentic AI systems have evolved from natural language tasks to using external tools to plan, retrieve, and act in technical domains</p>
-<p><strong>方法:</strong> This paper presents a solver-grounded design principle: a numerical result is reported only when it originates from a trusted tool and passes explicit verification</p>
-<p><strong>优点:</strong> N/A</p>
-<p><strong>改进建议:</strong> 可以与其他方法进行对比实验, 可以提供更详细的消融实验, 可以开源代码和数据集</p>
-    </div>
-</body></html>
+</body>
+</html>

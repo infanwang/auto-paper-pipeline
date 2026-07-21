@@ -2,23 +2,31 @@
 <html lang="zh">
 <head>
     <meta charset="utf-8">
-    <title>Natural Language Access to Domain-Specific Metadata: A Reusable Framework for LLM Query Generation - AI Paper Pipeline</title>
+    <title>Natural Language Access to Domain-Specific Metadata: A Reusable Framework for LLM Query Generation</title>
     <style>
-        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { color: #1a1a2e; }
-        .meta { color: #666; margin: 10px 0; }
-        .abstract { background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0; }
-        .analysis { background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .paper { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a2e; line-height: 1.4; }
+        .meta { color: #666; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+        .abstract { background: #f0f4ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .section { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
     </style>
 </head>
 <body>
-    <a href="../index.html">← 返回首页</a>
-    <h1>Natural Language Access to Domain-Specific Metadata: A Reusable Framework for LLM Query Generation</h1>
-    <div class="meta">
-        ArXiv: 2607.18029v1 | 日期: 2026-07-20
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="paper">
+        <h1>Natural Language Access to Domain-Specific Metadata: A Reusable Framework for LLM Query Generation</h1>
+        <div class="meta">
+            <strong>ArXiv:</strong> 2607.18029v1 | 
+            <strong>日期:</strong> 2026-07-20 | 
+            <strong>评分:</strong> 5.0/10
+        </div>
+        <div class="abstract">
+            <h3>摘要</h3>
+            <p>Researchers need to answer ad-hoc questions about the contents of domain-specific archives but often lack the expertise to write structured queries on the metadata. We show that when domain vocabulary and semantics are captured in a well-designed Web Ontology Language (OWL) ontology, Large Language Models (LLMs) can generate accurate structured queries zero-shot, without fine-tuning, retrieval augmentation, or multi-agent orchestration. We present the Natural Language Knowledge Graph Query (NLKGQ) system, a framework and development process that enables natural language access to metadata in such archives. The framework includes a web interface that helps researchers pose natural language questions, which a domain-agnostic harness translates to SPARQL via an LLM and executes against a knowledge graph. The development process begins with capturing domain vocabulary and semantics in a formal OWL ontology. Domain-specific code then extracts metadata from archive sources and imports it into a knowledge graph defined by the ontology. Both are designed for reuse across domains. We demonstrate the system on metadata derived from a large-scale neuroimaging research archive, evaluating multiple LLMs and ontology representations. The best configurations achieve 100% accuracy on a competence and regression question set developed with domain experts. An ablation study across eight ontology representations reveals that readable entity names and semantic annotations are the dominant factors in accuracy, more significant than model choice or prompt engineering. We also compare SPARQL to an auto-generated SQL database as query backends, showing that OWL's structural features provide a substantial advantage over SQL DDL for LLM-driven query generation. Our demonstration domain also requires local LLMs on modest institutional hardware to address privacy concerns for human subject data.</p>
+        </div>
+        
     </div>
-    <div class="abstract">
-        <h3>摘要</h3>
-        <p>Researchers need to answer ad-hoc questions about the contents of domain-specific archives but often lack the expertise to write structured queries on the metadata. We show that when domain vocabulary and semantics are captured in a well-designed Web Ontology Language (OWL) ontology, Large Language Models (LLMs) can generate accurate structured queries zero-shot, without fine-tuning, retrieval augmentation, or multi-agent orchestration. We present the Natural Language Knowledge Graph Query (NLKGQ) system, a framework and development process that enables natural language access to metadata in such archives. The framework includes a web interface that helps researchers pose natural language questions, which a domain-agnostic harness translates to SPARQL via an LLM and executes against a knowledge graph. The development process begins with capturing domain vocabulary and semantics in a formal OWL ontology. Domain-specific code then extracts metadata from archive sources and imports it into a knowledge graph defined by the ontology. Both are designed for reuse across domains. We demonstrate the system on metadata derived from a large-scale neuroimaging research archive, evaluating multiple LLMs and ontology representations. The best configurations achieve 100% accuracy on a competence and regression question set developed with domain experts. An ablation study across eight ontology representations reveals that readable entity names and semantic annotations are the dominant factors in accuracy, more significant than model choice or prompt engineering. We also compare SPARQL to an auto-generated SQL database as query backends, showing that OWL's structural features provide a substantial advantage over SQL DDL for LLM-driven query generation. Our demonstration domain also requires local LLMs on modest institutional hardware to address privacy concerns for human subject data.</p>
-    </div>
-</body></html>
+</body>
+</html>

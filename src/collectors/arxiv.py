@@ -1,6 +1,7 @@
 """ArXiv 论文采集器 - V2.0"""
 
 import urllib.request
+import urllib.error
 import xml.etree.ElementTree as ET
 import json
 import time
@@ -10,13 +11,14 @@ from typing import List, Dict, Optional
 
 
 class ArxivCollector:
-    """ArXiv API 论文采集器"""
+    """ArXiv API 论文采集器（带重试）"""
     
     BASE_URL = "https://export.arxiv.org/api/query"
     NS = {'atom': 'http://www.w3.org/2005/Atom'}
     
-    def __init__(self, rate_limit: float = 3.0):
+    def __init__(self, rate_limit: float = 3.0, max_retries: int = 3):
         self.rate_limit = rate_limit
+        self.max_retries = max_retries
         self.last_request_time = 0
     
     def _throttle(self):
@@ -49,10 +51,29 @@ class ArxivCollector:
         })
         url = f"{self.BASE_URL}?{params}"
         
+        data = None
+        for attempt in range(self.max_retries):
+            try:
+                self._throttle()
+                req = urllib.request.Request(url, headers={'User-Agent': 'PaperPipeline/2.0'})
+                data = urllib.request.urlopen(req, timeout=30).read().decode()
+                break
+            except urllib.error.HTTPError as e:
+                if e.code == 429 and attempt < self.max_retries - 1:
+                    wait_time = 5 * (attempt + 1)
+                    print(f"  ArXiv限流，等待{wait_time}秒后重试...")
+                    time.sleep(wait_time)
+                    continue
+                print(f"  ArXiv搜索失败: {e}")
+                return []
+            except Exception as e:
+                print(f"  ArXiv搜索失败: {e}")
+                return []
+        
+        if data is None:
+            return []
+        
         try:
-            req = urllib.request.Request(url, headers={'User-Agent': 'PaperPipeline/2.0'})
-            data = urllib.request.urlopen(req, timeout=30).read().decode()
-            
             root = ET.fromstring(data)
             papers = []
             
@@ -61,20 +82,16 @@ class ArxivCollector:
                 title = entry.find('atom:title', self.NS).text.strip().replace('\n', ' ')
                 published = entry.find('atom:published', self.NS).text[:10]
                 
-                # 时间过滤
                 if published < cutoff:
                     continue
                 
-                # 提取摘要
                 abstract = entry.find('atom:summary', self.NS).text.strip()
                 
-                # 提取作者
                 authors = []
                 for author in entry.findall('atom:author', self.NS):
                     name = author.find('atom:name', self.NS).text
                     authors.append({'name': name})
                 
-                # 提取分类
                 categories = [c.get('term') for c in entry.findall('atom:category', self.NS)]
                 
                 papers.append({
@@ -88,9 +105,8 @@ class ArxivCollector:
                 })
             
             return papers
-        
         except Exception as e:
-            print(f"ArXiv搜索失败: {e}")
+            print(f"  ArXiv解析失败: {e}")
             return []
     
     def search_multi_topic(self, topics: Dict, days_back: int = 7) -> List[Dict]:

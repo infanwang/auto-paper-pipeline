@@ -4,86 +4,85 @@
     <meta charset="utf-8">
     <title>AI_Agent - AI Paper Pipeline</title>
     <style>
-        body { font-family: -apple-system, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; }
-        h1 { color: #1a1a2e; border-bottom: 2px solid #667eea; }
-        .paper { background: #f9f9f9; border-radius: 8px; padding: 15px; margin: 10px 0; }
-        .paper h3 { color: #333; }
-        .meta { color: #666; font-size: 0.9em; }
+        body { font-family: -apple-system, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; border-radius: 12px; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        th { background: #667eea; color: white; padding: 12px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #eee; }
+        tr:hover { background: #f5f5f5; }
+        a { color: #667eea; text-decoration: none; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; }
     </style>
 </head>
 <body>
-    <h1>📁 AI_Agent (9篇)</h1>
-    <a href="../index.html">← 返回首页</a>
-
-    <div class="paper">
-        <h3>1. MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models</h3>
-        <div class="meta">
-            ArXiv: 2607.18006v1 | 日期: 2026-07-20 | 评分: 7.3
-        </div>
-        <p>Large language models achieve strong reasoning performance, but often at prohibitive training cost - a challenge that is especially acute for compact models ($\leq 4 \, \mathrm{B}$ parameters) trained...</p>
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="header">
+        <h1>📁 AI_Agent</h1>
+        <p>10篇论文</p>
     </div>
-
-    <div class="paper">
-        <h3>2. SWE-Pruner Pro: The Coder LLM Already Knows What to Prune</h3>
-        <div class="meta">
-            ArXiv: 2607.18213v1 | 日期: 2026-07-20 | 评分: 6.3
-        </div>
-        <p>Pruning long context for coding agents has been a vital technology for efficient context management. While existing context pruning methods such as SWE-Pruner realize this by attaching a separate code...</p>
-    </div>
-
-    <div class="paper">
-        <h3>3. LLMs and Agentic AI Systems for Smart Grids: A Tutorial on Architectures and Applications</h3>
-        <div class="meta">
-            ArXiv: 2607.18147v1 | 日期: 2026-07-20 | 评分: 6.3
-        </div>
-        <p>Large language models (LLMs) and agentic AI systems have evolved from natural language tasks to using external tools to plan, retrieve, and act in technical domains. In smart grids, recent work applie...</p>
-    </div>
-
-    <div class="paper">
-        <h3>4. RoboHarness: Memory-Driven Orchestration of Heterogeneous Robot Policies for Long-Horizon Planning</h3>
-        <div class="meta">
-            ArXiv: 2607.18060v1 | 日期: 2026-07-20 | 评分: 6.3
-        </div>
-        <p>Long-horizon robotic tasks require diverse capabilities that no single policy can reliably provide. Heterogeneous policies offer complementary strengths, but orchestrating them requires reasoning over...</p>
-    </div>
-
-    <div class="paper">
-        <h3>5. SGA: Plug&Play Geometric Verification for Educational Video Synthesis</h3>
-        <div class="meta">
-            ArXiv: 2607.18116v1 | 日期: 2026-07-20 | 评分: 6.0
-        </div>
-        <p>Recent work leverages Large Language Models (LLMs) to generate executable code for pedagogical animations using libraries such as Manim. However, ensuring spatial correctness and visual legibility rem...</p>
-    </div>
-
-    <div class="paper">
-        <h3>6. Compositional Semantic Communication for Physical AI: Category Theory Meets Game Theory</h3>
-        <div class="meta">
-            ArXiv: 2607.18115v1 | 日期: 2026-07-20 | 评分: 6.0
-        </div>
-        <p>Physical artificial intelligence (AI) systems involve distributed sensing agents with embedded AI models that must coordinate to perceive, reason, and act in networked environments. Transmitting raw s...</p>
-    </div>
-
-    <div class="paper">
-        <h3>7. FlashRT: Agent Harness for Guiding Agents to Deploy Real-Time Multimodal Applications</h3>
-        <div class="meta">
-            ArXiv: 2607.18171v1 | 日期: 2026-07-20 | 评分: 5.3
-        </div>
-        <p>Real-time multimodal applications, including voice agents and interactive video generation, compose heterogeneous models into pipelines whose efficient deployment requires application-specific decisio...</p>
-    </div>
-
-    <div class="paper">
-        <h3>8. Evidence-in-the-Loop: Trace-Driven Optimization for Customer-Service LLM Agents</h3>
-        <div class="meta">
-            ArXiv: 2607.18039v1 | 日期: 2026-07-20 | 评分: 5.3
-        </div>
-        <p>Production customer-service bots must improve answer quality across iterative releases, yet large language models must not bypass evidence boundaries, policy rules, or human-handoff safeguards. We pre...</p>
-    </div>
-
-    <div class="paper">
-        <h3>9. Natural Language Access to Domain-Specific Metadata: A Reusable Framework for LLM Query Generation</h3>
-        <div class="meta">
-            ArXiv: 2607.18029v1 | 日期: 2026-07-20 | 评分: 5.0
-        </div>
-        <p>Researchers need to answer ad-hoc questions about the contents of domain-specific archives but often lack the expertise to write structured queries on the metadata. We show that when domain vocabulary...</p>
-    </div>
-</body></html>
+    <table>
+        <tr><th>#</th><th>标题</th><th>日期</th><th>评分</th></tr>
+        
+            <tr>
+                <td>1</td>
+                <td><a href="../papers/2607.18006v1.html">MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for</a></td>
+                <td>2026-07-20</td>
+                <td><span style="background:#4CAF50;color:white;padding:3px 8px;border-radius:10px;">7.3</span></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="../papers/2607.18213v1.html">SWE-Pruner Pro: The Coder LLM Already Knows What to Prune</a></td>
+                <td>2026-07-20</td>
+                <td><span style="background:#FFC107;color:white;padding:3px 8px;border-radius:10px;">6.3</span></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="../papers/2607.18147v1.html">LLMs and Agentic AI Systems for Smart Grids: A Tutorial on A</a></td>
+                <td>2026-07-20</td>
+                <td><span style="background:#FFC107;color:white;padding:3px 8px;border-radius:10px;">6.3</span></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="../papers/2607.18060v1.html">RoboHarness: Memory-Driven Orchestration of Heterogeneous Ro</a></td>
+                <td>2026-07-20</td>
+                <td><span style="background:#FFC107;color:white;padding:3px 8px;border-radius:10px;">6.3</span></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><a href="../papers/2607.18046v1.html">SEE: Structure-aware Exploring \& Exploiting for Long-horizo</a></td>
+                <td>2026-07-20</td>
+                <td><span style="background:#FFC107;color:white;padding:3px 8px;border-radius:10px;">6.3</span></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><a href="../papers/2607.18116v1.html">SGA: Plug&Play Geometric Verification for Educational Video </a></td>
+                <td>2026-07-20</td>
+                <td><span style="background:#FFC107;color:white;padding:3px 8px;border-radius:10px;">6.0</span></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><a href="../papers/2607.18115v1.html">Compositional Semantic Communication for Physical AI: Catego</a></td>
+                <td>2026-07-20</td>
+                <td><span style="background:#FFC107;color:white;padding:3px 8px;border-radius:10px;">6.0</span></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><a href="../papers/2607.18171v1.html">FlashRT: Agent Harness for Guiding Agents to Deploy Real-Tim</a></td>
+                <td>2026-07-20</td>
+                <td><span style="background:#FFC107;color:white;padding:3px 8px;border-radius:10px;">5.3</span></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><a href="../papers/2607.18039v1.html">Evidence-in-the-Loop: Trace-Driven Optimization for Customer</a></td>
+                <td>2026-07-20</td>
+                <td><span style="background:#FFC107;color:white;padding:3px 8px;border-radius:10px;">5.3</span></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><a href="../papers/2607.18029v1.html">Natural Language Access to Domain-Specific Metadata: A Reusa</a></td>
+                <td>2026-07-20</td>
+                <td><span style="background:#FFC107;color:white;padding:3px 8px;border-radius:10px;">5.0</span></td>
+            </tr>
+    </table>
+</body>
+</html>

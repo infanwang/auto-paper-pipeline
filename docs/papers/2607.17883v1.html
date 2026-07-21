@@ -2,23 +2,31 @@
 <html lang="zh">
 <head>
     <meta charset="utf-8">
-    <title>Zero Hallucination, by Construction: Hallucination-Aware Layered Oversight for Trustworthy Enterprise AI - AI Paper Pipeline</title>
+    <title>Zero Hallucination, by Construction: Hallucination-Aware Layered Oversight for Trustworthy Enterprise AI</title>
     <style>
-        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { color: #1a1a2e; }
-        .meta { color: #666; margin: 10px 0; }
-        .abstract { background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0; }
-        .analysis { background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .paper { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a2e; line-height: 1.4; }
+        .meta { color: #666; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+        .abstract { background: #f0f4ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .section { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
     </style>
 </head>
 <body>
-    <a href="../index.html">← 返回首页</a>
-    <h1>Zero Hallucination, by Construction: Hallucination-Aware Layered Oversight for Trustworthy Enterprise AI</h1>
-    <div class="meta">
-        ArXiv: 2607.17883v1 | 日期: 2026-07-20
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="paper">
+        <h1>Zero Hallucination, by Construction: Hallucination-Aware Layered Oversight for Trustworthy Enterprise AI</h1>
+        <div class="meta">
+            <strong>ArXiv:</strong> 2607.17883v1 | 
+            <strong>日期:</strong> 2026-07-20 | 
+            <strong>评分:</strong> 5.3/10
+        </div>
+        <div class="abstract">
+            <h3>摘要</h3>
+            <p>Enterprises will not deploy AI agents they cannot trust, and the most-cited reason for distrust is hallucination: confident, fluent output that is simply not true. The common response is to wait for a model that does not hallucinate. We argue that this is the wrong target. Large language models are, by construction, capable of generating unsupported text, and no amount of scale removes the possibility; a faithfulness judge bolted onto a raw model catches some errors but still ships others, and even well-curated retrieval pipelines have been shown to fabricate citations. We reframe the goal: "zero hallucination" is not a property a model possesses but a property a system enforces. We present HALO (Hallucination-Aware Layered Oversight), an assurance architecture which treats hallucination as a containable failure mode rather than an eliminable one. HALO composes six layers of defense: grounded generation over retrieved, approved content; constrained, deterministic execution that bounds where the model can err; multi-signal verification that scores every output for groundedness and hallucination using both an LLM judge and evidence-based checks against the source text; calibrated abstention, so the system declines rather than guesses when grounding is insufficient; total traceability of every retrieval, tool call, and generation; and continuous oversight that detects drift, alerts on threshold breaches, and closes the loop by regenerating and statistically validating improved agents. We detail each layer, give particular attention to evidence-based confidence (which verifies extractions against the source document rather than trusting the model's self-reported certainty), and illustrate the architecture on a regulated claims-extraction workload</p>
+        </div>
+        
     </div>
-    <div class="abstract">
-        <h3>摘要</h3>
-        <p>Enterprises will not deploy AI agents they cannot trust, and the most-cited reason for distrust is hallucination: confident, fluent output that is simply not true. The common response is to wait for a model that does not hallucinate. We argue that this is the wrong target. Large language models are, by construction, capable of generating unsupported text, and no amount of scale removes the possibility; a faithfulness judge bolted onto a raw model catches some errors but still ships others, and even well-curated retrieval pipelines have been shown to fabricate citations. We reframe the goal: "zero hallucination" is not a property a model possesses but a property a system enforces. We present HALO (Hallucination-Aware Layered Oversight), an assurance architecture which treats hallucination as a containable failure mode rather than an eliminable one. HALO composes six layers of defense: grounded generation over retrieved, approved content; constrained, deterministic execution that bounds where the model can err; multi-signal verification that scores every output for groundedness and hallucination using both an LLM judge and evidence-based checks against the source text; calibrated abstention, so the system declines rather than guesses when grounding is insufficient; total traceability of every retrieval, tool call, and generation; and continuous oversight that detects drift, alerts on threshold breaches, and closes the loop by regenerating and statistically validating improved agents. We detail each layer, give particular attention to evidence-based confidence (which verifies extractions against the source document rather than trusting the model's self-reported certainty), and illustrate the architecture on a regulated claims-extraction workload</p>
-    </div>
-</body></html>
+</body>
+</html>
