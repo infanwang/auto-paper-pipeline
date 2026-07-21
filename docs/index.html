@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Paper Pipeline - 2026-07-21</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 1.1em; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: white; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .stat-number { font-size: 2.5em; font-weight: bold; color: #667eea; }
+        .stat-label { color: #666; margin-top: 5px; }
+        .papers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; }
+        .paper-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.2s; }
+        .paper-card:hover { transform: translateY(-5px); }
+        .paper-title { font-size: 1.1em; font-weight: 600; color: #1a1a2e; margin-bottom: 10px; }
+        .paper-meta { color: #666; font-size: 0.9em; margin-bottom: 10px; }
+        .paper-abstract { color: #444; font-size: 0.95em; line-height: 1.5; }
+        .paper-tags { margin-top: 10px; }
+        .tag { display: inline-block; background: #e8eaf6; color: #3f51b5; padding: 4px 8px; border-radius: 4px; font-size: 0.8em; margin-right: 5px; }
+        .topic-filter { margin: 20px 0; }
+        .topic-btn { display: inline-block; padding: 8px 16px; margin: 5px; border: 2px solid #667eea; border-radius: 20px; cursor: pointer; transition: all 0.2s; }
+        .topic-btn:hover, .topic-btn.active { background: #667eea; color: white; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📚 AI Paper Pipeline</h1>
+        <p>AI驱动的论文研究自动化平台 | 2026-07-21</p>
+    </div>
+    
+    <div class="container">
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">20</div>
+                <div class="stat-label">论文总数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div class="stat-label">研究领域</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5</div>
+                <div class="stat-label">高分论文</div>
+            </div>
+        </div>
+        
+        <div class="topic-filter">
+            <span class="topic-btn active" onclick="filterPapers('all')">全部</span>
+            <span class="topic-btn" onclick="filterPapers('5G移动通信')">5G移动通信</span>
+            <span class="topic-btn" onclick="filterPapers('AI_Agent')">AI_Agent</span>
+            <span class="topic-btn" onclick="filterPapers('LLM推理优化')">LLM推理优化</span>
+            <span class="topic-btn" onclick="filterPapers('代码生成')">代码生成</span>
+            <span class="topic-btn" onclick="filterPapers('多模态大模型')">多模态大模型</span>
+            <span class="topic-btn" onclick="filterPapers('芯片验证')">芯片验证</span>
+        </div>
+        
+        <div class="papers-grid" id="papers-grid">
+
+            <div class="paper-card" data-topic="LLM推理优化">
+                <div class="paper-title">Patch Policy: Efficient Embodied Control via Dense Visual Representations</div>
+                <div class="paper-meta">
+                    📁 LLM推理优化 | 📅 2026-07-20 | ⭐ 7.8/10
+                </div>
+                <div class="paper-abstract">Pretrained dense visual features from Vision Transformers (ViTs) are powerful yet have been underutilized in robot learning. Modern robot policies eit...</div>
+                <div class="paper-tags">
+                    <span class="tag">LLM</span>
+                    <span class="tag">推理优化</span>
+                    <span class="tag">多模态</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="多模态大模型">
+                <div class="paper-title">HOMIE: Human-object Centric Video Personalization via Multimodal Intelligent Enc</div>
+                <div class="paper-meta">
+                    📁 多模态大模型 | 📅 2026-07-20 | ⭐ 7.8/10
+                </div>
+                <div class="paper-abstract">Human-object centric video personalization (HOCVP) is a core task within subject-driven video generation. However, existing methods suffer from two ke...</div>
+                <div class="paper-tags">
+                    <span class="tag">LLM</span>
+                    <span class="tag">多模态</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="AI_Agent">
+                <div class="paper-title">MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient</div>
+                <div class="paper-meta">
+                    📁 AI_Agent | 📅 2026-07-20 | ⭐ 7.3/10
+                </div>
+                <div class="paper-abstract">Large language models achieve strong reasoning performance, but often at prohibitive training cost - a challenge that is especially acute for compact ...</div>
+                <div class="paper-tags">
+                    <span class="tag">LLM</span>
+                    <span class="tag">Agent</span>
+                    <span class="tag">推理优化</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="芯片验证">
+                <div class="paper-title">Sparse Evidence Can Suffice: Agentic Evidence Seeking for Multimodal Video Misin</div>
+                <div class="paper-meta">
+                    📁 芯片验证 | 📅 2026-07-20 | ⭐ 7.3/10
+                </div>
+                <div class="paper-abstract">Multimodal video misinformation detection is commonly formulated as a holistic video-understanding task, where the entire video and its associated con...</div>
+                <div class="paper-tags">
+                    <span class="tag">Agent</span>
+                    <span class="tag">多模态</span>
+                    <span class="tag">芯片验证</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="LLM推理优化">
+                <div class="paper-title">Kernelized Linear Attention: Breaking the Capacity Wall with Symmetric Cones</div>
+                <div class="paper-meta">
+                    📁 LLM推理优化 | 📅 2026-07-19 | ⭐ 7.0/10
+                </div>
+                <div class="paper-abstract">Linear attention promises constant-time recurrent inference but degrades sharply on associative recall. We formulate attention recall as a spherical-p...</div>
+                <div class="paper-tags">
+                    <span class="tag">LLM</span>
+                    <span class="tag">推理优化</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="LLM推理优化">
+                <div class="paper-title">C$^2$KV: Compressed and Composable KV Cache Reuse for Efficient LLM Inference</div>
+                <div class="paper-meta">
+                    📁 LLM推理优化 | 📅 2026-07-20 | ⭐ 6.3/10
+                </div>
+                <div class="paper-abstract">Long-context inference is central to modern large language model (LLM) applications such as retrieval-augmented generation and multi-document reasonin...</div>
+                <div class="paper-tags">
+                    <span class="tag">LLM</span>
+                    <span class="tag">推理优化</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="5G移动通信">
+                <div class="paper-title">SelectInfer: Selective Neuron Loading and Computation for On-Device LLMs</div>
+                <div class="paper-meta">
+                    📁 5G移动通信 | 📅 2026-07-20 | ⭐ 6.3/10
+                </div>
+                <div class="paper-abstract">Large Language Models (LLMs) have demonstrated remarkable capabilities across a range of Natural Language Processing (NLP) tasks, but their high compu...</div>
+                <div class="paper-tags">
+                    <span class="tag">LLM</span>
+                    <span class="tag">推理优化</span>
+                    <span class="tag">量化</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="AI_Agent">
+                <div class="paper-title">SWE-Pruner Pro: The Coder LLM Already Knows What to Prune</div>
+                <div class="paper-meta">
+                    📁 AI_Agent | 📅 2026-07-20 | ⭐ 6.3/10
+                </div>
+                <div class="paper-abstract">Pruning long context for coding agents has been a vital technology for efficient context management. While existing context pruning methods such as SW...</div>
+                <div class="paper-tags">
+                    <span class="tag">Agent</span>
+                    <span class="tag">推理优化</span>
+                    <span class="tag">5G</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="AI_Agent">
+                <div class="paper-title">LLMs and Agentic AI Systems for Smart Grids: A Tutorial on Architectures and App</div>
+                <div class="paper-meta">
+                    📁 AI_Agent | 📅 2026-07-20 | ⭐ 6.3/10
+                </div>
+                <div class="paper-abstract">Large language models (LLMs) and agentic AI systems have evolved from natural language tasks to using external tools to plan, retrieve, and act in tec...</div>
+                <div class="paper-tags">
+                    <span class="tag">LLM</span>
+                    <span class="tag">Agent</span>
+                    <span class="tag">推理优化</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="5G移动通信">
+                <div class="paper-title">Task-Oriented Precoding for Edge Inference over Large-Scale MIMO Systems</div>
+                <div class="paper-meta">
+                    📁 5G移动通信 | 📅 2026-07-20 | ⭐ 6.3/10
+                </div>
+                <div class="paper-abstract">Future wireless networks are expected to support networked artificial intelligence (AI) services, where multiple devices transmit learned features to ...</div>
+                <div class="paper-tags">
+                    <span class="tag">推理优化</span>
+                    <span class="tag">5G</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="LLM推理优化">
+                <div class="paper-title">FlowBlock: Wavefront-Parallel Decoding for Self-Correcting Diffusion Language Mo</div>
+                <div class="paper-meta">
+                    📁 LLM推理优化 | 📅 2026-07-20 | ⭐ 6.3/10
+                </div>
+                <div class="paper-abstract">Block-wise diffusion large language models (dLLMs) decode sequentially at the block level, enabling effective KV-cache reuse across blocks but making ...</div>
+                <div class="paper-tags">
+                    <span class="tag">LLM</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="LLM推理优化">
+                <div class="paper-title">WAR: Workload-Aware Rollouts for Synchronous Agentic Reinforcement Learning</div>
+                <div class="paper-meta">
+                    📁 LLM推理优化 | 📅 2026-07-19 | ⭐ 6.3/10
+                </div>
+                <div class="paper-abstract">Long-horizon rollout generation has become the dominant systems bottleneck in agentic reinforcement learning (RL). As agents interact with environment...</div>
+                <div class="paper-tags">
+                    <span class="tag">Agent</span>
+                    <span class="tag">推理优化</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="AI_Agent">
+                <div class="paper-title">RoboHarness: Memory-Driven Orchestration of Heterogeneous Robot Policies for Lon</div>
+                <div class="paper-meta">
+                    📁 AI_Agent | 📅 2026-07-20 | ⭐ 6.3/10
+                </div>
+                <div class="paper-abstract">Long-horizon robotic tasks require diverse capabilities that no single policy can reliably provide. Heterogeneous policies offer complementary strengt...</div>
+                <div class="paper-tags">
+                    <span class="tag">Agent</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="AI_Agent">
+                <div class="paper-title">SGA: Plug&Play Geometric Verification for Educational Video Synthesis</div>
+                <div class="paper-meta">
+                    📁 AI_Agent | 📅 2026-07-20 | ⭐ 6.0/10
+                </div>
+                <div class="paper-abstract">Recent work leverages Large Language Models (LLMs) to generate executable code for pedagogical animations using libraries such as Manim. However, ensu...</div>
+                <div class="paper-tags">
+                    <span class="tag">LLM</span>
+                    <span class="tag">Agent</span>
+                    <span class="tag">多模态</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="AI_Agent">
+                <div class="paper-title">Compositional Semantic Communication for Physical AI: Category Theory Meets Game</div>
+                <div class="paper-meta">
+                    📁 AI_Agent | 📅 2026-07-20 | ⭐ 6.0/10
+                </div>
+                <div class="paper-abstract">Physical artificial intelligence (AI) systems involve distributed sensing agents with embedded AI models that must coordinate to perceive, reason, and...</div>
+                <div class="paper-tags">
+                    <span class="tag">Agent</span>
+                    <span class="tag">推理优化</span>
+                    <span class="tag">芯片验证</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="代码生成">
+                <div class="paper-title">Empowering On-Device Model Adaptation with an Edge AI Inference Accelerator</div>
+                <div class="paper-meta">
+                    📁 代码生成 | 📅 2026-07-20 | ⭐ 6.0/10
+                </div>
+                <div class="paper-abstract">On-device model adaptation is essential to enable lifelong personalization on resource-constrained hardware, but compute, power, and memory limitation...</div>
+                <div class="paper-tags">
+                    <span class="tag">推理优化</span>
+                    <span class="tag">量化</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="AI_Agent">
+                <div class="paper-title">FlashRT: Agent Harness for Guiding Agents to Deploy Real-Time Multimodal Applica</div>
+                <div class="paper-meta">
+                    📁 AI_Agent | 📅 2026-07-20 | ⭐ 5.3/10
+                </div>
+                <div class="paper-abstract">Real-time multimodal applications, including voice agents and interactive video generation, compose heterogeneous models into pipelines whose efficien...</div>
+                <div class="paper-tags">
+                    <span class="tag">LLM</span>
+                    <span class="tag">Agent</span>
+                    <span class="tag">推理优化</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="芯片验证">
+                <div class="paper-title">Zero Hallucination, by Construction: Hallucination-Aware Layered Oversight for T</div>
+                <div class="paper-meta">
+                    📁 芯片验证 | 📅 2026-07-20 | ⭐ 5.3/10
+                </div>
+                <div class="paper-abstract">Enterprises will not deploy AI agents they cannot trust, and the most-cited reason for distrust is hallucination: confident, fluent output that is sim...</div>
+                <div class="paper-tags">
+                    <span class="tag">LLM</span>
+                    <span class="tag">Agent</span>
+                    <span class="tag">芯片验证</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="AI_Agent">
+                <div class="paper-title">Evidence-in-the-Loop: Trace-Driven Optimization for Customer-Service LLM Agents</div>
+                <div class="paper-meta">
+                    📁 AI_Agent | 📅 2026-07-20 | ⭐ 5.3/10
+                </div>
+                <div class="paper-abstract">Production customer-service bots must improve answer quality across iterative releases, yet large language models must not bypass evidence boundaries,...</div>
+                <div class="paper-tags">
+                    <span class="tag">LLM</span>
+                    <span class="tag">Agent</span>
+                </div>
+            </div>
+
+            <div class="paper-card" data-topic="AI_Agent">
+                <div class="paper-title">Natural Language Access to Domain-Specific Metadata: A Reusable Framework for LL</div>
+                <div class="paper-meta">
+                    📁 AI_Agent | 📅 2026-07-20 | ⭐ 5.0/10
+                </div>
+                <div class="paper-abstract">Researchers need to answer ad-hoc questions about the contents of domain-specific archives but often lack the expertise to write structured queries on...</div>
+                <div class="paper-tags">
+                    <span class="tag">LLM</span>
+                    <span class="tag">Agent</span>
+                    <span class="tag">芯片验证</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    function filterPapers(topic) {
+        const cards = document.querySelectorAll('.paper-card');
+        const btns = document.querySelectorAll('.topic-btn');
+        
+        btns.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        
+        cards.forEach(card => {
+            if (topic === 'all' || card.dataset.topic === topic) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    </script>
+</body>
+</html>

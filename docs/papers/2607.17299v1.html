@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>WAR: Workload-Aware Rollouts for Synchronous Agentic Reinforcement Learning - AI Paper Pipeline</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #1a1a2e; }
+        .meta { color: #666; margin: 10px 0; }
+        .abstract { background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .analysis { background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← 返回首页</a>
+    <h1>WAR: Workload-Aware Rollouts for Synchronous Agentic Reinforcement Learning</h1>
+    <div class="meta">
+        ArXiv: 2607.17299v1 | 日期: 2026-07-19
+    </div>
+    <div class="abstract">
+        <h3>摘要</h3>
+        <p>Long-horizon rollout generation has become the dominant systems bottleneck in agentic reinforcement learning (RL). As agents interact with environments over many turns, trajectories rapidly grow to tens of thousands of tokens, making synchronous RL training increasingly constrained by rollout. We propose WAR, a workload-aware rollout system that substantially accelerates synchronous agentic RL by jointly optimizing decoding and scheduling. WAR is built on a key observation: the optimal rollout optimization strategy depends on runtime load: (1) Under low load, WAR enables model-free speculative decoding with SuffixDecoding, which reuses suffix patterns from previously completed trajectories as speculative drafts for future rollouts. Unlike model-based drafters, SuffixDecoding introduces no additional draft model and avoids GPU contention with rollout generation. (2) Under high load, where saturated batched decoding leaves limited room for speculative speedup, WAR shifts the optimization focus to cache-aware scheduling. A global scheduler places requests across rollout replicas based on cache locality, trajectory progress and server load, reducing redundant KV-cache recomputation and mitigating load imbalance. By combining decoding-level suffix reuse with system-level rollout scheduling, WAR delivers robust throughput improvements across workload regimes without changing the underlying RL algorithm. WAR improves long-context agentic rollout throughput by 1.4x under low load and up to 1.6x under high load. These results show that WAR removes a major rollout bottleneck in synchronous agentic RL and provides a practical path toward scalable long-context agent training.</p>
+    </div>
+</body></html>

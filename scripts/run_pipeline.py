@@ -17,6 +17,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 from collectors.arxiv import ArxivCollector, SemanticScholarCollector
 from pipeline.funnel import FunnelPipeline
 from analyzers.paper_analyzer import PaperAnalyzer, ReproducibilityAssessor
+from analyzers.doc_generator import ReportGenerator
 from notifiers.email import EmailNotifier
 
 
@@ -114,6 +115,17 @@ def run_pipeline(mode: str = "daily"):
     output_path = output_dir / f"pipeline_{today}.json"
     output_path.write_text(json.dumps(output_data, indent=2, ensure_ascii=False))
     
+    # 生成静态站点
+    print("\n🌐 生成静态站点...")
+    from web.static_generator import StaticSiteGenerator
+    site_gen = StaticSiteGenerator("docs")
+    site_gen.generate(papers, today)
+    
+    # 生成报告
+    print("\n📄 生成报告...")
+    report_gen = ReportGenerator("reports")
+    report_gen.generate_full_report(papers, today)
+    
     # 发送邮件
     print("\n📧 发送邮件简报...")
     notifier = EmailNotifier()
@@ -122,6 +134,8 @@ def run_pipeline(mode: str = "daily"):
     print("\n" + "="*60)
     print(f"✅ 完成! 共处理 {len(papers)} 篇论文")
     print(f"📁 数据: {output_path}")
+    print(f"🌐 静态站点: docs/")
+    print(f"📄 报告: reports/")
     print("="*60)
     
     return papers

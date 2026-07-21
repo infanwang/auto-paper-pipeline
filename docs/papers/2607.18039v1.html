@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>Evidence-in-the-Loop: Trace-Driven Optimization for Customer-Service LLM Agents - AI Paper Pipeline</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #1a1a2e; }
+        .meta { color: #666; margin: 10px 0; }
+        .abstract { background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .analysis { background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← 返回首页</a>
+    <h1>Evidence-in-the-Loop: Trace-Driven Optimization for Customer-Service LLM Agents</h1>
+    <div class="meta">
+        ArXiv: 2607.18039v1 | 日期: 2026-07-20
+    </div>
+    <div class="abstract">
+        <h3>摘要</h3>
+        <p>Production customer-service bots must improve answer quality across iterative releases, yet large language models must not bypass evidence boundaries, policy rules, or human-handoff safeguards. We present an \textbf{Evidence-Grounded Customer-Service Agent Workflow} deployed in a real-world customer-service setting. BM25 recall, issue-title-vector recall, issue-description-vector recall, weighted RRF fusion, and cross-encoder reranking construct grounded FAQ evidence for controlled LLM decisions. Policy-guided orchestration then combines this RAG evidence with scenario-specific rule evidence, conversation memory, and clarification state inside a fixed LangGraph DAG~\cite{langgraph2024}. The paper contributes three reusable deployment patterns: \textbf{hybrid RAG evidence construction}, where multi-channel retrieval and reranking produce auditable FAQ candidates; \textbf{evidence-grounded issue/action decision}, where an Evidence-Grounded Decision Module selects an issue/action from typed FAQ evidence and scenario-specific rule evidence; and \textbf{trace-driven RAG and reranker improvement}, where traces diagnose whether failures come from recall, ranking, final candidate selection, clarification, rule-derived evidence, or action policy, and where reranker fine-tuning is evaluated not only for in-domain gain but also for forgetting risk.</p>
+    </div>
+</body></html>

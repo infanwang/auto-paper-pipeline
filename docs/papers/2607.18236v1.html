@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>Patch Policy: Efficient Embodied Control via Dense Visual Representations - AI Paper Pipeline</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #1a1a2e; }
+        .meta { color: #666; margin: 10px 0; }
+        .abstract { background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .analysis { background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← 返回首页</a>
+    <h1>Patch Policy: Efficient Embodied Control via Dense Visual Representations</h1>
+    <div class="meta">
+        ArXiv: 2607.18236v1 | 日期: 2026-07-20
+    </div>
+    <div class="abstract">
+        <h3>摘要</h3>
+        <p>Pretrained dense visual features from Vision Transformers (ViTs) are powerful yet have been underutilized in robot learning. Modern robot policies either compress each observation into a single global token, or rely on visual backbones trained from scratch, sacrificing both fine-grained spatial detail and the benefits of large-scale visual pre-training. While there exist policies that do operate on dense patch features like large vision-language-action models (VLAs), they tend to be heavy and slow, inheriting the full cost of a billion-parameter vision-language model (VLM) backbone. We close this gap with Patch Policy, a minimal architectural extension that enables transformer-based policies to consume dense pre-trained patch tokens directly without the computational overhead of a full VLM. At its core is a block-causal attention mask that preserves the temporal causality of standard policies while letting the model attend over many patch tokens per observation, alongside other state information. Patch Policy is lightweight, fast, and highly effective. Across four simulated and three real-world environment suites, our method achieves a 40% relative improvement over policies using state-of-the-art global-pooled representations. Furthermore, it surpasses fine-tuned OpenVLA-OFT by 18% while using roughly 0.7% of the parameters. We believe Patch Policy provides a pipeline for the robotics community to readily leverage continuing progress in visual representation learning, without sacrificing the training efficiency or inference speed required for high-frequency, reactive control. Videos can be viewed at https://patch-policy.github.io</p>
+    </div>
+
+    <div class="analysis">
+        <h3>深度分析</h3>
+<p><strong>问题:</strong> Pretrained dense visual features from Vision Transformers (ViTs) are powerful yet have been underutilized in robot learning</p>
+<p><strong>方法:</strong> Across four simulated and three real-world environment suites, our method achieves a 40% relative improvement over policies using state-of-the-art global-pooled representations</p>
+<p><strong>优点:</strong> performance, efficiency</p>
+<p><strong>改进建议:</strong> 可以与其他方法进行对比实验, 可以提供更详细的消融实验, 可以开源代码和数据集</p>
+    </div>
+</body></html>

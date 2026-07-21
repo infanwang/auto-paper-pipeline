@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>C$^2$KV: Compressed and Composable KV Cache Reuse for Efficient LLM Inference - AI Paper Pipeline</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #1a1a2e; }
+        .meta { color: #666; margin: 10px 0; }
+        .abstract { background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .analysis { background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← 返回首页</a>
+    <h1>C$^2$KV: Compressed and Composable KV Cache Reuse for Efficient LLM Inference</h1>
+    <div class="meta">
+        ArXiv: 2607.17715v1 | 日期: 2026-07-20
+    </div>
+    <div class="abstract">
+        <h3>摘要</h3>
+        <p>Long-context inference is central to modern large language model (LLM) applications such as retrieval-augmented generation and multi-document reasoning. To mitigate the growing inference cost, recent work has explored key-value (KV) cache reuse to reduce redundant prefill computation. However, existing reuse methods primarily focus on computation savings and overlook a critical bottleneck in long-context LLM serving: the cost of storing and accessing large KV caches. While KV compression appears to be a natural complement, naively combining compression with non-prefix KV reuse often leads to severe accuracy degradation. In this work, we propose C$^2$KV, a unified framework for non-prefix KV reuse that jointly optimizes KV extraction and inference-time concatenation. C$^2$KV learns a composable and compressed KV cache manifold that is explicitly designed to be position-agnostic. Our approach introduces a lightweight sidecar Extractor with learnable compression tokens and a structured attention flow, enabling modular KV representations that can be flexibly reused and concatenated without modifying the frozen base model. We further employ a compression-concatenation co-training strategy to align extraction-time representations with their downstream reuse behavior. Extensive experiments across multiple long-context benchmarks and model families demonstrate that C$^2$KV significantly reduces KV cache storage and transfer costs, achieving up to 17$\times$ inference speedup under long contexts, while preserving generation quality.</p>
+    </div>
+
+    <div class="analysis">
+        <h3>深度分析</h3>
+<p><strong>问题:</strong> However, existing reuse methods primarily focus on computation savings and overlook a critical bottleneck in long-context LLM serving: the cost of storing and accessing large KV caches</p>
+<p><strong>方法:</strong> However, existing reuse methods primarily focus on computation savings and overlook a critical bottleneck in long-context LLM serving: the cost of storing and accessing large KV caches</p>
+<p><strong>优点:</strong> efficiency</p>
+<p><strong>改进建议:</strong> 可以与其他方法进行对比实验, 可以提供更详细的消融实验, 可以开源代码和数据集</p>
+    </div>
+</body></html>
