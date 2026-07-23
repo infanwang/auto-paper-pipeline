@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>TraceDev: A Traceability-Driven Multi-agent Framework for Requirement-to-Code Development</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .paper { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a2e; line-height: 1.4; }
+        .meta { color: #666; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+        .abstract { background: #f0f4ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .section { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="paper">
+        <h1>TraceDev: A Traceability-Driven Multi-agent Framework for Requirement-to-Code Development</h1>
+        <div class="meta">
+            <strong>ArXiv:</strong> 2607.18886v1 | 
+            <strong>日期:</strong> 2026-07-21 | 
+            <strong>评分:</strong> 8.8/10
+        </div>
+        <div class="abstract">
+            <h3>摘要</h3>
+            <p>In modern software development, the rapid advancement of Large Language Models (LLMs) has made the end-to-end transformation of Natural Language Requirements (NLRs) into executable repository-level code increasingly feasible. However, existing approaches typically rely on simplified instructions (e.g., single-sentence descriptions), failing to reflect complex software development scenarios. Moreover, they lack explicit requirement traceability mechanisms, making it difficult to precisely align and validate generated code against original requirements. To address these limitations, we propose TraceDev, a multi-agent framework for automated software development grounded in use cases that contain multiple functional points and complex semantics. TraceDev employs five role-specific agents, including a Requirement Refiner, Designer, Developer, Tester, and Validator. Notably, the Validator Agent constructs and maintains a heterogeneous traceability graph that links requirements, design models, and code artifacts for interacting with the preceding four agents. The traceability graph maintains consistency across various artifacts and serves as a structured context for efficient memory management, supporting reliable repository-level code generation. We evaluate TraceDev on two widely used datasets (including 125 use cases) compared with two state-of-the-art approaches. On the ETOUR dataset, TraceDev achieves a success rate of 53.63\%, outperforming baseline approaches by up to 186.63\%. A similar trend is observed on the SMOS dataset, where TraceDev attains a success rate of 56.82\%, exceeding baseline approaches by up to 340.80\%. These results demonstrate the effectiveness of TraceDev in repository-level code generation from requirements.</p>
+        </div>
+        <div class="section"><h2>📊 深度分析</h2><p><strong>问题:</strong> To address these limitations, we propose TraceDev, a multi-agent framework for automated software development grounded in use cases that contain multiple functional points and complex semantics</p><p><strong>方法:</strong> In modern software development, the rapid advancement of Large Language Models (LLMs) has made the end-to-end transformation of Natural Language Requirements (NLRs) into executable repository-level co</p><p><strong>优点:</strong> performance, efficiency</p><p><strong>改进建议:</strong> 可以与其他方法进行对比实验, 可以提供更详细的消融实验, 可以开源代码和数据集</p></div>
+    </div>
+</body>
+</html>

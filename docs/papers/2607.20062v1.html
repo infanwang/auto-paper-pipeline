@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>Solar Open 2 Technical Report</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .paper { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a2e; line-height: 1.4; }
+        .meta { color: #666; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+        .abstract { background: #f0f4ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .section { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="paper">
+        <h1>Solar Open 2 Technical Report</h1>
+        <div class="meta">
+            <strong>ArXiv:</strong> 2607.20062v1 | 
+            <strong>日期:</strong> 2026-07-22 | 
+            <strong>评分:</strong> 6.3/10
+        </div>
+        <div class="abstract">
+            <h3>摘要</h3>
+            <p>We present Solar Open 2, a 250B-A15B Mixture-of-Experts language model built for long-horizon agentic tasks, scaled up from Solar Open 1 (Solar Open 100B). To hold entire agent trajectories in a single context, Solar Open 2 reaches a 1M-token window through a hybrid attention stack that interleaves one softmax layer among every three linear-attention layers, using no positional encoding and a gated delta rule extended to negative eigenvalues. To train at this scale under a fixed compute budget, we make training efficient in two ways: a stronger starting point, and higher-value data. For the starting point, we initialize Solar Open 2 from Solar Open 1, transferring the 5.69B-parameter shared skeleton that survives the architectural change and learning everything else through full pre-training. For the data, we curate for value per token: quality- and rarity-aware data curation and mixture-ratio optimization refine a 20T pool into a 10T mixture that, at equal token budget, outperforms the Solar Open 1 recipe. To build its agent skills, we train twelve domain specialists across purpose-built scenarios, then consolidate them into a single model by Multi-teacher On-Policy Distillation (MOPD). Against comparably sized open-weight models on English benchmarks, Solar Open 2 leads on MMLU-Pro, LiveCodeBench, and the APEX-Agents agentic suite, and stays competitive with the strongest (DeepSeek-V4-Flash and MiMo-V2.5) elsewhere. On Korean benchmarks, Solar Open 2 records the highest average of any model compared, including fast-tier closed APIs, and on Ko-GDPval, an in-house Korean officework-agent benchmark, it is competitive with DeepSeek-V4-Pro (1.6T) at less than a sixth of its size.</p>
+        </div>
+        <div class="section"><h2>📊 深度分析</h2><p><strong>问题:</strong> We present Solar Open 2, a 250B-A15B Mixture-of-Experts language model built for long-horizon agentic tasks, scaled up from Solar Open 1 (Solar Open 100B)</p><p><strong>方法:</strong> We present Solar Open 2, a 250B-A15B Mixture-of-Experts language model built for long-horizon agentic tasks, scaled up from Solar Open 1 (Solar Open 100B)</p><p><strong>优点:</strong> efficiency</p><p><strong>改进建议:</strong> 可以与其他方法进行对比实验, 可以提供更详细的消融实验, 可以开源代码和数据集</p></div>
+    </div>
+</body>
+</html>

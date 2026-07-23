@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>OLEDLM: A Unified Language Model for OLED Molecular Design</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .paper { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a2e; line-height: 1.4; }
+        .meta { color: #666; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+        .abstract { background: #f0f4ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .section { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="paper">
+        <h1>OLEDLM: A Unified Language Model for OLED Molecular Design</h1>
+        <div class="meta">
+            <strong>ArXiv:</strong> 2607.20194v1 | 
+            <strong>日期:</strong> 2026-07-22 | 
+            <strong>评分:</strong> 6.3/10
+        </div>
+        <div class="abstract">
+            <h3>摘要</h3>
+            <p>The development of organic light-emitting diode (OLED) materials faces the compounded challenges of an astronomically large chemical space, stringent quantum-chemical constraints, and a scarcity of labeled data. Although the question of OLED generation is important, few models have been trained effectively for this specific domain. We propose an inverse molecular design framework based on causal language models: given target optoelectronic properties (e.g., excitation energy, oscillator strength), our model directly generates OLED SMILES sequences satisfying the specified constraints. We employ a multi-stage strategy: first, we establish a foundational chemical language model using a LLaMA-style transformer architecture. To the best of our knowledge, this represents the first successful adaptation of LLMs specifically for the OLED domain, bridging the gap between generic molecular generation and the stringent structural requirements of optoelectronic materials. Second, we fine-tune property predictors based on a BERT model pre-trained on our large-scale OLED dataset. Then, we perform Reinforcement Learning on our fine-tuned model, leveraging our property predictor, for better SMILES generation. Finally, through DFT verification, we demonstrate that our framework can efficiently navigate the OLED chemical space, generating novel candidates with high structural validity and optimized optoelectronic properties.</p>
+        </div>
+        <div class="section"><h2>📊 深度分析</h2><p><strong>问题:</strong> The development of organic light-emitting diode (OLED) materials faces the compounded challenges of an astronomically large chemical space, stringent quantum-chemical constraints, and a scarcity of la</p><p><strong>方法:</strong> The development of organic light-emitting diode (OLED) materials faces the compounded challenges of an astronomically large chemical space, stringent quantum-chemical constraints, and a scarcity of la</p><p><strong>优点:</strong> novelty, performance, efficiency</p><p><strong>改进建议:</strong> 可以扩展到更多领域验证泛化性, 可以与其他方法进行对比实验, 可以提供更详细的消融实验</p></div>
+    </div>
+</body>
+</html>

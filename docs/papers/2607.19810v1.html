@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>SimulS2ST-Omni: Data-Efficient Streaming Speech-to-Speech Translation via Explicit Trajectory Supervision</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .paper { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a2e; line-height: 1.4; }
+        .meta { color: #666; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+        .abstract { background: #f0f4ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .section { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="paper">
+        <h1>SimulS2ST-Omni: Data-Efficient Streaming Speech-to-Speech Translation via Explicit Trajectory Supervision</h1>
+        <div class="meta">
+            <strong>ArXiv:</strong> 2607.19810v1 | 
+            <strong>日期:</strong> 2026-07-22 | 
+            <strong>评分:</strong> 8.8/10
+        </div>
+        <div class="abstract">
+            <h3>摘要</h3>
+            <p>Long-form streaming speech-to-speech translation (S2ST) requires incremental, unbounded translation under strict latency constraints. Existing methods typically suffer from sentence-bounded supervision or demand massive paired-S2ST supervision. We introduce a training recipe enabling a speech language model for sentence-level and long-form streaming S2ST using only $\sim$2k hours of paired cross-lingual S2ST data, layered atop auxiliary supervision. Anchored by auxiliary multitask training, our approach remains robust even when the paired-S2ST budget itself is reduced by 90\%. Our core contribution, joint text-code trajectory supervision, schedules target text and acoustic semantic codes as a unified commitment path, eliminating the need for separate, unstable speech-side emission controllers. Furthermore, our two-stream Thinker--Talker factorization significantly outperforms unified-decoder baselines by decoupling linguistic reasoning from dense acoustic prediction to mitigate modality interference. Finally, our system achieves highly competitive quality-latency trade-offs on RealSI and ACL60/60-dev, matching state-of-the-art, closed-source S2ST systems such as LiveInterpret~2.0 on ASR-BLEU.</p>
+        </div>
+        <div class="section"><h2>📊 深度分析</h2><p><strong>问题:</strong> Long-form streaming speech-to-speech translation (S2ST) requires incremental, unbounded translation under strict latency constraints</p><p><strong>方法:</strong> Existing methods typically suffer from sentence-bounded supervision or demand massive paired-S2ST supervision</p><p><strong>优点:</strong> performance, generalization</p><p><strong>改进建议:</strong> 可以与其他方法进行对比实验, 可以提供更详细的消融实验, 可以开源代码和数据集</p></div>
+    </div>
+</body>
+</html>

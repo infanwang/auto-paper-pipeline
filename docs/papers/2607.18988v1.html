@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>DobicVLM: Aligning Chest X-Ray Report Generation with Clinically-Grounded Programmatic Rewards via Group Relative Policy Optimization</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .paper { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a2e; line-height: 1.4; }
+        .meta { color: #666; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+        .abstract { background: #f0f4ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .section { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="paper">
+        <h1>DobicVLM: Aligning Chest X-Ray Report Generation with Clinically-Grounded Programmatic Rewards via Group Relative Policy Optimization</h1>
+        <div class="meta">
+            <strong>ArXiv:</strong> 2607.18988v1 | 
+            <strong>日期:</strong> 2026-07-21 | 
+            <strong>评分:</strong> 7.3/10
+        </div>
+        <div class="abstract">
+            <h3>摘要</h3>
+            <p>Medical imaging is a cornerstone of diagnostics, yet automated chest X-ray report generation struggles with structural adherence, anatomical completeness, and semantic faithfulness. We introduce DobicVLM, a vision-language model combining supervised fine-tuning on MedGemma-4B with Group Relative Policy Optimization (GRPO) and clinically-grounded programmatic rewards. Our approach uses interpretable, rule-based reward components; structural verification, anatomical checklist, semantic similarity, and length constraints to enforce clinical standards without neural reward models. Trained on 1,000 de-identified image-report pairs from a private clinical dataset (with ethics approval and compliance to local regulations), DobicVLM is evaluated via blinded expert review on 69 held-out cases. DobicVLM outperforms Gemini 2.5 Flash across the majority of criteria, achieving the highest impression accuracy (27.2%) and medical terminology (86.5%) compared to both Gemini 2.5 Flash and MedGemma 4B baselines, with minor trade-offs in completeness and referrals. This demonstrates GRPO's value for transparent alignment in resource-limited settings. Keywords: Vision-Language Models, Radiology Report Generation, Reinforcement Learning, Medical AI, GRPO</p>
+        </div>
+        <div class="section"><h2>📊 深度分析</h2><p><strong>问题:</strong> Medical imaging is a cornerstone of diagnostics, yet automated chest X-ray report generation struggles with structural adherence, anatomical completeness, and semantic faithfulness</p><p><strong>方法:</strong> We introduce DobicVLM, a vision-language model combining supervised fine-tuning on MedGemma-4B with Group Relative Policy Optimization (GRPO) and clinically-grounded programmatic rewards</p><p><strong>优点:</strong> N/A</p><p><strong>改进建议:</strong> 可以与其他方法进行对比实验, 可以提供更详细的消融实验, 可以开源代码和数据集</p></div>
+    </div>
+</body>
+</html>

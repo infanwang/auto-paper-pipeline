@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>Cognitive Dual-Process Planning for Autonomous Driving with Structured Scene Knowledge and Verifiable Reasoning-Action Consistency</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .paper { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a2e; line-height: 1.4; }
+        .meta { color: #666; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+        .abstract { background: #f0f4ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .section { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="paper">
+        <h1>Cognitive Dual-Process Planning for Autonomous Driving with Structured Scene Knowledge and Verifiable Reasoning-Action Consistency</h1>
+        <div class="meta">
+            <strong>ArXiv:</strong> 2607.19194v1 | 
+            <strong>日期:</strong> 2026-07-21 | 
+            <strong>评分:</strong> 5.3/10
+        </div>
+        <div class="abstract">
+            <h3>摘要</h3>
+            <p>High-level planning for autonomous driving is a knowledge-intensive engineering decision task that requires accurate scene understanding, timely inference, and internally consistent action selection. Vision-language models (VLMs) can make intermediate reasoning explicit, but their use in deployed planners is constrained by costly structured supervision, unnecessary reasoning in routine scenes, and possible inconsistencies between generated rationales and driving actions. We present a cognitive dual-process planning framework that represents planning-relevant scene knowledge in a machine-parsable structured chain-of-thought (S-CoT) schema. An automated data engine integrates perception foundation models, critical-path filtering, and an expert VLM to generate S-CoT supervision without manual annotation of individual rationales. A lightweight visual Arbiter estimates scene complexity from multilevel vision-encoder features before language decoding and routes each input to either fast meta-action prediction or slow structured reasoning. For slow-path outputs, a deterministic rule-based validator checks whether the parsed S-CoT fields are consistent with the final meta-action and provides verifiable rewards for Group Relative Policy Optimization (GRPO). In a 195-scene manual audit, the generated annotations achieve 91.8\% CoT accuracy and a 98.5\% Logical Consistency Score (LCS). On 574 manually verified NAVSIM test samples, the planner achieves 80.14\% planning accuracy and 97.20\% LCS while reducing average latency by 17.39\% relative to applying slow reasoning to every scene. Evaluation on external long-tail subsets further identifies conditions under which routing and planning performance degrade. Together, these results show how explicit scene knowledge can be operationalized through adaptive reasoning and rule-based verification to support high-level VLM planning decisions.</p>
+        </div>
+        
+    </div>
+</body>
+</html>

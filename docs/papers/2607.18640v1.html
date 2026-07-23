@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>Semantic-Aware Data-Aided Channel Estimation with Large Language Models for MIMO Systems</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .paper { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a2e; line-height: 1.4; }
+        .meta { color: #666; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+        .abstract { background: #f0f4ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .section { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="paper">
+        <h1>Semantic-Aware Data-Aided Channel Estimation with Large Language Models for MIMO Systems</h1>
+        <div class="meta">
+            <strong>ArXiv:</strong> 2607.18640v1 | 
+            <strong>日期:</strong> 2026-07-21 | 
+            <strong>评分:</strong> 7.0/10
+        </div>
+        <div class="abstract">
+            <h3>摘要</h3>
+            <p>Data-aided channel estimation enhances spectral efficiency by reusing detected symbols as virtual pilots. In this process, selecting only reliable symbols is crucial to prevent misdetected symbols from corrupting the channel estimate. However, conventional methods rely exclusively on physical-layer statistics. Beyond physical-layer information, transmitted payloads possess inherent semantic structures that can be exploited to resolve detection errors. In this paper, we propose a novel semantic-aware channel estimation framework for multiple-input multiple-output (MIMO) systems that utilizes a fine-tuned large language model (LLM) to perform reliable symbol selection and correction based on semantic information. The framework employs a two-layer mechanism: one layer selects reliable decoded symbols through semantic verification, while the other selects accurately LLM-corrected symbols by cross-validating them against the received signal using physical-layer information. We prove that corrected symbols yield a strictly larger expected reduction in estimation error than initially correctly decoded symbols. Extensive simulations demonstrate that the proposed framework significantly outperforms conventional data-aided schemes in both normalized mean squared error and bit error rate, closely approaching the performance of an oracle estimator.</p>
+        </div>
+        <div class="section"><h2>📊 深度分析</h2><p><strong>问题:</strong> Data-aided channel estimation enhances spectral efficiency by reusing detected symbols as virtual pilots</p><p><strong>方法:</strong> However, conventional methods rely exclusively on physical-layer statistics</p><p><strong>优点:</strong> novelty</p><p><strong>改进建议:</strong> 可以与其他方法进行对比实验, 可以提供更详细的消融实验, 可以开源代码和数据集</p></div>
+    </div>
+</body>
+</html>

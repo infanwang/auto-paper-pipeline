@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>RIM: A Retrieval-In-Matching Framework for Cross-Domain Global Visual Localization of UAVs</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .paper { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a2e; line-height: 1.4; }
+        .meta { color: #666; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+        .abstract { background: #f0f4ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .section { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="paper">
+        <h1>RIM: A Retrieval-In-Matching Framework for Cross-Domain Global Visual Localization of UAVs</h1>
+        <div class="meta">
+            <strong>ArXiv:</strong> 2607.20116v1 | 
+            <strong>日期:</strong> 2026-07-22 | 
+            <strong>评分:</strong> 7.3/10
+        </div>
+        <div class="abstract">
+            <h3>摘要</h3>
+            <p>Global visual localization of unmanned aerial vehicles (UAVs) using remote-sensing reference maps has attracted increasing attention. However, acquisition-time and imaging-platform differences between UAV and reference imagery induce substantial cross-domain appearance and viewpoint shifts, challenging robust six-degree-of-freedom (6-DoF) pose estimation. We address these shifts by sampling UAV-viewpoint reference views from Google 3D Tiles across locations, altitudes, and orientations. A two-stage cross-domain fine-tuning recipe adapts SALAD using pose-near positives and geographically distant hard negatives, while local geometric consistency re-ranks the Top-K candidates. We further propose Retrieval-In-Matching (RIM), which freezes the adapted DINOv2-B retriever and distils a local-descriptor decoder that reuses its token field alongside a shallow VGG19 detail stream. One query-side DINOv2-B forward thus serves both SALAD retrieval and local description, eliminating a second foundation-model backbone while preserving retrieval descriptors by construction. We evaluate RIM zero-shot on the reconstructed EPFL Urbanscape and self-collected Chang'an Park datasets, both geographically disjoint from the training data. RIM outperforms ten recent retrieval baseline families. At 25/50 m under the full 3D distance metric, it improves Recall@1 over SALAD by 8.55/13.77 percentage points on EPFL and 4.45/8.94 points on Park. At Top-K=5, the complete measured localization query, including retrieval, candidate matching, and robust geometric verification, takes 67.9 ms end-to-end: 1.8 times faster than the strongest separate sparse-matching baseline and over 40 times faster than RoMa, while achieving comparable re-ranking accuracy. These results establish an efficient and deployable pipeline for UAV global visual localization in GNSS-challenged environments.</p>
+        </div>
+        <div class="section"><h2>📊 深度分析</h2><p><strong>问题:</strong> These results establish an efficient and deployable pipeline for UAV global visual localization in GNSS-challenged environments.</p><p><strong>方法:</strong> We further propose Retrieval-In-Matching (RIM), which freezes the adapted DINOv2-B retriever and distils a local-descriptor decoder that reuses its token field alongside a shallow VGG19 detail stream</p><p><strong>优点:</strong> efficiency, generalization</p><p><strong>改进建议:</strong> 可以与其他方法进行对比实验, 可以提供更详细的消融实验, 可以开源代码和数据集</p></div>
+    </div>
+</body>
+</html>

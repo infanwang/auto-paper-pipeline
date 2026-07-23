@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>SciCodePile: A 128GB Corpus and Executable Benchmark for Challenging Scientific Code Generation</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .paper { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a2e; line-height: 1.4; }
+        .meta { color: #666; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+        .abstract { background: #f0f4ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .section { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="paper">
+        <h1>SciCodePile: A 128GB Corpus and Executable Benchmark for Challenging Scientific Code Generation</h1>
+        <div class="meta">
+            <strong>ArXiv:</strong> 2607.19104v1 | 
+            <strong>日期:</strong> 2026-07-21 | 
+            <strong>评分:</strong> 5.3/10
+        </div>
+        <div class="abstract">
+            <h3>摘要</h3>
+            <p>Large language models (LLMs) excel at general-purpose code generation, yet how well they handle scientific code remains an open question. Existing datasets and benchmarks are limited in scale, domain coverage, or executable verification, leaving the true gap between current LLMs and reliable scientific code generators inadequately assessed. To address these limitations, we present SciCodePile, the largest scientific code corpus to date, constructed from 37,737 public repositories and collectively comprising 128GB of code that spans multiple computational science disciplines. From this corpus, we further curate an executable benchmark of 200 tasks, each equipped with a sandboxed execution environment and an automated test harness for functional verification. We evaluate 15 LLMs from both open-source and closed-source families on three tasks: prefix-to-suffix completion, fill-in-the-middle infilling, and executable code generation. Results show that scientific code generation remains highly challenging: The best CodeBLEU reaches only 38.13 and 38.37 on the two completion tasks, while the strongest model achieves just 12.30\% Pass@1 on the executable benchmark, underscoring how far current models remain from reliable scientific code generation. To demonstrate the training utility of SciCodePile, we further show that continued pretraining on our corpus improves CodeBLEU by $\times$2.84 on scientific code completion, and instruction tuning on our data improves Pass@1 by $\times$4.79 on the executable benchmark. All code and data are available at https://huggingface.co/SciCodePile.</p>
+        </div>
+        
+    </div>
+</body>
+</html>

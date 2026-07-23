@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>InstructMixup: Instruction-Guided Salient Patch Editing for Robust Data Augmentation</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .paper { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a2e; line-height: 1.4; }
+        .meta { color: #666; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+        .abstract { background: #f0f4ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .section { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="paper">
+        <h1>InstructMixup: Instruction-Guided Salient Patch Editing for Robust Data Augmentation</h1>
+        <div class="meta">
+            <strong>ArXiv:</strong> 2607.19324v1 | 
+            <strong>日期:</strong> 2026-07-21 | 
+            <strong>评分:</strong> 7.3/10
+        </div>
+        <div class="abstract">
+            <h3>摘要</h3>
+            <p>In image and video technologies, data augmentation is widely used to improve the generalization of deep visual models, and mixup-based strategies that interpolate between samples have become the dominant approach. However, computing informative mixing regions adds substantial overhead, and blending content across different images frequently disrupts the semantic integrity of the resulting sample. We propose \our{}, a data augmentation method that constructs challenging yet label-consistent training samples entirely within a single visual sample. \our{} first extracts multi-scale salient patches from the sample using a lightweight saliency detector, refines each patch with an instruction-guided generative model, and blends the edited patch back into the non-salient regions of the same sample; because the generative edits are computed once and cached offline, this step adds negligible training cost. To further diversify the learned representation, \our{} injects self-similar fractal structure into the same salient regions at an adaptive ratio, so each training sample carries both fractal and non-fractal structure. We derive a second-order approximation of the resulting vicinal risk, showing that the method simultaneously enforces invariance to the generative edit and suppresses curvature along the perturbed salient directions, and we verify both predictions empirically. We evaluate on small to large backbones for instance Convolutional Neural Networks (CNNs), Vision Transformers (ViTs) and Vision-Language Foundational Models (VLMs) across seven benchmarks covering coarse- and fine-grained classification, robustness to corruption and occlusion, calibration, and transfer and self-supervised learning, InstructMixup outperforms nine competing augmentation methods, surpassing the strongest baseline across all benchmarks.</p>
+        </div>
+        <div class="section"><h2>📊 深度分析</h2><p><strong>问题:</strong> In image and video technologies, data augmentation is widely used to improve the generalization of deep visual models, and mixup-based strategies that interpolate between samples have become the domin</p><p><strong>方法:</strong> We propose \our{}, a data augmentation method that constructs challenging yet label-consistent training samples entirely within a single visual sample</p><p><strong>优点:</strong> novelty, efficiency, generalization</p><p><strong>改进建议:</strong> 可以与其他方法进行对比实验, 可以提供更详细的消融实验, 可以开源代码和数据集</p></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>HACO: Hedged Agent Computing for Reliable LLM Systems</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .paper { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a2e; line-height: 1.4; }
+        .meta { color: #666; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+        .abstract { background: #f0f4ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .section { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="paper">
+        <h1>HACO: Hedged Agent Computing for Reliable LLM Systems</h1>
+        <div class="meta">
+            <strong>ArXiv:</strong> 2607.19215v1 | 
+            <strong>日期:</strong> 2026-07-21 | 
+            <strong>评分:</strong> 6.0/10
+        </div>
+        <div class="abstract">
+            <h3>摘要</h3>
+            <p>As large language model (LLM) agents move from isolated prompting to longhorizon workflows, failures increasingly arise at the role-to-instance binding boundary, where task-specific role requests must be assigned to concrete agent instances under current service, network, and query conditions. Existing agent system research has improved role specialization, workflow topology, memory, and tool use, but often assumes a fixed stable execution environment. This assumption limits deployed reliability, because the same role request can exhibit different latency, failure probability, and output quality across agent instances operating under different service regions and network conditions. We propose Hedged Agent Computing (HACO), a runtime control scheme that treats each role request as a reliability-constrained selection problem over candidate agent instances, each coupling a role type, an LLM, and a concrete execution environment. Different from routing, HACO adaptively selects a hedge set of candidates for each invocation. Its allocation rule combines optimistic ranking, which prioritizes candidates with high estimated quality, reliability, and informative uncertainty, with conservative reliability accumulation, which stops selection only after the hedge set reaches a target success probability. Through experience harvesting, HACO updates candidate and link profiles from all executed candidate traces, including quality, success, latency, and network statistics. Experiments on various benchmarks, together with runtime degradation studies, show that HACO improves robustness and output quality under changing deployment conditions, while using lower token and latency cost than exhaustive parallel execution.</p>
+        </div>
+        
+    </div>
+</body>
+</html>

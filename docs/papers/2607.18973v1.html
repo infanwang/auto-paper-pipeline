@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>Verifiable Self-Evolution for Open-Ended Dialogue Skills via Future-Feedback Prediction</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .paper { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a2e; line-height: 1.4; }
+        .meta { color: #666; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+        .abstract { background: #f0f4ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .section { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="paper">
+        <h1>Verifiable Self-Evolution for Open-Ended Dialogue Skills via Future-Feedback Prediction</h1>
+        <div class="meta">
+            <strong>ArXiv:</strong> 2607.18973v1 | 
+            <strong>日期:</strong> 2026-07-21 | 
+            <strong>评分:</strong> 6.0/10
+        </div>
+        <div class="abstract">
+            <h3>摘要</h3>
+            <p>Textual skills provide a lightweight way to improve frozen language-model agents, but their self-evolution normally requires a stable validation signal. Such signals are natural in mathematics or code, where an answer can be checked after it changes, yet are problematic in open-ended dialogue: changing the assistant response also changes the user's next reaction, so a logged reaction cannot directly evaluate a counterfactual response. We propose future-feedback skill evolution, which first redirects self-evolution from prescribing the current answer to predicting whether the observed answer will lead to a positive or negative subsequent user signal. This prediction task is verifiable on fixed logged tuples and therefore supports validation-gated textual optimization. The evolved feedback skill captures interpretable criteria for response quality and can subsequently serve as a diagnostic and optimization target for answer skills. On a proprietary, privacy-preserving sales-assistant dataset, careful quality filtering and a balanced resolved/unresolved split yield more than 75% prediction accuracy. Beyond this result, the central contribution is a formulation that converts otherwise moving conversational feedback into a fixed offline learning target, enabling reproducible skill evolution without placing every candidate skill in live traffic. We discuss the boundary between observational verification and counterfactual validity, and position the method as an offline optimization stage rather than a replacement for final human or online evaluation.</p>
+        </div>
+        
+    </div>
+</body>
+</html>
