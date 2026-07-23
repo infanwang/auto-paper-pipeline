@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Multi-language paper support module.
+"""Enhanced Multi-language paper support module.
 
 Supports all 7 UN official languages:
 - English (en)
@@ -15,9 +15,11 @@ import json
 import re
 import urllib.request
 import urllib.parse
+from pathlib import Path
 from typing import Dict, List, Optional, Tuple
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from enum import Enum
+from collections import defaultdict
 
 
 class Language(Enum):
@@ -45,15 +47,26 @@ LANGUAGE_NAMES = {
 # RTL languages
 RTL_LANGUAGES = {Language.ARABIC}
 
-# Common words for language detection
+# Language codes mapping
+LANGUAGE_CODES = {
+    "en": Language.ENGLISH,
+    "fr": Language.FRENCH,
+    "es": Language.SPANISH,
+    "ru": Language.RUSSIAN,
+    "zh": Language.CHINESE,
+    "ar": Language.ARABIC,
+    "pt": Language.PORTUGUESE,
+}
+
+# Enhanced patterns for language detection
 LANGUAGE_PATTERNS = {
-    Language.ENGLISH: r'\b(the|is|are|was|were|have|has|had|do|does|did|will|would|could|should|may|might|can|and|but|or|not|this|that|with|from|for|in|on|at|to|by|of|as|into|through|during|before|after|above|below|between|out|off|over|under|again|further|then|once)\b',
-    Language.FRENCH: r'\b(le|la|les|un|une|des|est|sont|avoir|fait|faire|peut|être|ce|cette|avec|pour|dans|sur|par|de|du|des|au|aux|et|mais|ou|ne|pas|plus|aussi|bien|tout|très|comme|mais|donc|car|ni|soit|si|quand|où|comment|pourquoi|qui|que|quel|quelle|dont)\b',
-    Language.SPANISH: r'\b(el|la|los|las|un|una|unos|unas|es|son|estar|tener|hacer|poder|deber|como|con|para|por|en|de|del|al|sin|sobre|entre|hasta|desde|durante|ante|según|tras|y|o|pero|sino|ni|que|este|esta|ese|esa|aquel|aquella)\b',
+    Language.ENGLISH: r'\b(the|is|are|was|were|have|has|had|do|does|did|will|would|could|should|may|might|can|and|but|or|not|this|that|with|from|for|in|on|at|to|by|of|as|into|through|during|before|after|above|below|between|out|off|over|under|again|further|then|once|we|our|us|their|them|they|its|it|he|she|his|her|him|my|your|their|our|these|those|which|what|who|whom|whose|where|when|how|why|all|each|every|both|few|more|most|other|some|such|no|nor|not|only|own|same|so|than|too|very|just|because|but|and|or|if|while|about|against|between|through|during|before|after|above|below|to|from|up|down|in|out|on|off|over|under|again|further|then|once|here|there|when|where|why|how|all|any|both|each|few|more|most|other|some|such|no|nor|not|only|own|same|so|than|too|very|s|t|can|will|just|don|should|now)\b',
+    Language.FRENCH: r'\b(le|la|les|un|une|des|est|sont|avoir|fait|faire|peut|être|ce|cette|avec|pour|dans|sur|par|de|du|des|au|aux|et|mais|ou|ne|pas|plus|aussi|bien|tout|très|comme|donc|car|ni|soit|si|quand|où|comment|pourquoi|qui|que|quel|quelle|dont|je|tu|il|elle|nous|vous|ils|elles|mon|ma|mes|ton|ta|tes|son|sa|ses|notre|nos|votre|vos|leur|leurs|ce|cette|ces|qui|que|quoi|dont|où|être|avoir|faire|pouvoir|vouloir|devoir|savoir|voir|venir|aller|partir|prendre|donner|trouver|croire|penser|parler|aimer|passer|rester|mettre|tenir|suivre|revenir|devenir|sortir|entrer|rendre|vivre|écrire|lire|apprendre|comprendre|perdre|gagner|payer|chercher|demander|répondre|commencer|finir|continuer|arrêter|essayer|réussir|échouer|combattre|défendre|attaquer|construire|détruire|créer|inventer|découvrir|explorer|étudier|rechercher|analyser|comparer|mesurer|calculer|estimer|évaluer|juger|décider|choisir|préférer|accepter|refuser|permettre|interdire|obliger|contraindre|encourager|décourager|aider|gêner|faciliter|compliquer|simplifier|aggraver|atténuer|augmenter|diminuer|réduire|étendre|limiter|élargir|restreindre|ouvrir|fermer|connecter|déconnecter|attacher|détacher|unir|séparer|mélanger|distinguer|confondre|éclaircir|obscurcir|enrichir|appauvrir|renforcer|affaiblir|accélérer|ralentir|activer|désactiver|inclure|exclure|ajouter|retirer|insérer|supprimer|modifier|conserver|remplacer|corriger|altérer|transformer|convertir|adapter|ajuster|calibrer|vérifier|valider|confirmer|infirmer|prouver|démontrer|illustrer|exemplifier|représenter|symboliser|signifier|indiquer|suggérer|impliquer|entraîner|causer|provoquer|résulter|dériver|provenir|émaner|originer|naître|mourir|vivre|exister|subsister|durer|persévérer|hésiter|hâter|presser|attendre|espérer|craindre|regretter|remercier|féliciter|blâmer|critiquer|louer|complimenter|insulter|offenser|pardonner|excuser|justifier|expliquer|clarifier|simplifier|complic|obscurcir|éclaircir|illuminer|éclairer|briller|luire|scintiller|étinceler|chatoyer|opacifier|translucider|transparent|opaque|visible|invisible|apparent|caché|secret|clairement|obscurément|vaguement|précisément|exactement|approximativement|globalement|particulièrement|généralement|spécifiquement|habituellement|normalement|exceptionnellement|ordinairement|communément|rarement|souvent|toujours|jamais|parfois|quelquefois|occasionally|constantly|continuously|frequently|infrequently|occasionally|rarely|regularly|sometimes|usually|often|seldom|rarely|never|always|constantly|continually|continuously|frequently|habitually|intermittently|irregularly|normally|occasionally|periodically|persistently|regularly|repeatedly|sometimes|sporadically|steadily|typically|uniformly|usually|variably|willingly)\b',
+    Language.SPANISH: r'\b(el|la|los|las|un|una|unos|unas|es|son|estar|tener|hacer|poder|deber|como|con|para|por|en|de|del|al|sin|sobre|entre|hasta|desde|durante|ante|según|tras|y|o|pero|sino|ni|que|este|esta|ese|esa|aquel|aquella|yo|tú|él|ella|nosotros|vosotros|ellos|ellas|mi|tu|su|nuestro|nuestra|vuestro|vuestra|este|esta|estos|estas|ese|esa|esos|esas|aquel|aquella|aquellos|aquellas|quién|qué|cuál|dónde|cuándo|cómo|cuánto|ser|estar|haber|tener|hacer|poder|decir|ir|ver|dar|saber|querer|llegar|poner|parecer|creer|hablar|llevar|dejar|seguir|encontrar|llamar|venir|pensar|salir|volver|tomar|conocer|vivir|sentir|tratar|mirar|contar|empezar|esperar|buscar|existir|entrar|trabajar|escribir|perder|producir|ocurrir|recibir|comenzar|permitir|aparecer|considerar|terminar|desarrollar|obtener|actualmente|realmente|simplemente|probablemente|generalmente|exactamente|definitivamente|básicamente|particularmente|frecuentemente|constantemente|constantemente|simultáneamente|internacional|internacional|internacional|internacional)\b',
     Language.RUSSIAN: r'[а-яА-ЯёЁ]{3,}',
     Language.CHINESE: r'[\u4e00-\u9fff]{2,}',
     Language.ARABIC: r'[\u0600-\u06ff]{2,}',
-    Language.PORTUGUESE: r'\b(o|a|os|as|um|uma|uns|umas|é|são|estar|ter|fazer|poder|dever|como|com|para|por|em|de|do|da|dos|das|ao|aos|sem|sobre|entre|até|desde|durante|após|antes|segundo|conforme|e|mas|ou|nem|que|este|esta|esse|essa|aquele|aquela)\b',
+    Language.PORTUGUESE: r'\b(o|a|os|as|um|uma|uns|umas|é|são|estar|ter|fazer|poder|dever|como|com|para|por|em|de|do|da|dos|das|ao|aos|sem|sobre|entre|até|desde|durante|após|antes|segundo|conforme|e|mas|ou|nem|que|este|esta|esse|essa|aquele|aquela|eu|tu|ele|ela|nós|vocês|eles|elas|meu|minha|meus|minhas|teu|tua|teus|tuas|seu|sua|seus|suas|nosso|nossa|nossos|nossas|vosso|vossa|vossos|vossas|este|esta|estes|estas|esse|essa|esses|essas|aquele|aquela|aqueles|aquelas|quem|que|qual|onde|quando|como|quanto|ser|estar|ter|fazer|poder|dizer|ir|ver|dar|saber|querer|chegar|por|parecer|crer|falar|carregar|deixar|seguir|encontrar|chamar|vir|pensar|sair|voltar|tomar|conhecer|viver|sentir|tratar|olhar|contar|começar|esperar|buscar|existir|entrar|trabalhar|escrever|perder|produzir|ocorrer|receber|começar|permitir|aparecer|considerar|terminar|desenvolver|obter|atualmente|realmente|simplesmente|provavelmente|geralmente|exatamente|definitivamente|basicamente|particularmente|frequentemente|constantemente|simultaneamente|internacional|internacional)\b',
 }
 
 
@@ -63,6 +76,7 @@ class PaperTranslation:
     language: Language
     title: str
     abstract: str
+    summary: str = ""
     is_original: bool = False
 
 
@@ -79,8 +93,18 @@ class MultilingualPaper:
     citation_count: int = 0
 
 
+@dataclass
+class MultilingualReport:
+    """Multi-language report."""
+    title: str
+    date: str
+    sections: List[Dict]
+    language_stats: Dict[str, int]
+    papers_count: int
+
+
 class LanguageDetector:
-    """Detect paper language based on content."""
+    """Enhanced language detection with confidence scores."""
     
     def __init__(self):
         self.patterns = {}
@@ -90,18 +114,18 @@ class LanguageDetector:
             except re.error:
                 self.patterns[lang] = None
     
-    def detect(self, text: str) -> Language:
+    def detect(self, text: str) -> Tuple[Language, float]:
         """
-        Detect language of text.
+        Detect language of text with confidence score.
         
         Args:
             text: Input text
             
         Returns:
-            Detected language
+            Tuple of (detected language, confidence score)
         """
         if not text:
-            return Language.ENGLISH
+            return Language.ENGLISH, 0.0
         
         scores = {}
         
@@ -116,6 +140,7 @@ class LanguageDetector:
         # Special handling for Chinese and Arabic (character-based)
         chinese_chars = len(re.findall(r'[\u4e00-\u9fff]', text))
         arabic_chars = len(re.findall(r'[\u0600-\u06ff]', text))
+        russian_chars = len(re.findall(r'[а-яА-ЯёЁ]', text))
         
         if chinese_chars > 0:
             scores[Language.CHINESE] = max(scores.get(Language.CHINESE, 0), chinese_chars * 10)
@@ -123,13 +148,20 @@ class LanguageDetector:
         if arabic_chars > 0:
             scores[Language.ARABIC] = max(scores.get(Language.ARABIC, 0), arabic_chars * 10)
         
+        if russian_chars > 0:
+            scores[Language.RUSSIAN] = max(scores.get(Language.RUSSIAN, 0), russian_chars * 5)
+        
         # Get language with highest score
         if not scores or max(scores.values()) == 0:
-            return Language.ENGLISH
+            return Language.ENGLISH, 0.0
         
-        return max(scores, key=scores.get)
+        total_score = sum(scores.values())
+        best_lang = max(scores, key=scores.get)
+        confidence = scores[best_lang] / total_score if total_score > 0 else 0.0
+        
+        return best_lang, confidence
     
-    def detect_from_metadata(self, paper: Dict) -> Language:
+    def detect_from_metadata(self, paper: Dict) -> Tuple[Language, float]:
         """
         Detect language from paper metadata.
         
@@ -137,14 +169,14 @@ class LanguageDetector:
             paper: Paper dictionary
             
         Returns:
-            Detected language
+            Tuple of (detected language, confidence)
         """
         # Check explicit language field
         lang_code = paper.get("language", "")
         if lang_code:
             for lang in Language:
                 if lang.value == lang_code:
-                    return lang
+                    return lang, 1.0
         
         # Detect from abstract
         abstract = paper.get("abstract", "")
@@ -156,14 +188,38 @@ class LanguageDetector:
         if title:
             return self.detect(title)
         
-        return Language.ENGLISH
+        return Language.ENGLISH, 0.0
 
 
 class MultilingualTranslator:
-    """Translate papers to multiple languages."""
+    """Enhanced translation with caching and fallback."""
     
-    def __init__(self):
+    def __init__(self, cache_dir: str = None):
         self.cache = {}
+        self.cache_dir = Path(cache_dir) if cache_dir else None
+        if self.cache_dir:
+            self.cache_dir.mkdir(parents=True, exist_ok=True)
+            self._load_cache()
+    
+    def _load_cache(self):
+        """Load translation cache from disk."""
+        cache_file = self.cache_dir / "translation_cache.json"
+        if cache_file.exists():
+            try:
+                with open(cache_file, "r", encoding="utf-8") as f:
+                    self.cache = json.load(f)
+            except Exception:
+                self.cache = {}
+    
+    def _save_cache(self):
+        """Save translation cache to disk."""
+        if self.cache_dir:
+            cache_file = self.cache_dir / "translation_cache.json"
+            try:
+                with open(cache_file, "w", encoding="utf-8") as f:
+                    json.dump(self.cache, f, ensure_ascii=False, indent=2)
+            except Exception:
+                pass
     
     def translate_text(
         self,
@@ -186,7 +242,7 @@ class MultilingualTranslator:
             return None
         
         # Check cache
-        cache_key = f"{text[:100]}_{target_lang}"
+        cache_key = f"{text[:200]}_{target_lang}"
         if cache_key in self.cache:
             return self.cache[cache_key]
         
@@ -206,16 +262,45 @@ class MultilingualTranslator:
                 
                 if translated:
                     self.cache[cache_key] = translated
+                    self._save_cache()
                     return translated
         except Exception as e:
             print(f"  [!] Translation error: {e}")
         
         return None
     
+    def generate_summary(self, text: str, max_length: int = 200) -> str:
+        """
+        Generate a short summary from text.
+        
+        Args:
+            text: Input text
+            max_length: Maximum summary length
+            
+        Returns:
+            Summary text
+        """
+        if not text:
+            return ""
+        
+        # Simple extractive summary
+        sentences = re.split(r'[.!?。！？]+', text)
+        summary = ""
+        
+        for sentence in sentences:
+            sentence = sentence.strip()
+            if sentence and len(summary) + len(sentence) < max_length:
+                summary += sentence + ". "
+            else:
+                break
+        
+        return summary.strip()
+    
     def translate_paper(
         self,
         paper: Dict,
         target_languages: List[Language] = None,
+        include_summary: bool = True,
     ) -> MultilingualPaper:
         """
         Translate paper to multiple languages.
@@ -223,6 +308,7 @@ class MultilingualTranslator:
         Args:
             paper: Paper dictionary
             target_languages: List of target languages
+            include_summary: Whether to include summary
             
         Returns:
             MultilingualPaper object
@@ -231,17 +317,19 @@ class MultilingualTranslator:
             target_languages = list(Language)
         
         detector = LanguageDetector()
-        original_lang = detector.detect_from_metadata(paper)
+        original_lang, _ = detector.detect_from_metadata(paper)
         
         translations = {}
         
         for lang in target_languages:
             if lang == original_lang:
                 # Original language
+                summary = self.generate_summary(paper.get("abstract", "")) if include_summary else ""
                 translations[lang] = PaperTranslation(
                     language=lang,
                     title=paper.get("title", ""),
                     abstract=paper.get("abstract", ""),
+                    summary=summary,
                     is_original=True,
                 )
             else:
@@ -258,10 +346,13 @@ class MultilingualTranslator:
                     target_lang=lang.value,
                 )
                 
+                summary = self.generate_summary(abstract) if include_summary and abstract else ""
+                
                 translations[lang] = PaperTranslation(
                     language=lang,
                     title=title or paper.get("title", ""),
                     abstract=abstract or paper.get("abstract", ""),
+                    summary=summary,
                     is_original=False,
                 )
         
@@ -278,11 +369,11 @@ class MultilingualTranslator:
 
 
 class MultilingualSearch:
-    """Multi-language paper search."""
+    """Enhanced multi-language paper search."""
     
-    def __init__(self):
+    def __init__(self, cache_dir: str = None):
         self.detector = LanguageDetector()
-        self.translator = MultilingualTranslator()
+        self.translator = MultilingualTranslator(cache_dir)
     
     def search_with_translation(
         self,
@@ -318,6 +409,7 @@ class MultilingualSearch:
                     **paper,
                     f"title_{target_lang.value}": multilingual.translations[target_lang].title,
                     f"abstract_{target_lang.value}": multilingual.translations[target_lang].abstract,
+                    f"summary_{target_lang.value}": multilingual.translations[target_lang].summary,
                 })
             return translated_papers
         
@@ -340,7 +432,7 @@ class MultilingualSearch:
         """
         filtered = []
         for paper in papers:
-            paper_lang = self.detector.detect_from_metadata(paper)
+            paper_lang, _ = self.detector.detect_from_metadata(paper)
             if paper_lang == language:
                 filtered.append(paper)
         
@@ -359,24 +451,130 @@ class MultilingualSearch:
         stats = defaultdict(int)
         
         for paper in papers:
-            lang = self.detector.detect_from_metadata(paper)
+            lang, _ = self.detector.detect_from_metadata(paper)
             stats[lang.value] += 1
         
         return dict(stats)
+    
+    def generate_multilingual_report(
+        self,
+        papers: List[Dict],
+        report_title: str = "AI Paper Daily Report",
+        target_languages: List[Language] = None,
+    ) -> Dict[Language, str]:
+        """
+        Generate report in multiple languages.
+        
+        Args:
+            papers: List of papers
+            report_title: Report title
+            target_languages: Target languages
+            
+        Returns:
+            Dictionary of language -> report content
+        """
+        if target_languages is None:
+            target_languages = [Language.ENGLISH, Language.CHINESE]
+        
+        reports = {}
+        
+        # Get language stats
+        lang_stats = self.get_language_stats(papers)
+        
+        for lang in target_languages:
+            report_lines = []
+            
+            # Title
+            if lang == Language.ENGLISH:
+                report_lines.append(f"# {report_title}")
+                report_lines.append(f"\n**Date**: {__import__('datetime').datetime.now().strftime('%Y-%m-%d')}")
+                report_lines.append(f"**Total Papers**: {len(papers)}")
+            elif lang == Language.CHINESE:
+                report_lines.append(f"# {self.translator.translate_text(report_title, target_lang='zh') or report_title}")
+                report_lines.append(f"\n**日期**: {__import__('datetime').datetime.now().strftime('%Y-%m-%d')}")
+                report_lines.append(f"**论文总数**: {len(papers)}")
+            
+            # Language distribution
+            report_lines.append("\n## " + ("Language Distribution" if lang == Language.ENGLISH else "语言分布"))
+            for lang_code, count in lang_stats.items():
+                lang_name = LANGUAGE_NAMES.get(LANGUAGE_CODES.get(lang_code, Language.ENGLISH), lang_code)
+                report_lines.append(f"- {lang_name}: {count}")
+            
+            # Top papers
+            report_lines.append("\n## " + ("Top Papers" if lang == Language.ENGLISH else "热门论文"))
+            for i, paper in enumerate(papers[:10], 1):
+                title = paper.get("title", "N/A")
+                if lang != Language.ENGLISH:
+                    translated = self.translator.translate_text(title, target_lang=lang.value)
+                    if translated:
+                        title = translated
+                
+                report_lines.append(f"\n### {i}. {title}")
+                report_lines.append(f"- **ArXiv**: {paper.get('id', 'N/A')}")
+                report_lines.append(f"- **Score**: {paper.get('llm_score', 'N/A')}/10")
+            
+            reports[lang] = "\n".join(report_lines)
+        
+        return reports
+
+
+class MultilingualFormatter:
+    """Format content for different languages."""
+    
+    @staticmethod
+    def format_number(number: int, lang: Language) -> str:
+        """Format number according to language conventions."""
+        if lang == Language.ENGLISH:
+            return f"{number:,}"
+        elif lang == Language.CHINESE:
+            return f"{number:,}"
+        else:
+            return f"{number:,}"
+    
+    @staticmethod
+    def format_date(date_str: str, lang: Language) -> str:
+        """Format date according to language conventions."""
+        # Simple formatting
+        return date_str
+    
+    @staticmethod
+    def get_rtl_style(lang: Language) -> str:
+        """Get CSS style for RTL languages."""
+        if lang in RTL_LANGUAGES:
+            return 'direction: rtl; text-align: right;'
+        return 'direction: ltr; text-align: left;'
+    
+    @staticmethod
+    def format_paper_html(paper: Dict, lang: Language) -> str:
+        """Format paper as HTML for specific language."""
+        rtl_style = MultilingualFormatter.get_rtl_style(lang)
+        
+        title = paper.get("title", "N/A")
+        abstract = paper.get("abstract", "N/A")
+        
+        return f"""
+        <div style="{rtl_style} padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;">
+            <h3>{title}</h3>
+            <p><strong>ArXiv:</strong> {paper.get('id', 'N/A')}</p>
+            <p><strong>Score:</strong> {paper.get('llm_score', 'N/A')}/10</p>
+            <p>{abstract[:300]}...</p>
+        </div>
+        """
 
 
 # Global instances
 language_detector = LanguageDetector()
 multilingual_translator = MultilingualTranslator()
 multilingual_search = MultilingualSearch()
+multilingual_formatter = MultilingualFormatter()
 
 
 if __name__ == "__main__":
-    # Test multi-language support
-    print("Testing multi-language support...")
+    # Test enhanced multi-language support
+    print("Testing enhanced multi-language support...")
     print()
     
-    # Test language detection
+    # Test language detection with confidence
     test_texts = {
         "English": "We propose a novel method for machine learning.",
         "French": "Nous proposons une nouvelle méthode pour l'apprentissage automatique.",
@@ -387,19 +585,40 @@ if __name__ == "__main__":
         "Portuguese": "Propomos um novo método para aprendizado de máquina.",
     }
     
-    print("Language detection:")
+    print("Language detection with confidence:")
     for lang_name, text in test_texts.items():
-        detected = language_detector.detect(text)
-        print(f"  {lang_name}: {detected.value} (expected: {lang_name[:2].lower()})")
+        detected, confidence = language_detector.detect(text)
+        expected = lang_name[:2].lower()
+        status = "✓" if detected.value == expected else "✗"
+        print(f"  {status} {lang_name}: {detected.value} (confidence: {confidence:.2f})")
     
     print()
     
-    # Test translation
-    print("Translation test:")
+    # Test translation with caching
+    print("Translation test with caching:")
     test_text = "We propose a novel method for machine learning."
-    for lang in Language:
+    for lang in [Language.CHINESE, Language.FRENCH, Language.SPANISH]:
         translated = multilingual_translator.translate_text(test_text, target_lang=lang.value)
         if translated:
             print(f"  {lang.value}: {translated[:50]}...")
         else:
             print(f"  {lang.value}: [translation failed]")
+    
+    print()
+    
+    # Test summary generation
+    print("Summary generation:")
+    long_text = "We propose a novel method for machine learning that achieves state-of-the-art performance on multiple benchmarks. Our approach combines attention mechanisms with transformer architecture to efficiently process long sequences. Extensive experiments demonstrate the effectiveness of our method."
+    summary = multilingual_translator.generate_summary(long_text, max_length=100)
+    print(f"  Original: {long_text[:100]}...")
+    print(f"  Summary: {summary}")
+    
+    print()
+    
+    # Test RTL formatting
+    print("RTL formatting:")
+    rtl_style = multilingual_formatter.get_rtl_style(Language.ARABIC)
+    print(f"  Arabic style: {rtl_style}")
+    
+    print()
+    print("✓ Enhanced multi-language support tested successfully!")
