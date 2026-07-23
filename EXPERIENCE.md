@@ -190,7 +190,7 @@ python3 validate_skill.py /root/git/mimo/paper-pipeline/skills/paper-pipeline
 ### 中期
 - [x] 构建论文知识图谱
 - [x] 实现论文推荐系统
-- [ ] 支持多语言论文
+- [x] 支持多语言论文
 
 ### 长期
 - [ ] 论文复现自动化
