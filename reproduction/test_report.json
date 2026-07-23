@@ -1,0 +1,135 @@
+{
+  "timestamp": "2026-07-24T06:40:05.728140",
+  "topics": {
+    "ai_agent": {
+      "papers": [
+        {
+          "name": "PoTRE",
+          "arxiv_id": "2607.20268v1",
+          "status": "passed",
+          "input_shape": [
+            4,
+            128
+          ],
+          "output_shape": [
+            4,
+            128
+          ],
+          "parameters": 1598084
+        },
+        {
+          "name": "PRO-LONG",
+          "arxiv_id": "2607.20064v1",
+          "status": "passed",
+          "input_shape": [
+            1,
+            128
+          ],
+          "output_shape": [
+            1,
+            64
+          ],
+          "parameters": 221514
+        },
+        {
+          "name": "Look Less Think Faster",
+          "arxiv_id": "2607.20357v1",
+          "status": "passed",
+          "input_shape": [
+            2,
+            50,
+            256
+          ],
+          "output_shape": [
+            2,
+            50,
+            128
+          ],
+          "parameters": 1977137
+        }
+      ],
+      "status": "passed"
+    },
+    "llm_inference": {
+      "papers": [
+        {
+          "name": "InstructMixup",
+          "arxiv_id": "2607.19324v1",
+          "status": "passed",
+          "input_shape": [
+            4,
+            3,
+            32,
+            32
+          ],
+          "output_shape": [
+            4,
+            3,
+            32,
+            32
+          ],
+          "parameters": 1103684
+        },
+        {
+          "name": "HijackKV",
+          "arxiv_id": "2607.19957v1",
+          "status": "passed",
+          "input_shape": [
+            2,
+            8,
+            10,
+            32
+          ],
+          "hijack_score": 0.0,
+          "parameters": 205569
+        }
+      ],
+      "status": "passed"
+    },
+    "chip_verification": {
+      "papers": [
+        {
+          "name": "OLEDLM",
+          "arxiv_id": "2607.20194v1",
+          "status": "passed",
+          "input_shape": [
+            4,
+            20
+          ],
+          "output_shape": [
+            4,
+            5
+          ],
+          "parameters": 1135147
+        },
+        {
+          "name": "HalluTruthQA",
+          "arxiv_id": "2607.20219v1",
+          "status": "passed",
+          "input_shape": [
+            2,
+            50,
+            256
+          ],
+          "hallucination_scores": [
+            [
+              0.5057284235954285
+            ],
+            [
+              0.5074077844619751
+            ]
+          ],
+          "parameters": 510210
+        }
+      ],
+      "status": "passed"
+    }
+  },
+  "summary": {
+    "total_papers": 7,
+    "total_models": 7,
+    "total_parameters": 6751345,
+    "passed": 7,
+    "failed": 0
+  }
+}
