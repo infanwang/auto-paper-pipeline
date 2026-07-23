@@ -183,13 +183,13 @@ python3 validate_skill.py /root/git/mimo/paper-pipeline/skills/paper-pipeline
 ## 七、未来改进
 
 ### 短期
-- [ ] 添加更多论文源 (ACL, NeurIPS, ICML)
-- [ ] 改进 LLM 评分准确性
-- [ ] 增加论文摘要翻译
+- [x] 添加更多论文源 (ACL, NeurIPS, ICML)
+- [x] 改进 LLM 评分准确性
+- [x] 增加论文摘要翻译
 
 ### 中期
-- [ ] 构建论文知识图谱
-- [ ] 实现论文推荐系统
+- [x] 构建论文知识图谱
+- [x] 实现论文推荐系统
 - [ ] 支持多语言论文
 
 ### 长期
