@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>Identifying Good Rules for Efficient SAT Encodings of Single-Constant Multiplication Using Machine Learning</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .paper { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a2e; line-height: 1.4; }
+        .meta { color: #666; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px; }
+        .abstract { background: #f0f4ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .section { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <a class="back" href="../index.html">← 返回首页</a>
+    <div class="paper">
+        <h1>Identifying Good Rules for Efficient SAT Encodings of Single-Constant Multiplication Using Machine Learning</h1>
+        <div class="meta">
+            <strong>ArXiv:</strong> 2607.21188v1 | 
+            <strong>日期:</strong> 2026-07-23 | 
+            <strong>评分:</strong> 6.0/10
+        </div>
+        <div class="abstract">
+            <h3>摘要</h3>
+            <p>The Single Constant Multiplication problem is a fundamental NP-hard optimization task in hardware design, which seeks to decompose a fixed constant using only additions, subtractions, and bit-shifts. Although dynamic programming methods can produce near-optimal SAT encodings for SCM, their encoding cost remains high for large constants. We propose a neuro-symbolic framework that accelerates SCM SAT encoding by identifying good rules for guiding operator selection during decomposition. Our approach employs a graph neural network model to predict promising operator types from constant decompositions, and exploits the resulting confidence scores to prune no-good choices in the symbolic search. Experimental results on unseen 17-32 bit constants demonstrate one to two orders of magnitude reductions in encoding time, over 97% reduction in memory usage, and an order-of-magnitude decrease in branching, while preserving near-optimal encoding quality in terms of additions. These results show that learning-guided symbolic strategies can significantly improve the scalability and efficiency of SCM encoding. Our code and data are publicly available at: https://github.com/Chufeng-Jiang/SCM_MLDP</p>
+        </div>
+        
+    </div>
+</body>
+</html>
