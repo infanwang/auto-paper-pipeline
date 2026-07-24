@@ -1,73 +1,36 @@
 version: '3.8'
 
 services:
-  # 主应用服务
-  app:
+  paper-pipeline:
     build: .
     container_name: paper-pipeline
-    environment:
-      - SMTP_HOST=${SMTP_HOST:-smtp.163.com}
-      - SMTP_PORT=${SMTP_PORT:-465}
-      - SMTP_SENDER=${SMTP_SENDER}
-      - SMTP_AUTH_CODE=${SMTP_AUTH_CODE}
-      - SMTP_RECIPIENT=${SMTP_RECIPIENT}
+    restart: unless-stopped
     volumes:
       - ./data:/app/data
-      - ./docs:/app/docs
       - ./reports:/app/reports
+      - ./docs:/app/docs
       - ./pdfs:/app/pdfs
-      - ./logs:/app/logs
-    command: python scripts/run_pipeline.py --mode daily
-    restart: unless-stopped
+      - ./.env:/app/.env:ro
+    environment:
+      - PYTHONPATH=/app/scripts
     networks:
       - paper-network
 
-  # Web API 服务（带健康检查）
+  # Optional: Web interface
   web:
     build: .
     container_name: paper-pipeline-web
+    restart: unless-stopped
+    command: python -m uvicorn src.web.app:app --host 0.0.0.0 --port 8000
     ports:
       - "8000:8000"
     volumes:
       - ./data:/app/data
-      - ./docs:/app/docs
-      - ./logs:/app/logs
-    command: uvicorn src.web.app:app --host 0.0.0.0 --port 8000
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 10s
-    networks:
-      - paper-network
-    depends_on:
-      - app
-
-  # 定时任务服务（带健康检查）
-  scheduler:
-    build: .
-    container_name: paper-pipeline-scheduler
-    environment:
-      - SMTP_HOST=${SMTP_HOST:-smtp.163.com}
-      - SMTP_PORT=${SMTP_PORT:-465}
-      - SMTP_SENDER=${SMTP_SENDER}
-      - SMTP_AUTH_CODE=${SMTP_AUTH_CODE}
-      - SMTP_RECIPIENT=${SMTP_RECIPIENT}
-    volumes:
-      - ./data:/app/data
-      - ./docs:/app/docs
       - ./reports:/app/reports
-      - ./logs:/app/logs
-    command: >
-      sh -c "echo 'Scheduler started. Daily task at 08:00 via host cron.' && sleep infinity"
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "test", "-f", "/etc/crontabs/root"]
-      interval: 30s
-      timeout: 5s
-      retries: 3
+      - ./docs:/app/docs
+      - ./.env:/app/.env:ro
+    environment:
+      - PYTHONPATH=/app/scripts
     networks:
       - paper-network
 

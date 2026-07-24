@@ -2,26 +2,30 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-# 安装系统依赖
-RUN apt-get update && apt-get install -y --no-install-recommends \
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
     gcc \
+    g++ \
     && rm -rf /var/lib/apt/lists/*
 
-# 安装Python依赖
-COPY requirements.txt ./
+# Copy requirements
+COPY requirements.txt .
+
+# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 复制源码
-COPY src/ ./src/
-COPY scripts/ ./scripts/
-COPY tests/ ./tests/
-COPY config/ ./config/
+# Copy application code
+COPY . .
 
-# 创建数据目录
-RUN mkdir -p data docs reports pdfs
+# Create necessary directories
+RUN mkdir -p data reports docs pdfs
 
-# 暴露端口
+# Set environment variables
+ENV PYTHONPATH=/app/scripts
+ENV PYTHONUNBUFFERED=1
+
+# Expose port (for web interface)
 EXPOSE 8000
 
-# 启动命令
+# Default command
 CMD ["python", "scripts/run_pipeline.py", "--mode", "daily"]

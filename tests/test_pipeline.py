@@ -1,97 +1,157 @@
-"""单元测试 - 过滤漏斗"""
+#!/usr/bin/env python3
+"""Test suite for paper pipeline modules."""
 
 import pytest
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
-
-from pipeline.funnel import TFFilter, LLMScorer, FunnelPipeline
-
-
-class TestTFFilter:
-    """TF-IDF过滤器测试"""
-    
-    def test_init(self, domain_keywords):
-        """测试初始化"""
-        filter = TFFilter(domain_keywords)
-        assert len(filter.domain_keywords) > 0
-    
-    def test_compute_score_high(self, domain_keywords):
-        """测试高分计算"""
-        filter = TFFilter(domain_keywords)
-        text = "This paper proposes a novel LLM agent framework with attention mechanism"
-        score = filter._compute_score(text)
-        assert score > 0.3
-    
-    def test_compute_score_low(self, domain_keywords):
-        """测试低分计算"""
-        filter = TFFilter(domain_keywords)
-        text = "This paper is about cooking recipes and food preparation"
-        score = filter._compute_score(text)
-        assert score < 0.3
-    
-    def test_filter(self, domain_keywords, sample_papers):
-        """测试过滤"""
-        filter = TFFilter(domain_keywords)
-        filtered = filter.filter(sample_papers, threshold=0.1)
-        assert len(filtered) <= len(sample_papers)
-        assert all('tfidf_score' in p for p in filtered)
+# Add scripts to path
+sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 
 
-class TestLLMScorer:
-    """LLM评分器测试"""
+class TestAntiCrawl:
+    """Test anti-crawl module."""
     
-    def test_init(self):
-        """测试初始化"""
-        scorer = LLMScorer()
-        assert scorer.model == "gpt-4o-mini"
+    def test_import(self):
+        from anti_crawl import AntiCrawl
+        assert AntiCrawl is not None
     
-    def test_heuristic_score(self, sample_paper):
-        """测试启发式评分"""
-        scorer = LLMScorer()
-        score = scorer._heuristic_score(sample_paper)
-        assert 1.0 <= score <= 10.0
+    def test_get_headers(self):
+        from anti_crawl import AntiCrawl
+        ac = AntiCrawl()
+        headers = ac.get_headers()
+        assert "User-Agent" in headers
+        assert "Accept" in headers
     
-    def test_extract_summary(self):
-        """测试摘要提取"""
-        scorer = LLMScorer()
-        abstract = "This is a test abstract about LLM agents and their applications in various domains."
-        summary = scorer._extract_summary(abstract)
-        assert len(summary) <= 110
-        assert summary.endswith("...")
-    
-    def test_extract_tags(self):
-        """测试标签提取"""
-        scorer = LLMScorer()
-        abstract = "This paper proposes a novel LLM agent framework with multimodal capabilities."
-        tags = scorer._extract_tags(abstract)
-        assert "LLM" in tags
-        assert "Agent" in tags
-        assert "多模态" in tags
-    
-    def test_score_batch(self, sample_papers):
-        """测试批量评分"""
-        scorer = LLMScorer()
-        scored = scorer.score_batch(sample_papers[:3])
-        assert len(scored) == 3
-        assert all('llm_score' in p for p in scored)
-        assert all('llm_summary' in p for p in scored)
-        assert all('llm_tags' in p for p in scored)
+    def test_wait(self):
+        import time
+        from anti_crawl import AntiCrawl
+        ac = AntiCrawl(min_delay=0.1, max_delay=0.2)
+        start = time.time()
+        ac.wait()
+        elapsed = time.time() - start
+        assert elapsed >= 0.1
 
 
-class TestFunnelPipeline:
-    """过滤漏斗测试"""
+class TestDedup:
+    """Test dedup module."""
     
-    def test_init(self, domain_keywords):
-        """测试初始化"""
-        pipeline = FunnelPipeline(domain_keywords)
-        assert pipeline.stage1 is not None
-        assert pipeline.stage2 is not None
+    def test_import(self):
+        from dedup import Deduplicator
+        assert Deduplicator is not None
     
-    def test_run(self, domain_keywords, sample_papers):
-        """测试运行"""
-        pipeline = FunnelPipeline(domain_keywords)
-        result = pipeline.run(sample_papers, tfidf_threshold=0.1, llm_top_n=3)
-        assert len(result) <= 3
-        assert all('llm_score' in p for p in result)
+    def test_register_and_check(self, tmp_path):
+        from dedup import Deduplicator
+        dedup = Deduplicator(index_path=tmp_path / "test.json")
+        
+        # Register a paper
+        dedup.register("2607.00001", "Test Paper")
+        
+        # Check duplicate
+        assert dedup.is_duplicate("2607.00001")
+        assert not dedup.is_duplicate("2607.00002")
+    
+    def test_title_similarity(self, tmp_path):
+        from dedup import Deduplicator
+        dedup = Deduplicator(index_path=tmp_path / "test.json")
+        
+        dedup.register("2607.00001", "A Novel Approach to Machine Learning")
+        
+        # Similar title should be detected as duplicate
+        assert dedup.is_duplicate("2607.00002", "A Novel Approach to Machine Learning Systems")
+
+
+class TestMultilingual:
+    """Test multilingual module."""
+    
+    def test_import(self):
+        from multilingual import LanguageDetector, Language
+        assert LanguageDetector is not None
+    
+    def test_english_detection(self):
+        from multilingual import LanguageDetector, Language
+        detector = LanguageDetector()
+        lang, confidence = detector.detect("We propose a novel method for machine learning.")
+        assert lang == Language.ENGLISH
+    
+    def test_chinese_detection(self):
+        from multilingual import LanguageDetector, Language
+        detector = LanguageDetector()
+        lang, confidence = detector.detect("我们提出了一种新的机器学习方法。")
+        assert lang == Language.CHINESE
+    
+    def test_spanish_detection(self):
+        from multilingual import LanguageDetector, Language
+        detector = LanguageDetector()
+        lang, confidence = detector.detect("Proponemos un nuevo método para el aprendizaje automático.")
+        assert lang == Language.SPANISH
+
+
+class TestEnhancedScorer:
+    """Test enhanced scorer module."""
+    
+    def test_import(self):
+        from enhanced_scorer import EnhancedLLMScorer
+        assert EnhancedLLMScorer is not None
+    
+    def test_score_paper(self):
+        from enhanced_scorer import EnhancedLLMScorer
+        scorer = EnhancedLLMScorer()
+        scores = scorer.score_paper(
+            "Test Paper Title",
+            "This is a test abstract with some keywords like novel and method.",
+            10
+        )
+        assert scores.overall > 0
+        assert scores.novelty > 0
+
+
+class TestKnowledgeGraph:
+    """Test knowledge graph module."""
+    
+    def test_import(self):
+        from knowledge_graph import PaperKnowledgeGraph
+        assert PaperKnowledgeGraph is not None
+    
+    def test_add_paper(self, tmp_path):
+        from knowledge_graph import PaperKnowledgeGraph
+        kg = PaperKnowledgeGraph(data_dir=str(tmp_path))
+        
+        paper = {
+            "id": "2607.00001",
+            "title": "Test Paper",
+            "authors": ["Author One"],
+            "topics": ["AI"],
+            "year": "2026",
+        }
+        kg.add_paper(paper)
+        
+        assert "2607.00001" in kg.graph["papers"]
+
+
+class TestRecommender:
+    """Test recommender module."""
+    
+    def test_import(self):
+        from recommender import PaperRecommender
+        assert PaperRecommender is not None
+
+
+class TestTranslator:
+    """Test translator module."""
+    
+    def test_import(self):
+        from translator import AbstractTranslator
+        assert AbstractTranslator is not None
+
+
+class TestMultiSourceCrawler:
+    """Test multi-source crawler module."""
+    
+    def test_import(self):
+        from multi_source_crawler import MultiSourceCrawler
+        assert MultiSourceCrawler is not None
+
+
+if __name__ == "__main__":
+    pytest.main([__file__, "-v"])
