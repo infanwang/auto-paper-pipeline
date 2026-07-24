@@ -27,10 +27,13 @@ class TestAntiCrawl:
         import time
         from anti_crawl import AntiCrawl
         ac = AntiCrawl(min_delay=0.1, max_delay=0.2)
+        # Set last request time to trigger wait
+        ac.last_request_time = time.time() - 0.05  # 50ms ago
         start = time.time()
         ac.wait()
         elapsed = time.time() - start
-        assert elapsed >= 0.1
+        # Should wait at least 50ms (0.1 - 0.05 = 0.05)
+        assert elapsed >= 0.04  # Allow some tolerance
 
 
 class TestDedup:
