@@ -35,13 +35,20 @@ class PaperKnowledgeGraph:
             return
         
         # Add paper node
+        # Handle both 'topic' (singular) and 'topics' (plural) fields
+        topics = paper.get("topics", [])
+        if not topics:
+            topic = paper.get("topic", "")
+            if topic:
+                topics = [topic]
+        
         self.graph["papers"][paper_id] = {
             "title": paper.get("title", ""),
             "authors": paper.get("authors", []),
             "abstract": paper.get("abstract", ""),
             "year": paper.get("year", paper.get("published_date", "")[:4]),
             "venue": paper.get("venue", ""),
-            "topics": paper.get("topics", []),
+            "topics": topics,
             "citation_count": paper.get("citation_count", 0),
         }
         
@@ -76,7 +83,18 @@ class PaperKnowledgeGraph:
                             self.graph["co_authors"][author_name].add(other_name)
         
         # Add topic relationships
-        topics = paper.get("topics", paper.get("categories", []))
+        # Handle both 'topic' (singular) and 'topics' (plural) fields
+        topics = paper.get("topics", [])
+        if not topics:
+            topic = paper.get("topic", "")
+            if topic:
+                topics = [topic]
+        
+        # Also consider categories as topics
+        categories = paper.get("categories", [])
+        if categories:
+            topics = topics + categories
+        
         if isinstance(topics, list):
             for topic in topics:
                 if topic not in self.graph["topics"]:
